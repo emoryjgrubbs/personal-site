@@ -1,5 +1,6 @@
 <template>
-    <NuxtLoadingIndicator />
     <Navbar />
-    <NuxtPage />
+    <div class="overscroll-none">
+        <NuxtPage />
+    </div>
 </template>
