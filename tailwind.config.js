@@ -11,9 +11,10 @@ export default {
   theme: {
     extend: {
       colors: {
-        'nav': '#46597a',
-        'bg': '#ffffff',
-        'text-light': '#ffffff',
+        'nav': '#364c6b',
+        'bg': '#c5d5eb',
+        'text-light': '#c5d5eb',
+        'text-dark': '#364c6b',
       },
     },
   },
