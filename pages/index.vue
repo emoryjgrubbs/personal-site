@@ -1,14 +1,14 @@
 <template>
     <body class="flex-auto bg-bg text-center overscroll-contain">
         <!--title-->
-        <h1 class=" mt-10 mb-5 text-3xl">
+        <h1 class=" mt-10 mb-5 text-4xl font-bold">
             Emory Grubbs
         </h1>
         <!--about me-->
         <div class="flex py-2 items-center mx-20">
-            <img src="/images/headshot/DSC00288.jpg" alt="headshot" class="inline-flex w-5/12 px-6" draggable="false" />
+            <img src="/images/headshot/DSC00288.jpg" alt="headshot, credit: John Grubbs rockslidephotography" class="inline-flex w-5/12 px-6" draggable="false" />
             <h1 class="w-7/12 px-6">
-                <div class="text-xl underline">
+                <div class="text-2xl underline">
                     About Me
                 </div>
                 <p class="text-base pt-4">

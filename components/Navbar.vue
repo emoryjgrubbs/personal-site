@@ -11,7 +11,7 @@ function projectsClick() {
 </script>
 
 <template>
-  <nav class="bg-nav text-text-light text-xl flex space-x-10 py-2">
+  <nav class="bg-nav text-text-light text-2xl font-bold flex space-x-10 py-2">
     <div class="flex grow mx-2">
         <button
           class="px-2"

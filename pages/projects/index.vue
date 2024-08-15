@@ -102,7 +102,7 @@ function checkInclusion(project) { //note: this could cause slow downs, but shou
         // add to name
         else {
             // allow for space after quoted tag/date
-            if (!(i > 0 && (searchTerm.value.at(i-1) === "\'" || searchTerm.value.at(i-1) === "\""))) {
+            if (!(i > 0 && (searchTerm.value.at(i-1) === "\'" || searchTerm.value.at(i-1) === "\"") && searchTerm.value.at(i) === " ")) {
                 name += searchTerm.value.at(i)
             }
         }
@@ -234,6 +234,8 @@ function validateDate(date) {
     return datePattern.test(date);
 }
 
+const showInstructions = ref(false);
+
 //on click
 function handleProjectClick(project) {
     //take them to the project page
@@ -247,17 +249,25 @@ function handleGithubClick(github) {
 <template>
     <body class="flex-auto bg-bg text-center overscroll-contain">
         <!--title-->
-        <h1 class=" mt-10 mb-5 text-3xl">
+        <h1 class=" mt-10 mb-5 text-4xl font-bold">
             Projects
         </h1>
         <!--search-->
-        <div>
-            <input placeholder="Project Search" title="Project Search" v-model="searchTerm" />
+        <div class="mx-20">
+            <input placeholder="Project Search" title="Project Search" v-model="searchTerm" class="w-2/3 text-center" />
+            <div v-on:mouseenter="showInstructions = true" v-on:mouseleave="showInstructions = false" class="">
+                <p class="inline-flex">
+                    How to use
+                </p>
+                <p v-show="showInstructions" class="inline-flex">
+                    : instructions...
+                </p>
+            </div>
         </div>
         <!--list of projects-->
         <ul v-for="project in projects" v-show="checkInclusion(project)" class="py-5">
             <div v-on:click="handleProjectClick(project)" class="hover:cursor-pointer">
-                <h1>
+                <h1 class="text-2xl underline">
                     {{ project.name }}
                 </h1>
                 <p>

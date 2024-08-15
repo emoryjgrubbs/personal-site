@@ -11,10 +11,14 @@ export default {
   theme: {
     extend: {
       colors: {
-        'nav': '#364c6b',
-        'bg': '#c5d5eb',
-        'text-light': '#c5d5eb',
+        'nav': '#49914b',
+        'bg': '#edf7ee',
+        'text-light': '#ffffff',
         'text-dark': '#364c6b',
+      },
+      fontFamily: {
+        title: ['Noto Sans Mono', 'Ubuntu Mono', 'DM Mono', 'Sono', 'Rubik Mono One',],
+        body: ['Noto Sans Mono', 'Ubuntu Mono', 'DM Mono', 'Sono',],
       },
     },
   },

@@ -1,6 +1,6 @@
 <template>
-    <Navbar />
-    <div class="overscroll-none bg-bg text-text-dark">
+    <div class="overscroll-none bg-bg text-text-dark font-body">
+        <Navbar />
         <NuxtPage />
         <ContactInfo />
     </div>
