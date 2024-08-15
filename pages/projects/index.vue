@@ -160,25 +160,6 @@ function cheeckDate(project, dateString) {
             }
             return true;
         }
-        // check if project end is in range
-        else if (validate(startDate) && (endDate.toLowerCase().includes("now") || endDate.toLowerCase().includes("current") || endDate.toLowerCase().includes("ongoing"))) {
-            if (project.endDate !== "now") {
-                if (project.endDate.substring(0,4) < startDate.substring(0,4)) {
-                    return false;
-                }
-                else if (project.endDate.substring(0,4) == startDate.substring(0,4)){
-                    if (project.endDate.substring(5,7) < startDate.substring(5,7)) {
-                        return false;
-                    }
-                    else if (project.endDate.substring(5,7) == startDate.substring(5,7)) {
-                        if (project.endDate.substring(8,10) < startDate.substring(8,10)) {
-                            return false;
-                        }
-                    }
-                }
-            }
-            return true;
-        }
         else {
             return false;
         }
@@ -224,6 +205,27 @@ function cheeckDate(project, dateString) {
         }
     }
     else {
+        let startDate = dateString.substring(0,10);
+        let endDate = dateString.substring(11,21);
+        // check if project end is in range
+        if (validateDate(startDate) && (endDate.toLowerCase().includes("now") || endDate.toLowerCase().includes("current") || endDate.toLowerCase().includes("ongoing"))) {
+            if (project.endDate !== "now") {
+                if (project.endDate.substring(0,4) < startDate.substring(0,4)) {
+                    return false;
+                }
+                else if (project.endDate.substring(0,4) == startDate.substring(0,4)){
+                    if (project.endDate.substring(5,7) < startDate.substring(5,7)) {
+                        return false;
+                    }
+                    else if (project.endDate.substring(5,7) == startDate.substring(5,7)) {
+                        if (project.endDate.substring(8,10) < startDate.substring(8,10)) {
+                            return false;
+                        }
+                    }
+                }
+            }
+            return true;
+        }
         return false;
     }
 }
