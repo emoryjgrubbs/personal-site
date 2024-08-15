@@ -40,10 +40,10 @@ function handleGithubClick(github) {
         </h1>
         <!--search-->
         <div>
-
+            <input placeholder="Project Search" title="Project Search" v-model="searchTerm" />
         </div>
         <!--list of projects-->
-        <ul v-for="project in projects" v-if="!searchTerm" class="py-5">
+        <ul v-for="project in projects" v-show="!searchTerm | project.name.toLocaleLowerCase().includes(searchTerm.toLocaleLowerCase())" class="py-5">
             <div v-on:click="handleProjectClick(project)" class="hover:cursor-pointer">
                 <h1>
                     {{ project.name }}
