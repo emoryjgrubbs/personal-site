@@ -4,7 +4,7 @@ const atc = {
     name: 'ATC Patient Data',
     desc: 'atc test description',
     thoughts: 'atc test thoughts',
-    tags: ['autism treatment center', 'epics', 'utd'],
+    tags: ['autism treatment center', 'epics', 'utd', 'web', 'website', 'webdeb', 'db', 'database'],
     startDate: '2024-06-03',
     endDate: '2024-08-07',
     github: 'https://github.com/UTDallasEPICS/ATC-Patient-Data',
@@ -13,9 +13,9 @@ const personalSite = {
     name: 'Personal Website',
     desc: 'personal test desc',
     thoughts: 'personal test thoughts',
-    tags: ['personal'],
+    tags: ['personal', 'web', 'website', 'webdeb'],
     startDate: '2024-08-12',
-    endDate: 'now', //need a better place holder for ongoing projects
+    endDate: 'now',
     github: 'https://github.com/emoryjgrubbs/personal-site',
 };
 //array of projects
@@ -242,7 +242,7 @@ function handleProjectClick(project) {
     //fake by replacing the content, capture backbutton
 }
 function handleGithubClick(github) {
-    window.location.href = `${github}`;
+    window.open(`${github}`, '_blank');
 }
 </script>
 
@@ -255,18 +255,26 @@ function handleGithubClick(github) {
         <!--search-->
         <div class="mx-20">
             <input placeholder="Project Search" title="Project Search" v-model="searchTerm" class="w-2/3 text-center" />
-            <div v-on:mouseenter="showInstructions = true" v-on:mouseleave="showInstructions = false" class="">
-                <p class="inline-flex">
+            <p @:mouseenter="showInstructions = true" @:mouseleave="showInstructions = false" class="">
+                <div class="inline-flex">
                     How to use
-                </p>
-                <p v-show="showInstructions" class="inline-flex">
-                    : instructions...
-                </p>
-            </div>
+                </div>
+                <div v-show="showInstructions" class="inline-flex whitespace-pre-wrap">
+                    : 
+                </div>
+                <div v-show="showInstructions" class="inline-flex">
+                    The search field includes projects if the title matches the string or if a tag or date match a special term
+                </div>
+                <div v-show="showInstructions" class="whitespace-pre-line text-center">
+                    {{ `Tags : $tag or $'some tag'
+                    Dates : @YYYY-MM-DD or @YYYY-MM-DD>YYYY-MM-DD
+                    Quotes : allow for spaces in special terms` }}
+                </div>
+            </p>
         </div>
         <!--list of projects-->
         <ul v-for="project in projects" v-show="checkInclusion(project)" class="py-5">
-            <div v-on:click="handleProjectClick(project)" class="hover:cursor-pointer">
+            <div @:click="handleProjectClick(project)" class="hover:cursor-pointer">
                 <h1 class="text-2xl underline">
                     {{ project.name }}
                 </h1>
@@ -274,7 +282,7 @@ function handleGithubClick(github) {
                     {{ project.desc }}
                 </p>
             </div>
-            <div v-on:click="handleGithubClick(project.github)" class="hover:cursor-pointer">
+            <div @:click="handleGithubClick(project.github)" class="hover:cursor-pointer">
                 Github: {{ project.github }}
             </div>
         </ul>

@@ -5,16 +5,16 @@
             Emory Grubbs
         </h1>
         <!--about me-->
-        <div class="flex py-2 items-center mx-20">
-            <img src="/images/headshot/DSC00288.jpg" alt="headshot, credit: John Grubbs rockslidephotography" class="inline-flex w-5/12 px-6" draggable="false" />
-            <h1 class="w-7/12 px-6">
-                <div class="text-2xl underline">
+        <div class="flex flex-row max-md:flex-col py-2 items-center mx-20">
+            <img src="/images/headshot/DSC00288.jpg" alt="headshot, credit: John Grubbs rockslidephotography" class="w-7/12 md:w-5/12 md:px-6" draggable="false" />
+            <div class="w-7/12 md:px-6">
+                <h1 class="text-2xl underline">
                     About Me
-                </div>
+                </h1>
                 <p class="text-base pt-4">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
                 </p>
-            </h1>
+            </div>
         </div>
     </body>
 </template>

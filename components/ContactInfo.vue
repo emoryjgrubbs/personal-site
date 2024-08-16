@@ -2,9 +2,18 @@
 
 const email = 'emoryjgrubbs@gmail.com';
 
+let emailMessageTimeout;
+
+const emailCopied = ref(false);
+
 function handleEmail() {
     navigator.clipboard.writeText(email);
-    //make some tool tip
+    emailCopied.value = true;
+    emailMessageTimeout = setTimeout(emailAlert, 2500);
+}
+
+function emailAlert() {
+    emailCopied.value = false;
 }
 
 </script>
@@ -16,10 +25,15 @@ function handleEmail() {
         </h1>
         <div class="flex flex-row space-x-3 justify-evenly">  
             <button
-            class=" justify-self-center"
+            class="flex flex-row space-x-2 justify-self-center"
             title="Copy Email Address"
             @click="handleEmail">
-                Email: {{ email }}
+                <div>
+                    Email: {{ email }}
+                </div>
+                <div v-show="emailCopied" class="scale-125">
+                    🖫
+                </div>
             </button>   
         </div>
     </div>
