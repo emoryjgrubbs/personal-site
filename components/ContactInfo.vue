@@ -1,5 +1,7 @@
 <script setup lang="ts">
 
+import { ClipboardDocumentCheckIcon } from '@heroicons/vue/16/solid'
+
 const email = 'emoryjgrubbs@gmail.com';
 
 let emailMessageTimeout;
@@ -31,8 +33,8 @@ function emailAlert() {
                 <div>
                     Email: {{ email }}
                 </div>
-                <div v-show="emailCopied" class="scale-125">
-                    🖫
+                <div v-show="emailCopied" class="scale-125 flex items-center">
+                    <ClipboardDocumentCheckIcon class="size-4 text-text-dark" />
                 </div>
             </button>   
         </div>
