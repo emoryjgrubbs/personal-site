@@ -8,6 +8,7 @@ const atc = {
     startDate: '2024-06-03',
     endDate: '2024-08-07',
     github: 'https://github.com/UTDallasEPICS/ATC-Patient-Data',
+    images: [],
 };
 const personalSite = {
     name: 'Personal Website',
@@ -17,6 +18,7 @@ const personalSite = {
     startDate: '2024-08-12',
     endDate: 'now',
     github: 'https://github.com/emoryjgrubbs/personal-site',
+    images: [],
 };
 //array of projects
 const projects = [personalSite, atc];
@@ -272,7 +274,7 @@ function handleGithubClick(github) {
                 </div>
             </p>
         </div>
-        <!--list of projects-->
+        <!--list-of-projects-->
         <ul v-for="project in projects" v-show="checkInclusion(project)" class="py-5">
             <div @:click="handleProjectClick(project)" class="hover:cursor-pointer">
                 <h1 class="text-2xl underline">

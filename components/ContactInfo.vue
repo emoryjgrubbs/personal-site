@@ -34,7 +34,7 @@ function emailAlert() {
                     Email: {{ email }}
                 </div>
                 <div v-show="emailCopied" class="scale-125 flex items-center">
-                    <ClipboardDocumentCheckIcon class="size-4 text-text-dark" />
+                    <ClipboardDocumentCheckIcon class="size-4 fill-text-dark" />
                 </div>
             </button>   
         </div>

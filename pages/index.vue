@@ -51,13 +51,14 @@ function interestIndexDown() {
         </div>
         <!--interests-->
         <div class="flex flex-row max-md:flex-col py-2 items-center mx-20 mb-5">
+            <!--select-image-->
             <div class="flex items-center w-7/12 md:w-5/12 md:px-6 max-md:mb-5 relative">
                 <button @click="interestIndexDown" title="Previous" class="z-10 text-4xl text-white absolute start-10 hover:scale-125">
-                    <ChevronLeftIcon class="size-10 text-white"/>
+                    <ChevronLeftIcon class="size-10 fill-white"/>
                 </button>
                 <img :src="interestPictures[interestIndex]" :alt="interestAlts[0]" class="w-fit z-0" draggable="false" />
                 <button @click="interestIndexUp" title="Next" class="z-10 text-4xl text-white absolute end-10 hover:scale-125">
-                    <ChevronRightIcon class="size-10 text-white"/>
+                    <ChevronRightIcon class="size-10 fill-white"/>
                 </button>
             </div>
             <div class="w-7/12 md:px-6 md:order-first">
