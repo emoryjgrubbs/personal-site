@@ -1,3 +1,20 @@
+<script setup>
+const interestPictures = ['/images/guitar/DSC00586.jpg','/images/guitar/DSC00569.jpg'];
+const interestAlts = ['playing guitar, credit: John Grubbs rockslidephotography'];
+
+const interestIndex = ref(0);
+
+function interestIndexUp() {
+    if (interestIndex.value < interestPictures.length-1) {
+        interestIndex.value += 1;
+        
+    }
+    else {
+        interestIndex.value = 0;
+    }
+}
+</script>
+
 <template>
     <body class="flex-auto bg-bg text-center overscroll-contain">
         <!--title-->
@@ -5,11 +22,23 @@
             Emory Grubbs
         </h1>
         <!--about me-->
-        <div class="flex flex-row max-md:flex-col py-2 items-center mx-20">
-            <img src="/images/headshot/DSC00288.jpg" alt="headshot, credit: John Grubbs rockslidephotography" class="w-7/12 md:w-5/12 md:px-6" draggable="false" />
+        <div class="flex flex-row max-md:flex-col py-2 items-center mx-20 mb-5">
+            <img src="/images/headshot/DSC00288.jpg" alt="headshot, credit: John Grubbs rockslidephotography" class="w-7/12 md:w-5/12 md:px-6 max-md:mb-5" draggable="false" />
             <div class="w-7/12 md:px-6">
                 <h1 class="text-2xl underline">
                     About Me
+                </h1>
+                <p class="text-base pt-4">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </p>
+            </div>
+        </div>
+        <!--interests-->
+        <div class="flex flex-row max-md:flex-col py-2 items-center mx-20 mb-5">
+            <img :src="interestPictures[interestIndex]" :alt="interestAlts[0]" class="w-7/12 md:w-5/12 md:px-6 max-md:mb-5" draggable="false" @click="interestIndexUp" />
+            <div class="w-7/12 md:px-6 md:order-first">
+                <h1 class="text-2xl underline">
+                    Interests
                 </h1>
                 <p class="text-base pt-4">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
