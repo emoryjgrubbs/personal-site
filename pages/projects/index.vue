@@ -1,6 +1,10 @@
 <script setup>
+
+import { ChevronLeftIcon } from '@heroicons/vue/24/solid'
+import { ChevronRightIcon } from '@heroicons/vue/24/solid'
+
 //project data
-const atc = {
+const atc = reactive({
     name: 'ATC Patient Data',
     desc: 'atc test description',
     thoughts: 'atc test thoughts',
@@ -8,9 +12,12 @@ const atc = {
     startDate: '2024-06-03',
     endDate: '2024-08-07',
     github: 'https://github.com/UTDallasEPICS/ATC-Patient-Data',
-    images: [],
-};
-const personalSite = {
+    images: ['/images/atc/Firefox_Screenshot_2024-08-18T10-53-54.601Z.png', '/images/atc/Firefox_Screenshot_2024-08-18T10-54-50.427Z.png', '/images/atc/Firefox_Screenshot_2024-08-18T10-56-39.575Z.png', '/images/atc/Firefox_Screenshot_2024-08-18T10-57-52.223Z.png', '/images/atc/Firefox_Screenshot_2024-08-18T10-58-09.579Z.png', '/images/atc/Firefox_Screenshot_2024-08-18T10-58-09.580z.png', '/images/atc/Firefox_Screenshot_2024-08-18T10-58-09.580z.png', '/images/atc/Firefox_Screenshot_2024-08-18T11-00-14.434Z.png'],
+    alts: ['ATC log in page', 'ATC student search page', 'ATC student sessions page', 'ATC session data input', 'ATC student behavior page', 'ATC behavior creation', 'ATC employee page', 'ATC edit user'],
+    index: 0,
+    showImages: false,
+});
+const personalSite = reactive({
     name: 'Personal Website',
     desc: 'personal test desc',
     thoughts: 'personal test thoughts',
@@ -19,9 +26,53 @@ const personalSite = {
     endDate: 'now',
     github: 'https://github.com/emoryjgrubbs/personal-site',
     images: [],
-};
+    alts: [],
+    index: 0,
+    showImages: false,
+});
 //array of projects
 const projects = [personalSite, atc];
+
+//image switch
+function indexUp(project) {
+    console.log(`next ${project.name} image`, project.index);
+    if (project.index < project.images.length-1) {
+        project.index += 1;
+    }
+    else {
+        project.index = 0;
+    }
+}
+function indexDown(project) {
+    console.log(`previous ${project.name} image`, project.index);
+    if (project.index > 0) {
+        project.index -= 1;
+    }
+    else {
+        project.index = project.images.length-1;
+    }
+}
+
+function imagesMessage(project) {
+    if (project.images.length >0) {
+        return 'Show Project Images';
+    }
+    return 'This Project Has No Images'
+}
+
+function handleShowImages(project) {
+    if (project.images.length > 0) {
+        if (project.showImages) {
+            project.showImages = false;
+        }
+        else {
+            for(let i = 0; i < projects.length; i++) {
+                projects[i].showImages = false;
+            }
+            project.showImages = true;
+        }
+    }
+}
 
 //search
 const searchTerm = ref("");
@@ -239,10 +290,6 @@ function validateDate(date) {
 const showInstructions = ref(false);
 
 //on click
-function handleProjectClick(project) {
-    //take them to the project page
-    //fake by replacing the content, capture backbutton
-}
 function handleGithubClick(github) {
     window.open(`${github}`, '_blank');
 }
@@ -275,16 +322,30 @@ function handleGithubClick(github) {
             </p>
         </div>
         <!--list-of-projects-->
-        <ul v-for="project in projects" v-show="checkInclusion(project)" class="py-5">
-            <div @:click="handleProjectClick(project)" class="hover:cursor-pointer">
-                <h1 class="text-2xl underline">
-                    {{ project.name }}
-                </h1>
-                <p>
-                    {{ project.desc }}
-                </p>
+        <ul v-for="project in projects" v-show="checkInclusion(project)" class="mb-5">
+            <div class="flex flex-col py-2 items-center justify-center mx-20 mb-5">
+                <!--select-image-->
+                <div v-if="project.images.length>0 & project.showImages" class="flex items-center w-7/12 mb-5 relative">
+                    <button @click="indexDown(project)" title="Previous" v-if="project.images.length>1" class="z-10 text-4xl text-white absolute start-10 hover:scale-125">
+                        <ChevronLeftIcon class="size-10 fill-white absolute z-20"/>
+                        <ChevronLeftIcon class="size-10 opacity-45 stroke-black stroke-2"/>
+                    </button>
+                    <img :src="project.images[project.index]" :alt="project.alts[project.index]"  class="w-fit z-0" draggable="false" />
+                    <button @click="indexUp(project)" title="Next" v-if="project.images.length>1" class="z-10 text-4xl text-white absolute end-10 hover:scale-125">
+                        <ChevronRightIcon class="size-10 fill-white absolute z-20"/>
+                        <ChevronRightIcon class="size-10 opacity-45 stroke-black stroke-2"/>
+                    </button>
+                </div>
+                <div :title="imagesMessage(project)" @click="handleShowImages(project)" class="contents hover:cursor-pointer">
+                    <h1 class="text-2xl underline mb-5 order-first">
+                        {{ project.name }}
+                    </h1>
+                    <p>
+                        {{ project.desc }}
+                    </p>
+                </div>
             </div>
-            <div @:click="handleGithubClick(project.github)" class="hover:cursor-pointer">
+            <div title="Open Project Github" @click="handleGithubClick(project.github)" class="hover:cursor-pointer">
                 Github: {{ project.github }}
             </div>
         </ul>
