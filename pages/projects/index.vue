@@ -12,14 +12,18 @@ const atc = reactive({
     startDate: '2024-06-03',
     endDate: '2024-08-07',
     github: 'https://github.com/UTDallasEPICS/ATC-Patient-Data',
-    images: ['/images/atc/Firefox_Screenshot_2024-08-18T10-53-54.601Z.png', '/images/atc/Firefox_Screenshot_2024-08-18T10-54-50.427Z.png', '/images/atc/Firefox_Screenshot_2024-08-18T10-56-39.575Z.png', '/images/atc/Firefox_Screenshot_2024-08-18T10-57-52.223Z.png', '/images/atc/Firefox_Screenshot_2024-08-18T10-58-09.579Z.png', '/images/atc/Firefox_Screenshot_2024-08-18T10-58-09.580z.png', '/images/atc/Firefox_Screenshot_2024-08-18T10-58-09.580z.png', '/images/atc/Firefox_Screenshot_2024-08-18T11-00-14.434Z.png'],
-    alts: ['ATC log in page', 'ATC student search page', 'ATC student sessions page', 'ATC session data input', 'ATC student behavior page', 'ATC behavior creation', 'ATC employee page', 'ATC edit user'],
+    images: ['/images/atc/Firefox_Screenshot_2024-08-18T10-53-54.601Z.png', '/images/atc/Firefox_Screenshot_2024-08-18T10-54-50.427Z.png', 
+    '/images/atc/Firefox_Screenshot_2024-08-18T10-56-39.575Z.png', '/images/atc/Firefox_Screenshot_2024-08-18T10-57-52.223Z.png', 
+    '/images/atc/Firefox_Screenshot_2024-08-18T10-58-09.579Z.png', '/images/atc/Firefox_Screenshot_2024-08-18T10-58-09.580z.png', 
+    '/images/atc/Firefox_Screenshot_2024-08-18T10-58-09.580z.png', '/images/atc/Firefox_Screenshot_2024-08-18T11-00-14.434Z.png'],
+    alts: ['ATC log in page', 'ATC student search page', 'ATC student sessions page', 'ATC session data input', 'ATC student behavior page', 
+    'ATC behavior creation', 'ATC employee page', 'ATC edit user'],
     index: 0,
     showImages: false,
 });
 const personalSite = reactive({
     name: 'Personal Website',
-    desc: 'personal test desc',
+    desc: 'personal test description',
     thoughts: 'personal test thoughts',
     tags: ['personal', 'web', 'website', 'webdeb'],
     startDate: '2024-08-12',
@@ -78,10 +82,8 @@ function handleShowImages(project) {
 const searchTerm = ref("");
 
 function checkInclusion(project) { //note: this could cause slow downs, but should be fine with the limited number of projects
+    // return all projects, if there is no search
     if(!searchTerm.value) {
-        return true;
-    }
-    if (project.name.toLowerCase().includes(searchTerm.value.toLowerCase())) {
         return true;
     }
     // for over all letters in search term, if $ check tags, if @ check date
@@ -93,22 +95,22 @@ function checkInclusion(project) { //note: this could cause slow downs, but shou
     for (let i = 0; i < searchTerm.value.length; i++) {
         // start tag, check special if one exists
         if (searchTerm.value.at(i) === '$') {
-            if (checkSpecial === "tag" && checkTag(project, special)) {
-                return true;
+            if (checkSpecial === "tag" && !checkTag(project, special)) {
+                return false;
             }
-            if (checkSpecial === "date" && cheeckDate(project, special)) {
-                return true;
+            if (checkSpecial === "date" && !cheeckDate(project, special)) {
+                return false;
             }
             special = "";
             checkSpecial = "tag";
         }
         // start date, check special if one exists
         else if (searchTerm.value.at(i) === '@') {
-            if (checkSpecial === "tag" && checkTag(project, special)) {
-                return true;
+            if (checkSpecial === "tag" && !checkTag(project, special)) {
+                return false;
             }
-            if (checkSpecial === "date" && cheeckDate(project, special)) {
-                return true;
+            if (checkSpecial === "date" && !cheeckDate(project, special)) {
+                return false;
             }
             special = "";
             checkSpecial = "date";
@@ -120,11 +122,11 @@ function checkInclusion(project) { //note: this could cause slow downs, but shou
                     quoted = true;
                 }
                 else {
-                    if (checkSpecial === "tag" && checkTag(project, special)) {
-                        return true;
+                    if (checkSpecial === "tag" && !checkTag(project, special)) {
+                        return false;
                     }
-                    if (checkSpecial === "date" && cheeckDate(project, special)) {
-                        return true;
+                    if (checkSpecial === "date" && !cheeckDate(project, special)) {
+                        return false;
                     }
                     special = "";
                     checkSpecial = "";
@@ -138,11 +140,11 @@ function checkInclusion(project) { //note: this could cause slow downs, but shou
             // if space, end and search, otherwise add element
             else {
                 if (searchTerm.value.at(i) === " ") {
-                    if (checkSpecial === "tag" && checkTag(project, special)) {
-                        return true;
+                    if (checkSpecial === "tag" && !checkTag(project, special)) {
+                        return false;
                     }
-                    if (checkSpecial === "date" && cheeckDate(project, special)) {
-                        return true;
+                    if (checkSpecial === "date" && !cheeckDate(project, special)) {
+                        return false;
                     }
                     special = "";
                     checkSpecial = "";
@@ -161,16 +163,16 @@ function checkInclusion(project) { //note: this could cause slow downs, but shou
         }
     }
     // if search ended in a special search it
-    if (checkSpecial === "tag" && checkTag(project, special)) {
-        return true;
+    if (checkSpecial === "tag" && !checkTag(project, special)) {
+        return false;
     }
-    if (checkSpecial === "date" && cheeckDate(project, special)) {
-        return true;
+    if (checkSpecial === "date" && !cheeckDate(project, special)) {
+        return false;
     }
-    if (name && name !== " " && project.name.toLowerCase().includes(name.toLowerCase())) {
-        return true;
+    if (name && (name === " " || !project.name.toLowerCase().includes(name.toLowerCase()))) {
+        return false;
     }
-    return false;
+    return true;
 }
 function checkTag(project, tag) {
     return project.tags.includes(tag.toLowerCase());
@@ -312,7 +314,7 @@ function handleGithubClick(github) {
                     : 
                 </div>
                 <div v-show="showInstructions" class="inline-flex">
-                    The search field includes projects if the title matches the string or if a tag or date match a special term
+                    The search field includes projects if the title, tags, dates match the project's data
                 </div>
                 <div v-show="showInstructions" class="whitespace-pre-line text-center">
                     {{ `Tags : $tag or $'some tag'
@@ -325,7 +327,7 @@ function handleGithubClick(github) {
         <ul v-for="project in projects" v-show="checkInclusion(project)" class="mb-5">
             <div class="flex flex-col py-2 items-center justify-center mx-20 mb-5">
                 <!--select-image-->
-                <div v-if="project.images.length>0 & project.showImages" class="flex items-center w-7/12 mb-5 relative">
+                <div v-if="project.images.length>0 & project.showImages" class="flex items-center w-9/12 mb-5 relative">
                     <button @click="indexDown(project)" title="Previous" v-if="project.images.length>1" class="z-10 text-4xl text-white absolute start-10 hover:scale-125">
                         <ChevronLeftIcon class="size-10 fill-white absolute z-20"/>
                         <ChevronLeftIcon class="size-10 opacity-45 stroke-black stroke-2"/>
