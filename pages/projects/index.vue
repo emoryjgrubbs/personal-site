@@ -327,7 +327,7 @@ function handleGithubClick(github) {
         <ul v-for="project in projects" v-show="checkInclusion(project)" class="mb-5">
             <div class="flex flex-col py-2 items-center justify-center mx-20 mb-5">
                 <!--select-image-->
-                <div v-if="project.images.length>0 & project.showImages" class="flex items-center w-9/12 mb-5 relative">
+                <div v-if="project.showImages" class="flex items-center w-9/12 mb-5 relative">
                     <button @click="indexDown(project)" title="Previous" v-if="project.images.length>1" class="z-10 text-4xl text-white absolute start-10 hover:scale-125">
                         <ChevronLeftIcon class="size-10 fill-white absolute z-20"/>
                         <ChevronLeftIcon class="size-10 opacity-45 stroke-black stroke-2"/>
@@ -347,8 +347,11 @@ function handleGithubClick(github) {
                     </p>
                 </div>
             </div>
-            <div title="Open Project Github" @click="handleGithubClick(project.github)" class="hover:cursor-pointer">
+            <div v-if="project.github !== 'CONFIDENTIAL'" title="Open Project Github" @click="handleGithubClick(project.github)" class="hover:cursor-pointer">
                 Github: {{ project.github }}
+            </div>
+            <div v-else>
+                I am unable to share code from this project.
             </div>
         </ul>
     </body>
