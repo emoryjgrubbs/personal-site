@@ -3,8 +3,11 @@
 import { ChevronLeftIcon } from '@heroicons/vue/24/solid'
 import { ChevronRightIcon } from '@heroicons/vue/24/solid'
 
-const interestPictures = ['/images/interests/guitar-1.jpg','/images/interests/hiking-1.jpg','/images/interests/hiking-2.jpg','/images/interests/photography-1.jpg','/images/interests/photography-2.jpg','/images/interests/electronics-1.jpg'];
-const interestAlts = ['playing guitar, credit: John Grubbs rockslidephotography','hiking, photo of the black bear pass sign in Colorado','hiking, overlooking the Rio Grande in Whiterock New Mexico','photography, white butterfly on white flowers','photography, 2024 eclipse','electronics, hand soldered univibe guitar pedal'];
+const interestPictures = ['/images/interests/guitar-1.jpg','/images/interests/hiking-1.jpg','/images/interests/hiking-2.jpg',
+'/images/interests/photography-1.jpg','/images/interests/photography-2.jpg','/images/interests/electronics-1.jpg'];
+const interestAlts = ['playing guitar, credit: John Grubbs rockslidephotography','hiking, photo of the black bear pass sign in Colorado',
+'hiking, overlooking the Rio Grande in Whiterock New Mexico','photography, white butterfly on white flowers','photography, 2024 eclipse',
+'electronics, hand soldered univibe guitar pedal'];
 
 const interestIndex = ref(0);
 
@@ -30,7 +33,7 @@ function interestIndexDown() {
 </script>
 
 <template>
-    <body class="flex-auto bg-bg text-center overscroll-contain">
+    <body class="flex flex-col bg-bg text-center overscroll-contain">
         <!--title-->
         <h1 class=" mt-10 mb-5 text-4xl font-bold">
             Emory Grubbs
@@ -43,7 +46,6 @@ function interestIndexDown() {
                     About Me
                 </h1>
                 <p class="text-base pt-4">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
                 </p>
             </div>
         </div>
@@ -55,7 +57,7 @@ function interestIndexDown() {
                     <ChevronLeftIcon class="size-10 fill-white absolute z-20"/>
                     <ChevronLeftIcon class="size-10 opacity-45 stroke-black stroke-2"/>
                 </button>
-                <img :src="interestPictures[interestIndex]" :alt="interestAlts[interestIndex]" class="w-fit z-0" draggable="false" />
+                <NuxtImg :src="interestPictures[interestIndex]" :alt="interestAlts[interestIndex]" class="w-fit z-0" draggable="false" />
                 <button @click="interestIndexUp" title="Next" class="z-10 text-4xl text-white absolute end-10 hover:scale-125">
                     <ChevronRightIcon class="size-10 fill-white absolute z-20"/>
                     <ChevronRightIcon class="size-10 opacity-45 stroke-black stroke-2"/>
@@ -66,7 +68,6 @@ function interestIndexDown() {
                     Interests
                 </h1>
                 <p class="text-base pt-4">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
                 </p>
             </div>
         </div>

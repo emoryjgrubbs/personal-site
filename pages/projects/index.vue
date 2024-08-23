@@ -7,15 +7,14 @@ import { ChevronRightIcon } from '@heroicons/vue/24/solid'
 const atc = reactive({
     name: 'ATC Patient Data',
     desc: 'atc test description',
-    thoughts: 'atc test thoughts',
     tags: ['autism treatment center', 'epics', 'utd', 'web', 'website', 'webdeb', 'db', 'database'],
-    startDate: '2024-06-03',
-    endDate: '2024-08-07',
+    startDates: ['2024-06-03'],
+    endDates: ['2024-08-07'],
     github: 'https://github.com/UTDallasEPICS/ATC-Patient-Data',
     images: ['/images/atc/Firefox_Screenshot_2024-08-18T10-53-54.601Z.png', '/images/atc/Firefox_Screenshot_2024-08-18T10-54-50.427Z.png', 
     '/images/atc/Firefox_Screenshot_2024-08-18T10-56-39.575Z.png', '/images/atc/Firefox_Screenshot_2024-08-18T10-57-52.223Z.png', 
     '/images/atc/Firefox_Screenshot_2024-08-18T10-58-09.579Z.png', '/images/atc/Firefox_Screenshot_2024-08-18T10-58-09.580z.png', 
-    '/images/atc/Firefox_Screenshot_2024-08-18T10-58-09.580z.png', '/images/atc/Firefox_Screenshot_2024-08-18T11-00-14.434Z.png'],
+    '/images/atc/Firefox_Screenshot_2024-08-18T11-00-03.438Z.png', '/images/atc/Firefox_Screenshot_2024-08-18T11-00-14.434Z.png'],
     alts: ['ATC log in page', 'ATC student search page', 'ATC student sessions page', 'ATC session data input', 'ATC student behavior page', 
     'ATC behavior creation', 'ATC employee page', 'ATC edit user'],
     index: 0,
@@ -24,10 +23,9 @@ const atc = reactive({
 const personalSite = reactive({
     name: 'Personal Website',
     desc: 'personal test description',
-    thoughts: 'personal test thoughts',
     tags: ['personal', 'web', 'website', 'webdeb'],
-    startDate: '2024-08-12',
-    endDate: 'now',
+    startDates: ['2024-08-12'],
+    endDates: ['now'],
     github: 'https://github.com/emoryjgrubbs/personal-site',
     images: [],
     alts: [],
@@ -98,7 +96,7 @@ function checkInclusion(project) { //note: this could cause slow downs, but shou
             if (checkSpecial === "tag" && !checkTag(project, special)) {
                 return false;
             }
-            if (checkSpecial === "date" && !cheeckDate(project, special)) {
+            if (checkSpecial === "date" && !cheeckDates(project, special)) {
                 return false;
             }
             special = "";
@@ -109,7 +107,7 @@ function checkInclusion(project) { //note: this could cause slow downs, but shou
             if (checkSpecial === "tag" && !checkTag(project, special)) {
                 return false;
             }
-            if (checkSpecial === "date" && !cheeckDate(project, special)) {
+            if (checkSpecial === "date" && !cheeckDates(project, special)) {
                 return false;
             }
             special = "";
@@ -125,7 +123,7 @@ function checkInclusion(project) { //note: this could cause slow downs, but shou
                     if (checkSpecial === "tag" && !checkTag(project, special)) {
                         return false;
                     }
-                    if (checkSpecial === "date" && !cheeckDate(project, special)) {
+                    if (checkSpecial === "date" && !cheeckDates(project, special)) {
                         return false;
                     }
                     special = "";
@@ -143,7 +141,7 @@ function checkInclusion(project) { //note: this could cause slow downs, but shou
                     if (checkSpecial === "tag" && !checkTag(project, special)) {
                         return false;
                     }
-                    if (checkSpecial === "date" && !cheeckDate(project, special)) {
+                    if (checkSpecial === "date" && !cheeckDates(project, special)) {
                         return false;
                     }
                     special = "";
@@ -166,7 +164,7 @@ function checkInclusion(project) { //note: this could cause slow downs, but shou
     if (checkSpecial === "tag" && !checkTag(project, special)) {
         return false;
     }
-    if (checkSpecial === "date" && !cheeckDate(project, special)) {
+    if (checkSpecial === "date" && !cheeckDates(project, special)) {
         return false;
     }
     if (name && (name === " " || !project.name.toLowerCase().includes(name.toLowerCase()))) {
@@ -177,37 +175,45 @@ function checkInclusion(project) { //note: this could cause slow downs, but shou
 function checkTag(project, tag) {
     return project.tags.includes(tag.toLowerCase());
 }
-function cheeckDate(project, dateString) {
+function cheeckDates(project, dateString) {
+    for (let i = 0; i < project.startDates.length; i++){
+        if(cheeckDate(project, dateString, i)){
+            return true;
+        }
+    }
+    return false;
+}
+function cheeckDate(project, dateString, i) { 
     if (dateString.length == 21) {
         let startDate = dateString.substring(0,10);
         let endDate = dateString.substring(11,21);
         // check if project start or end are in range
         if(validateDate(startDate) && validateDate(endDate)) {
             // project start is after end search date
-            if (project.startDate.substring(0,4) > endDate.substring(0,4)) {
+            if (project.startDates[i].substring(0,4) > endDate.substring(0,4)) {
                 return false;
             }
-            else if (project.startDate.substring(0,4) == endDate.substring(0,4)){
-                if (project.startDate.substring(5,7) > endDate.substring(5,7)) {
+            else if (project.startDates[i].substring(0,4) == endDate.substring(0,4)){
+                if (project.startDates[i].substring(5,7) > endDate.substring(5,7)) {
                     return false;
                 }
-                else if (project.startDate.substring(5,7) == endDate.substring(5,7)) {
-                    if (project.startDate.substring(8,10) > endDate.substring(8,10)) {
+                else if (project.startDates[i].substring(5,7) == endDate.substring(5,7)) {
+                    if (project.startDates[i].substring(8,10) > endDate.substring(8,10)) {
                         return false;
                     }
                 }
             }
             // project end is before the start search date
-            if (project.endDate !== "now") {
-                if (project.endDate.substring(0,4) < startDate.substring(0,4)) {
+            if (project.endDates[i] !== "now") {
+                if (project.endDates[i].substring(0,4) < startDate.substring(0,4)) {
                     return false;
                 }
-                else if (project.endDate.substring(0,4) == startDate.substring(0,4)){
-                    if (project.endDate.substring(5,7) < startDate.substring(5,7)) {
+                else if (project.endDates[i].substring(0,4) == startDate.substring(0,4)){
+                    if (project.endDates[i].substring(5,7) < startDate.substring(5,7)) {
                         return false;
                     }
-                    else if (project.endDate.substring(5,7) == startDate.substring(5,7)) {
-                        if (project.endDate.substring(8,10) < startDate.substring(8,10)) {
+                    else if (project.endDates[i].substring(5,7) == startDate.substring(5,7)) {
+                        if (project.endDates[i].substring(8,10) < startDate.substring(8,10)) {
                             return false;
                         }
                     }
@@ -224,30 +230,30 @@ function cheeckDate(project, dateString) {
         // check if project start and end cover date
         if(validateDate(date)) {
             // start is after date
-            if (project.startDate.substring(0,4) > date.substring(0,4)) {
+            if (project.startDates[i].substring(0,4) > date.substring(0,4)) {
                 return false;
             }
-            else if (project.startDate.substring(0,4) == date.substring(0,4)){
-                if (project.startDate.substring(5,7) > date.substring(5,7)) {
+            else if (project.startDates[i].substring(0,4) == date.substring(0,4)){
+                if (project.startDates[i].substring(5,7) > date.substring(5,7)) {
                     return false;
                 }
-                else if (project.startDate.substring(5,7) == date.substring(5,7)) {
-                    if (project.startDate.substring(8,10) > date.substring(8,10)) {
+                else if (project.startDates[i].substring(5,7) == date.substring(5,7)) {
+                    if (project.startDates[i].substring(8,10) > date.substring(8,10)) {
                         return false;
                     }
                 }
             }
             // end is before date
-            if (project.endDate !== "now") {
-                if (project.endDate.substring(0,4) < date.substring(0,4)) {
+            if (project.endDates[i] !== "now") {
+                if (project.endDates[i].substring(0,4) < date.substring(0,4)) {
                     return false;
                 }
-                else if (project.endDate.substring(0,4) == date.substring(0,4)){
-                    if (project.endDate.substring(5,7) < date.substring(5,7)) {
+                else if (project.endDates[i].substring(0,4) == date.substring(0,4)){
+                    if (project.endDates[i].substring(5,7) < date.substring(5,7)) {
                         return false;
                     }
-                    else if (project.endDate.substring(5,7) == date.substring(5,7)) {
-                        if (project.endDate.substring(8,10) < date.substring(8,10)) {
+                    else if (project.endDates[i].substring(5,7) == date.substring(5,7)) {
+                        if (project.endDates[i].substring(8,10) < date.substring(8,10)) {
                             return false;
                         }
                     }
@@ -264,21 +270,24 @@ function cheeckDate(project, dateString) {
         let endDate = dateString.substring(11,21);
         // check if project end is in range
         if (validateDate(startDate) && (endDate.toLowerCase().includes("now") || endDate.toLowerCase().includes("current") || endDate.toLowerCase().includes("ongoing"))) {
-            if (project.endDate !== "now") {
-                if (project.endDate.substring(0,4) < startDate.substring(0,4)) {
+            if (project.endDates[i] !== "now") {
+                if (project.endDates[i].substring(0,4) < startDate.substring(0,4)) {
                     return false;
                 }
-                else if (project.endDate.substring(0,4) == startDate.substring(0,4)){
-                    if (project.endDate.substring(5,7) < startDate.substring(5,7)) {
+                else if (project.endDates[i].substring(0,4) == startDate.substring(0,4)){
+                    if (project.endDates[i].substring(5,7) < startDate.substring(5,7)) {
                         return false;
                     }
-                    else if (project.endDate.substring(5,7) == startDate.substring(5,7)) {
-                        if (project.endDate.substring(8,10) < startDate.substring(8,10)) {
+                    else if (project.endDates[i].substring(5,7) == startDate.substring(5,7)) {
+                        if (project.endDates[i].substring(8,10) < startDate.substring(8,10)) {
                             return false;
                         }
                     }
                 }
             }
+            return true;
+        }
+        if ((startDate.toLowerCase().includes("now") || startDate.toLowerCase().includes("current") || startDate.toLowerCase().includes("ongoing")) && project.endDates[i] === "now") {
             return true;
         }
         return false;
@@ -332,7 +341,7 @@ function handleGithubClick(github) {
                         <ChevronLeftIcon class="size-10 fill-white absolute z-20"/>
                         <ChevronLeftIcon class="size-10 opacity-45 stroke-black stroke-2"/>
                     </button>
-                    <img :src="project.images[project.index]" :alt="project.alts[project.index]"  class="w-fit z-0" draggable="false" />
+                    <NuxtImg :src="project.images[project.index]" :alt="project.alts[project.index]" class="w-fit z-0" draggable="false" />
                     <button @click="indexUp(project)" title="Next" v-if="project.images.length>1" class="z-10 text-4xl text-white absolute end-10 hover:scale-125">
                         <ChevronRightIcon class="size-10 fill-white absolute z-20"/>
                         <ChevronRightIcon class="size-10 opacity-45 stroke-black stroke-2"/>
