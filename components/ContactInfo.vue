@@ -1,33 +1,3 @@
-<script setup lang="ts">
-
-import { ClipboardDocumentCheckIcon } from '@heroicons/vue/24/outline'
-
-const email = 'emoryjgrubbs@gmail.com';
-const linkedIn = 'linkedin.com/in/emory-grubbs';
-const gitHub = 'github.com/emoryjgrubbs';
-
-let emailMessageTimeout;
-
-const emailCopied = ref(false);
-
-function handleEmail() {
-    navigator.clipboard.writeText(email);
-    emailCopied.value = true;
-    emailMessageTimeout = setTimeout(emailAlert, 2500);
-}
-function handleLinkedIn() {
-    window.open(`https://www.${linkedIn}`, '_blank');
-}
-function handleGitHub() {
-    window.open(`https://${gitHub}`, '_blank');
-}
-
-function emailAlert() {
-    emailCopied.value = false;
-}
-
-</script>
-
 <template>
     <div class="flex flex-col mt-5 mb-10 justify-center">
         <h1 class="underline text-2xl">
@@ -64,3 +34,33 @@ function emailAlert() {
         </div>
     </div>
 </template>
+
+<script setup lang="ts">
+
+import { ClipboardDocumentCheckIcon } from '@heroicons/vue/24/outline'
+
+const email = 'emoryjgrubbs@gmail.com';
+const linkedIn = 'linkedin.com/in/emory-grubbs';
+const gitHub = 'github.com/emoryjgrubbs';
+
+let emailMessageTimeout;
+
+const emailCopied = ref(false);
+
+function handleEmail() {
+    navigator.clipboard.writeText(email);
+    emailCopied.value = true;
+    emailMessageTimeout = setTimeout(emailAlert, 2500);
+}
+function handleLinkedIn() {
+    window.open(`https://www.${linkedIn}`, '_blank');
+}
+function handleGitHub() {
+    window.open(`https://${gitHub}`, '_blank');
+}
+
+function emailAlert() {
+    emailCopied.value = false;
+}
+
+</script>

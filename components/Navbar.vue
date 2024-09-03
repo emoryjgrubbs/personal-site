@@ -1,15 +1,3 @@
-<script setup lang="ts">
-
-const config = useRuntimeConfig();
-
-function homeClick() {
-  window.location.href = `${config.public.BASEURL}/`;
-}
-function projectsClick() {
-  window.location.href = `${config.public.BASEURL}/projects`;
-}
-</script>
-
 <template>
   <nav class="bg-nav text-text-light text-2xl font-bold flex space-x-10 py-2 overflow-x-scroll">
     <div class="flex grow mx-2">
@@ -30,3 +18,15 @@ function projectsClick() {
     </div>
   </nav>
 </template>
+
+<script setup lang="ts">
+
+const config = useRuntimeConfig();
+
+function homeClick() {
+  window.location.href = `${config.public.BASEURL}/`;
+}
+function projectsClick() {
+  window.location.href = `${config.public.BASEURL}/projects`;
+}
+</script>
