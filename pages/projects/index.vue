@@ -26,27 +26,34 @@
         </div>
         <!--list-of-projects-->
         <ul v-for="project in projects" v-show="checkInclusion(project)" class="mb-20">
-            <div class="flex flex-col py-2 items-center justify-center mx-20 mb-5">
+            <div class="flex flex-col py-2 items-center justify-center mx-20 max-sm:mx-10 mb-5">
                 <!--select-image-->
-                <div v-if="project.showImages" class="flex items-center w-9/12 mb-5 relative">
-                    <button @click="indexDown(project)" title="Previous" v-if="project.images.length>1" class="z-10 text-4xl text-white absolute start-10 hover:scale-125">
+                <div v-if="project.showImages" class="flex items-center w-9/12 max-md:w-11/12 mb-5 relative">
+                    <button @click="indexDown(project)" title="Previous" v-if="project.images.length>1" class="z-10 text-4xl text-white absolute -start-10 sm:-start-20 hover:scale-125">
                         <ChevronLeftIcon class="size-10 fill-white absolute z-20"/>
                         <ChevronLeftIcon class="size-10 opacity-45 stroke-black stroke-2"/>
                     </button>
                     <img :src="project.images[project.index]" :alt="project.alts[project.index]" class="w-fit z-0" draggable="false" />
-                    <button @click="indexUp(project)" title="Next" v-if="project.images.length>1" class="z-10 text-4xl text-white absolute end-10 hover:scale-125">
+                    <button @click="indexUp(project)" title="Next" v-if="project.images.length>1" class="z-10 text-4xl text-white absolute -end-10 sm:-end-20 hover:scale-125">
                         <ChevronRightIcon class="size-10 fill-white absolute z-20"/>
                         <ChevronRightIcon class="size-10 opacity-45 stroke-black stroke-2"/>
                     </button>
                 </div>
-                <div :title="imagesMessage(project)" @click="handleShowImages(project)" class="contents hover:cursor-pointer">
-                    <h1 class="text-2xl underline mt-5 mb-5 order-first">
-                        {{ project.name }}
-                    </h1>
-                    <p>
-                        {{ project.desc }}
-                    </p>
-                </div>
+                <!--unexpanded-project-->
+                <h1 class="text-2xl underline mt-5 mb-5 order-first">
+                    {{ project.name }}
+                </h1>
+                <button v-if="project.images.length>0" title="Show Porject Images" @click="project.showImages = !project.showImages" class="mb-5 bg-nav text-text-light px-3 py-1">
+                    <div v-show="!project.showImages">
+                        show images
+                    </div>
+                    <div v-show="project.showImages">
+                        hide images
+                    </div>
+                </button>
+                <p>
+                    {{ project.desc }}
+                </p>
             </div>
             <div v-if="project.github !== 'CONFIDENTIAL'" title="Open Project Github" @click="handleGithubClick(project.github)" class="hover:cursor-pointer">
                 Github: {{ project.github }}
@@ -131,27 +138,6 @@ function indexDown(project) {
     }
     else {
         project.index = project.images.length-1;
-    }
-}
-
-function imagesMessage(project) {
-    if (project.images.length >0) {
-        return 'Show Project Images';
-    }
-    return 'This Project Has No Images'
-}
-
-function handleShowImages(project) {
-    if (project.images.length > 0) {
-        if (project.showImages) {
-            project.showImages = false;
-        }
-        else {
-            for(let i = 0; i < projects.length; i++) {
-                projects[i].showImages = false;
-            }
-            project.showImages = true;
-        }
     }
 }
 
