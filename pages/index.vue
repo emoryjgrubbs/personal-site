@@ -6,7 +6,7 @@
         </h1>
         <!--about me-->
         <div class="flex flex-row max-md:flex-col py-2 items-center mx-20 mb-5">
-            <img src="/images/headshot/headshot-1.webp" alt="headshot, credit: John Grubbs rockslidephotography" class="w-7/12 md:w-5/12 md:px-6 max-md:mb-5" draggable="false" />
+            <img src="/assets/images/headshot/headshot-1.webp" alt="headshot, credit: John Grubbs rockslidephotography" class="w-7/12 md:w-5/12 md:px-6 max-md:mb-5" draggable="false" />
             <div class="w-7/12 md:px-6">
                 <h1 class="text-2xl underline">
                     About Me
@@ -26,7 +26,7 @@
                     <ChevronLeftIcon class="size-10 fill-white absolute z-20"/>
                     <ChevronLeftIcon class="size-10 opacity-45 stroke-black stroke-2"/>
                 </button>
-                <NuxtImg :src="interestPictures[interestIndex]" :alt="interestAlts[interestIndex]" class="w-fit z-0" draggable="false" />
+                <img :src="interestPictures[interestIndex]" :alt="interestAlts[interestIndex]" class="w-fit z-0" draggable="false" />
                 <button @click="interestIndexUp" title="Next" class="z-10 text-4xl text-white absolute end-10 hover:scale-125">
                     <ChevronRightIcon class="size-10 fill-white absolute z-20"/>
                     <ChevronRightIcon class="size-10 opacity-45 stroke-black stroke-2"/>
@@ -52,8 +52,13 @@
 import { ChevronLeftIcon } from '@heroicons/vue/24/solid'
 import { ChevronRightIcon } from '@heroicons/vue/24/solid'
 
-const interestPictures = ['/images/interests/guitar-1.webp','/images/interests/hiking-1.webp','/images/interests/hiking-2.webp',
-'/images/interests/photography-1.webp','/images/interests/photography-2.webp','/images/interests/electronics-1.webp'];
+import guitar1 from '/assets/images/interests/guitar-1.webp'
+import hiking1 from '/assets/images/interests/hiking-1.webp'
+import hiking2 from '/assets/images/interests/hiking-2.webp'
+import photography1 from '/assets/images/interests/photography-1.webp'
+import photography2 from '/assets/images/interests/photography-2.webp'
+import electronics1 from '/assets/images/interests/electronics-1.webp'
+const interestPictures = [guitar1, hiking1, hiking2, photography1, photography2, electronics1];
 const interestAlts = ['playing guitar, credit: John Grubbs rockslidephotography','hiking, photo of the black bear pass sign in Colorado',
 'hiking, overlooking the Rio Grande in Whiterock New Mexico','photography, white butterfly on white flowers','photography, 2024 eclipse',
 'electronics, hand soldered univibe guitar pedal'];

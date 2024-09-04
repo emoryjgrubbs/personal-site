@@ -96,8 +96,6 @@ jobs:
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
       - name: optimize tailwind
         run: npx tailwindcss -o build.css --minify
-      - name: install nuxt images
-        run: npx nuxi@latest module add @nuxt/image
       - name: Static HTML export with Nuxt
         run: ${{ steps.detect-package-manager.outputs.manager }} run generate
       - name: Upload artifact

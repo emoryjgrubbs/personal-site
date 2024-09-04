@@ -25,7 +25,7 @@
             </p>
         </div>
         <!--list-of-projects-->
-        <ul v-for="project in projects" v-show="checkInclusion(project)" class="mb-5">
+        <ul v-for="project in projects" v-show="checkInclusion(project)" class="mb-20">
             <div class="flex flex-col py-2 items-center justify-center mx-20 mb-5">
                 <!--select-image-->
                 <div v-if="project.showImages" class="flex items-center w-9/12 mb-5 relative">
@@ -33,14 +33,14 @@
                         <ChevronLeftIcon class="size-10 fill-white absolute z-20"/>
                         <ChevronLeftIcon class="size-10 opacity-45 stroke-black stroke-2"/>
                     </button>
-                    <NuxtImg :src="project.images[project.index]" :alt="project.alts[project.index]" class="w-fit z-0" draggable="false" />
+                    <img :src="project.images[project.index]" :alt="project.alts[project.index]" class="w-fit z-0" draggable="false" />
                     <button @click="indexUp(project)" title="Next" v-if="project.images.length>1" class="z-10 text-4xl text-white absolute end-10 hover:scale-125">
                         <ChevronRightIcon class="size-10 fill-white absolute z-20"/>
                         <ChevronRightIcon class="size-10 opacity-45 stroke-black stroke-2"/>
                     </button>
                 </div>
                 <div :title="imagesMessage(project)" @click="handleShowImages(project)" class="contents hover:cursor-pointer">
-                    <h1 class="text-2xl underline mb-5 order-first">
+                    <h1 class="text-2xl underline mt-5 mb-5 order-first">
                         {{ project.name }}
                     </h1>
                     <p>
@@ -64,6 +64,10 @@ import { ChevronLeftIcon } from '@heroicons/vue/24/solid'
 import { ChevronRightIcon } from '@heroicons/vue/24/solid'
 
 //project data
+import personalHome from '/assets/images/personal-site/home.webp'
+import personalProjects from '/assets/images/personal-site/projects.webp'
+import personalTags from '/assets/images/personal-site/tags.webp'
+import personalDates from '/assets/images/personal-site/dates.webp'
 const personalSite = reactive({
     name: 'Personal Website',
     desc: `Using the knowledge I gained from working on the ATC project, 
@@ -74,11 +78,20 @@ const personalSite = reactive({
     startDates: ['2024-08-12'],
     endDates: ['2024-09-03'],
     github: 'https://github.com/emoryjgrubbs/personal-site',
-    images: ['/images/personal-site/home.webp', '/images/personal-site/projects.webp', '/images/personal-site/tags.webp', '/images/personal-site/dates.webp'],
+    images: [personalHome, personalProjects, personalTags, personalDates],
     alts: ['Personal website home page', 'Personal website projects pages', 'Personal website tags search', 'Personal website dates search'],
     index: 0,
     showImages: false,
 });
+import atcLogin from '/assets/images/atc/login.webp'
+import atcStudent from '/assets/images/atc/student.webp'
+import atcCreateUser from '/assets/images/atc/createBehavior.webp'
+import atcUpdateUser from '/assets/images/atc/updateUser.webp'
+import atcSessions from '/assets/images/atc/sessions.webp'
+import atcData from '/assets/images/atc/data.webp'
+import atcNote from '/assets/images/atc/note.webp'
+import atcBehavior from '/assets/images/atc/behavior.webp'
+import atcCreateBehavior from '/assets/images/atc/createBehavior.webp'
 const atc = reactive({
     name: 'ATC Patient Data',
     desc: `This is the project that I worked on during my first semester in EPICS, which had a number of issues. 
@@ -91,8 +104,8 @@ const atc = reactive({
     startDates: ['2024-06-03'],
     endDates: ['2024-08-07'],
     github: 'https://github.com/UTDallasEPICS/ATC-Patient-Data',
-    images: ['/images/atc/login.webp', '/images/atc/student.webp', '/images/atc/createUser.webp', '/images/atc/updateUser.webp', '/images/atc/sessions.webp', 
-        '/images/atc/data.webp', '/images/atc/note.webp', '/images/atc/behavior.webp', '/images/atc/createBehavior.webp'],
+    images: [atcLogin, atcStudent, atcCreateUser, atcUpdateUser, atcSessions, 
+        atcData, atcNote, atcBehavior, atcCreateBehavior],
     alts: ['ATC log in page', 'ATC student search page', 'ATC student create', 'ATC employee update', 'ATC student sessions page', 'ATC session data input', 
         'ATC session note input', 'ATC student behavior page', 'ATC behavior creation'],
     index: 0,
