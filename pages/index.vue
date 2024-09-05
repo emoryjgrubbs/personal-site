@@ -1,6 +1,6 @@
 <template>
     <title> Emory Grubbs - About Me </title>
-
+    <div>
     <body class="flex flex-col bg-bg text-center overscroll-contain">
         <!--title-->
         <h1 class=" mt-10 mb-5 text-4xl font-bold">
@@ -47,6 +47,7 @@
             </div>
         </div>
     </body>
+    </div>
 </template>
 
 <script setup>
