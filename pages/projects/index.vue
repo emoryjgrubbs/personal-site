@@ -1,4 +1,6 @@
 <template>
+    <title> Emory Grubbs - Projects </title>
+
     <body class="flex-auto bg-bg text-center overscroll-contain">
         <!--title-->
         <h1 class=" mt-10 mb-5 text-4xl font-bold">
@@ -25,7 +27,7 @@
             </p>
         </div>
         <!--list-of-projects-->
-        <ul v-for="project in projects" v-show="checkInclusion(project)" class="mb-20">
+        <ul v-for="project in projects" v-show="checkInclusion(project)" class="mx-10 md:mx-14 lg:mx-20">
             <div class="flex flex-col py-2 items-center justify-center mx-20 max-sm:mx-10 mb-5">
                 <!--select-image-->
                 <div v-if="project.showImages" class="flex items-center w-9/12 max-md:w-11/12 mb-5 relative">
@@ -83,7 +85,7 @@ const personalSite = reactive({
         I felt unsure of coming off the ATC project, and this has changed that.`,
     tags: ['personal', 'web', 'website', 'webdeb'],
     startDates: ['2024-08-12'],
-    endDates: ['2024-09-03'],
+    endDates: ['2024-09-04'],
     github: 'https://github.com/emoryjgrubbs/personal-site',
     images: [personalHome, personalProjects, personalTags, personalDates],
     alts: ['Personal website home page', 'Personal website projects pages', 'Personal website tags search', 'Personal website dates search'],

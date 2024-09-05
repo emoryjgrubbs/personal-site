@@ -1,11 +1,13 @@
 <template>
+    <title> Emory Grubbs - About Me </title>
+
     <body class="flex flex-col bg-bg text-center overscroll-contain">
         <!--title-->
         <h1 class=" mt-10 mb-5 text-4xl font-bold">
             Emory Grubbs
         </h1>
         <!--about me-->
-        <div class="flex flex-row max-md:flex-col py-2 items-center mx-20 mb-5 max-sm:mx-10">
+        <div class="flex flex-row max-md:flex-col py-2 items-center mx-10 md:mx-14 lg:mx-20 mb-5 ">
             <img src="/assets/images/headshot/headshot-1.webp" alt="headshot, credit: John Grubbs rockslidephotography" class="w-7/12 md:w-5/12 md:px-6 max-md:mb-5 max-sm:w-9/12" draggable="false" />
             <div class="w-7/12 md:px-6 max-sm:w-11/12">
                 <h1 class="text-2xl underline">
@@ -19,7 +21,7 @@
             </div>
         </div>
         <!--interests-->
-        <div class="flex flex-row max-md:flex-col py-2 items-center mx-20 mb-5 max-sm:mx-10">
+        <div class="flex flex-row max-md:flex-col py-2 items-center mx-10 md:mx-14 lg:mx-20 mb-5">
             <!--select-image-->
             <div class="flex items-center w-7/12 md:w-5/12 md:px-6 max-md:mb-5 relative max-sm:w-9/12">
                 <button @click="interestIndexDown" title="Previous" class="z-10 text-4xl text-white absolute start-10 max-xl:start-5 max-md:-start-20 max-sm:-start-10 hover:scale-125">
