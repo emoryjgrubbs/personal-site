@@ -1,70 +1,73 @@
 <template>
     <title> Emory Grubbs - Projects </title>
-
+    <div>
     <body class="flex-auto bg-bg text-center overscroll-contain">
-        <!--title-->
-        <h1 class=" mt-10 mb-5 text-4xl font-bold">
-            Projects
-        </h1>
-        <!--search-->
-        <div class="mx-20">
-            <input placeholder="Project Search" title="Project Search" v-model="searchTerm" class="w-2/3 text-center" />
-            <p @:mouseenter="showInstructions = true" @:mouseleave="showInstructions = false" class="">
-                <div class="inline-flex">
-                    How to use
-                </div>
-                <div v-show="showInstructions" class="inline-flex whitespace-pre-wrap">
-                    : 
-                </div>
-                <div v-show="showInstructions" class="inline-flex">
-                    The search field includes projects if the title, tags, dates match the project's data
-                </div>
-                <div v-show="showInstructions" class="whitespace-pre-line text-center">
-                    {{ `Tags : $tag or $'some tag'
-                    Dates : @YYYY-MM-DD or @YYYY-MM-DD>YYYY-MM-DD
-                    Quotes : allow for spaces in special terms` }}
-                </div>
-            </p>
-        </div>
-        <!--list-of-projects-->
-        <ul v-for="project in projects" v-show="checkInclusion(project)" class="mx-10 md:mx-14 lg:mx-20">
-            <div class="flex flex-col py-2 items-center justify-center mx-20 max-sm:mx-10 mb-5">
-                <!--select-image-->
-                <div v-if="project.showImages" class="flex items-center w-9/12 max-md:w-11/12 mb-5 relative">
-                    <button @click="indexDown(project)" title="Previous" v-if="project.images.length>1" class="z-10 text-4xl text-white absolute -start-10 sm:-start-20 hover:scale-125">
-                        <ChevronLeftIcon class="size-10 fill-white absolute z-20"/>
-                        <ChevronLeftIcon class="size-10 opacity-45 stroke-black stroke-2"/>
-                    </button>
-                    <img :src="project.images[project.index]" :alt="project.alts[project.index]" class="w-fit z-0" draggable="false" />
-                    <button @click="indexUp(project)" title="Next" v-if="project.images.length>1" class="z-10 text-4xl text-white absolute -end-10 sm:-end-20 hover:scale-125">
-                        <ChevronRightIcon class="size-10 fill-white absolute z-20"/>
-                        <ChevronRightIcon class="size-10 opacity-45 stroke-black stroke-2"/>
-                    </button>
-                </div>
-                <!--unexpanded-project-->
-                <h1 class="text-2xl underline mt-5 mb-5 order-first">
-                    {{ project.name }}
-                </h1>
-                <button v-if="project.images.length>0" title="Show Porject Images" @click="project.showImages = !project.showImages" class="mb-5 bg-nav text-text-light px-3 py-1">
-                    <div v-show="!project.showImages">
-                        show images
+        <div class="mx-10 md:mx-14 lg:mx-20">
+            <!--title-->
+            <h1 class=" mt-10 mb-5 text-4xl font-bold">
+                Projects
+            </h1>
+            <!--search-->
+            <div class="">
+                <input placeholder="Project Search" title="Project Search" v-model="searchTerm" class="w-2/3 text-center" />
+                <p @:mouseenter="showInstructions = true" @:mouseleave="showInstructions = false" class="">
+                    <div class="inline-flex">
+                        How to use
                     </div>
-                    <div v-show="project.showImages">
-                        hide images
+                    <div v-show="showInstructions" class="inline-flex whitespace-pre-wrap">
+                        : 
                     </div>
-                </button>
-                <p>
-                    {{ project.desc }}
+                    <div v-show="showInstructions" class="inline-flex">
+                        The search field includes projects if the title, tags, dates match the project's data
+                    </div>
+                    <div v-show="showInstructions" class="whitespace-pre-line text-center">
+                        {{ `Tags : $tag or $'some tag'
+                        Dates : @YYYY-MM-DD or @YYYY-MM-DD>YYYY-MM-DD
+                        Quotes : allow for spaces in special terms` }}
+                    </div>
                 </p>
             </div>
-            <div v-if="project.github !== 'CONFIDENTIAL'" title="Open Project Github" @click="handleGithubClick(project.github)" class="hover:cursor-pointer">
-                Github: {{ project.github }}
-            </div>
-            <div v-else>
-                I am unable to share code from this project.
-            </div>
-        </ul>
+            <!--list-of-projects-->
+            <ul v-for="project in projects" v-show="checkInclusion(project)" class="mb-20">
+                <div class="flex flex-col py-2 items-center justify-center mb-5">
+                    <!--select-image-->
+                    <div v-if="project.showImages" class="flex items-center w-9/12 max-md:w-11/12 mb-5 relative">
+                        <button @click="indexDown(project)" title="Previous" v-if="project.images.length>1" class="z-10 text-4xl text-white absolute -start-10 md:-start-20 hover:scale-125">
+                            <ChevronLeftIcon class="size-10 fill-white absolute z-20"/>
+                            <ChevronLeftIcon class="size-10 opacity-45 stroke-black stroke-2"/>
+                        </button>
+                        <img :src="project.images[project.index]" :alt="project.alts[project.index]" class="w-fit z-0" draggable="false" />
+                        <button @click="indexUp(project)" title="Next" v-if="project.images.length>1" class="z-10 text-4xl text-white absolute -end-10 md:-end-20 hover:scale-125">
+                            <ChevronRightIcon class="size-10 fill-white absolute z-20"/>
+                            <ChevronRightIcon class="size-10 opacity-45 stroke-black stroke-2"/>
+                        </button>
+                    </div>
+                    <!--unexpanded-project-->
+                    <h1 class="text-2xl underline mt-5 mb-5 order-first">
+                        {{ project.name }}
+                    </h1>
+                    <button v-if="project.images.length>0" title="Show Porject Images" @click="project.showImages = !project.showImages" class="mb-5 bg-nav text-text-light px-3 py-1">
+                        <div v-show="!project.showImages">
+                            show images
+                        </div>
+                        <div v-show="project.showImages">
+                            hide images
+                        </div>
+                    </button>
+                    <p>
+                        {{ project.desc }}
+                    </p>
+                </div>
+                <div v-if="project.github !== 'CONFIDENTIAL'" title="Open Project Github" @click="handleGithubClick(project.github)" class="hover:cursor-pointer">
+                    Github: {{ project.github }}
+                </div>
+                <div v-else>
+                    I am unable to share code from this project.
+                </div>
+            </ul>
+        </div>
     </body>
+    </div>
 </template>
 
 <script setup>
