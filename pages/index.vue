@@ -42,7 +42,7 @@
                     I have had a lifelong interest in technology, but I’m also deeply passionate about art, nature, and knowledge. 
                     Throughout primary school, I pursued visual arts. Mostly, I focused on drawing. Initially just graphite, although I’ve found that I prefer traditional ink now. 
                     I’ve also become increasingly interested in photography. 
-                    Like with visual arts, I love music. I find it important to make time for myself to explore different genres, see live shows, and play myself.
+                    Like with visual arts, I love music. And, I find it important to make time for myself to explore different genres, see live shows, and play myself.
                 </p>
             </div>
         </div>

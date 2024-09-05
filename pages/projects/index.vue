@@ -32,12 +32,12 @@
                 <div class="flex flex-col py-2 items-center justify-center mb-5">
                     <!--select-image-->
                     <div v-if="project.showImages" class="flex items-center w-9/12 max-md:w-11/12 mb-5 relative">
-                        <button @click="indexDown(project)" title="Previous" v-if="project.images.length>1" class="z-10 text-4xl text-white absolute -start-10 sm:-start-20 hover:scale-125">
+                        <button @click="indexDown(project)" title="Previous" v-if="project.images.length>1" class="z-10 text-4xl text-white absolute -start-10 md:-start-20 hover:scale-125">
                             <ChevronLeftIcon class="size-10 fill-white absolute z-20"/>
                             <ChevronLeftIcon class="size-10 opacity-45 stroke-black stroke-2"/>
                         </button>
                         <img :src="project.images[project.index]" :alt="project.alts[project.index]" class="w-fit z-0" draggable="false" />
-                        <button @click="indexUp(project)" title="Next" v-if="project.images.length>1" class="z-10 text-4xl text-white absolute -end-10 sm:-end-20 hover:scale-125">
+                        <button @click="indexUp(project)" title="Next" v-if="project.images.length>1" class="z-10 text-4xl text-white absolute -end-10 md:-end-20 hover:scale-125">
                             <ChevronRightIcon class="size-10 fill-white absolute z-20"/>
                             <ChevronRightIcon class="size-10 opacity-45 stroke-black stroke-2"/>
                         </button>
