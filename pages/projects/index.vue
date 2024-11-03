@@ -1,6 +1,5 @@
 <template>
     <title> Emory Grubbs - Projects </title>
-    <div>
     <body class="flex-auto bg-bg text-center overscroll-contain">
         <div class="mx-10 md:mx-14 lg:mx-20">
             <!--title-->
@@ -8,9 +7,9 @@
                 Projects
             </h1>
             <!--search-->
-            <div class="">
+            <div class="flex flex-col place-items-center">
                 <input placeholder="Project Search" title="Project Search" v-model="searchTerm" class="w-2/3 text-center" />
-                <p @:mouseenter="showInstructions = true" @:mouseleave="showInstructions = false" class="">
+                <div @:mouseenter="showInstructions = true" @:mouseleave="showInstructions = false" class="w-1/2 justify-self-center">
                     <div class="inline-flex">
                         How to use
                     </div>
@@ -25,7 +24,7 @@
                         Dates : @YYYY-MM-DD or @YYYY-MM-DD>YYYY-MM-DD
                         Quotes : allow for spaces in special terms` }}
                     </div>
-                </p>
+                </div>
             </div>
             <!--list-of-projects-->
             <ul v-for="project in projects" v-show="checkInclusion(project)" class="mb-20">
@@ -67,7 +66,6 @@
             </ul>
         </div>
     </body>
-    </div>
 </template>
 
 <script setup>
@@ -76,11 +74,31 @@ import { ChevronLeftIcon } from '@heroicons/vue/24/solid'
 import { ChevronRightIcon } from '@heroicons/vue/24/solid'
 
 //project data
+//end date of 'now' means ongoing
+const cupboard = {
+    name: 'Commet Cupboard',
+    desc: `The Commet Cupboard acts as a resource for UTD students, essentially functioning as a food bank.
+        This project is ongoing, but we are on track to deliver a well designed, function product.
+        We took the time early on to planned our deisgn in figma, which has given us a great blueprint to work from while implementing.
+        So far, I have personally writen the code for the navbar, footer, and page controls.
+        The navbar is built with responsive design in mind and fits all screens.
+        The page controls include a multi-select dropdown for the filters and a search featuring autocomplete.
+        As I am a senior member of the team, I am also a reviewers on pull requests. And, I have provided feedback on all requests which I have not authored.
+        Additionally, I am the team's project partner liason, and have been comminucating with the director of the Commet Cupboard Dr. Bel Khuu to ensure the user's needs our met.`,
+    tags: ['food bank', 'epics', 'utd', 'web', 'website', 'webdeb', 'db', 'database'],
+    startDates: ['2024-08-19'],
+    endDates: ['now'],
+    github: 'https://github.com/UTDallasEPICS/Comet-Cupboard',
+    images: [],
+    alts: [],
+    index: 0,
+    showImages: false,
+};
 import personalHome from '/assets/images/personal-site/home.webp'
 import personalProjects from '/assets/images/personal-site/projects.webp'
 import personalTags from '/assets/images/personal-site/tags.webp'
 import personalDates from '/assets/images/personal-site/dates.webp'
-const personalSite = reactive({
+const personalSite = {
     name: 'Personal Website',
     desc: `Using the knowledge I gained from working on the ATC project, 
         I created this website from scratch using vue and tailwind. With my purpose being to both have a place to display things 
@@ -94,7 +112,7 @@ const personalSite = reactive({
     alts: ['Personal website home page', 'Personal website projects pages', 'Personal website tags search', 'Personal website dates search'],
     index: 0,
     showImages: false,
-});
+};
 import atcLogin from '/assets/images/atc/login.webp'
 import atcStudent from '/assets/images/atc/student.webp'
 import atcCreateUser from '/assets/images/atc/createBehavior.webp'
@@ -104,7 +122,7 @@ import atcData from '/assets/images/atc/data.webp'
 import atcNote from '/assets/images/atc/note.webp'
 import atcBehavior from '/assets/images/atc/behavior.webp'
 import atcCreateBehavior from '/assets/images/atc/createBehavior.webp'
-const atc = reactive({
+const atc = {
     name: 'ATC Patient Data',
     desc: `This is the project that I worked on during my first semester in EPICS, which had a number of issues. 
         The code we inherited was non-functional, and neither the team or mentors were able to contact the sponsor. 
@@ -122,9 +140,9 @@ const atc = reactive({
         'ATC session note input', 'ATC student behavior page', 'ATC behavior creation'],
     index: 0,
     showImages: false,
-});
+};
 //array of projects
-const projects = [personalSite, atc];
+const projects = [cupboard, personalSite, atc];
 
 //image switch
 function indexUp(project) {
