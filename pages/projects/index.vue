@@ -76,15 +76,15 @@ import { ChevronRightIcon } from '@heroicons/vue/24/solid'
 //project data
 //end date of 'now' means ongoing
 const cupboard = {
-    name: 'Commet Cupboard',
-    desc: `The Commet Cupboard acts as a resource for UTD students, essentially functioning as a food bank.
-        This project is ongoing, but we are on track to deliver a well designed, function product.
-        We took the time early on to planned our deisgn in figma, which has given us a great blueprint to work from while implementing.
-        So far, I have personally writen the code for the navbar, footer, and page controls.
+    name: 'Comet Cupboard',
+    desc: `The Comet Cupboard acts as a resource for UTD students, essentially functioning as a food bank.
+        This project is ongoing, but we are on track to deliver a well designed, functional product.
+        We took the time early on to plan our design in figma, which has given us a great blueprint to work from while implementing.
+        So far, I have personally written the code for the navbar, footer, and page controls.
         The navbar is built with responsive design in mind and fits all screens.
         The page controls include a multi-select dropdown for the filters and a search featuring autocomplete.
-        As I am a senior member of the team, I am also a reviewers on pull requests. And, I have provided feedback on all requests which I have not authored.
-        Additionally, I am the team's project partner liason, and have been comminucating with the director of the Commet Cupboard Dr. Bel Khuu to ensure the user's needs our met.`,
+        As I am a senior member of the team, I am also a reviewer on pull requests. And, I have provided feedback on all requests which I have not authored.
+        Additionally, I am the team's project partner liaison, and have been communicating with the director of the Comet Cupboard Dr. Bel Khuu to ensure the user's needs are met.`,
     tags: ['food bank', 'epics', 'utd', 'web', 'website', 'webdeb', 'db', 'database'],
     startDates: ['2024-08-19'],
     endDates: ['now'],
