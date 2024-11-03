@@ -1,6 +1,6 @@
 <template>
     <title> Emory Grubbs - Projects </title>
-    <body class="flex-auto bg-bg text-center overscroll-contain">
+    <body class="flex-auto bg-lg text-center overscroll-contain">
         <div class="mx-10 md:mx-14 lg:mx-20">
             <!--title-->
             <h1 class=" mt-10 mb-5 text-4xl font-bold">
@@ -8,8 +8,8 @@
             </h1>
             <!--search-->
             <div class="flex flex-col place-items-center">
-                <input placeholder="Project Search" title="Project Search" v-model="searchTerm" class="w-2/3 text-center" />
-                <div @:mouseenter="showInstructions = true" @:mouseleave="showInstructions = false" class="w-1/2 justify-self-center">
+                <input placeholder="Project Search" title="Project Search" v-model="searchTerm" class="w-2/3 text-center outline-none border-2 border-transparent focus:border-dg" />
+                <div @:mouseenter="showInstructions = true" @:mouseleave="showInstructions = false" class="w-2/3">
                     <div class="inline-flex">
                         How to use
                     </div>
@@ -45,7 +45,7 @@
                     <h1 class="text-2xl underline mt-5 mb-5 order-first">
                         {{ project.name }}
                     </h1>
-                    <button v-if="project.images.length>0" title="Show Porject Images" @click="project.showImages = !project.showImages" class="mb-5 bg-nav text-text-light px-3 py-1">
+                    <button v-if="project.images.length>0" title="Show Porject Images" @click="project.showImages = !project.showImages" class="mb-5 bg-dg text-text-light px-3 py-1">
                         <div v-show="!project.showImages">
                             show images
                         </div>
