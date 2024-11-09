@@ -13,9 +13,9 @@
                     About Me
                 </h1>
                 <p class="text-xl pt-4">
-                    I am a computer science senior, currently attending the University of Texas at Dallas. And, I have been admitted to the graduate program.
-                    I am a involved with the Engineering Projects in Community Service program, which connects students with non-profits. 
-                    I am a good problem solver, and have the skills to adapt my knowledge to novel situations.
+                    I am a computer science senior, currently attending the University of Texas at Dallas. I have been accepted to the graduate program. 
+                    And, I am involved with the Engineering Projects in Community Service program, which connects students with non-profits. 
+                    Currently, I am a senior member of a team working on building a web app for the Comet Cupboard. The aim is to improve the checkout flow and provide better data on item use. 
                 </p>
             </div>
         </div>
@@ -39,9 +39,12 @@
                 </h1>
                 <p class="text-xl pt-4">
                     I have had a lifelong interest in technology, but I’m also deeply passionate about art, nature, and knowledge. 
-                    Throughout primary school, I pursued visual arts. Mostly, I focused on drawing. Initially just graphite, although I’ve found that I prefer traditional ink now. 
-                    I’ve also become increasingly interested in photography. 
-                    Like with visual arts, I love music. And, I find it important to make time for myself to explore different genres, see live shows, and play myself.
+                    Currently, I have been having a lot of fun with Linux, having recently switched my primary machine. 
+                    Art has also been a constant in my life, having pursued visual arts throughout primary school. 
+                    Mostly, I focused on drawing. Initially just graphite, although I’ve found that I prefer traditional ink now. 
+                    I’ve also become increasingly interested in photography. Like with visual arts, I love music. 
+                    And, I find it important to make time for myself to explore different genres, see live shows, and play myself. 
+                    In addition, I try to do the little things I enjoy like brewing coffee, skateboarding, or just watching the birds fly.
                 </p>
             </div>
         </div>
