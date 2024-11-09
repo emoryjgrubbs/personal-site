@@ -1,11 +1,11 @@
 <template>
-    <div class="flex flex-col mt-5 mb-10 justify-center">
-        <h1 class="underline text-2xl">
+    <div class="flex flex-col pt-5 pb-10 justify-center">
+        <h1 class="underline text-3xl font-semibold text-center">
             Contact Information
         </h1>
-        <div class="flex flex-wrap space-x-5 justify-evenly pt-4">  
+        <div class="flex flex-wrap space-x-9 justify-evenly pt-4">  
             <button
-            class="flex flex-row space-x-2 justify-self-center"
+            class="flex flex-row pb-5 space-x-2 justify-self-center"
             title="Copy Email Address"
             @click="handleEmail">
                 <div>
@@ -16,7 +16,7 @@
                 </div>
             </button>   
             <button
-            class="flex flex-row space-x-2 justify-self-center"
+            class="flex flex-row pb-5 space-x-2 justify-self-center"
             title="View LinkedIn"
             @click="handleLinkedIn">
                 <div>
@@ -24,7 +24,7 @@
                 </div>
             </button>   
             <button
-            class="flex flex-row space-x-2 justify-self-center"
+            class="flex flex-row pb-5 space-x-2 justify-self-center"
             title="View GitHub"
             @click="handleGitHub">
                 <div>

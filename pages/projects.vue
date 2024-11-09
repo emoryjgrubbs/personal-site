@@ -1,6 +1,6 @@
 <template>
     <title> Emory Grubbs - Projects </title>
-    <body class="flex-auto bg-lg text-center overscroll-contain">
+    <div class="flex-auto bg-lg text-center overscroll-contain">
         <div class="mx-10 md:mx-14 lg:mx-20">
             <!--title-->
             <h1 class=" mt-10 mb-5 text-4xl font-bold">
@@ -8,18 +8,15 @@
             </h1>
             <!--search-->
             <div class="flex flex-col place-items-center">
-                <input placeholder="Project Search" title="Project Search" v-model="searchTerm" class="w-2/3 text-center outline-none border-2 border-transparent focus:border-dg" />
-                <div @:mouseenter="showInstructions = true" @:mouseleave="showInstructions = false" class="w-2/3">
-                    <div class="inline-flex">
-                        How to use
+                <div class="relative w-2/3">
+                    <input placeholder="Project Search" title="Project Search" v-model="searchTerm" class="w-full text-center outline-none border-2 border-transparent border-b-text-dark focus:border-dg rounded-sm drop-shadow-sm" />
+                    <button @click="showInstructions=!showInstructions" class="absolute -end-4 sm:end-3 md:end-5 inset-y-0 font-semibold hover:font-black">?</button>
+                </div>
+                <div v-show="showInstructions" class="w-2/3">
+                    <div class="">
+                        Search Instructions: The search field includes projects if the title, tags, dates match the project's data
                     </div>
-                    <div v-show="showInstructions" class="inline-flex whitespace-pre-wrap">
-                        : 
-                    </div>
-                    <div v-show="showInstructions" class="inline-flex">
-                        The search field includes projects if the title, tags, dates match the project's data
-                    </div>
-                    <div v-show="showInstructions" class="whitespace-pre-line text-center">
+                    <div class="whitespace-pre-line text-center">
                         {{ `Tags : $tag or $'some tag'
                         Dates : @YYYY-MM-DD or @YYYY-MM-DD>YYYY-MM-DD
                         Quotes : allow for spaces in special terms` }}
@@ -27,7 +24,7 @@
                 </div>
             </div>
             <!--list-of-projects-->
-            <ul v-for="project in projects" v-show="checkInclusion(project)" class="mb-20">
+            <ul v-for="project in projects" v-show="checkInclusion(project)" class="pb-20">
                 <div class="flex flex-col py-2 items-center justify-center mb-5">
                     <!--select-image-->
                     <div v-if="project.showImages" class="flex items-center w-9/12 max-md:w-11/12 mb-5 relative">
@@ -42,14 +39,14 @@
                         </button>
                     </div>
                     <!--unexpanded-project-->
-                    <h1 class="text-2xl underline mt-5 mb-5 order-first">
+                    <h1 class="text-3xl font-semibold underline mt-5 mb-5 order-first select-all">
                         {{ project.name }}
                     </h1>
-                    <button v-if="project.images.length>0" title="Show Porject Images" @click="project.showImages = !project.showImages" class="mb-5 bg-dg text-text-light px-3 py-1">
-                        <div v-show="!project.showImages">
+                    <button v-if="project.images.length>0" title="Show Porject Images" @click="project.showImages = !project.showImages" class="mb-5 border-[3px] bg-dg text-text-light hover:font-bold hover:text-white border-dg rounded-sm drop-shadow-sm">
+                        <div v-show="!project.showImages" class="px-[9px] py-[1px]">
                             show images
                         </div>
-                        <div v-show="project.showImages">
+                        <div v-show="project.showImages" class="px-[9px] py-[1px]">
                             hide images
                         </div>
                     </button>
@@ -65,7 +62,7 @@
                 </div>
             </ul>
         </div>
-    </body>
+    </div>
 </template>
 
 <script setup>
@@ -74,8 +71,9 @@ import { ChevronLeftIcon } from '@heroicons/vue/24/solid'
 import { ChevronRightIcon } from '@heroicons/vue/24/solid'
 
 //project data
+//should be reactive as they store control variables
 //end date of 'now' means ongoing
-const cupboard = {
+const cupboard = reactive({
     name: 'Comet Cupboard',
     desc: `The Comet Cupboard acts as a resource for UTD students, essentially functioning as a food bank.
         This project is ongoing, but we are on track to deliver a well designed, functional product.
@@ -93,12 +91,12 @@ const cupboard = {
     alts: [],
     index: 0,
     showImages: false,
-};
+});
 import personalHome from '/assets/images/personal-site/home.webp'
 import personalProjects from '/assets/images/personal-site/projects.webp'
 import personalTags from '/assets/images/personal-site/tags.webp'
 import personalDates from '/assets/images/personal-site/dates.webp'
-const personalSite = {
+const personalSite = reactive({
     name: 'Personal Website',
     desc: `Using the knowledge I gained from working on the ATC project, 
         I created this website from scratch using vue and tailwind. With my purpose being to both have a place to display things 
@@ -112,7 +110,7 @@ const personalSite = {
     alts: ['Personal website home page', 'Personal website projects pages', 'Personal website tags search', 'Personal website dates search'],
     index: 0,
     showImages: false,
-};
+});
 import atcLogin from '/assets/images/atc/login.webp'
 import atcStudent from '/assets/images/atc/student.webp'
 import atcCreateUser from '/assets/images/atc/createBehavior.webp'
@@ -122,11 +120,11 @@ import atcData from '/assets/images/atc/data.webp'
 import atcNote from '/assets/images/atc/note.webp'
 import atcBehavior from '/assets/images/atc/behavior.webp'
 import atcCreateBehavior from '/assets/images/atc/createBehavior.webp'
-const atc = {
+const atc = reactive({
     name: 'ATC Patient Data',
     desc: `This is the project that I worked on during my first semester in EPICS, which had a number of issues. 
         The code we inherited was non-functional, and neither the team or mentors were able to contact the sponsor. 
-        Despite that, I am very proud of what we were able to accomplish in the short time we had. Nobody on the team had any web development experience, 
+        Despite that, I am very proud of what we were able to accomplish in the short time we had. Nodiv on the team had any web development experience, 
         and we only had 11 weeks to turn the project around. I personally had a hand in nearly every aspect of the project. 
         This includes the database schema, user search, user creation/updating, APIs, session search, and session data input/autosave. 
         I was also the team leader, and worked to keep the project on schedule and assist my teammates where needed.`,
@@ -140,7 +138,7 @@ const atc = {
         'ATC session note input', 'ATC student behavior page', 'ATC behavior creation'],
     index: 0,
     showImages: false,
-};
+});
 //array of projects
 const projects = [cupboard, personalSite, atc];
 
