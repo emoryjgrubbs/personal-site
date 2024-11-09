@@ -23,14 +23,14 @@
         <div class="flex flex-row max-md:flex-col py-2 items-center mx-10 md:mx-14 lg:mx-20 mb-5">
             <!--select-image-->
             <div class="flex items-center w-7/12 md:w-5/12 md:px-6 max-md:mb-5 relative max-sm:w-9/12">
-                <button @click="interestIndexDown" title="Previous" class="z-10 text-4xl text-white absolute start-10 max-xl:start-5 max-md:-start-20 max-sm:-start-10 hover:scale-125">
-                    <ChevronLeftIcon class="size-10 fill-white absolute z-20"/>
-                    <ChevronLeftIcon class="size-10 opacity-45 stroke-black stroke-2"/>
+                <button @click="interestIndexDown" title="Previous" class="z-10 text-4xl text-white absolute start-10 max-xl:start-5 max-md:-start-20 max-sm:-start-14 hover:scale-125">
+                    <ChevronLeftIcon class="size-14 fill-white absolute z-20"/>
+                    <ChevronLeftIcon class="size-14 opacity-45 stroke-black stroke-2"/>
                 </button>
                 <img :src="interestPictures[interestIndex]" :alt="interestAlts[interestIndex]" class="w-fit z-0 drop-shadow-sm" draggable="false" />
-                <button @click="interestIndexUp" title="Next" class="z-10 text-4xl text-white absolute end-10 max-xl:end-5 max-md:-end-20 max-sm:-end-10 hover:scale-125">
-                    <ChevronRightIcon class="size-10 fill-white absolute z-20"/>
-                    <ChevronRightIcon class="size-10 opacity-45 stroke-black stroke-2"/>
+                <button @click="interestIndexUp" title="Next" class="z-10 text-4xl text-white absolute end-10 max-xl:end-5 max-md:-end-20 max-sm:-end-14 hover:scale-125">
+                    <ChevronRightIcon class="size-14 fill-white absolute z-20"/>
+                    <ChevronRightIcon class="size-14 opacity-45 stroke-black stroke-2"/>
                 </button>
             </div>
             <div class="w-7/12 md:px-6 md:order-first max-sm:w-11/12">
