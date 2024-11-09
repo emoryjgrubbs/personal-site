@@ -7,7 +7,7 @@
         <div class="flex flex-row max-md:flex-col py-2 items-center mx-10 md:mx-14 lg:mx-20 mb-5 ">
             <img src="/assets/images/headshot/headshot-1.webp" alt="headshot, credit: John Grubbs rockslidephotography" class="w-7/12 md:w-5/12 md:px-6 max-md:mb-5 max-sm:w-9/12 drop-shadow-sm" draggable="false" />
             <div class="w-7/12 md:px-6 max-sm:w-11/12">
-                <h1 class="text-3xl font-semibold underline">About Me</h1>
+                <h1 class="text-3xl font-semibold underline decoration-2">About Me</h1>
                 <p class="text-xl pt-4">I am a computer science senior, currently attending the University of Texas at Dallas. I have been accepted to the graduate program. 
                     And, I am involved with the Engineering Projects in Community Service program, which connects students with non-profits. 
                     Currently, I am a senior member of a team working on building a web app for the Comet Cupboard. The aim is to improve the checkout flow and provide better data on item use.</p>
@@ -28,7 +28,7 @@
                 </button>
             </div>
             <div class="w-7/12 md:px-6 md:order-first max-sm:w-11/12">
-                <h1 class="text-3xl font-semibold underline">Interests</h1>
+                <h1 class="text-3xl font-semibold underline decoration-2">Interests</h1>
                 <p class="text-xl pt-4">I have had a lifelong interest in technology, but I’m also deeply passionate about art, nature, and knowledge. 
                     Currently, I have been having a lot of fun with Linux, having recently switched my primary machine. 
                     Art has also been a constant in my life, having pursued visual arts throughout primary school. 

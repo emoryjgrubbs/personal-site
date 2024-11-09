@@ -37,7 +37,7 @@
                         </button>
                     </div>
                     <!--unexpanded-project-->
-                    <h1 class="text-3xl font-semibold underline mt-5 mb-5 order-first select-all">
+                    <h1 class="text-3xl font-semibold underline decoration-2 mt-5 mb-5 order-first select-all">
                         {{ project.name }}
                     </h1>
                     <button v-if="project.images.length>0" title="Show Porject Images" @click="project.showImages = !project.showImages" class="mb-5 border-[3px] bg-dg text-text-light hover:font-bold hover:text-white border-dg rounded-sm drop-shadow-sm">
