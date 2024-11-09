@@ -3,9 +3,7 @@
     <div class="flex-auto bg-lg text-center overscroll-contain">
         <div class="mx-10 md:mx-14 lg:mx-20">
             <!--title-->
-            <h1 class=" mt-10 mb-5 text-4xl font-bold">
-                Projects
-            </h1>
+            <h1 class=" mt-10 mb-5 text-4xl font-bold">Project</h1>
             <!--search-->
             <div class="flex flex-col place-items-center">
                 <div class="relative w-2/3">
@@ -54,8 +52,13 @@
                         {{ project.desc }}
                     </p>
                 </div>
-                <div v-if="project.github !== 'CONFIDENTIAL'" title="Open Project Github" @click="handleGithubClick(project.github)" class="hover:cursor-pointer">
-                    Github: {{ project.github }}
+                <div v-if="project.github !== 'CONFIDENTIAL'" title="Open Project Github" @click="handleGithubClick(project.github)" class="group flex flex-row space-x-2 hover:cursor-pointer hover:font-bold justify-center">
+                    <div>
+                        Github:
+                    </div>
+                    <div class="group-hover:underline">
+                        {{ project.github }}
+                    </div>
                 </div>
                 <div v-else>
                     I am unable to share code from this project.
