@@ -1,7 +1,7 @@
 <template>
     <div class="flex flex-col pt-5 pb-10 justify-center">
-        <h1 class="underline text-text-light selection:text-text-dark decoration-2 text-3xl font-semibold text-center">Contact Information</h1>
-        <div class="flex flex-wrap space-x-9 justify-evenly pt-4">  
+        <h1 class="text-text-light selection:text-text-dark text-3xl font-semibold text-center">Contact Information</h1>
+        <div class="flex flex-wrap space-x-9 justify-evenly pt-4 select-none">  
             <button
             class="group flex flex-row pb-5 space-x-2 justify-self-center hover:font-bold"
             title="Copy Email Address"

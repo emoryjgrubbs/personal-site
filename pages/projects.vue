@@ -37,7 +37,7 @@
                         </button>
                     </div>
                     <!--unexpanded-project-->
-                    <h1 class="text-3xl font-semibold underline decoration-2 mt-5 mb-5 order-first select-all">
+                    <h1 class="text-3xl font-semibold mt-5 mb-5 order-first select-all">
                         {{ project.name }}
                     </h1>
                     <button v-if="project.images.length>0" title="Show Porject Images" @click="project.showImages = !project.showImages" class="mb-5 border-[3px] bg-dg text-text-light hover:font-bold hover:text-white border-dg rounded-sm drop-shadow-sm">
@@ -52,7 +52,7 @@
                         {{ project.desc }}
                     </p>
                 </div>
-                <div v-if="project.github !== 'CONFIDENTIAL'" title="Open Project Github" @click="handleGithubClick(project.github)" class="group flex flex-row space-x-2 hover:cursor-pointer hover:font-bold justify-center">
+                <div v-if="project.github !== 'CONFIDENTIAL'" title="Open Project Github" @click="handleGithubClick(project.github)" class="group flex flex-row space-x-2 hover:cursor-pointer hover:font-bold justify-center select-none">
                     <div>
                         Github:
                     </div>

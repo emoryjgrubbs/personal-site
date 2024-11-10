@@ -1,5 +1,5 @@
 <template>
-  <nav class="bg-dg text-text-light text-3xl font-bold flex py-2 overflow-x-scroll">
+  <nav class="bg-dg text-text-light text-3xl font-bold flex py-2 overflow-x-auto">
     <div class="flex grow mx-2 space-x-2">
         <button
           class="px-2 hover:font-black hover:text-white"
