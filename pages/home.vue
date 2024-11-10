@@ -5,7 +5,7 @@
         <h1 class=" mt-10 mb-5 text-4xl font-bold">Emory Grubbs</h1>
         <!--about me-->
         <div class="flex flex-row max-md:flex-col py-2 items-center mx-10 md:mx-14 lg:mx-20 mb-5">
-            <img src="/assets/images/headshot/headshot-1.webp" alt="headshot, credit: John Grubbs rockslidephotography" class="w-7/12 md:w-5/12 md:px-6 max-md:mb-5 max-sm:w-9/12 drop-shadow-sm" draggable="false" />
+            <img src="/assets/images/headshot/headshot-1.webp" alt="headshot, credit: John Grubbs rockslidephotography" class="w-7/12 md:w-5/12 md:px-6 max-md:mb-5 max-sm:w-9/12 drop-shadow-sm select-none" draggable="false" />
             <div class="w-7/12 md:px-6 max-sm:w-11/12">
                 <h1 class="text-3xl font-semibold">About Me</h1>
                 <p class="text-xl pt-4">I am a computer science senior, currently attending the University of Texas at Dallas. I have been accepted to the graduate program. 
@@ -21,7 +21,7 @@
                     <ChevronLeftIcon class="size-14 fill-white absolute z-20"/>
                     <ChevronLeftIcon class="size-14 opacity-45 stroke-black stroke-2"/>
                 </button>
-                <img :src="interestPictures[interestIndex]" :alt="interestAlts[interestIndex]" class="w-fit z-0 drop-shadow-sm" draggable="false" />
+                <img :src="interestPictures[interestIndex]" :alt="interestAlts[interestIndex]" class="w-fit z-0 drop-shadow-sm select-none" draggable="false" />
                 <button @click="interestIndexUp" title="Next" class="z-10 text-4xl text-white absolute end-10 max-xl:end-5 max-md:-end-20 max-sm:-end-14 hover:scale-125">
                     <ChevronRightIcon class="size-14 fill-white absolute z-20"/>
                     <ChevronRightIcon class="size-14 opacity-45 stroke-black stroke-2"/>

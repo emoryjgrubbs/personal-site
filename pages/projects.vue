@@ -30,7 +30,7 @@
                             <ChevronLeftIcon class="size-14 fill-white absolute z-20"/>
                             <ChevronLeftIcon class="size-14 opacity-45 stroke-black stroke-2"/>
                         </button>
-                        <img :src="project.images[project.index]" :alt="project.alts[project.index]" class="w-fit z-0" draggable="false" />
+                        <img :src="project.images[project.index]" :alt="project.alts[project.index]" class="w-fit z-0 select-none" draggable="false" />
                         <button @click="indexUp(project)" title="Next" v-if="project.images.length>1" class="z-10 text-4xl text-white absolute -end-14 md:-end-20 hover:scale-125">
                             <ChevronRightIcon class="size-14 fill-white absolute z-20"/>
                             <ChevronRightIcon class="size-14 opacity-45 stroke-black stroke-2"/>
