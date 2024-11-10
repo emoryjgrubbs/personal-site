@@ -14,7 +14,7 @@ export default {
         'dg': '#49914b',
         'mg': '#77BB7C',
         'lg': '#edf7ee',
-        'text-light': '#ffffff',
+        'text-light': '#edf7ee',
         'text-dark': '#364c6b',
       },
       fontFamily: {

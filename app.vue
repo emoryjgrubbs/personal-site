@@ -1,11 +1,10 @@
 <template>
-    <div class="selection:bg-dg selection:text-white accent-mg">
-        <div class="overscroll-none bg-lg text-text-dark font-body">
-            <Navbar />
+    <div class="flex flex-col min-h-screen font-body">
+        <Navbar class="selection:bg-lg selection:text-text-dark"/>
+        <div class="grow bg-lg text-text-dark text-xl selection:bg-dg selection:text-white">
             <NuxtPage />
         </div>
-        <div class="overscroll-none bg-lg text-text-dark font-body">
-            <ContactInfo />
-        </div>
+        <!--second div prevents double contact info on projects-->
+        <ContactInfo class="bg-dg text-text-light text-xl selection:bg-lg selection:text-text-dark"/>
     </div>
 </template>

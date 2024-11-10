@@ -1,35 +1,40 @@
 <template>
-    <div class="flex flex-col mt-5 mb-10 justify-center">
-        <h1 class="underline text-2xl">
-            Contact Information
-        </h1>
-        <div class="flex flex-wrap space-x-5 justify-evenly pt-4">  
+    <div class="flex flex-col pt-5 pb-10 justify-center">
+        <h1 class="text-text-light selection:text-text-dark text-3xl font-semibold text-center">Contact Information</h1>
+        <div class="flex flex-wrap space-x-9 justify-evenly pt-4 select-none">  
             <button
-            class="flex flex-row space-x-2 justify-self-center"
+            class="group flex flex-row pb-5 space-x-2 justify-self-center hover:font-bold"
             title="Copy Email Address"
             @click="handleEmail">
                 <div>
                     Email: {{ email }}
                 </div>
                 <div v-show="emailCopied" class="scale-125 flex items-center">
-                    <ClipboardDocumentCheckIcon class="size-4 text-text-dark" />
+                    <ClipboardDocumentCheckIcon class="size-4 text-text-lg" />
                 </div>
             </button>   
             <button
-            class="flex flex-row space-x-2 justify-self-center"
+            class="group flex flex-row pb-5 space-x-2 justify-self-center hover:font-bold"
             title="View LinkedIn"
             @click="handleLinkedIn">
                 <div>
-                    LikedIn: {{ linkedIn }}
+                    LinkedIn: 
+                </div>
+                <div class="group-hover:underline">
+                    {{ linkedIn }}
                 </div>
             </button>   
             <button
-            class="flex flex-row space-x-2 justify-self-center"
+            class="group flex flex-row pb-5 space-x-2 justify-self-center hover:font-bold"
             title="View GitHub"
             @click="handleGitHub">
                 <div>
-                    GitHub: {{ gitHub }}
+                    GitHub:
                 </div>
+                <div class="group-hover:underline">
+                    {{ gitHub }}
+                </div>
+
             </button>   
         </div>
     </div>
