@@ -11,8 +11,17 @@
 		</div>
 
 		<div
-			class="mx-16 my-16 mt-40 flex flex-col gap-y-8 md:mx-14 lg:mx-20"
-		></div>
+			class="mx-16 my-16 mt-40 flex flex-col md:mx-14 lg:mx-20"
+		>
+            <div class="grid grid-cols-5 gap-3">
+            <div v-for="x in [1,2,3,4,5,6,7,8,9]">
+                <GridImg 
+                    src="/images/about-me-guitar.webp"
+                    alt="playing guitar, credit: John Grubbs rockslidephotography"
+                />
+            </div>
+            </div>
+        </div>
 	</div>
 </template>
 
