@@ -94,39 +94,37 @@ const filter = computed(() => {
 
 // use filters object on content list
 const searchResults = computed(() => {
-    let filteredContent = props.content;
+    let filteredContent = [];
 
-    for (let i = 0; i < filteredContent.length; i++) {
+    console.log("");
+    for (let i = 0; i < props.content.length; i++) {
+        console.log(props.content[i].title);
         checks: {
             // check for title inclusion
-            if (!filteredContent[i].title.toLowerCase().includes(filter.value.title)) {
-                filteredContent = filteredContent.toSpliced(i, 1);
+            if (!props.content[i].title.toLowerCase().includes(filter.value.title)) {
                 break checks;
             }
 
             // check for tag inclusion
             for (const tag of filter.value.tags) {
-                if (tag.sign == "p" && !filteredContent[i].tags.includes(tag.value)) {
-                    filteredContent = filteredContent.toSpliced(i, 1);
+                if (tag.sign == "p" && !props.content[i].tags.includes(tag.value)) {
                     break checks;
                 }
-                else if (tag.sign =="n" && filteredContent[i].tags.includes(tag.value)) {
-                    filteredContent = filteredContent.toSpliced(i, 1);
+                else if (tag.sign =="n" && props.content[i].tags.includes(tag.value)) {
                     break checks;
                 }
             }
 
             // check date for inclusion
             for (const date of filter.value.dates) {
-                if (date.sign == "p" && !dateIncludes(filteredContent[i].dates, date.value)) {
-                    filteredContent = filteredContent.toSpliced(i, 1);
+                if (date.sign == "p" && !dateIncludes(props.content[i].dates, date.value)) {
                     break checks;
                 }
-                else if (date.sign == "n" && dateIncludes(filteredContent[i].dates, date.value)) {
-                    filteredContent = filteredContent.toSpliced(i, 1);
+                else if (date.sign == "n" && dateIncludes(props.content[i].dates, date.value)) {
                     break checks;
                 }
             }
+            filteredContent.push(props.content[i]);
         }
     }
 
