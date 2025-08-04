@@ -13,6 +13,7 @@
 		<div
 			class="mx-16 my-16 mt-40 flex flex-col md:mx-14 lg:mx-20"
 		>
+            <CombiFilter :content="images" placeholder="Search Gallery Images" />
             <div class="grid grid-cols-5 gap-3">
             <div v-for="x in [1,2,3,4,5,6,7,8,9]">
                 <GridImg 
@@ -25,4 +26,12 @@
 	</div>
 </template>
 
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+const images = [
+    {
+        title: "probably nothing",
+        tags: ["tag"],
+        dates: [{start: "2024-08-19", end: "now"}],
+    },
+];
+</script>
