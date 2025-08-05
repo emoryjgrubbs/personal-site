@@ -29,44 +29,19 @@
 <script lang="ts" setup>
 const images = [
     {
-        title: "01",
+        title: "alpha",
         tags: ["tag"],
-        dates: [{start: "2024-08-19", end: "now"}],
+        dates: [{start: "2024-01-05", end: "now"}],
     },
     {
-        title: "02",
+        title: "gamma",
         tags: ["tag"],
-        dates: [{start: "2024-08-19", end: "now"}],
+        dates: [{start: "2024-06-01", end: "2025-06-01"}],
     },
     {
-        title: "03",
+        title: "beta",
         tags: ["tag"],
-        dates: [{start: "2024-08-19", end: "now"}],
-    },
-    {
-        title: "04",
-        tags: ["tag"],
-        dates: [{start: "2024-08-19", end: "now"}],
-    },
-    {
-        title: "05",
-        tags: ["tag"],
-        dates: [{start: "2024-08-19", end: "now"}],
-    },
-    {
-        title: "06",
-        tags: ["tag"],
-        dates: [{start: "2024-08-19", end: "now"}],
-    },
-    {
-        title: "07",
-        tags: ["tag"],
-        dates: [{start: "2024-08-19", end: "now"}],
-    },
-    {
-        title: "08",
-        tags: ["tag"],
-        dates: [{start: "2024-08-19", end: "now"}],
+        dates: [{start: "2025-01-01", end: "2025-01-05"}],
     },
 ];
 </script>

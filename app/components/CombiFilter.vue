@@ -1,11 +1,7 @@
 <template>
     <input :placeholder="props.placeholder" :title="props.placeholder" v-model="searchTerm" class="bg-columbia-blue outline-black w-full text-2xl rounded-md px-3"/>
 
-    <p> content = {{ props.content }} </p>
-    <p> title = {{ filter.title }} </p>
-    <p> tags = {{ filter.tags }} </p>
-    <p> dates = {{ filter.dates }} </p>
-    <p> filtered content = {{ searchResults }} </p>
+    <p class="text-2xl"> filtered content = {{ searchResults }} </p>
 </template>
 
 <script lang="ts" setup>
@@ -21,6 +17,7 @@ const filter = computed(() => {
     let title = "";
     let tags = [];
     let dates = [];
+    let sorts = [];
 
     let box = "n";
     let quote = "";
@@ -41,6 +38,7 @@ const filter = computed(() => {
             // switch to appropriate box
             else if (char == "$") { box = "t"; }
             else if (char == "@") { box = "d"; }
+            else if (char == "^") { box = "s"; }
             // set escape flag 
             else if (char == "\\") { escape = true; }
 
@@ -77,28 +75,42 @@ const filter = computed(() => {
 
             else { current = current.concat(char); }
         }
+        // adding a sort order
+        else if (box == "s") {
+            if (quote == "" && char == " ") {
+                sorts.push({sign: sign, value: current});
+                sign = "p";
+                current = "";
+                box = "n";
+            }
+            else if (quote == "" && char == "\"") { quote = "\"" }
+            else if (quote == "\"" && char == "\"") { quote = "" }
+            else if (quote == "" && char == "\'") { quote = "\'" }
+            else if (quote == "\'" && char == "\'") { quote = "" }
+
+            else { current = current.concat(char); }
+        }
     }
     // if there is a bit left of a tag or date add it
     if (box == "t" && current.length > 0) {
         tags.push({sign: sign, value: current});
-        sign = "p";
     }
     else if (box == "d" && current.length > 0) {
         dates.push({sign: sign, value: current});
-        sign = "p";
+    }
+    else if (box == "s" && current.length > 0) {
+        sorts.push({sign: sign, value: current});
     }
 
     // return filters object
-    return { title: title.trim(), tags: tags, dates: dates };
+    return { title: title.trim(), tags: tags, dates: dates, sorts: sorts };
 });
 
 // use filters object on content list
 const searchResults = computed(() => {
     let filteredContent = [];
 
-    console.log("");
     for (let i = 0; i < props.content.length; i++) {
-        console.log(props.content[i].title);
         checks: {
             // check for title inclusion
             if (!props.content[i].title.toLowerCase().includes(filter.value.title)) {
@@ -125,6 +137,82 @@ const searchResults = computed(() => {
                 }
             }
             filteredContent.push(props.content[i]);
+        }
+    }
+
+    for (const sort of filter.value.sorts) {
+        let lowercaseSortValue = sort.value.toLowerCase();
+        if (lowercaseSortValue == "alpha") {
+            if (sort.sign == "p") {
+                filteredContent.sort(
+                    function(a, b){
+                        let x = a.title;
+                        let y = b.title;
+                        if (x < y) {return -1;}
+                        if (x > y) {return 1;}
+                        return 0;
+                    }
+                );
+            }
+            else if (sort.sign == "n") {
+                filteredContent.sort(
+                    function(a, b){
+                        let x = a.title;
+                        let y = b.title;
+                        if (x < y) {return 1;}
+                        if (x > y) {return -1;}
+                        return 0;
+                    }
+                );
+            }
+        }
+        else if (lowercaseSortValue == "start" || lowercaseSortValue == "upload" || lowercaseSortValue == "original") {
+            if (sort.sign == "p") {
+                filteredContent.sort(
+                    function(a, b){
+                        let x = a.dates[0].start;
+                        let y = b.dates[0].start;
+                        if (x < y) {return -1;}
+                        if (x > y) {return 1;}
+                        return 0;
+                    }
+                );
+            }
+            else if (sort.sign == "n") {
+                filteredContent.sort(
+                    function(a, b){
+                        let x = a.dates[0].start;
+                        let y = b.dates[0].start;
+                        if (x < y) {return 1;}
+                        if (x > y) {return -1;}
+                        return 0;
+                    }
+                );
+            }
+        }
+        else if (lowercaseSortValue == "end" || lowercaseSortValue == "modify" || lowercaseSortValue == "modified" || lowercaseSortValue == "latest") {
+            if (sort.sign == "p") {
+                filteredContent.sort(
+                    function(a, b){
+                        let x = a.dates[a.dates.length-1].end;
+                        let y = b.dates[b.dates.length-1].end;
+                        if (x < y) {return -1;}
+                        if (x > y) {return 1;}
+                        return 0;
+                    }
+                );
+            }
+            else if (sort.sign == "n") {
+                filteredContent.sort(
+                    function(a, b){
+                        let x = a.dates[a.dates.length-1].end;
+                        let y = b.dates[b.dates.length-1].end;
+                        if (x < y) {return 1;}
+                        if (x > y) {return -1;}
+                        return 0;
+                    }
+                );
+            }
         }
     }
 
