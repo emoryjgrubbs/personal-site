@@ -1,10 +1,165 @@
 <template>
-	<input
-		:placeholder="props.placeholder"
-		:title="props.placeholder"
-		v-model="searchTerm"
-		class="bg-columbia-blue w-full rounded-md px-3 text-2xl outline-black"
-	/>
+	<div class="flex flex-col gap-3 text-2xl">
+		<!--Combined Search Line-->
+		<label>
+			Combined {{ props.placeholder }} Search
+			<div class="flex w-full flex-row gap-2">
+				<input
+					placeholder="Tile, $Tags, @Dates, or ^Order"
+					v-model="searchTerm"
+					class="bg-columbia-blue h-8 w-full rounded-l-md px-3 text-xl outline-black"
+				/>
+				<div
+					class="bg-columbia-blue flex cursor-pointer rounded-r-md px-3"
+					@click="toggleBreakoutBar"
+				>
+					<Icon
+						v-if="false"
+						name="famicons:filter"
+						class="self-center"
+					/>
+					<Icon
+						v-if="true"
+						name="famicons:options"
+						class="self-center"
+					/>
+				</div>
+			</div>
+		</label>
+		<!--Breakout Options Line-->
+		<div v-if="showBreakoutBar" class="flex flex-row gap-2 text-xl">
+			<!--Input for Tags-->
+			<label class="w-full">
+				Tag Input
+				<input
+					placeholder="Tags"
+					v-model="tagTerm"
+					class="bg-columbia-blue h-8 w-full rounded-l-md px-3 outline-black"
+				/>
+			</label>
+			<!--Input for Date Range-->
+			<label>
+				Start of Range
+				<input
+					v-model="dateTerm.start"
+					type="date"
+					class="bg-columbia-blue h-8 w-full px-3 outline-black"
+					:max="dateTerm.end || today"
+				/>
+			</label>
+			<label>
+				End of Range
+				<input
+					v-model="dateTerm.end"
+					type="date"
+					class="bg-columbia-blue h-8 w-full px-3 outline-black"
+					:min="dateTerm.start"
+					:max="today"
+				/>
+			</label>
+			<!--Input for Sort Order-->
+			<label class="relative">
+				Order
+				<button
+					class="bg-columbia-blue h-8 min-w-56 cursor-pointer rounded-r-md px-3 text-left outline-black"
+					@click="toggleSortMenu"
+				>
+					<div
+						v-if="sortTerm.value == 'Default'"
+						class="text-gray-500"
+					>
+						Default
+					</div>
+					<div class="flex flex-row gap-3" v-else>
+						<icon
+							v-if="sortTerm.sign == 'p'"
+							name="famicons:arrow-down"
+							class="self-center"
+							@click="sortTerm.sign = 'n'"
+						/>
+						<Icon
+							v-if="sortTerm.sign == 'n'"
+							name="famicons:arrow-up"
+							class="self-center"
+							@click="sortTerm.sign = 'p'"
+						/>
+
+						{{ sortTerm.value }}
+					</div>
+				</button>
+
+				<!--Sort Order Dropdown-->
+				<div
+					v-if="showSortMenu"
+					class="bg-columbia-blue absolute top-18 right-0 flex min-w-56 flex-col gap-3 rounded-md px-3 py-1"
+				>
+					<button
+						class="flex cursor-pointer flex-row gap-3 pl-8"
+						@click="selectOrder('Default')"
+					>
+						Default
+					</button>
+					<button
+						class="flex cursor-pointer flex-row gap-3"
+						@click="selectOrder('Alphabetical')"
+					>
+						<Icon
+							v-if="
+								sortTerm.value == 'Alphabetical' &&
+								sortTerm.sign == 'n'
+							"
+							name="famicons:arrow-up"
+							class="self-center"
+						/>
+						<Icon
+							v-else
+							name="famicons:arrow-down cursor-pointer"
+							class="self-center"
+						/>
+						Alphabetical
+					</button>
+					<button
+						class="flex cursor-pointer flex-row gap-3"
+						@click="selectOrder('Date Uploaded')"
+					>
+						<Icon
+							v-if="
+								sortTerm.value == 'Date Uploaded' &&
+								sortTerm.sign == 'n'
+							"
+							name="famicons:arrow-up"
+							class="self-center"
+						/>
+						<Icon
+							v-else
+							name="famicons:arrow-down cursor-pointer"
+							class="self-center"
+						/>
+						Date Uploaded
+					</button>
+					<button
+						class="flex cursor-pointer flex-row gap-3"
+						@click="selectOrder('Date Modified')"
+					>
+						<Icon
+							v-if="
+								sortTerm.value == 'Date Modified' &&
+								sortTerm.sign == 'n'
+							"
+							name="famicons:arrow-up"
+							class="self-center"
+						/>
+						<Icon
+							v-else
+							name="famicons:arrow-down cursor-pointer"
+							class="self-center"
+						/>
+						Date Modified
+					</button>
+				</div>
+			</label>
+		</div>
+	</div>
 </template>
 
 <script lang="ts" setup>
@@ -15,7 +170,37 @@ const props = defineProps({
 
 const emit = defineEmits(["searchUpdate"]);
 
+//page control variables & functions
+const showBreakoutBar = ref(false);
+function toggleBreakoutBar() {
+	showBreakoutBar.value = !showBreakoutBar.value;
+}
+
+const showSortMenu = ref(false);
+function toggleSortMenu() {
+	showSortMenu.value = !showSortMenu.value;
+}
+function selectOrder(value) {
+	if (sortTerm.value.value == value) {
+		if (sortTerm.value.sign == "p") {
+			sortTerm.value.sign = "n";
+		} else {
+			sortTerm.value.sign = "p";
+		}
+	} else {
+		sortTerm.value.sign = "p";
+		sortTerm.value.value = value;
+	}
+}
+
+//input filter variables
 const searchTerm = ref("");
+const tagTerm = ref("");
+const dateTerm = ref({ start: "", end: "" });
+const sortTerm = ref({ sign: "p", value: "Default" });
+
+// get current date for limiting date range input
+const today = new Date().toISOString().split("T")[0];
 
 // compute the filters based on the search input
 const filter = computed(() => {
@@ -30,8 +215,9 @@ const filter = computed(() => {
 	let sign = "p";
 	let current = "";
 
-	const lowercaseTerm = searchTerm.value.toLowerCase();
-	for (const char of lowercaseTerm) {
+	// build filter from combined search
+	const lowercaseSearchTerm = searchTerm.value.toLowerCase();
+	for (const char of lowercaseSearchTerm) {
 		// base case, looking haven't seen any special characters yet
 		if (box == "n") {
 			// escaped (act as standard no matter what)
@@ -40,12 +226,10 @@ const filter = computed(() => {
 				title = title.concat(char);
 				escape = false;
 			}
-
 			// negate next control sequence
 			else if (char == "!") {
 				sign = "n";
 			}
-
 			// switch to appropriate box
 			else if (char == "$") {
 				box = "t";
@@ -58,13 +242,13 @@ const filter = computed(() => {
 			else if (char == "\\") {
 				escape = true;
 			}
-
 			// standard behavior
 			else {
 				sign = "p";
 				title = title.concat(char);
 			}
 		}
+
 		// adding a tag to filter by
 		else if (box == "t") {
 			if (quote == "" && char == " ") {
@@ -84,6 +268,7 @@ const filter = computed(() => {
 				current = current.concat(char);
 			}
 		}
+
 		// adding a date to filter by
 		else if (box == "d") {
 			if (quote == "" && char == " ") {
@@ -103,6 +288,7 @@ const filter = computed(() => {
 				current = current.concat(char);
 			}
 		}
+
 		// adding a sort order
 		else if (box == "s") {
 			if (quote == "" && char == " ") {
@@ -123,6 +309,7 @@ const filter = computed(() => {
 			}
 		}
 	}
+
 	// if there is a bit left of a tag or date add it
 	if (box == "t" && current.length > 0) {
 		tags.push({ sign: sign, value: current });
@@ -130,6 +317,62 @@ const filter = computed(() => {
 		dates.push({ sign: sign, value: current });
 	} else if (box == "s" && current.length > 0) {
 		sorts.push({ sign: sign, value: current });
+	}
+
+	current = "";
+
+	// build filter from breakout tag input
+	const lowercaseTagTerm = tagTerm.value.toLowerCase();
+	for (const char of lowercaseTagTerm) {
+		if (quote == "" && char == " ") {
+			tags.push({ sign: sign, value: current });
+			sign = "p";
+			current = "";
+		} else if (quote == "" && char == '"') {
+			quote = '"';
+		} else if (quote == '"' && char == '"') {
+			quote = "";
+		} else if (quote == "" && char == "\'") {
+			quote = "\'";
+		} else if (quote == "\'" && char == "\'") {
+			quote = "";
+		} else {
+			current = current.concat(char);
+		}
+	}
+
+	if (current.length > 0) {
+		tags.push({ sign: sign, value: current });
+	}
+
+	// build filter from breakout date inputs
+	// check that at lease one of the breakout date inputs is entered
+	if (dateTerm.value.start != "" || dateTerm.value.end != "") {
+		let breakoutDate;
+		if (dateTerm.value.start == "") {
+			breakoutDate = "1970-01-01";
+		} else {
+			breakoutDate = dateTerm.value.start;
+		}
+		if (dateTerm.value.end == "") {
+			breakoutDate = breakoutDate.concat(">now");
+		} else {
+			breakoutDate = breakoutDate.concat(">", dateTerm.value.end);
+		}
+
+		dates.push({ sign: "p", value: breakoutDate });
+	}
+
+	if (sortTerm.value.value != "Default") {
+		let breakoutOrder = sortTerm.value.value;
+		if (sortTerm.value.value == "Alphabetical") {
+			breakoutOrder = "alpha";
+		} else if (sortTerm.value.value == "Date Uploaded") {
+			breakoutOrder = "start";
+		} else if (sortTerm.value.value == "Date Modified") {
+			breakoutOrder = "end";
+		}
+		sorts.push({ sign: sortTerm.value.sign, value: breakoutOrder });
 	}
 
 	// return filters object
@@ -275,8 +518,6 @@ const searchResults = computed(() => {
 			}
 		}
 	}
-
-	emit("searchUpdate", filteredContent);
 
 	return filteredContent;
 });
@@ -472,4 +713,8 @@ function validateDate(date) {
 	const datePattern = /\d{4}.\d{2}.\d{2}/; //regular expression of format YYYY_MM_DD
 	return datePattern.test(date);
 }
+
+watch(searchResults, (newResults) => {
+	emit("searchUpdate", newResults);
+});
 </script>
