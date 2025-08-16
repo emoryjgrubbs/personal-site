@@ -1,6 +1,19 @@
 <template>
 	<div
+        v-if="props.crop"
 		class="flex aspect-square items-center overflow-hidden object-none select-none"
+		@click="maximize"
+	>
+		<NuxtImg
+			:src="props.src"
+			:alt="props.alt"
+			loading="lazy"
+			draggable="false"
+		/>
+	</div>
+	<div
+        v-else
+		class="flex items-center overflow-hidden object-none select-none"
 		@click="maximize"
 	>
 		<NuxtImg
@@ -39,6 +52,7 @@
 const props = defineProps({
 	src: String,
 	alt: String,
+    crop: Boolean,
 });
 
 const expanded = ref(false);
