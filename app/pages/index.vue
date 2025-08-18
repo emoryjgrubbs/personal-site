@@ -3,13 +3,12 @@
 		<div class="mx-16 my-16 flex flex-col gap-y-8 md:mx-14 lg:mx-20">
 			<!--about me-->
 			<div class="flex flex-row items-center gap-x-16 max-md:flex-col">
-				<NuxtImg
-					src="/images/about-me-guitar.webp"
-					alt="playing guitar, credit: John Grubbs rockslidephotography"
-					class="w-7/12 select-none max-sm:w-9/12 md:w-5/12"
-					loading="lazy"
-					draggable="false"
-				/>
+				<div class="w-7/12 select-none max-sm:w-9/12 md:w-5/12">
+					<ImgWrap
+						src="/images/about-me-guitar.webp"
+						alt="playing guitar, credit: John Grubbs rockslidephotography"
+					/>
+				</div>
 				<div class="flex w-7/12 flex-col gap-y-4 max-sm:w-11/12">
 					<h1 class="text-center text-3xl font-semibold">About Me</h1>
 					<p class="text-xl">
@@ -23,68 +22,98 @@
 			</div>
 			<!--Projects-->
 			<div class="flex flex-row items-center gap-x-16 max-md:flex-col">
-				<div
-					class="order-2 aspect-3/4 w-7/12 bg-slate-500 select-none max-sm:w-9/12 md:w-5/12"
-				></div>
-				<div class="flex w-7/12 flex-col gap-y-4 max-sm:w-11/12">
-					<div class="flex justify-center">
-						<NuxtLink
-							to="/Projects"
-							class="flex w-60 cursor-pointer justify-evenly rounded-lg bg-black py-2 text-center text-3xl font-semibold text-white"
+				<NuxtLink
+					to="/Projects"
+					class="group relative order-2 w-7/12 cursor-pointer select-none max-sm:w-9/12 md:w-5/12"
+				>
+					<ImgWrap
+						src="/images/about-me-guitar.webp"
+						alt="playing guitar, credit: John Grubbs rockslidephotography"
+					/>
+					<div
+						class="group-hover:text-columbia-blue group-hover-transition absolute top-0 flex h-full w-full cursor-pointer justify-center text-white backdrop-blur-md duration-300 ease-in group-hover:backdrop-blur-none"
+					>
+						<div
+							class="flex w-48 justify-evenly self-center rounded-lg py-2 text-center text-3xl font-semibold mix-blend-difference duration-300 ease-in group-hover:scale-125 group-hover:transition"
 						>
-							Projects
+							View
 							<Icon
 								name="famicons:caret-forward"
 								class="self-center"
 							/>
-						</NuxtLink>
+						</div>
 					</div>
+				</NuxtLink>
+				<div class="flex w-7/12 flex-col gap-y-4 max-sm:w-11/12">
+					<div class="flex justify-center"></div>
+					<h1 class="text-center text-3xl font-semibold">
+						Project Directory
+					</h1>
 					<p class="text-xl">Write ups on projects</p>
 				</div>
 			</div>
 			<!--Recpies-->
 			<div class="flex flex-row items-center gap-x-16 max-md:flex-col">
-				<div
-					class="aspect-3/4 w-7/12 bg-slate-500 select-none max-sm:w-9/12 md:w-5/12"
-				></div>
-				<div class="flex w-7/12 flex-col gap-y-4 max-sm:w-11/12">
-					<div class="flex justify-center">
-						<NuxtLink
-							to="/Recipes"
-							class="flex w-60 cursor-pointer justify-evenly rounded-lg bg-black py-2 text-center text-3xl font-semibold text-white"
+				<NuxtLink
+					to="/Recipes"
+					class="group relative w-7/12 cursor-pointer select-none max-sm:w-9/12 md:w-5/12"
+				>
+					<ImgWrap
+						src="/images/about-me-guitar.webp"
+						alt="playing guitar, credit: John Grubbs rockslidephotography"
+					/>
+					<div
+						class="group-hover:text-columbia-blue group-hover-transition absolute top-0 flex h-full w-full cursor-pointer justify-center text-white backdrop-blur-md duration-300 ease-out group-hover:backdrop-blur-none"
+					>
+						<div
+							class="flex w-48 justify-evenly self-center rounded-lg py-2 text-center text-3xl font-semibold mix-blend-difference duration-300 ease-out group-hover:scale-125 group-hover:transition"
 						>
-							Recipes
+							View
 							<Icon
 								name="famicons:caret-forward"
 								class="self-center"
 							/>
-						</NuxtLink>
+						</div>
 					</div>
-					<p class="text-xl">
-						Document recipes for myself and friends
-					</p>
+				</NuxtLink>
+				<div class="flex w-7/12 flex-col gap-y-4 max-sm:w-11/12">
+					<div class="flex justify-center"></div>
+					<h1 class="text-center text-3xl font-semibold">Recpies</h1>
+					<p class="text-xl">A place to share recpies</p>
 				</div>
 			</div>
 			<!--Gallery-->
 			<div class="flex flex-row items-center gap-x-16 max-md:flex-col">
-				<div
-					class="order-2 aspect-3/4 w-7/12 bg-slate-500 select-none max-sm:w-9/12 md:w-5/12"
-				></div>
-				<div class="flex w-7/12 flex-col gap-y-4 max-sm:w-11/12">
-					<div class="flex justify-center">
-						<NuxtLink
-							to="/Gallery"
-							class="flex w-60 cursor-pointer justify-evenly rounded-lg bg-black py-2 text-center text-3xl font-semibold text-white"
+				<!--re-add order-2-->
+				<NuxtLink
+					to="/Gallery"
+					class="group relative order-2 w-7/12 cursor-pointer select-none max-sm:w-9/12 md:w-5/12"
+				>
+					<ImgWrap
+						src="/images/about-me-guitar.webp"
+						alt="playing guitar, credit: John Grubbs rockslidephotography"
+					/>
+					<div
+						class="group-hover:text-columbia-blue group-hover-transition absolute top-0 flex h-full w-full cursor-pointer justify-center text-white backdrop-blur-md duration-300 ease-in-out group-hover:backdrop-blur-none"
+					>
+						<div
+							class="flex w-48 justify-evenly self-center rounded-lg py-2 text-center text-3xl font-semibold mix-blend-difference duration-300 ease-in-out group-hover:scale-125 group-hover:transition"
 						>
-							Gallery
+							View
 							<Icon
 								name="famicons:caret-forward"
 								class="self-center"
 							/>
-						</NuxtLink>
+						</div>
 					</div>
+				</NuxtLink>
+				<div class="flex w-7/12 flex-col gap-y-4 max-sm:w-11/12">
+					<div class="flex justify-center"></div>
+					<h1 class="text-center text-3xl font-semibold">
+						Photo Gallery
+					</h1>
 					<p class="text-xl">
-						Host high quality exports of photos, with details
+						A gallery to host high quality versions of photographs.
 					</p>
 				</div>
 			</div>

@@ -9,18 +9,20 @@
 				@searchUpdate="(filterUpdate) => updateDisplay(filterUpdate)"
 				class="mb-10"
 			/>
-			<button
-				class="flex w-full cursor-pointer flex-row items-center justify-end gap-2 text-xl"
-				@click="toggleDetails"
-			>
-				<Icon
-					v-if="showDetails"
-					name="famicons:radio-button-on"
-					class=""
-				/>
-				<Icon v-else name="famicons:radio-button-off" class="" />
-				Details
-			</button>
+			<div class="flex w-full justify-end">
+				<button
+					class="flex w-fit cursor-pointer flex-row items-center gap-2 text-xl"
+					@click="toggleDetails"
+				>
+					<Icon
+						v-if="showDetails"
+						name="famicons:radio-button-on"
+						class=""
+					/>
+					<Icon v-else name="famicons:radio-button-off" class="" />
+					Details
+				</button>
+			</div>
 
 			<div class="grid grid-cols-5 gap-3" v-if="!showDetails">
 				<div v-for="image in filteredImages">

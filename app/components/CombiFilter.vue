@@ -91,7 +91,7 @@
 				<!--Sort Order Dropdown-->
 				<div
 					v-if="showSortMenu"
-					class="bg-columbia-blue absolute top-18 right-0 flex min-w-56 flex-col gap-3 rounded-md px-3 py-1"
+					class="bg-columbia-blue absolute top-18 right-0 z-20 flex min-w-56 flex-col gap-3 rounded-md px-3 py-1"
 				>
 					<button
 						class="flex cursor-pointer flex-row gap-3 pl-8"
