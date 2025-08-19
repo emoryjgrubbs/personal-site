@@ -9,24 +9,16 @@
 					v-model="searchTerm"
 					class="bg-columbia-blue h-8 w-full rounded-l-md px-3 text-xl outline-black"
 				/>
-				<div
+				<button
 					class="bg-columbia-blue flex cursor-pointer rounded-r-md px-3"
 					@click="toggleBreakoutBar"
+					title="Expanded Filters"
 				>
-					<Icon
-						v-if="false"
-						name="famicons:filter"
-						class="self-center"
-					/>
-					<Icon
-						v-if="true"
-						name="famicons:options"
-						class="self-center"
-					/>
-				</div>
+					<Icon name="famicons:options" class="self-center" />
+				</button>
 			</div>
 		</label>
-		<!--Breakout Options Line-->
+		<!--Breakout Options Lines-->
 		<div v-if="showBreakoutBar" class="flex flex-row gap-2 text-xl">
 			<!--Input for Tags-->
 			<label class="w-full">
@@ -63,6 +55,7 @@
 				<button
 					class="bg-columbia-blue h-8 min-w-56 cursor-pointer rounded-r-md px-3 text-left outline-black"
 					@click="toggleSortMenu"
+					title="Show Sorting Options"
 				>
 					<div
 						v-if="sortTerm.value == 'Default'"
@@ -71,18 +64,28 @@
 						Default
 					</div>
 					<div class="flex flex-row gap-3" v-else>
-						<icon
-							v-if="sortTerm.sign == 'p'"
-							name="famicons:arrow-down"
-							class="self-center"
-							@click="sortTerm.sign = 'n'"
-						/>
-						<Icon
+						<button
 							v-if="sortTerm.sign == 'n'"
-							name="famicons:arrow-up"
-							class="self-center"
 							@click="sortTerm.sign = 'p'"
-						/>
+							title="Switch to Descending"
+							class="flex"
+						>
+							<Icon
+								name="famicons:arrow-up"
+								class="self-center"
+							/>
+						</button>
+						<button
+							v-else
+							@click="sortTerm.sign = 'n'"
+							title="Switch to Ascending"
+							class="flex"
+						>
+							<Icon
+								name="famicons:arrow-down"
+								class="self-center"
+							/>
+						</button>
 
 						{{ sortTerm.value }}
 					</div>
@@ -96,12 +99,14 @@
 					<button
 						class="flex cursor-pointer flex-row gap-3 pl-8"
 						@click="selectOrder('Default')"
+						title="Use Default Sort Order"
 					>
 						Default
 					</button>
 					<button
 						class="flex cursor-pointer flex-row gap-3"
 						@click="selectOrder('Alphabetical')"
+						title="Sort Alphabetically"
 					>
 						<Icon
 							v-if="
@@ -121,6 +126,7 @@
 					<button
 						class="flex cursor-pointer flex-row gap-3"
 						@click="selectOrder('Date Uploaded')"
+						title="Sort By Date Uploaded"
 					>
 						<Icon
 							v-if="
@@ -140,6 +146,7 @@
 					<button
 						class="flex cursor-pointer flex-row gap-3"
 						@click="selectOrder('Date Modified')"
+						title="Sort By Date Modified"
 					>
 						<Icon
 							v-if="
@@ -158,6 +165,49 @@
 					</button>
 				</div>
 			</label>
+		</div>
+		<div v-if="showBreakoutBar" class="flex flex-col text-xl">
+			<label> Active Tags </label>
+			<div class="flex flex-wrap gap-2">
+				<div v-for="tag in filter.tags">
+					<button
+						class="bg-columbia-blue flex cursor-pointer gap-2 rounded-md pr-2 pl-3 whitespace-nowrap"
+						v-if="tag.sign == 'p'"
+						@click="invertTag(tag.value)"
+						title="Invert Tag to Exclude"
+					>
+						{{ tag.value }}
+						<button
+							@click="removeTag(tag.value)"
+							class="flex"
+							title="Remove Tag From Filters"
+						>
+							<Icon
+								name="famicons:close"
+								class="cursor-pointer self-center"
+							/>
+						</button>
+					</button>
+					<button
+						class="flex cursor-pointer gap-2 rounded-md bg-black pr-2 pl-3 text-white"
+						v-else
+						@click="invertTag(tag.value)"
+						title="Invert Tag to Include"
+					>
+						{{ tag.value }}
+						<button
+							@click="removeTag(tag.value)"
+							class="flex"
+							title="Remove Tag From Filters"
+						>
+							<Icon
+								name="famicons:close"
+								class="cursor-pointer self-center"
+							/>
+						</button>
+					</button>
+				</div>
+			</div>
 		</div>
 	</div>
 </template>

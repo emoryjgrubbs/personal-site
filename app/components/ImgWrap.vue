@@ -1,8 +1,9 @@
 <template>
-	<div
+	<button
 		v-if="props.crop"
 		class="flex aspect-square cursor-pointer items-center overflow-hidden select-none"
 		@click="maximize"
+		title="Expand Image"
 	>
 		<NuxtImg
 			class="h-full w-full object-cover"
@@ -11,30 +12,34 @@
 			loading="lazy"
 			draggable="false"
 		/>
-	</div>
-	<div v-else>
+	</button>
+	<button v-else @click="maximize" title="Expand Image">
 		<NuxtImg
 			class="cursor-pointer select-none"
-			@click="maximize"
 			:src="props.src"
 			:alt="props.alt"
 			loading="lazy"
 			draggable="false"
 		/>
-	</div>
+	</button>
 
 	<div
 		v-if="expanded"
-		class="fixed top-0 left-0 flex h-screen w-screen items-center justify-center select-none"
+		class="fixed top-0 left-0 z-40 flex h-screen w-screen items-center justify-center select-none"
 	>
-		<div class="h-full w-full bg-black/45" @click="minimize"></div>
+		<button
+			class="h-full w-full bg-black/45"
+			@click="minimize"
+			title="Close Image"
+		></button>
 		<div class="center-0 absolute flex h-5/6 max-w-5/6">
-			<div
+			<button
 				class="bg-alice-blue justify-self-right absolute -right-16 flex h-14 w-14 cursor-pointer items-center justify-center rounded-full"
 				@click="minimize"
+				title="Close Image"
 			>
 				<Icon name="famicons:close" size="28" />
-			</div>
+			</button>
 			<NuxtImg
 				class="bg-alice-blue max-h-full max-w-full self-center rounded-lg object-scale-down p-8"
 				:src="props.src"

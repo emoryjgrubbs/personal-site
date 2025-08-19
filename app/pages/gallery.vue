@@ -13,6 +13,7 @@
 				<button
 					class="flex w-fit cursor-pointer flex-row items-center gap-2 text-xl"
 					@click="toggleDetails"
+					title="Show Image Details"
 				>
 					<Icon
 						v-if="showDetails"

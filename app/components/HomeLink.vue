@@ -3,6 +3,7 @@
 		<NuxtLink
 			to="/"
 			class="flex w-40 cursor-pointer justify-evenly rounded-lg bg-black py-2 text-center text-3xl font-semibold text-white"
+			title="Return Home"
 		>
 			<Icon name="famicons:caret-back" class="self-center" />
 			<div v-show="true">Home</div>

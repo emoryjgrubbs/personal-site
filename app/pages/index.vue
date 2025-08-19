@@ -5,7 +5,7 @@
 			<div class="flex flex-row items-center gap-x-16 max-md:flex-col">
 				<div class="w-7/12 select-none max-sm:w-9/12 md:w-5/12">
 					<ImgWrap
-						src="/images/about-me-guitar.webp"
+						src="/images/home/about-me-guitar.webp"
 						alt="playing guitar, credit: John Grubbs rockslidephotography"
 					/>
 				</div>
@@ -25,16 +25,17 @@
 				<NuxtLink
 					to="/Projects"
 					class="group relative order-2 w-7/12 cursor-pointer select-none max-sm:w-9/12 md:w-5/12"
+					title="Navigate To Projects"
 				>
 					<ImgWrap
-						src="/images/about-me-guitar.webp"
+						src="/images/home/about-me-guitar.webp"
 						alt="playing guitar, credit: John Grubbs rockslidephotography"
 					/>
 					<div
-						class="group-hover:text-columbia-blue group-hover-transition absolute top-0 flex h-full w-full cursor-pointer justify-center text-white backdrop-blur-md duration-300 ease-in group-hover:backdrop-blur-none"
+						class="group-hover:text-columbia-blue group-hover-transition absolute top-0 flex h-full w-full cursor-pointer justify-center text-white backdrop-blur-md duration-300 ease-in-out group-hover:backdrop-blur-none"
 					>
 						<div
-							class="flex w-48 justify-evenly self-center rounded-lg py-2 text-center text-3xl font-semibold mix-blend-difference duration-300 ease-in group-hover:scale-125 group-hover:transition"
+							class="flex w-48 justify-evenly self-center rounded-lg py-2 text-center text-3xl font-semibold duration-300 ease-in-out group-hover:scale-125 group-hover:transition"
 						>
 							View
 							<Icon
@@ -57,16 +58,17 @@
 				<NuxtLink
 					to="/Recipes"
 					class="group relative w-7/12 cursor-pointer select-none max-sm:w-9/12 md:w-5/12"
+					title="Navigate To Recipes"
 				>
 					<ImgWrap
-						src="/images/about-me-guitar.webp"
+						src="/images/home/about-me-guitar.webp"
 						alt="playing guitar, credit: John Grubbs rockslidephotography"
 					/>
 					<div
-						class="group-hover:text-columbia-blue group-hover-transition absolute top-0 flex h-full w-full cursor-pointer justify-center text-white backdrop-blur-md duration-300 ease-out group-hover:backdrop-blur-none"
+						class="group-hover:text-columbia-blue group-hover-transition absolute top-0 flex h-full w-full cursor-pointer justify-center text-white backdrop-blur-md duration-300 ease-in-out group-hover:backdrop-blur-none"
 					>
 						<div
-							class="flex w-48 justify-evenly self-center rounded-lg py-2 text-center text-3xl font-semibold mix-blend-difference duration-300 ease-out group-hover:scale-125 group-hover:transition"
+							class="flex w-48 justify-evenly self-center rounded-lg py-2 text-center text-3xl font-semibold duration-300 ease-in-out group-hover:scale-125 group-hover:transition"
 						>
 							View
 							<Icon
@@ -88,16 +90,17 @@
 				<NuxtLink
 					to="/Gallery"
 					class="group relative order-2 w-7/12 cursor-pointer select-none max-sm:w-9/12 md:w-5/12"
+					title="Navigate To Gallery"
 				>
 					<ImgWrap
-						src="/images/about-me-guitar.webp"
+						src="/images/home/camera-setup.webp"
 						alt="playing guitar, credit: John Grubbs rockslidephotography"
 					/>
 					<div
 						class="group-hover:text-columbia-blue group-hover-transition absolute top-0 flex h-full w-full cursor-pointer justify-center text-white backdrop-blur-md duration-300 ease-in-out group-hover:backdrop-blur-none"
 					>
 						<div
-							class="flex w-48 justify-evenly self-center rounded-lg py-2 text-center text-3xl font-semibold mix-blend-difference duration-300 ease-in-out group-hover:scale-125 group-hover:transition"
+							class="flex w-48 justify-evenly self-center rounded-lg py-2 text-center text-3xl font-semibold duration-300 ease-in-out group-hover:scale-125 group-hover:transition"
 						>
 							View
 							<Icon
