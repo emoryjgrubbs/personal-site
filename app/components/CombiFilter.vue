@@ -10,7 +10,7 @@
 					class="bg-columbia-blue h-8 w-full rounded-l-md px-3 text-xl outline-black"
 				/>
 				<button
-					class="bg-columbia-blue flex cursor-pointer rounded-r-md px-3"
+					class="bg-columbia-blue flex cursor-pointer rounded-r-md px-3 transition ease-in-out hover:scale-105"
 					@click="toggleBreakoutBar"
 					title="Expanded Filters"
 				>
@@ -53,7 +53,7 @@
 			<label class="relative">
 				Order
 				<button
-					class="bg-columbia-blue h-8 min-w-56 cursor-pointer rounded-r-md px-3 text-left outline-black"
+					class="bg-columbia-blue h-8 min-w-56 cursor-pointer rounded-r-md px-3 text-left outline-black transition ease-in-out hover:scale-102"
 					@click="toggleSortMenu"
 					title="Show Sorting Options"
 				>

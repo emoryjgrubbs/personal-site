@@ -11,7 +11,7 @@
 			/>
 			<div class="flex w-full justify-end">
 				<button
-					class="flex w-fit cursor-pointer flex-row items-center gap-2 text-xl"
+					class="flex w-fit cursor-pointer flex-row items-center gap-2 text-xl transition ease-in-out hover:scale-105"
 					@click="toggleDetails"
 					title="Show Image Details"
 				>

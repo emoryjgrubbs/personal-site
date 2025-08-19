@@ -7,7 +7,7 @@
 		</h1>
 		<div class="flex flex-wrap justify-evenly space-x-9 pt-4 select-none">
 			<button
-				class="group flex flex-row space-x-2 justify-self-center pb-5 hover:cursor-pointer"
+				class="group flex w-96 flex-row space-x-2 justify-self-center pb-5 transition ease-in-out hover:scale-105 hover:cursor-pointer"
 				title="Copy Email Address"
 				@click="handleEmail"
 			>
@@ -17,7 +17,7 @@
 				</div>
 			</button>
 			<button
-				class="group flex flex-row space-x-2 justify-self-center pb-5 hover:cursor-pointer"
+				class="group flex w-96 flex-row space-x-2 justify-self-center pb-5 transition ease-in-out hover:scale-105 hover:cursor-pointer"
 				title="View LinkedIn"
 				@click="handleLinkedIn"
 			>
@@ -27,7 +27,7 @@
 				</div>
 			</button>
 			<button
-				class="group flex flex-row space-x-2 justify-self-center pb-5 hover:cursor-pointer"
+				class="group flex w-96 flex-row space-x-2 justify-self-center pb-5 transition ease-in-out hover:scale-105 hover:cursor-pointer"
 				title="View GitHub"
 				@click="handleGitHub"
 			>

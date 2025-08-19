@@ -27,9 +27,11 @@
 					class="group relative order-2 w-7/12 cursor-pointer select-none max-sm:w-9/12 md:w-5/12"
 					title="Navigate To Projects"
 				>
-					<ImgWrap
+					<NuxtImg
 						src="/images/home/about-me-guitar.webp"
 						alt="playing guitar, credit: John Grubbs rockslidephotography"
+						loading="lazy"
+						draggable="false"
 					/>
 					<div
 						class="group-hover:text-columbia-blue group-hover-transition absolute top-0 flex h-full w-full cursor-pointer justify-center text-white backdrop-blur-md duration-300 ease-in-out group-hover:backdrop-blur-none"
@@ -60,9 +62,11 @@
 					class="group relative w-7/12 cursor-pointer select-none max-sm:w-9/12 md:w-5/12"
 					title="Navigate To Recipes"
 				>
-					<ImgWrap
+					<NuxtImg
 						src="/images/home/about-me-guitar.webp"
 						alt="playing guitar, credit: John Grubbs rockslidephotography"
+						loading="lazy"
+						draggable="false"
 					/>
 					<div
 						class="group-hover:text-columbia-blue group-hover-transition absolute top-0 flex h-full w-full cursor-pointer justify-center text-white backdrop-blur-md duration-300 ease-in-out group-hover:backdrop-blur-none"
@@ -92,9 +96,11 @@
 					class="group relative order-2 w-7/12 cursor-pointer select-none max-sm:w-9/12 md:w-5/12"
 					title="Navigate To Gallery"
 				>
-					<ImgWrap
+					<NuxtImg
 						src="/images/home/camera-setup.webp"
 						alt="playing guitar, credit: John Grubbs rockslidephotography"
+						loading="lazy"
+						draggable="false"
 					/>
 					<div
 						class="group-hover:text-columbia-blue group-hover-transition absolute top-0 flex h-full w-full cursor-pointer justify-center text-white backdrop-blur-md duration-300 ease-in-out group-hover:backdrop-blur-none"

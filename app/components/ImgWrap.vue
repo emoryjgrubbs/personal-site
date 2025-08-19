@@ -27,11 +27,7 @@
 		v-if="expanded"
 		class="fixed top-0 left-0 z-40 flex h-screen w-screen items-center justify-center select-none"
 	>
-		<button
-			class="h-full w-full bg-black/45"
-			@click="minimize"
-			title="Close Image"
-		></button>
+		<button class="h-full w-full bg-black/45" @click="minimize"></button>
 		<div class="center-0 absolute flex h-5/6 max-w-5/6">
 			<button
 				class="bg-alice-blue justify-self-right absolute -right-16 flex h-14 w-14 cursor-pointer items-center justify-center rounded-full"
