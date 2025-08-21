@@ -32,17 +32,20 @@
 								class="bg-columbia-blue h-8 w-full rounded-l-md px-3"
 							/>
 							<ComboboxOptions
-								class="bg-columbia-blue absolute z-20 mt-11 flex max-h-128 w-full min-w-56 flex-col gap-3 overflow-y-scroll rounded-md px-3 py-1"
+								class="bg-columbia-blue absolute z-20 mt-11 flex max-h-128 w-full min-w-56 flex-col gap-1 overflow-y-scroll overscroll-contain rounded-md p-1"
 							>
 								<ComboboxOption
 									v-show="filteredTagList == 0"
 									disabled="true"
+									class="h-8 rounded-md bg-white px-3"
+									title="No Tags to Select"
 								>
 									No Matching Tags
 								</ComboboxOption>
 								<ComboboxOption
 									v-for="tag in filteredTagList"
-									class="capitalize"
+									class="h-8 cursor-pointer rounded-md bg-white px-3 capitalize hover:bg-black hover:text-white"
+									title="Select Tag"
 									:value="tag"
 								>
 									{{ tag.value }}
@@ -63,7 +66,7 @@
 							>
 								{{ tag.value }}
 								<button
-									@click="removeTag(index)"
+									@click.stop="removeTag(index)"
 									class="flex"
 									title="Remove Tag From Filters"
 								>
@@ -81,7 +84,7 @@
 							>
 								{{ tag.value }}
 								<button
-									@click="removeTag(index)"
+									@click.stop="removeTag(index)"
 									class="flex"
 									title="Remove Tag From Filters"
 								>
@@ -160,11 +163,11 @@
 
 						<!--Sort Order Dropdown-->
 						<ListboxOptions
-							class="bg-columbia-blue absolute z-20 mt-3 flex min-w-56 flex-col gap-3 rounded-md px-3 py-1"
+							class="bg-columbia-blue absolute z-20 mt-3 flex min-w-56 flex-col gap-1 rounded-md p-1"
 						>
 							<ListboxOption
 								value="Default"
-								class="flex cursor-pointer flex-row gap-3 pl-8"
+								class="flex h-8 cursor-pointer flex-row gap-3 rounded-md bg-white px-3 pl-8 capitalize hover:bg-black hover:text-white"
 								@click="selectOrder('Default')"
 								title="Use Default Sort Order"
 							>
@@ -172,7 +175,7 @@
 							</ListboxOption>
 							<ListboxOption
 								value="Alphabetical"
-								class="flex cursor-pointer flex-row gap-3"
+								class="flex h-8 cursor-pointer flex-row gap-3 rounded-md bg-white px-3 capitalize hover:bg-black hover:text-white"
 								@click="selectOrder('Alphabetical')"
 								title="Sort Alphabetically"
 							>
@@ -193,7 +196,7 @@
 							</ListboxOption>
 							<ListboxOption
 								value="Date Uploaded"
-								class="flex cursor-pointer flex-row gap-3"
+								class="flex h-8 cursor-pointer flex-row gap-3 rounded-md bg-white px-3 capitalize hover:bg-black hover:text-white"
 								@click="selectOrder('Date Uploaded')"
 								title="Sort By Date Uploaded"
 							>
@@ -214,7 +217,7 @@
 							</ListboxOption>
 							<ListboxOption
 								value="Date Modified"
-								class="flex cursor-pointer flex-row gap-3"
+								class="flex h-8 cursor-pointer flex-row gap-3 rounded-md bg-white px-3 capitalize hover:bg-black hover:text-white"
 								@click="selectOrder('Date Modified')"
 								title="Sort By Date Modified"
 							>

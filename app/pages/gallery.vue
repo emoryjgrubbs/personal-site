@@ -267,6 +267,7 @@ function computeTagList() {
 		list.push(...image.tags);
 	}
 	list = [...new Set(list)];
+	list.sort();
 	list = list.map((element) => ({ sign: "p", value: element }));
 	return list;
 }
