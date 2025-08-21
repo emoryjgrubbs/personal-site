@@ -5,9 +5,11 @@
 		<div class="mx-16 my-16 mt-40 flex flex-col md:mx-14 lg:mx-20">
 			<CombiFilter
 				:content="images"
+				:tagList="tagList"
 				placeholder="Gallery Image"
 				@searchUpdate="(filterUpdate) => updateDisplay(filterUpdate)"
 				class="mb-10"
+				ref="filter"
 			/>
 			<div class="flex w-full justify-end">
 				<button
@@ -51,7 +53,9 @@
 								Tags:
 								<div
 									v-for="tag in image.tags"
-									class="bg-columbia-blue rounded-md px-3"
+									class="bg-columbia-blue cursor-pointer rounded-md px-3 capitalize"
+									@click="addClickedTag(tag)"
+									title="Add Tag to Filter"
 								>
 									{{ tag }}
 								</div>
@@ -256,6 +260,29 @@ const images = [
 		alt: "",
 	},
 ];
+
+function computeTagList() {
+	let list = [];
+	for (const image of images) {
+		list.push(...image.tags);
+	}
+	list = [...new Set(list)];
+	list = list.map((element) => ({ sign: "p", value: element }));
+	return list;
+}
+
+const tagList = computeTagList();
+const filter = ref(null);
+
+function addClickedTag(value) {
+	if (
+		!filter.value.selectedTags
+			.map((element) => element.value)
+			.includes(value)
+	) {
+		filter.value.selectedTags.push({ sign: "p", value: value });
+	}
+}
 
 const filteredImages = ref(images);
 

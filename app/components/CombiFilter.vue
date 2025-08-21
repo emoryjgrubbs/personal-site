@@ -7,7 +7,7 @@
 				<input
 					placeholder="Tile, $Tags, @Dates, or ^Order"
 					v-model="searchTerm"
-					class="bg-columbia-blue h-8 w-full rounded-l-md px-3 text-xl outline-black"
+					class="bg-columbia-blue h-8 w-full rounded-l-md px-3 text-xl"
 				/>
 				<button
 					class="bg-columbia-blue flex cursor-pointer rounded-r-md px-3 transition ease-in-out hover:scale-105"
@@ -23,11 +23,77 @@
 			<!--Input for Tags-->
 			<label class="w-full">
 				Tag Input
-				<input
-					placeholder="Tags"
-					v-model="tagTerm"
-					class="bg-columbia-blue h-8 w-full rounded-l-md px-3 outline-black"
-				/>
+				<div class="flex flex-row gap-2">
+					<Combobox v-model="selectedTags" multiple>
+						<div class="relative flex min-w-1/2 grow">
+							<ComboboxInput
+								placeholder="Tags"
+								@change="tagTerm = $event.target.value.trim()"
+								class="bg-columbia-blue h-8 w-full rounded-l-md px-3"
+							/>
+							<ComboboxOptions
+								class="bg-columbia-blue absolute z-20 mt-11 flex max-h-128 w-full min-w-56 flex-col gap-3 overflow-y-scroll rounded-md px-3 py-1"
+							>
+								<ComboboxOption
+									v-show="filteredTagList == 0"
+									disabled="true"
+								>
+									No Matching Tags
+								</ComboboxOption>
+								<ComboboxOption
+									v-for="tag in filteredTagList"
+									class="capitalize"
+									:value="tag"
+								>
+									{{ tag.value }}
+								</ComboboxOption>
+							</ComboboxOptions>
+						</div>
+					</Combobox>
+					<div
+						v-show="selectedTags.length > 0"
+						class="flex flex-row gap-2 overflow-x-scroll"
+					>
+						<div v-for="(tag, index) in selectedTags">
+							<button
+								class="flex h-8 cursor-pointer gap-2 bg-black pr-2 pl-3 whitespace-nowrap text-white capitalize"
+								v-if="tag.sign == 'n'"
+								@click="invertTag(index)"
+								title="Invert Tag to Include"
+							>
+								{{ tag.value }}
+								<button
+									@click="removeTag(index)"
+									class="flex"
+									title="Remove Tag From Filters"
+								>
+									<Icon
+										name="famicons:close"
+										class="cursor-pointer self-center"
+									/>
+								</button>
+							</button>
+							<button
+								class="bg-columbia-blue flex h-8 cursor-pointer gap-2 pr-2 pl-3 whitespace-nowrap capitalize"
+								v-else
+								@click="invertTag(index)"
+								title="Invert Tag to Exclude"
+							>
+								{{ tag.value }}
+								<button
+									@click="removeTag(index)"
+									class="flex"
+									title="Remove Tag From Filters"
+								>
+									<Icon
+										name="famicons:close"
+										class="cursor-pointer self-center"
+									/>
+								</button>
+							</button>
+						</div>
+					</div>
+				</div>
 			</label>
 			<!--Input for Date Range-->
 			<label>
@@ -35,7 +101,7 @@
 				<input
 					v-model="dateTerm.start"
 					type="date"
-					class="bg-columbia-blue h-8 w-full px-3 outline-black"
+					class="bg-columbia-blue h-8 w-full px-3"
 					:max="dateTerm.end || today"
 				/>
 			</label>
@@ -44,7 +110,7 @@
 				<input
 					v-model="dateTerm.end"
 					type="date"
-					class="bg-columbia-blue h-8 w-full px-3 outline-black"
+					class="bg-columbia-blue h-8 w-full px-3"
 					:min="dateTerm.start"
 					:max="today"
 				/>
@@ -52,169 +118,145 @@
 			<!--Input for Sort Order-->
 			<label class="relative">
 				Order
-				<button
-					class="bg-columbia-blue h-8 min-w-56 cursor-pointer rounded-r-md px-3 text-left outline-black transition ease-in-out hover:scale-102"
-					@click="toggleSortMenu"
-					title="Show Sorting Options"
-				>
-					<div
-						v-if="sortTerm.value == 'Default'"
-						class="text-gray-500"
-					>
-						Default
-					</div>
-					<div class="flex flex-row gap-3" v-else>
-						<button
-							v-if="sortTerm.sign == 'n'"
-							@click="sortTerm.sign = 'p'"
-							title="Switch to Descending"
-							class="flex"
+				<Listbox>
+					<div class="relative min-w-56 cursor-pointer text-left">
+						<ListboxButton
+							class="bg-columbia-blue flex h-8 w-full rounded-r-md px-3 transition ease-in-out hover:scale-102"
+							title="Show Sorting Options"
 						>
-							<Icon
-								name="famicons:arrow-up"
-								class="self-center"
-							/>
-						</button>
-						<button
-							v-else
-							@click="sortTerm.sign = 'n'"
-							title="Switch to Ascending"
-							class="flex"
+							<div
+								v-if="sortTerm.value == 'Default'"
+								class="text-gray-500"
+							>
+								Default
+							</div>
+							<div class="flex flex-row gap-3" v-else>
+								<button
+									v-if="sortTerm.sign == 'n'"
+									@click="sortTerm.sign = 'p'"
+									title="Switch to Descending"
+									class="flex"
+								>
+									<Icon
+										name="famicons:arrow-up"
+										class="self-center"
+									/>
+								</button>
+								<button
+									v-else
+									@click="sortTerm.sign = 'n'"
+									title="Switch to Ascending"
+									class="flex"
+								>
+									<Icon
+										name="famicons:arrow-down"
+										class="self-center"
+									/>
+								</button>
+
+								{{ sortTerm.value }}
+							</div>
+						</ListboxButton>
+
+						<!--Sort Order Dropdown-->
+						<ListboxOptions
+							class="bg-columbia-blue absolute z-20 mt-3 flex min-w-56 flex-col gap-3 rounded-md px-3 py-1"
 						>
-							<Icon
-								name="famicons:arrow-down"
-								class="self-center"
-							/>
-						</button>
-
-						{{ sortTerm.value }}
+							<ListboxOption
+								value="Default"
+								class="flex cursor-pointer flex-row gap-3 pl-8"
+								@click="selectOrder('Default')"
+								title="Use Default Sort Order"
+							>
+								Default
+							</ListboxOption>
+							<ListboxOption
+								value="Alphabetical"
+								class="flex cursor-pointer flex-row gap-3"
+								@click="selectOrder('Alphabetical')"
+								title="Sort Alphabetically"
+							>
+								<Icon
+									v-if="
+										sortTerm.value == 'Alphabetical' &&
+										sortTerm.sign == 'n'
+									"
+									name="famicons:arrow-up"
+									class="self-center"
+								/>
+								<Icon
+									v-else
+									name="famicons:arrow-down cursor-pointer"
+									class="self-center"
+								/>
+								Alphabetical
+							</ListboxOption>
+							<ListboxOption
+								value="Date Uploaded"
+								class="flex cursor-pointer flex-row gap-3"
+								@click="selectOrder('Date Uploaded')"
+								title="Sort By Date Uploaded"
+							>
+								<Icon
+									v-if="
+										sortTerm.value == 'Date Uploaded' &&
+										sortTerm.sign == 'n'
+									"
+									name="famicons:arrow-up"
+									class="self-center"
+								/>
+								<Icon
+									v-else
+									name="famicons:arrow-down cursor-pointer"
+									class="self-center"
+								/>
+								Date Uploaded
+							</ListboxOption>
+							<ListboxOption
+								value="Date Modified"
+								class="flex cursor-pointer flex-row gap-3"
+								@click="selectOrder('Date Modified')"
+								title="Sort By Date Modified"
+							>
+								<Icon
+									v-if="
+										sortTerm.value == 'Date Modified' &&
+										sortTerm.sign == 'n'
+									"
+									name="famicons:arrow-up"
+									class="self-center"
+								/>
+								<Icon
+									v-else
+									name="famicons:arrow-down cursor-pointer"
+									class="self-center"
+								/>
+								Date Modified
+							</ListboxOption>
+						</ListboxOptions>
 					</div>
-				</button>
-
-				<!--Sort Order Dropdown-->
-				<div
-					v-if="showSortMenu"
-					class="bg-columbia-blue absolute top-18 right-0 z-20 flex min-w-56 flex-col gap-3 rounded-md px-3 py-1"
-				>
-					<button
-						class="flex cursor-pointer flex-row gap-3 pl-8"
-						@click="selectOrder('Default')"
-						title="Use Default Sort Order"
-					>
-						Default
-					</button>
-					<button
-						class="flex cursor-pointer flex-row gap-3"
-						@click="selectOrder('Alphabetical')"
-						title="Sort Alphabetically"
-					>
-						<Icon
-							v-if="
-								sortTerm.value == 'Alphabetical' &&
-								sortTerm.sign == 'n'
-							"
-							name="famicons:arrow-up"
-							class="self-center"
-						/>
-						<Icon
-							v-else
-							name="famicons:arrow-down cursor-pointer"
-							class="self-center"
-						/>
-						Alphabetical
-					</button>
-					<button
-						class="flex cursor-pointer flex-row gap-3"
-						@click="selectOrder('Date Uploaded')"
-						title="Sort By Date Uploaded"
-					>
-						<Icon
-							v-if="
-								sortTerm.value == 'Date Uploaded' &&
-								sortTerm.sign == 'n'
-							"
-							name="famicons:arrow-up"
-							class="self-center"
-						/>
-						<Icon
-							v-else
-							name="famicons:arrow-down cursor-pointer"
-							class="self-center"
-						/>
-						Date Uploaded
-					</button>
-					<button
-						class="flex cursor-pointer flex-row gap-3"
-						@click="selectOrder('Date Modified')"
-						title="Sort By Date Modified"
-					>
-						<Icon
-							v-if="
-								sortTerm.value == 'Date Modified' &&
-								sortTerm.sign == 'n'
-							"
-							name="famicons:arrow-up"
-							class="self-center"
-						/>
-						<Icon
-							v-else
-							name="famicons:arrow-down cursor-pointer"
-							class="self-center"
-						/>
-						Date Modified
-					</button>
-				</div>
+				</Listbox>
 			</label>
-		</div>
-		<div v-if="showBreakoutBar" class="flex flex-col text-xl">
-			<label> Active Tags </label>
-			<div class="flex flex-wrap gap-2">
-				<div v-for="tag in filter.tags">
-					<button
-						class="bg-columbia-blue flex cursor-pointer gap-2 rounded-md pr-2 pl-3 whitespace-nowrap"
-						v-if="tag.sign == 'p'"
-						@click="invertTag(tag.value)"
-						title="Invert Tag to Exclude"
-					>
-						{{ tag.value }}
-						<button
-							@click="removeTag(tag.value)"
-							class="flex"
-							title="Remove Tag From Filters"
-						>
-							<Icon
-								name="famicons:close"
-								class="cursor-pointer self-center"
-							/>
-						</button>
-					</button>
-					<button
-						class="flex cursor-pointer gap-2 rounded-md bg-black pr-2 pl-3 text-white"
-						v-else
-						@click="invertTag(tag.value)"
-						title="Invert Tag to Include"
-					>
-						{{ tag.value }}
-						<button
-							@click="removeTag(tag.value)"
-							class="flex"
-							title="Remove Tag From Filters"
-						>
-							<Icon
-								name="famicons:close"
-								class="cursor-pointer self-center"
-							/>
-						</button>
-					</button>
-				</div>
-			</div>
 		</div>
 	</div>
 </template>
 
 <script lang="ts" setup>
+import {
+	Combobox,
+	ComboboxLabel,
+	ComboboxInput,
+	ComboboxOptions,
+	ComboboxOption,
+	Listbox,
+	ListboxButton,
+	ListboxOptions,
+	ListboxOption,
+} from "@headlessui/vue";
+
 const props = defineProps({
 	content: Array,
+	tagList: Array,
 	placeholder: String,
 });
 
@@ -226,10 +268,6 @@ function toggleBreakoutBar() {
 	showBreakoutBar.value = !showBreakoutBar.value;
 }
 
-const showSortMenu = ref(false);
-function toggleSortMenu() {
-	showSortMenu.value = !showSortMenu.value;
-}
 function selectOrder(value) {
 	if (sortTerm.value.value == value) {
 		if (sortTerm.value.sign == "p") {
@@ -248,6 +286,32 @@ const searchTerm = ref("");
 const tagTerm = ref("");
 const dateTerm = ref({ start: "", end: "" });
 const sortTerm = ref({ sign: "p", value: "Default" });
+
+const filteredTagList = computed(() => {
+	if (tagTerm.value == null || tagTerm.value == "") {
+		return props.tagList || [];
+	}
+	return props.tagList.filter((item) =>
+		item.value.toLowerCase().includes(tagTerm.value.toLowerCase())
+	);
+});
+
+const selectedTags = ref([]);
+const selectedTags2 = ref([]);
+defineExpose({
+	selectedTags,
+});
+
+function invertTag(index) {
+	if (selectedTags.value[index].sign == "n") {
+		selectedTags.value[index].sign = "p";
+	} else {
+		selectedTags.value[index].sign = "n";
+	}
+}
+function removeTag(index) {
+	selectedTags.value.splice(index, 1);
+}
 
 // get current date for limiting date range input
 const today = new Date().toISOString().split("T")[0];
@@ -371,28 +435,9 @@ const filter = computed(() => {
 
 	current = "";
 
-	// build filter from breakout tag input
-	const lowercaseTagTerm = tagTerm.value.toLowerCase();
-	for (const char of lowercaseTagTerm) {
-		if (quote == "" && char == " ") {
-			tags.push({ sign: sign, value: current });
-			sign = "p";
-			current = "";
-		} else if (quote == "" && char == '"') {
-			quote = '"';
-		} else if (quote == '"' && char == '"') {
-			quote = "";
-		} else if (quote == "" && char == "\'") {
-			quote = "\'";
-		} else if (quote == "\'" && char == "\'") {
-			quote = "";
-		} else {
-			current = current.concat(char);
-		}
-	}
-
-	if (current.length > 0) {
-		tags.push({ sign: sign, value: current });
+	// append tag field to filters
+	if (selectedTags.value.length > 0) {
+		tags.push(...selectedTags.value);
 	}
 
 	// build filter from breakout date inputs
@@ -751,7 +796,7 @@ function dateIncludes(contentDate, filterDate) {
 				(filterStart.toLowerCase().includes("now") ||
 					filterStart.toLowerCase().includes("current") ||
 					filterStart.toLowerCase().includes("ongoing")) &&
-				contentDate[i].end === "now"
+				contentDate[i].end == "now"
 			) {
 				return true;
 			}
