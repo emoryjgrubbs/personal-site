@@ -13,7 +13,7 @@
 			/>
 			<div class="flex w-full justify-end">
 				<button
-					class="flex w-fit cursor-pointer flex-row items-center gap-2 text-xl transition ease-in-out hover:scale-105"
+					class="flex w-fit cursor-pointer flex-row items-center gap-2 text-xl transition ease-in-out hover:scale-102"
 					@click="toggleDetails"
 					title="Show Image Details"
 				>
@@ -28,23 +28,18 @@
 			</div>
 
 			<div class="grid grid-cols-5 gap-3" v-if="!showDetails">
-				<div v-for="image in filteredImages">
-					<ImgWrap
-						:src="image.src"
-						:alt="image.alt"
-						:crop="!showDetails"
-					/>
+				<div
+					v-for="image in filteredImages"
+					class="flex aspect-square cursor-pointer items-center overflow-hidden select-none"
+				>
+					<ImgWrap :src="image.src" :alt="image.alt" />
 				</div>
 			</div>
 			<div class="grid grid-cols-1 gap-12" v-else>
 				<div v-for="image in filteredImages">
 					<div class="flex w-full flex-row gap-12">
 						<div class="w-3/8">
-							<ImgWrap
-								:src="image.src"
-								:alt="image.alt"
-								:crop="!showDetails"
-							/>
+							<ImgWrap :src="image.src" :alt="image.alt" />
 						</div>
 						<div class="flex w-full flex-col gap-3 text-xl">
 							<h1 class="text-2xl">Title: {{ image.title }}</h1>

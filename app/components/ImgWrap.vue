@@ -1,21 +1,7 @@
 <template>
-	<button
-		v-if="props.crop"
-		class="flex aspect-square cursor-pointer items-center overflow-hidden select-none"
-		@click="maximize"
-		title="Expand Image"
-	>
+	<button @click="maximize" title="Expand Image" class="h-full w-full">
 		<NuxtImg
-			class="h-full w-full object-cover"
-			:src="props.src"
-			:alt="props.alt"
-			loading="lazy"
-			draggable="false"
-		/>
-	</button>
-	<button v-else @click="maximize" title="Expand Image">
-		<NuxtImg
-			class="cursor-pointer select-none"
+			class="h-full w-full cursor-pointer object-cover select-none"
 			:src="props.src"
 			:alt="props.alt"
 			loading="lazy"
@@ -51,7 +37,6 @@
 const props = defineProps({
 	src: String,
 	alt: String,
-	crop: Boolean,
 });
 
 const expanded = ref(false);
