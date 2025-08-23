@@ -24,31 +24,57 @@
 			<label class="w-full">
 				Tag Input
 				<div class="flex flex-row gap-2">
-					<Combobox v-model="selectedTags" multiple>
+					<Combobox v-model="selectedTags" multiple v-slot="{ open }">
 						<div class="relative flex min-w-1/2 grow">
 							<ComboboxInput
 								placeholder="Tags"
 								@change="tagTerm = $event.target.value.trim()"
-								class="bg-columbia-blue h-8 w-full rounded-l-md px-3"
+								class="bg-columbia-blue h-8 w-full pr-10 pl-3"
+								:class="{
+									'rounded-tl-md': open,
+									'rounded-l-md': !open,
+								}"
 							/>
+							<ComboboxButton
+								class="absolute right-3 flex h-full"
+							>
+								<Icon
+									name="famicons:search"
+									class="self-center"
+								/>
+							</ComboboxButton>
 							<ComboboxOptions
-								class="bg-columbia-blue absolute z-20 mt-11 flex max-h-128 w-full min-w-56 flex-col gap-1 overflow-y-scroll overscroll-contain rounded-md p-1"
+								class="bg-alice-blue absolute z-20 mt-11 flex max-h-128 w-full min-w-56 flex-col gap-1 overflow-y-scroll overscroll-contain rounded-b-md"
 							>
 								<ComboboxOption
 									v-show="filteredTagList == 0"
 									disabled="true"
-									class="h-8 rounded-md bg-white px-3"
+									class="bg-columbia-blue h-8 rounded-b-md px-3"
 									title="No Tags to Select"
 								>
 									No Matching Tags
 								</ComboboxOption>
 								<ComboboxOption
-									v-for="tag in filteredTagList"
-									class="h-8 cursor-pointer rounded-md bg-white px-3 capitalize hover:bg-black hover:text-white"
+									v-for="(tag, index) in filteredTagList"
+									class=""
 									title="Select Tag"
+									v-slot="{ active, selected }"
 									:value="tag"
 								>
-									{{ tag.value }}
+									<div
+										class="h-8 cursor-pointer px-3 capitalize"
+										:class="{
+											'bg-alice-blue': active,
+											'bg-rich-black text-white':
+												active && selected,
+											'bg-black text-white':
+												!active && selected,
+											'bg-columbia-blue':
+												!active && !selected,
+										}"
+									>
+										{{ tag.value }}
+									</div>
 								</ComboboxOption>
 							</ComboboxOptions>
 						</div>
@@ -119,12 +145,16 @@
 				/>
 			</label>
 			<!--Input for Sort Order-->
-			<label class="relative">
+			<label>
 				Order
-				<Listbox>
+				<Listbox v-slot="{ open }">
 					<div class="relative min-w-56 cursor-pointer text-left">
 						<ListboxButton
-							class="bg-columbia-blue flex h-8 w-full rounded-r-md px-3 transition ease-in-out hover:scale-102"
+							class="bg-columbia-blue flex h-8 w-full cursor-pointer px-3 transition ease-in-out hover:scale-102"
+							:class="{
+								'rounded-tr-md': open,
+								'rounded-r-md': !open,
+							}"
 							title="Show Sorting Options"
 						>
 							<div
@@ -138,7 +168,7 @@
 									v-if="sortTerm.sign == 'n'"
 									@click="sortTerm.sign = 'p'"
 									title="Switch to Descending"
-									class="flex"
+									class="flex cursor-pointer"
 								>
 									<Icon
 										name="famicons:arrow-up"
@@ -149,7 +179,7 @@
 									v-else
 									@click="sortTerm.sign = 'n'"
 									title="Switch to Ascending"
-									class="flex"
+									class="flex cursor-pointer"
 								>
 									<Icon
 										name="famicons:arrow-down"
@@ -163,78 +193,129 @@
 
 						<!--Sort Order Dropdown-->
 						<ListboxOptions
-							class="bg-columbia-blue absolute z-20 mt-3 flex min-w-56 flex-col gap-1 rounded-md p-1"
+							class="bg-alice-blue absolute z-20 mt-3 flex min-w-56 flex-col gap-1 overflow-hidden rounded-b-md"
 						>
 							<ListboxOption
 								value="Default"
-								class="flex h-8 cursor-pointer flex-row gap-3 rounded-md bg-white px-3 pl-8 capitalize hover:bg-black hover:text-white"
+								v-slot="{ active, selected }"
 								@click="selectOrder('Default')"
 								title="Use Default Sort Order"
 							>
-								Default
+								<div
+									class="flex h-8 cursor-pointer flex-row gap-3 px-3 capitalize"
+									:class="{
+										'bg-alice-blue': active,
+										'bg-rich-black text-white':
+											active && selected,
+										'bg-black text-white':
+											!active && selected,
+										'bg-columbia-blue':
+											!active && !selected,
+									}"
+								>
+									Default
+								</div>
 							</ListboxOption>
 							<ListboxOption
 								value="Alphabetical"
-								class="flex h-8 cursor-pointer flex-row gap-3 rounded-md bg-white px-3 capitalize hover:bg-black hover:text-white"
+								v-slot="{ active, selected }"
 								@click="selectOrder('Alphabetical')"
 								title="Sort Alphabetically"
 							>
-								<Icon
-									v-if="
-										sortTerm.value == 'Alphabetical' &&
-										sortTerm.sign == 'n'
-									"
-									name="famicons:arrow-up"
-									class="self-center"
-								/>
-								<Icon
-									v-else
-									name="famicons:arrow-down cursor-pointer"
-									class="self-center"
-								/>
-								Alphabetical
+								<div
+									class="flex h-8 cursor-pointer flex-row gap-3 px-3 capitalize"
+									:class="{
+										'bg-alice-blue': active,
+										'bg-rich-black text-white':
+											active && selected,
+										'bg-black text-white':
+											!active && selected,
+										'bg-columbia-blue':
+											!active && !selected,
+									}"
+								>
+									<Icon
+										v-if="
+											sortTerm.value == 'Alphabetical' &&
+											sortTerm.sign == 'n'
+										"
+										name="famicons:arrow-up"
+										class="self-center"
+									/>
+									<Icon
+										v-else
+										name="famicons:arrow-down"
+										class="self-center"
+									/>
+									Alphabetical
+								</div>
 							</ListboxOption>
 							<ListboxOption
 								value="Date Uploaded"
-								class="flex h-8 cursor-pointer flex-row gap-3 rounded-md bg-white px-3 capitalize hover:bg-black hover:text-white"
+								v-slot="{ active, selected }"
 								@click="selectOrder('Date Uploaded')"
 								title="Sort By Date Uploaded"
 							>
-								<Icon
-									v-if="
-										sortTerm.value == 'Date Uploaded' &&
-										sortTerm.sign == 'n'
-									"
-									name="famicons:arrow-up"
-									class="self-center"
-								/>
-								<Icon
-									v-else
-									name="famicons:arrow-down cursor-pointer"
-									class="self-center"
-								/>
-								Date Uploaded
+								<div
+									class="flex h-8 cursor-pointer flex-row gap-3 px-3 capitalize"
+									:class="{
+										'bg-alice-blue': active,
+										'bg-rich-black text-white':
+											active && selected,
+										'bg-black text-white':
+											!active && selected,
+										'bg-columbia-blue':
+											!active && !selected,
+									}"
+								>
+									<Icon
+										v-if="
+											sortTerm.value == 'Date Uploaded' &&
+											sortTerm.sign == 'n'
+										"
+										name="famicons:arrow-up"
+										class="self-center"
+									/>
+									<Icon
+										v-else
+										name="famicons:arrow-down"
+										class="self-center"
+									/>
+									Date Uploaded
+								</div>
 							</ListboxOption>
 							<ListboxOption
 								value="Date Modified"
-								class="flex h-8 cursor-pointer flex-row gap-3 rounded-md bg-white px-3 capitalize hover:bg-black hover:text-white"
 								@click="selectOrder('Date Modified')"
 								title="Sort By Date Modified"
 							>
-								<Icon
-									v-if="
-										sortTerm.value == 'Date Modified' &&
-										sortTerm.sign == 'n'
-									"
-									name="famicons:arrow-up"
-									class="self-center"
-								/>
-								<Icon
-									v-else
-									name="famicons:arrow-down cursor-pointer"
-									class="self-center"
-								/>
-								Date Modified
+								<div
+									class="flex h-8 cursor-pointer flex-row gap-3 px-3 capitalize"
+									:class="{
+										'bg-alice-blue': active,
+										'bg-rich-black text-white':
+											active && selected,
+										'bg-black text-white':
+											!active && selected,
+										'bg-columbia-blue':
+											!active && !selected,
+									}"
+								>
+									<Icon
+										v-if="
+											sortTerm.value == 'Date Modified' &&
+											sortTerm.sign == 'n'
+										"
+										name="famicons:arrow-up"
+										class="self-center"
+									/>
+									<Icon
+										v-else
+										name="famicons:arrow-down"
+										class="self-center"
+									/>
+									Date Modified
+								</div>
 							</ListboxOption>
 						</ListboxOptions>
 					</div>
@@ -249,6 +330,7 @@ import {
 	Combobox,
 	ComboboxLabel,
 	ComboboxInput,
+	ComboboxButton,
 	ComboboxOptions,
 	ComboboxOption,
 	Listbox,
