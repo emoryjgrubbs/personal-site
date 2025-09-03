@@ -328,6 +328,55 @@ function toggleBreakoutBar() {
 	showBreakoutBar.value = !showBreakoutBar.value;
 }
 
+//input filter variables
+const searchTerm = ref("");
+const tagTerm = ref("");
+const dateTerm = ref({ start: "", end: "" });
+const sortTerm = ref({ sign: "p", value: "Default" });
+
+// tag list displayed in combobox
+const filteredTagList = computed(() => {
+	if (tagTerm.value == null || tagTerm.value == "") {
+		return props.tagList || [];
+	}
+	return props.tagList.filter((item) =>
+		item.value.toLowerCase().includes(tagTerm.value.toLowerCase())
+	);
+});
+
+// list of tags selected by user with tagTerm/combobox
+const selectedTags = ref([]);
+/*
+    exposed because the parent page needs to be able to directly add 
+    tags to the list when the user clicks on a displayed tag
+*/
+defineExpose({
+	selectedTags,
+});
+
+// controlling selectedTags
+function invertTag(index) {
+	if (selectedTags.value[index].sign == "n") {
+		selectedTags.value[index].sign = "p";
+	} else {
+		selectedTags.value[index].sign = "n";
+	}
+}
+function removeTag(index) {
+	selectedTags.value.splice(index, 1);
+}
+
+// get current date for limiting date range input
+const today = new Date().toISOString().split("T")[0];
+
+// controlling sortTerm
+function invertSort() {
+	if (sortTerm.value.sign == "n") {
+		sortTerm.value.sign = "p";
+	} else {
+		sortTerm.value.sign = "n";
+	}
+}
 function selectOrder(value) {
 	if (sortTerm.value.value == value) {
 		if (sortTerm.value.sign == "p") {
@@ -340,48 +389,6 @@ function selectOrder(value) {
 		sortTerm.value.value = value;
 	}
 }
-
-//input filter variables
-const searchTerm = ref("");
-const tagTerm = ref("");
-const dateTerm = ref({ start: "", end: "" });
-const sortTerm = ref({ sign: "p", value: "Default" });
-
-const filteredTagList = computed(() => {
-	if (tagTerm.value == null || tagTerm.value == "") {
-		return props.tagList || [];
-	}
-	return props.tagList.filter((item) =>
-		item.value.toLowerCase().includes(tagTerm.value.toLowerCase())
-	);
-});
-
-const selectedTags = ref([]);
-defineExpose({
-	selectedTags,
-});
-
-function invertTag(index) {
-	if (selectedTags.value[index].sign == "n") {
-		selectedTags.value[index].sign = "p";
-	} else {
-		selectedTags.value[index].sign = "n";
-	}
-}
-function removeTag(index) {
-	selectedTags.value.splice(index, 1);
-}
-
-function invertSort() {
-	if (sortTerm.value.sign == "n") {
-		sortTerm.value.sign = "p";
-	} else {
-		sortTerm.value.sign = "n";
-	}
-}
-
-// get current date for limiting date range input
-const today = new Date().toISOString().split("T")[0];
 
 // compute the filters based on the search input
 const filter = computed(() => {
