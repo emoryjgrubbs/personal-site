@@ -1,14 +1,33 @@
 <template>
 	<div>
+		<!--Expanded Image Handling-->
+		<ImgExpand
+			:src="expand.src"
+			:alt="expand.alt"
+			:open="expand.open"
+			@minimize="minimize"
+		/>
 		<div class="mx-16 my-16 flex flex-col gap-y-8 md:mx-14 lg:mx-20">
 			<!--about me-->
 			<div class="flex flex-row items-center gap-x-16 max-md:flex-col">
-				<div class="w-7/12 select-none max-sm:w-9/12 md:w-5/12">
-					<ImgWrap
+				<button
+					@click="
+						maximize({
+							src: '/images/home/about-me-guitar.webp',
+							alt: 'playing guitar, credit: John Grubbs rockslidephotography',
+						})
+					"
+					title="Expand Image"
+					class="w-7/12 select-none max-sm:w-9/12 md:w-5/12"
+				>
+					<NuxtImg
+						class="h-full w-full cursor-pointer object-cover select-none"
 						src="/images/home/about-me-guitar.webp"
 						alt="playing guitar, credit: John Grubbs rockslidephotography"
+						loading="lazy"
+						draggable="false"
 					/>
-				</div>
+				</button>
 				<div class="flex w-7/12 flex-col gap-y-4 max-sm:w-11/12">
 					<h1 class="text-center text-3xl font-semibold">About Me</h1>
 					<p class="text-xl">
@@ -130,4 +149,18 @@
 	</div>
 </template>
 
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+const expand = reactive({
+	src: "",
+	alt: "",
+	open: false,
+});
+function minimize() {
+	expand.open = false;
+}
+function maximize(image) {
+	expand.src = image.src;
+	expand.alt = image.alt;
+	expand.open = true;
+}
+</script>

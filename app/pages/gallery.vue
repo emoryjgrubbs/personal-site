@@ -3,6 +3,7 @@
 		<HomeLink />
 
 		<div class="mx-16 my-16 mt-40 flex flex-col md:mx-14 lg:mx-20">
+			<!--Search Component-->
 			<CombiFilter
 				:content="images"
 				:tagList="tagList"
@@ -11,49 +12,75 @@
 				class="mb-10"
 				ref="filter"
 			/>
+
+			<!--Button for toggling Image Details-->
 			<div class="flex w-full justify-end">
 				<button
 					class="flex w-fit cursor-pointer flex-row items-center gap-2 text-xl transition ease-in-out hover:scale-102"
 					@click="toggleDetails"
-					title="Show Image Details"
+					:title="
+						showDetails
+							? 'Hide Image Details'
+							: 'Show Image Details'
+					"
 				>
-					<Icon
-						v-if="showDetails"
-						name="famicons:radio-button-on"
-						class=""
-					/>
-					<Icon v-else name="famicons:radio-button-off" class="" />
+					<Icon v-if="showDetails" name="famicons:radio-button-on" />
+					<Icon v-else name="famicons:radio-button-off" />
 					Details
 				</button>
 			</div>
 
-			<div class="grid grid-cols-5 gap-3" v-if="!showDetails">
+			<!--Expanded Image Handling-->
+			<ImgExpand
+				:src="expand.src"
+				:alt="expand.alt"
+				:open="expand.open"
+				@minimize="minimize"
+			/>
+			<!--Top Gallery-->
+			<!--Image Grid-->
+			<div
+				class="grid"
+				:class="
+					showDetails ? 'grid-cols-1 gap-12' : 'grid-cols-5 gap-3'
+				"
+			>
 				<div
 					v-for="image in filteredImages"
-					class="flex aspect-square cursor-pointer items-center overflow-hidden select-none"
+					class="flex cursor-pointer items-center select-none"
+					:class="
+						showDetails ? 'gap-12' : 'aspect-square overflow-hidden'
+					"
 				>
-					<ImgWrap :src="image.src" :alt="image.alt" />
-				</div>
-			</div>
-			<div class="grid grid-cols-1 gap-12" v-else>
-				<div v-for="image in filteredImages">
-					<div class="flex w-full flex-row gap-12">
-						<div class="w-3/8">
-							<ImgWrap :src="image.src" :alt="image.alt" />
-						</div>
-						<div class="flex w-full flex-col gap-3 text-xl">
-							<h1 class="text-2xl">Title: {{ image.title }}</h1>
-							<div>Date: {{ image.dates[0].start }}</div>
-							<div class="flex flex-row flex-wrap gap-3">
-								Tags:
-								<div
-									v-for="tag in image.tags"
-									class="bg-columbia-blue cursor-pointer rounded-md px-3 capitalize"
-									@click="addClickedTag(tag)"
-									title="Add Tag to Filter"
-								>
-									{{ tag }}
-								</div>
+					<button
+						@click="maximize(image)"
+						title="Expand Image"
+						class="h-full"
+						:class="showDetails ? 'w-3/8' : 'w-full'"
+					>
+						<NuxtImg
+							class="h-full w-full cursor-pointer object-cover select-none"
+							:src="image.src"
+							:alt="image.alt"
+							loading="lazy"
+							draggable="false"
+						/>
+					</button>
+					<div
+						class="flex w-full flex-col gap-3 text-xl"
+						v-if="showDetails"
+					>
+						<h1 class="text-2xl">Title: {{ image.title }}</h1>
+						<div>Date: {{ image.dates[0].start }}</div>
+						<div class="flex flex-row flex-wrap gap-3">
+							Tags:
+							<div
+								v-for="tag in image.tags"
+								class="bg-columbia-blue cursor-pointer rounded-md px-3 capitalize"
+								@click="addClickedTag(tag)"
+								title="Add Tag to Filter"
+							>
+								{{ tag }}
 							</div>
 						</div>
 					</div>
@@ -67,6 +94,20 @@
 const showDetails = ref(false);
 function toggleDetails() {
 	showDetails.value = !showDetails.value;
+}
+
+const expand = reactive({
+	src: "",
+	alt: "",
+	open: false,
+});
+function minimize() {
+	expand.open = false;
+}
+function maximize(image) {
+	expand.src = image.src;
+	expand.alt = image.alt;
+	expand.open = true;
 }
 
 const images = [

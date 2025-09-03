@@ -382,7 +382,6 @@ const filteredTagList = computed(() => {
 });
 
 const selectedTags = ref([]);
-const selectedTags2 = ref([]);
 defineExpose({
 	selectedTags,
 });
