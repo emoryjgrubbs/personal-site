@@ -24,8 +24,13 @@
 							: 'Show Image Details'
 					"
 				>
-					<Icon v-if="showDetails" name="famicons:radio-button-on" />
-					<Icon v-else name="famicons:radio-button-off" />
+					<Icon
+						:name="
+							showDetails
+								? 'famicons:radio-button-on'
+								: 'famicons:radio-button-off'
+						"
+					/>
 					Details
 				</button>
 			</div>

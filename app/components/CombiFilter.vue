@@ -85,28 +85,18 @@
 					>
 						<div v-for="(tag, index) in selectedTags">
 							<button
-								class="flex h-8 cursor-pointer gap-2 bg-black pr-2 pl-3 whitespace-nowrap text-white capitalize"
-								v-if="tag.sign == 'n'"
+								class="flex h-8 cursor-pointer gap-2 pr-2 pl-3 whitespace-nowrap capitalize"
+								:class="
+									tag.sign == 'n'
+										? 'bg-black text-white'
+										: 'bg-columbia-blue'
+								"
 								@click="invertTag(index)"
-								title="Invert Tag to Include"
-							>
-								{{ tag.value }}
-								<button
-									@click.stop="removeTag(index)"
-									class="flex"
-									title="Remove Tag From Filters"
-								>
-									<Icon
-										name="famicons:close"
-										class="cursor-pointer self-center"
-									/>
-								</button>
-							</button>
-							<button
-								class="bg-columbia-blue flex h-8 cursor-pointer gap-2 pr-2 pl-3 whitespace-nowrap capitalize"
-								v-else
-								@click="invertTag(index)"
-								title="Invert Tag to Exclude"
+								:title="
+									tag.sign == 'n'
+										? 'Invert Tag to Include'
+										: 'Invert Tag to Exclude'
+								"
 							>
 								{{ tag.value }}
 								<button
@@ -147,7 +137,7 @@
 			<!--Input for Sort Order-->
 			<label>
 				Order
-				<Listbox v-slot="{ open }">
+				<Listbox v-slot="{ open }" defaultValue="Default">
 					<div class="relative min-w-56 cursor-pointer text-left">
 						<ListboxButton
 							class="bg-columbia-blue flex h-8 w-full cursor-pointer px-3 transition ease-in-out hover:scale-102"
@@ -165,24 +155,20 @@
 							</div>
 							<div class="flex flex-row gap-3" v-else>
 								<button
-									v-if="sortTerm.sign == 'n'"
-									@click="sortTerm.sign = 'p'"
-									title="Switch to Descending"
+									@click.stop="invertSort"
+									:title="
+										sortTerm.sign == 'n'
+											? 'Switch to Descending'
+											: 'Switch to Ascending'
+									"
 									class="flex cursor-pointer"
 								>
 									<Icon
-										name="famicons:arrow-up"
-										class="self-center"
-									/>
-								</button>
-								<button
-									v-else
-									@click="sortTerm.sign = 'n'"
-									title="Switch to Ascending"
-									class="flex cursor-pointer"
-								>
-									<Icon
-										name="famicons:arrow-down"
+										:name="
+											sortTerm.sign == 'n'
+												? 'famicons:arrow-up'
+												: 'famicons:arrow-down'
+										"
 										class="self-center"
 									/>
 								</button>
@@ -235,16 +221,12 @@
 									}"
 								>
 									<Icon
-										v-if="
+										:name="
 											sortTerm.value == 'Alphabetical' &&
 											sortTerm.sign == 'n'
+												? 'famicons:arrow-up'
+												: 'famicons:arrow-down'
 										"
-										name="famicons:arrow-up"
-										class="self-center"
-									/>
-									<Icon
-										v-else
-										name="famicons:arrow-down"
 										class="self-center"
 									/>
 									Alphabetical
@@ -269,16 +251,12 @@
 									}"
 								>
 									<Icon
-										v-if="
+										:name="
 											sortTerm.value == 'Date Uploaded' &&
 											sortTerm.sign == 'n'
+												? 'famicons:arrow-up'
+												: 'famicons:arrow-down'
 										"
-										name="famicons:arrow-up"
-										class="self-center"
-									/>
-									<Icon
-										v-else
-										name="famicons:arrow-down"
 										class="self-center"
 									/>
 									Date Uploaded
@@ -286,6 +264,7 @@
 							</ListboxOption>
 							<ListboxOption
 								value="Date Modified"
+								v-slot="{ active, selected }"
 								@click="selectOrder('Date Modified')"
 								title="Sort By Date Modified"
 							>
@@ -302,16 +281,12 @@
 									}"
 								>
 									<Icon
-										v-if="
+										:name="
 											sortTerm.value == 'Date Modified' &&
 											sortTerm.sign == 'n'
+												? 'famicons:arrow-up'
+												: 'famicons:arrow-down'
 										"
-										name="famicons:arrow-up"
-										class="self-center"
-									/>
-									<Icon
-										v-else
-										name="famicons:arrow-down"
 										class="self-center"
 									/>
 									Date Modified
@@ -395,6 +370,14 @@ function invertTag(index) {
 }
 function removeTag(index) {
 	selectedTags.value.splice(index, 1);
+}
+
+function invertSort() {
+	if (sortTerm.value.sign == "n") {
+		sortTerm.value.sign = "p";
+	} else {
+		sortTerm.value.sign = "n";
+	}
 }
 
 // get current date for limiting date range input
