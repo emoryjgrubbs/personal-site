@@ -83,14 +83,17 @@
 						v-show="selectedTags.length > 0"
 						class="flex flex-row gap-2 overflow-x-scroll"
 					>
-						<div v-for="(tag, index) in selectedTags">
+						<div
+							v-for="(tag, index) in selectedTags"
+							class="flex h-8 gap-2 pr-2 pl-3"
+							:class="
+								tag.sign == 'n'
+									? 'bg-black text-white'
+									: 'bg-columbia-blue'
+							"
+						>
 							<button
-								class="flex h-8 cursor-pointer gap-2 pr-2 pl-3 whitespace-nowrap capitalize"
-								:class="
-									tag.sign == 'n'
-										? 'bg-black text-white'
-										: 'bg-columbia-blue'
-								"
+								class="cursor-pointer whitespace-nowrap capitalize"
 								@click="invertTag(index)"
 								:title="
 									tag.sign == 'n'
@@ -99,16 +102,16 @@
 								"
 							>
 								{{ tag.value }}
-								<button
-									@click.stop="removeTag(index)"
-									class="flex"
-									title="Remove Tag From Filters"
-								>
-									<Icon
-										name="famicons:close"
-										class="cursor-pointer self-center"
-									/>
-								</button>
+							</button>
+							<button
+								@click.stop="removeTag(index)"
+								class="flex"
+								title="Remove Tag From Filters"
+							>
+								<Icon
+									name="famicons:close"
+									class="cursor-pointer self-center"
+								/>
 							</button>
 						</div>
 					</div>
