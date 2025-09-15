@@ -47,21 +47,25 @@
 			<div
 				class="grid"
 				:class="
-					showDetails ? 'grid-cols-1 gap-12' : 'grid-cols-5 gap-3'
+					showDetails
+						? 'grid-cols-1 gap-12'
+						: 'grid-cols-1 gap-3 md:grid-cols-3 xl:grid-cols-5'
 				"
 			>
 				<div
 					v-for="image in filteredImages"
-					class="flex cursor-pointer items-center select-none"
+					class="flex items-center select-none"
 					:class="
-						showDetails ? 'gap-12' : 'aspect-square overflow-hidden'
+						showDetails
+							? 'gap-6 max-xl:flex max-xl:flex-col md:gap-12'
+							: 'aspect-square overflow-hidden'
 					"
 				>
 					<button
 						@click="maximize(image)"
 						title="Expand Image"
-						class="h-full"
-						:class="showDetails ? 'w-3/8' : 'w-full'"
+						class="h-full cursor-pointer"
+						:class="showDetails ? 'xl:w-3/8' : 'w-full'"
 					>
 						<NuxtImg
 							class="h-full w-full cursor-pointer object-cover select-none"

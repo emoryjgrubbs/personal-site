@@ -7,9 +7,13 @@
 			:open="expand.open"
 			@minimize="minimize"
 		/>
-		<div class="mx-16 my-16 flex flex-col gap-y-8 md:mx-14 lg:mx-20">
+		<div
+			class="mx-16 my-16 flex flex-col gap-24 md:mx-14 md:gap-y-8 lg:mx-20"
+		>
 			<!--about me-->
-			<div class="flex flex-row items-center gap-x-16 max-md:flex-col">
+			<div
+				class="flex flex-col items-center gap-x-16 gap-y-8 md:flex-row"
+			>
 				<button
 					@click="
 						maximize({
@@ -18,7 +22,7 @@
 						})
 					"
 					title="Expand Image"
-					class="w-7/12 select-none max-sm:w-9/12 md:w-5/12"
+					class="order-2 select-none md:order-none md:w-5/12"
 				>
 					<NuxtImg
 						class="h-full w-full cursor-pointer object-cover select-none"
@@ -27,9 +31,9 @@
 						draggable="false"
 					/>
 				</button>
-				<div class="flex w-7/12 flex-col gap-y-4 max-sm:w-11/12">
+				<div class="contents w-7/12 gap-y-4 md:flex md:flex-col">
 					<h1 class="text-center text-3xl font-semibold">About Me</h1>
-					<p class="text-xl">
+					<p class="order-3 text-xl">
 						I graduated with honors from The University of Texas at
 						Dallas, with a degree in Computer Science. And, I am
 						proud to have been involved with the school’s
@@ -47,10 +51,12 @@
 				</div>
 			</div>
 			<!--Projects-->
-			<div class="flex flex-row items-center gap-x-16 max-md:flex-col">
+			<div
+				class="flex flex-col items-center gap-x-16 gap-y-8 md:flex-row"
+			>
 				<NuxtLink
 					to="/Projects"
-					class="group relative order-2 w-7/12 cursor-pointer select-none max-sm:w-9/12 md:w-5/12"
+					class="group relative order-2 cursor-pointer select-none md:w-5/12"
 					title="Navigate To Projects"
 				>
 					<NuxtImg
@@ -59,7 +65,7 @@
 						draggable="false"
 					/>
 					<div
-						class="group-hover:text-columbia-blue group-hover-transition absolute top-0 flex h-full w-full cursor-pointer justify-center text-white backdrop-blur-md duration-300 ease-in-out group-hover:backdrop-blur-none"
+						class="group-hover:text-columbia-blue group-hover-transition absolute top-0 flex h-full w-full cursor-pointer justify-center text-white backdrop-blur-sm duration-300 ease-in-out group-hover:backdrop-blur-none lg:backdrop-blur-md"
 					>
 						<div
 							class="flex w-48 justify-evenly self-center rounded-lg py-2 text-center text-3xl font-semibold duration-300 ease-in-out group-hover:scale-125 group-hover:transition"
@@ -72,22 +78,23 @@
 						</div>
 					</div>
 				</NuxtLink>
-				<div class="flex w-7/12 flex-col gap-y-4 max-sm:w-11/12">
-					<div class="flex justify-center"></div>
+				<div class="contents w-7/12 gap-y-4 md:flex md:flex-col">
 					<h1 class="text-center text-3xl font-semibold">
 						Project Directory
 					</h1>
-					<p class="text-xl">
+					<p class="order-3 text-xl">
 						This is a catalog of project write ups, in which I can
 						document my thoughts and decisions.
 					</p>
 				</div>
 			</div>
 			<!--Recipes-->
-			<div class="flex flex-row items-center gap-x-16 max-md:flex-col">
+			<div
+				class="flex flex-col items-center gap-x-16 gap-y-8 md:flex-row"
+			>
 				<NuxtLink
 					to="/Recipes"
-					class="group relative w-7/12 cursor-pointer select-none max-sm:w-9/12 md:w-5/12"
+					class="group relative order-2 cursor-pointer select-none md:order-none md:w-5/12"
 					title="Navigate To Recipes"
 				>
 					<NuxtImg
@@ -96,7 +103,7 @@
 						draggable="false"
 					/>
 					<div
-						class="group-hover:text-columbia-blue group-hover-transition absolute top-0 flex h-full w-full cursor-pointer justify-center text-white backdrop-blur-md duration-300 ease-in-out group-hover:backdrop-blur-none"
+						class="group-hover:text-columbia-blue group-hover-transition absolute top-0 flex h-full w-full cursor-pointer justify-center text-white backdrop-blur-sm duration-300 ease-in-out group-hover:backdrop-blur-none lg:backdrop-blur-md"
 					>
 						<div
 							class="flex w-48 justify-evenly self-center rounded-lg py-2 text-center text-3xl font-semibold duration-300 ease-in-out group-hover:scale-125 group-hover:transition"
@@ -109,10 +116,9 @@
 						</div>
 					</div>
 				</NuxtLink>
-				<div class="flex w-7/12 flex-col gap-y-4 max-sm:w-11/12">
-					<div class="flex justify-center"></div>
+				<div class="contents w-7/12 gap-y-4 md:flex md:flex-col">
 					<h1 class="text-center text-3xl font-semibold">Recipes</h1>
-					<p class="text-xl">
+					<p class="order-3 text-xl">
 						I am not a Michelin Star chef, but there are a hand-full
 						of recipes I have put in time to refine. This serves as
 						a centralized reference for myself and a platform to
@@ -121,11 +127,12 @@
 				</div>
 			</div>
 			<!--Gallery-->
-			<div class="flex flex-row items-center gap-x-16 max-md:flex-col">
-				<!--re-add order-2-->
+			<div
+				class="flex flex-col items-center gap-x-16 gap-y-8 md:flex-row"
+			>
 				<NuxtLink
 					to="/Gallery"
-					class="group relative order-2 w-7/12 cursor-pointer select-none max-sm:w-9/12 md:w-5/12"
+					class="group relative order-2 cursor-pointer select-none md:w-5/12"
 					title="Navigate To Gallery"
 				>
 					<NuxtImg
@@ -134,7 +141,7 @@
 						draggable="false"
 					/>
 					<div
-						class="group-hover:text-columbia-blue group-hover-transition absolute top-0 flex h-full w-full cursor-pointer justify-center text-white backdrop-blur-md duration-300 ease-in-out group-hover:backdrop-blur-none"
+						class="group-hover:text-columbia-blue group-hover-transition absolute top-0 flex h-full w-full cursor-pointer justify-center text-white backdrop-blur-sm duration-300 ease-in-out group-hover:backdrop-blur-none lg:backdrop-blur-md"
 					>
 						<div
 							class="flex w-48 justify-evenly self-center rounded-lg py-2 text-center text-3xl font-semibold duration-300 ease-in-out group-hover:scale-125 group-hover:transition"
@@ -147,12 +154,11 @@
 						</div>
 					</div>
 				</NuxtLink>
-				<div class="flex w-7/12 flex-col gap-y-4 max-sm:w-11/12">
-					<div class="flex justify-center"></div>
+				<div class="contents w-7/12 gap-y-4 md:flex md:flex-col">
 					<h1 class="text-center text-3xl font-semibold">
 						Photo Gallery
 					</h1>
-					<p class="text-xl">
+					<p class="order-3 text-xl">
 						I’ve taken up photography and needed a better way to
 						permanently host images, without sacrificing quality for
 						file size. This solution allows me to make them public

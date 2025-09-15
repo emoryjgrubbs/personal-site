@@ -1,8 +1,9 @@
 <template>
-	<div class="flex flex-col gap-3 text-2xl">
+	<div class="flex flex-col gap-2 text-2xl">
 		<!--Combined Search Line-->
 		<label>
-			Combined {{ props.placeholder }} Search
+			Combined
+			<span class="max-sm:hidden">{{ props.placeholder }}</span> Search
 			<div class="flex w-full flex-row gap-2">
 				<input
 					placeholder="Tile, $Tags, @Dates, or ^Order"
@@ -19,11 +20,14 @@
 			</div>
 		</label>
 		<!--Breakout Options Lines-->
-		<div v-if="showBreakoutBar" class="flex flex-row gap-2 text-xl">
+		<div
+			v-if="showBreakoutBar"
+			class="flex flex-col gap-2 text-xl lg:flex-row"
+		>
 			<!--Input for Tags-->
-			<label class="w-full">
+			<label class="flex w-full grow-9 flex-col">
 				Tag Input
-				<div class="flex flex-row gap-2">
+				<div class="flex flex-col gap-2 md:flex-row">
 					<Combobox v-model="selectedTags" multiple v-slot="{ open }">
 						<div class="relative flex min-w-1/2 grow">
 							<ComboboxInput
@@ -31,8 +35,8 @@
 								@change="tagTerm = $event.target.value.trim()"
 								class="bg-columbia-blue h-8 w-full pr-10 pl-3"
 								:class="{
-									'rounded-tl-md': open,
-									'rounded-l-md': !open,
+									'rounded-t-md lg:rounded-tr-none': open,
+									'rounded-md lg:rounded-r-none': !open,
 								}"
 							/>
 							<ComboboxButton
@@ -44,7 +48,7 @@
 								/>
 							</ComboboxButton>
 							<ComboboxOptions
-								class="bg-alice-blue absolute z-20 mt-11 flex max-h-128 w-full min-w-56 flex-col gap-1 overflow-y-scroll overscroll-contain rounded-b-md"
+								class="bg-alice-blue absolute z-20 mt-11 flex max-h-128 w-full min-w-64 flex-col gap-1 overflow-y-scroll overscroll-contain rounded-b-md"
 							>
 								<ComboboxOption
 									v-show="filteredTagList == 0"
@@ -118,187 +122,195 @@
 				</div>
 			</label>
 			<!--Input for Date Range-->
-			<label>
-				Start of Range
-				<input
-					v-model="dateTerm.start"
-					type="date"
-					class="bg-columbia-blue h-8 w-full px-3"
-					:max="dateTerm.end || today"
-				/>
-			</label>
-			<label>
-				End of Range
-				<input
-					v-model="dateTerm.end"
-					type="date"
-					class="bg-columbia-blue h-8 w-full px-3"
-					:min="dateTerm.start"
-					:max="today"
-				/>
-			</label>
-			<!--Input for Sort Order-->
-			<label>
-				Order
-				<Listbox v-slot="{ open }" defaultValue="Default">
-					<div class="relative min-w-56 cursor-pointer text-left">
-						<ListboxButton
-							class="bg-columbia-blue flex h-8 w-full cursor-pointer px-3 transition ease-in-out hover:scale-102"
-							:class="{
-								'rounded-tr-md': open,
-								'rounded-r-md': !open,
-							}"
-							title="Show Sorting Options"
-						>
-							<div
-								v-if="sortTerm.value == 'Default'"
-								class="text-gray-500"
-							>
-								Default
-							</div>
-							<div class="flex flex-row gap-3" v-else>
-								<button
-									@click.stop="invertSort"
-									:title="
-										sortTerm.sign == 'n'
-											? 'Switch to Descending'
-											: 'Switch to Ascending'
-									"
-									class="flex cursor-pointer"
-								>
-									<Icon
-										:name="
-											sortTerm.sign == 'n'
-												? 'famicons:arrow-up'
-												: 'famicons:arrow-down'
-										"
-										class="self-center"
-									/>
-								</button>
-
-								{{ sortTerm.value }}
-							</div>
-						</ListboxButton>
-
-						<!--Sort Order Dropdown-->
-						<ListboxOptions
-							class="bg-alice-blue absolute z-20 mt-3 flex min-w-56 flex-col gap-1 overflow-hidden rounded-b-md"
-						>
-							<ListboxOption
-								value="Default"
-								v-slot="{ active, selected }"
-								@click="selectOrder('Default')"
-								title="Use Default Sort Order"
+			<div class="flex flex-col gap-2 md:grow-1 md:flex-row">
+				<label>
+					Date Range
+					<div class="flex flex-row gap-2">
+						<input
+							v-model="dateTerm.start"
+							type="date"
+							class="bg-columbia-blue h-8 w-full rounded-l-md px-3 lg:rounded-none"
+							:max="dateTerm.end || today"
+						/>
+						<input
+							v-model="dateTerm.end"
+							type="date"
+							class="bg-columbia-blue h-8 w-full rounded-r-md px-3 md:rounded-none"
+							:min="dateTerm.start"
+							:max="today"
+						/>
+					</div>
+				</label>
+				<!--Input for Sort Order-->
+				<label class="w-full">
+					Order
+					<Listbox v-slot="{ open }" defaultValue="Default">
+						<div class="relative min-w-64 cursor-pointer text-left">
+							<ListboxButton
+								class="bg-columbia-blue flex h-8 w-full cursor-pointer px-3 transition ease-in-out hover:scale-102"
+								:class="{
+									'rounded-t-md md:rounded-tl-none': open,
+									'rounded-md md:rounded-l-none': !open,
+								}"
+								title="Show Sorting Options"
 							>
 								<div
-									class="flex h-8 cursor-pointer flex-row gap-3 px-3 capitalize"
-									:class="{
-										'bg-alice-blue': active,
-										'bg-rich-black text-white':
-											active && selected,
-										'bg-black text-white':
-											!active && selected,
-										'bg-columbia-blue':
-											!active && !selected,
-									}"
+									v-if="sortTerm.value == 'Default'"
+									class="text-gray-500"
 								>
 									Default
 								</div>
-							</ListboxOption>
-							<ListboxOption
-								value="Alphabetical"
-								v-slot="{ active, selected }"
-								@click="selectOrder('Alphabetical')"
-								title="Sort Alphabetically"
-							>
-								<div
-									class="flex h-8 cursor-pointer flex-row gap-3 px-3 capitalize"
-									:class="{
-										'bg-alice-blue': active,
-										'bg-rich-black text-white':
-											active && selected,
-										'bg-black text-white':
-											!active && selected,
-										'bg-columbia-blue':
-											!active && !selected,
-									}"
-								>
-									<Icon
-										:name="
-											sortTerm.value == 'Alphabetical' &&
+								<div class="flex flex-row gap-3" v-else>
+									<button
+										@click.stop="invertSort"
+										:title="
 											sortTerm.sign == 'n'
-												? 'famicons:arrow-up'
-												: 'famicons:arrow-down'
+												? 'Switch to Descending'
+												: 'Switch to Ascending'
 										"
-										class="self-center"
-									/>
-									Alphabetical
+										class="flex cursor-pointer"
+									>
+										<Icon
+											:name="
+												sortTerm.sign == 'n'
+													? 'famicons:arrow-up'
+													: 'famicons:arrow-down'
+											"
+											class="self-center"
+										/>
+									</button>
+
+									{{ sortTerm.value }}
 								</div>
-							</ListboxOption>
-							<ListboxOption
-								value="Date Uploaded"
-								v-slot="{ active, selected }"
-								@click="selectOrder('Date Uploaded')"
-								title="Sort By Date Uploaded"
+								<Icon
+									name="famicons:caret-down"
+									class="absolute right-3 flex h-full self-center"
+								/>
+							</ListboxButton>
+
+							<!--Sort Order Dropdown-->
+							<ListboxOptions
+								class="bg-alice-blue w-64-full absolute z-20 mt-3 flex w-full flex-col gap-1 overflow-hidden rounded-b-md"
 							>
-								<div
-									class="flex h-8 cursor-pointer flex-row gap-3 px-3 capitalize"
-									:class="{
-										'bg-alice-blue': active,
-										'bg-rich-black text-white':
-											active && selected,
-										'bg-black text-white':
-											!active && selected,
-										'bg-columbia-blue':
-											!active && !selected,
-									}"
+								<ListboxOption
+									value="Default"
+									v-slot="{ active, selected }"
+									@click="selectOrder('Default')"
+									title="Use Default Sort Order"
 								>
-									<Icon
-										:name="
-											sortTerm.value == 'Date Uploaded' &&
-											sortTerm.sign == 'n'
-												? 'famicons:arrow-up'
-												: 'famicons:arrow-down'
-										"
-										class="self-center"
-									/>
-									Date Uploaded
-								</div>
-							</ListboxOption>
-							<ListboxOption
-								value="Date Modified"
-								v-slot="{ active, selected }"
-								@click="selectOrder('Date Modified')"
-								title="Sort By Date Modified"
-							>
-								<div
-									class="flex h-8 cursor-pointer flex-row gap-3 px-3 capitalize"
-									:class="{
-										'bg-alice-blue': active,
-										'bg-rich-black text-white':
-											active && selected,
-										'bg-black text-white':
-											!active && selected,
-										'bg-columbia-blue':
-											!active && !selected,
-									}"
+									<div
+										class="flex h-8 cursor-pointer flex-row gap-3 px-3 capitalize"
+										:class="{
+											'bg-alice-blue': active,
+											'bg-rich-black text-white':
+												active && selected,
+											'bg-black text-white':
+												!active && selected,
+											'bg-columbia-blue':
+												!active && !selected,
+										}"
+									>
+										Default
+									</div>
+								</ListboxOption>
+								<ListboxOption
+									value="Alphabetical"
+									v-slot="{ active, selected }"
+									@click="selectOrder('Alphabetical')"
+									title="Sort Alphabetically"
 								>
-									<Icon
-										:name="
-											sortTerm.value == 'Date Modified' &&
-											sortTerm.sign == 'n'
-												? 'famicons:arrow-up'
-												: 'famicons:arrow-down'
-										"
-										class="self-center"
-									/>
-									Date Modified
-								</div>
-							</ListboxOption>
-						</ListboxOptions>
-					</div>
-				</Listbox>
-			</label>
+									<div
+										class="flex h-8 cursor-pointer flex-row gap-3 px-3 capitalize"
+										:class="{
+											'bg-alice-blue': active,
+											'bg-rich-black text-white':
+												active && selected,
+											'bg-black text-white':
+												!active && selected,
+											'bg-columbia-blue':
+												!active && !selected,
+										}"
+									>
+										<Icon
+											:name="
+												sortTerm.value ==
+													'Alphabetical' &&
+												sortTerm.sign == 'n'
+													? 'famicons:arrow-up'
+													: 'famicons:arrow-down'
+											"
+											class="self-center"
+										/>
+										Alphabetical
+									</div>
+								</ListboxOption>
+								<ListboxOption
+									value="Date Uploaded"
+									v-slot="{ active, selected }"
+									@click="selectOrder('Date Uploaded')"
+									title="Sort By Date Uploaded"
+								>
+									<div
+										class="flex h-8 cursor-pointer flex-row gap-3 px-3 capitalize"
+										:class="{
+											'bg-alice-blue': active,
+											'bg-rich-black text-white':
+												active && selected,
+											'bg-black text-white':
+												!active && selected,
+											'bg-columbia-blue':
+												!active && !selected,
+										}"
+									>
+										<Icon
+											:name="
+												sortTerm.value ==
+													'Date Uploaded' &&
+												sortTerm.sign == 'n'
+													? 'famicons:arrow-up'
+													: 'famicons:arrow-down'
+											"
+											class="self-center"
+										/>
+										Date Uploaded
+									</div>
+								</ListboxOption>
+								<ListboxOption
+									value="Date Modified"
+									v-slot="{ active, selected }"
+									@click="selectOrder('Date Modified')"
+									title="Sort By Date Modified"
+								>
+									<div
+										class="flex h-8 cursor-pointer flex-row gap-3 px-3 capitalize"
+										:class="{
+											'bg-alice-blue': active,
+											'bg-rich-black text-white':
+												active && selected,
+											'bg-black text-white':
+												!active && selected,
+											'bg-columbia-blue':
+												!active && !selected,
+										}"
+									>
+										<Icon
+											:name="
+												sortTerm.value ==
+													'Date Modified' &&
+												sortTerm.sign == 'n'
+													? 'famicons:arrow-up'
+													: 'famicons:arrow-down'
+											"
+											class="self-center"
+										/>
+										Date Modified
+									</div>
+								</ListboxOption>
+							</ListboxOptions>
+						</div>
+					</Listbox>
+				</label>
+			</div>
 		</div>
 	</div>
 </template>

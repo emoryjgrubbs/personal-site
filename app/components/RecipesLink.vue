@@ -8,7 +8,7 @@
 			title="Return Home"
 		>
 			<Icon name="famicons:caret-back" class="self-center" />
-			<div v-show="true">Home</div>
+			<div v-show="true">Recipes</div>
 		</NuxtLink>
 	</div>
 </template>
