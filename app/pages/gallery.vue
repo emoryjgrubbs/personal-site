@@ -117,14 +117,14 @@ function maximize(image) {
 
 const images = [
 	{
-		title: "Seattle Fairy 1",
+		title: "Seattle Ferry 1",
 		tags: [
 			"seattle",
 			"washington",
 			"night",
 			"water",
 			"sound",
-			"fairy",
+			"ferry",
 			"color",
 		],
 		dates: [{ start: "2025-01-15", end: "2025-01-15" }],
@@ -132,14 +132,14 @@ const images = [
 		alt: "",
 	},
 	{
-		title: "Seattle Fairy 2",
+		title: "Seattle Ferry 2",
 		tags: [
 			"seattle",
 			"washington",
 			"night",
 			"water",
 			"sound",
-			"fairy",
+			"ferry",
 			"desaturated",
 			"color",
 		],

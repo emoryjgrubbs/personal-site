@@ -13,7 +13,7 @@
 				<button
 					@click="
 						maximize({
-							src: '/images/home/about-me-guitar.webp',
+							src: '/images/home/bio-guitar.webp',
 							alt: 'playing guitar, credit: John Grubbs rockslidephotography',
 						})
 					"
@@ -22,9 +22,8 @@
 				>
 					<NuxtImg
 						class="h-full w-full cursor-pointer object-cover select-none"
-						src="/images/home/about-me-guitar.webp"
+						src="/images/home/bio-guitar.webp"
 						alt="playing guitar, credit: John Grubbs rockslidephotography"
-						loading="lazy"
 						draggable="false"
 					/>
 				</button>
@@ -32,10 +31,18 @@
 					<h1 class="text-center text-3xl font-semibold">About Me</h1>
 					<p class="text-xl">
 						I graduated with honors from The University of Texas at
-						Dallas, with a degree in Computer Science. I was
-						involved as both a team member and a junior mentor in
-						the school’s Engineering Projects in Community Service
-						program. Linux & open source software
+						Dallas, with a degree in Computer Science. And, I am
+						proud to have been involved with the school’s
+						Engineering Projects in Community Service program, as
+						both a team member and a junior mentor. Currently, my
+						personal technological interests lie in open source
+						projects. Although I switched to Linux full time about a
+						year ago, I have been interested in FOSS for a long
+						time. Past simply not wanting to pay for software as a
+						child, I believe it has some compelling advantages.
+						Particularly I find that it empowers users to make
+						decisions on how they experience and interact with the
+						software.
 					</p>
 				</div>
 			</div>
@@ -47,9 +54,8 @@
 					title="Navigate To Projects"
 				>
 					<NuxtImg
-						src="/images/home/about-me-guitar.webp"
-						alt="playing guitar, credit: John Grubbs rockslidephotography"
-						loading="lazy"
+						src="/images/home/projects-this-page-source.webp"
+						alt="Computer screen, showing section of this page's source code"
 						draggable="false"
 					/>
 					<div
@@ -71,10 +77,13 @@
 					<h1 class="text-center text-3xl font-semibold">
 						Project Directory
 					</h1>
-					<p class="text-xl">Write ups on projects</p>
+					<p class="text-xl">
+						This is a catalog of project write ups, in which I can
+						document my thoughts and decisions.
+					</p>
 				</div>
 			</div>
-			<!--Recpies-->
+			<!--Recipes-->
 			<div class="flex flex-row items-center gap-x-16 max-md:flex-col">
 				<NuxtLink
 					to="/Recipes"
@@ -82,9 +91,8 @@
 					title="Navigate To Recipes"
 				>
 					<NuxtImg
-						src="/images/home/about-me-guitar.webp"
-						alt="playing guitar, credit: John Grubbs rockslidephotography"
-						loading="lazy"
+						src="/images/home/recipes-coffee.webp"
+						alt="Coffee cup, espresso shot, and milk jug"
 						draggable="false"
 					/>
 					<div
@@ -103,8 +111,13 @@
 				</NuxtLink>
 				<div class="flex w-7/12 flex-col gap-y-4 max-sm:w-11/12">
 					<div class="flex justify-center"></div>
-					<h1 class="text-center text-3xl font-semibold">Recpies</h1>
-					<p class="text-xl">A place to share recpies</p>
+					<h1 class="text-center text-3xl font-semibold">Recipes</h1>
+					<p class="text-xl">
+						I am not a Michelin Star chef, but there are a hand-full
+						of recipes I have put in time to refine. This serves as
+						a centralized reference for myself and a platform to
+						share them with friends.
+					</p>
 				</div>
 			</div>
 			<!--Gallery-->
@@ -116,9 +129,8 @@
 					title="Navigate To Gallery"
 				>
 					<NuxtImg
-						src="/images/home/camera-setup.webp"
-						alt="playing guitar, credit: John Grubbs rockslidephotography"
-						loading="lazy"
+						src="/images/home/gallery-overlook-camera-setup.webp"
+						alt="Camera on tripod, at Whiterock overlook"
 						draggable="false"
 					/>
 					<div
@@ -141,7 +153,11 @@
 						Photo Gallery
 					</h1>
 					<p class="text-xl">
-						A gallery to host high quality versions of photographs.
+						I’ve taken up photography and needed a better way to
+						permanently host images, without sacrificing quality for
+						file size. This solution allows me to make them public
+						as well, increasing ease of access for some of my family
+						members.
 					</p>
 				</div>
 			</div>
