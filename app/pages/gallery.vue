@@ -42,7 +42,9 @@
 				:open="expand.open"
 				@minimize="minimize"
 			/>
+
 			<!--Top Gallery-->
+
 			<!--Image Grid-->
 			<div
 				class="grid"
