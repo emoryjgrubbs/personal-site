@@ -147,45 +147,49 @@
 					<Listbox v-slot="{ open }" defaultValue="Default">
 						<div class="relative min-w-64 cursor-pointer text-left">
 							<ListboxButton
-								class="bg-columbia-blue flex h-8 w-full cursor-pointer px-3 transition ease-in-out hover:scale-102"
-								:class="{
-									'rounded-t-md md:rounded-tl-none': open,
-									'rounded-md md:rounded-l-none': !open,
-								}"
+                                class="w-full"
 								title="Show Sorting Options"
 							>
-								<div
-									v-if="sortTerm.value == 'Default'"
-									class="text-gray-500"
-								>
-									Default
-								</div>
-								<div class="flex flex-row gap-3" v-else>
-									<button
-										@click.stop="invertSort"
-										:title="
-											sortTerm.sign == 'n'
-												? 'Switch to Descending'
-												: 'Switch to Ascending'
-										"
-										class="flex cursor-pointer"
-									>
-										<Icon
-											:name="
-												sortTerm.sign == 'n'
-													? 'famicons:arrow-up'
-													: 'famicons:arrow-down'
-											"
-											class="self-center"
-										/>
-									</button>
+                                <div
+                                    class="bg-columbia-blue flex h-8 w-full cursor-pointer px-3 transition ease-in-out hover:scale-102"
+                                    :class="{
+                                        'rounded-t-md md:rounded-tl-none': open,
+                                        'rounded-md md:rounded-l-none': !open,
+                                    }"
+                                >
+                                    <div
+                                        v-if="sortTerm.value == 'Default'"
+                                        class="text-gray-500"
+                                    >
+                                        Default
+                                    </div>
+                                    <div class="flex flex-row gap-3" v-else>
+                                        <button
+                                            @click.stop="invertSort"
+                                            :title="
+                                                sortTerm.sign == 'n'
+                                                    ? 'Switch to Descending'
+                                                    : 'Switch to Ascending'
+                                            "
+                                            class="flex cursor-pointer"
+                                        >
+                                            <Icon
+                                                :name="
+                                                    sortTerm.sign == 'n'
+                                                        ? 'famicons:arrow-up'
+                                                        : 'famicons:arrow-down'
+                                                "
+                                                class="self-center"
+                                            />
+                                        </button>
 
-									{{ sortTerm.value }}
-								</div>
-								<Icon
-									name="famicons:caret-down"
-									class="absolute right-3 flex h-full self-center"
-								/>
+                                        {{ sortTerm.value }}
+                                    </div>
+                                    <Icon
+                                        name="famicons:caret-down"
+                                        class="absolute right-3 flex h-full self-center"
+                                    />
+                                </div>
 							</ListboxButton>
 
 							<!--Sort Order Dropdown-->
