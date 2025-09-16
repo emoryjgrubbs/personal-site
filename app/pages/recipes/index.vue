@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<HomeLink />
+		<ReturnLink link="/" location="Home"/>
 
 		<div class="mx-16 my-16 mt-40 flex flex-col md:mx-14 lg:mx-20">
 			<!--Search Component-->
