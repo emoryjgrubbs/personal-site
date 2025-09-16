@@ -1,6 +1,6 @@
 <template>
 	<div
-		class="fixed top-33 z-50 mx-16 flex flex-col gap-y-8 transition ease-in-out hover:scale-110 md:mx-14 lg:mx-20"
+		class="fixed top-33 z-40 mx-16 flex flex-col gap-y-8 transition ease-in-out hover:scale-110 md:mx-14 lg:mx-20"
 	>
 		<NuxtLink
 			to="/"
@@ -8,7 +8,7 @@
 			title="Return Home"
 		>
 			<Icon name="famicons:caret-back" class="self-center" />
-			<div v-show="true">Home</div>
+			<div>Home</div>
 		</NuxtLink>
 	</div>
 </template>
