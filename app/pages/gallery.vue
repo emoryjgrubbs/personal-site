@@ -3,7 +3,7 @@
 		<ReturnLink link="/" location="Home" />
 
 		<div
-			class="mx-16 my-16 mt-40 flex flex-col gap-24 md:mx-14 md:gap-y-8 lg:mx-24 xl:mx-48"
+			class="mx-16 my-16 mt-40 flex flex-col md:mx-14 gap-8 lg:mx-24 xl:mx-48"
 		>
 			<!--Search Component-->
 			<CombiFilter
@@ -11,14 +11,14 @@
 				:tagList="tagList"
 				placeholder="Gallery Image"
 				@searchUpdate="(filterUpdate) => updateDisplay(filterUpdate)"
-				class="mb-10"
+				class="sm:mb-10"
 				ref="filter"
 			/>
 
 			<!--Button for toggling Image Details-->
 			<div class="flex w-full justify-end">
 				<button
-					class="flex w-fit cursor-pointer flex-row items-center gap-2 text-xl transition ease-in-out hover:scale-102"
+					class="flex w-fit cursor-pointer flex-row items-center gap-2 text-lg sm:text-xl transition ease-in-out hover:scale-102"
 					@click="toggleDetails"
 					:title="
 						showDetails

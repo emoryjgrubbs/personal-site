@@ -1,5 +1,5 @@
 <template>
-	<div class="flex flex-col gap-2 text-2xl">
+	<div class="flex flex-col gap-2 text-lg sm:text-xl">
 		<!--Combined Search Line-->
 		<label>
 			Combined
@@ -8,7 +8,7 @@
 				<input
 					placeholder="Tile, $Tags, @Dates, or ^Order"
 					v-model="searchTerm"
-					class="bg-columbia-blue h-8 w-full rounded-l-md px-3 text-xl"
+					class="bg-columbia-blue h-8 w-full rounded-l-md px-3"
 				/>
 				<button
 					class="bg-columbia-blue flex cursor-pointer rounded-r-md px-3 transition ease-in-out hover:scale-105"
@@ -19,10 +19,11 @@
 				</button>
 			</div>
 		</label>
+
 		<!--Breakout Options Lines-->
 		<div
 			v-if="showBreakoutBar"
-			class="flex flex-col gap-2 text-xl lg:flex-row"
+			class="flex flex-col gap-2 lg:flex-row"
 		>
 			<!--Input for Tags-->
 			<label class="flex w-full grow-9 flex-col">
@@ -121,11 +122,11 @@
 					</div>
 				</div>
 			</label>
-			<!--Input for Date Range-->
 			<div class="flex flex-col gap-2 md:grow-1 md:flex-row">
+                <!--Input for Date Range-->
 				<label>
 					Date Range
-					<div class="flex flex-row gap-2">
+					<div class="flex flex-row gap-2 text-sm sm:text-xl">
 						<input
 							v-model="dateTerm.start"
 							type="date"
@@ -141,6 +142,7 @@
 						/>
 					</div>
 				</label>
+
 				<!--Input for Sort Order-->
 				<label class="w-full">
 					Order
@@ -182,7 +184,6 @@
 												class="self-center"
 											/>
 										</button>
-
 										{{ sortTerm.value }}
 									</div>
 									<Icon
