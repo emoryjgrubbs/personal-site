@@ -314,7 +314,6 @@
 				</label>
 			</div>
 		</div>
-		<p>{{ selectedTags }}</p>
 	</div>
 </template>
 
