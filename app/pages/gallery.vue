@@ -330,7 +330,8 @@ function addClickedTag(value) {
 			.map((element) => element.value)
 			.includes(value)
 	) {
-		filter.value.selectedTags.push({ sign: "p", value: value });
+		const index = tagList.map((element) => element.value).indexOf(value);
+		filter.value.selectedTags.push(tagList[index]);
 	}
 }
 
