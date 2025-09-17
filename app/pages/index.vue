@@ -10,7 +10,7 @@
 
 		<!--Home Content-->
 		<div
-			class="mx-16 my-16 flex flex-col gap-24 md:mx-14 md:gap-y-8 lg:mx-20"
+			class="mx-16 my-16 flex flex-col gap-y-24 md:mx-14 md:gap-y-16 lg:mx-24 xl:mx-48"
 		>
 			<!--about me-->
 			<div

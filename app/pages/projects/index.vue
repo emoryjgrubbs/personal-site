@@ -1,8 +1,10 @@
 <template>
 	<div>
-		<ReturnLink link="/" location="Home"/>
+		<ReturnLink link="/" location="Home" />
 
-		<div class="mx-16 my-16 mt-40 flex flex-col md:mx-14 lg:mx-20">
+		<div
+			class="mx-16 my-16 mt-40 flex flex-col gap-24 md:mx-14 md:gap-y-8 lg:mx-24 xl:mx-48"
+		>
 			<!--Search Component-->
 			<CombiFilter
 				:content="projects"

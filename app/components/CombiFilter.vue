@@ -186,7 +186,7 @@
 										{{ sortTerm.value }}
 									</div>
 									<Icon
-										name="famicons:caret-down"
+										name="famicons:chevron-expand"
 										class="absolute right-3 flex h-full self-center"
 									/>
 								</div>
