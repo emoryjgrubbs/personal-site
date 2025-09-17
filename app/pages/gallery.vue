@@ -3,7 +3,7 @@
 		<ReturnLink link="/" location="Home" />
 
 		<div
-			class="mx-16 my-16 mt-40 flex flex-col md:mx-14 gap-8 lg:mx-24 xl:mx-48"
+			class="mx-16 my-16 mt-40 flex flex-col gap-8 md:mx-14 lg:mx-24 xl:mx-48"
 		>
 			<!--Search Component-->
 			<CombiFilter
@@ -18,7 +18,7 @@
 			<!--Button for toggling Image Details-->
 			<div class="flex w-full justify-end">
 				<button
-					class="flex w-fit cursor-pointer flex-row items-center gap-2 text-lg sm:text-xl transition ease-in-out hover:scale-102"
+					class="flex w-fit cursor-pointer flex-row items-center gap-2 text-lg transition ease-in-out hover:scale-102 sm:text-xl"
 					@click="toggleDetails"
 					:title="
 						showDetails

@@ -21,10 +21,7 @@
 		</label>
 
 		<!--Breakout Options Lines-->
-		<div
-			v-if="showBreakoutBar"
-			class="flex flex-col gap-2 lg:flex-row"
-		>
+		<div v-if="showBreakoutBar" class="flex flex-col gap-2 lg:flex-row">
 			<!--Input for Tags-->
 			<label class="flex w-full grow-9 flex-col">
 				Tag Input
@@ -123,7 +120,7 @@
 				</div>
 			</label>
 			<div class="flex flex-col gap-2 md:grow-1 md:flex-row">
-                <!--Input for Date Range-->
+				<!--Input for Date Range-->
 				<label>
 					Date Range
 					<div class="flex flex-row gap-2 text-sm sm:text-xl">
@@ -388,11 +385,11 @@ function removeTag(index) {
 
 // get current date for limiting date range input
 const today = (() => {
-    const today = new Date();
-    // offset of local timezone (in milliseconds)
-    const offset = today.getTimezoneOffset() * 60 * 1000;
-    const rectifiedDay = new Date(today.getTime() - (offset));
-    return rectifiedDay.toISOString().split('T')[0];
+	const today = new Date();
+	// offset of local timezone (in milliseconds)
+	const offset = today.getTimezoneOffset() * 60 * 1000;
+	const rectifiedDay = new Date(today.getTime() - offset);
+	return rectifiedDay.toISOString().split("T")[0];
 })();
 
 // controlling sortTerm
