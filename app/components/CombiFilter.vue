@@ -387,7 +387,13 @@ function removeTag(index) {
 }
 
 // get current date for limiting date range input
-const today = new Date().toISOString().split("T")[0];
+const today = (() => {
+    const today = new Date();
+    // offset of local timezone (in milliseconds)
+    const offset = today.getTimezoneOffset() * 60 * 1000;
+    const rectifiedDay = new Date(today.getTime() - (offset));
+    return rectifiedDay.toISOString().split('T')[0];
+})();
 
 // controlling sortTerm
 function invertSort() {
