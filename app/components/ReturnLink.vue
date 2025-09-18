@@ -29,10 +29,10 @@ const props = defineProps({
 
 const shorten = computed(() => {
 	if (directions.top) {
-        return false;
+		return false;
 	}
 	if (directions.bottom) {
-        return true;
+		return true;
 	}
 });
 </script>

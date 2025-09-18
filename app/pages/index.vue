@@ -141,6 +141,7 @@
 						src="/images/home/gallery-overlook-camera-setup.webp"
 						alt="Camera on tripod, at Whiterock overlook"
 						draggable="false"
+						loading="lazy"
 					/>
 					<div
 						class="group-hover:text-columbia-blue group-hover-transition absolute top-0 flex h-full w-full cursor-pointer justify-center text-white backdrop-blur-sm duration-300 ease-in-out group-hover:backdrop-blur-none lg:backdrop-blur-md"

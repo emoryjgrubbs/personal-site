@@ -15,51 +15,16 @@
 				ref="filter"
 			/>
 
-			<!--Button for toggling Recipe Details-->
-			<div class="flex w-full justify-end">
-				<button
-					class="flex w-fit cursor-pointer flex-row items-center gap-2 text-lg transition ease-in-out hover:scale-102 sm:text-xl"
-					@click="toggleDetails"
-					:title="
-						showDetails
-							? 'Hide Image Details'
-							: 'Show Image Details'
-					"
-				>
-					<Icon
-						:name="
-							showDetails
-								? 'famicons:radio-button-on'
-								: 'famicons:radio-button-off'
-						"
-					/>
-					Ingredient
-				</button>
-			</div>
-
 			<!--Recipe Cards-->
-			<div
-				class="grid"
-				:class="
-					showDetails
-						? 'grid-cols-1 gap-12'
-						: 'grid-cols-1 gap-3 md:grid-cols-3 xl:grid-cols-5'
-				"
-			>
+			<div class="grid grid-cols-1 gap-3 md:grid-cols-3 xl:grid-cols-5">
 				<div
 					v-for="recipe in filteredRecipes"
 					class="flex items-center select-none"
-					:class="showDetails ? 'flex' : ''"
 				>
 					<NuxtLink
 						:to="recipe.link"
 						:title="'Navigate To ' + recipe.title"
-						class="h-full cursor-pointer text-xl"
-						:class="
-							showDetails
-								? 'xl:w-3/8'
-								: 'w-full overflow-hidden rounded-3xl bg-black text-white'
-						"
+						class="h-full w-full cursor-pointer overflow-hidden rounded-3xl bg-black text-xl text-white"
 					>
 						<NuxtImg
 							:src="recipe.thumbnail"
@@ -108,7 +73,8 @@ function addClickedTag(value) {
 			.map((element) => element.value)
 			.includes(value)
 	) {
-		filter.value.selectedTags.push({ sign: "p", value: value });
+		const index = tagList.map((element) => element.value).indexOf(value);
+		filter.value.selectedTags.push(tagList[index]);
 	}
 }
 
