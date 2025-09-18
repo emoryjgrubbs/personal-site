@@ -55,6 +55,7 @@
 						? 'grid-cols-1 gap-12'
 						: 'grid-cols-1 gap-3 md:grid-cols-3 xl:grid-cols-5'
 				"
+                hydrate-on-visible
 			>
 				<div
 					v-for="image in filteredImages"
