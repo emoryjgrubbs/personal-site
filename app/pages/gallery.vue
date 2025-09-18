@@ -272,7 +272,7 @@ const images = [
 			"b&k",
 		],
 		dates: [{ start: "2025-01-09", end: "2025-01-09" }],
-		src: "/images/test-img/more-down-b&k.webp",
+		src: "/images/test-img/more-down-bandk.webp",
 		alt: "",
 	},
 	{
