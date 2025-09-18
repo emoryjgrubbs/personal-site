@@ -27,14 +27,12 @@ const props = defineProps({
 	location: String,
 });
 
-const shorten = ref(false);
-
-watch((y) => {
+const shorten = computed(() => {
 	if (directions.top) {
-		shorten.value = false;
+        return false;
 	}
 	if (directions.bottom) {
-		shorten.value = true;
+        return true;
 	}
 });
 </script>
