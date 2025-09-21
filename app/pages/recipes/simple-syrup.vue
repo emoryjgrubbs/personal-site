@@ -35,163 +35,35 @@
 				</button>
 			</div>
 
-			<!--Recipe Information Block-->
-			<div
-				class="flex flex-col items-center gap-x-16 gap-y-8 md:flex-row"
-			>
-				<button
-					@click="
-						maximize({
-							src: '/images/recipes/simple-syrup/ingredients.webp',
-							alt: 'playing guitar, credit: John Grubbs rockslidephotography',
-						})
-					"
-					title="Expand Image"
-					class="overflow-contain order-2 flex aspect-square items-center md:order-none md:w-5/12"
-					v-if="!contentCondensed"
-				>
-					<NuxtImg
-						class="h-full w-full object-cover select-none"
-						src="/images/recipes/simple-syrup/ingredients.webp"
-						alt="Ingreidents List Reference"
-						draggable="false"
-					/>
-				</button>
-				<div class="contents w-full gap-y-8 md:flex md:flex-col">
-					<h1 class="text-center text-3xl font-semibold">
-						Simple Syrup
-					</h1>
-					<div class="order-3 flex w-full flex-col gap-2 text-xl">
-						<h2 class="text-2xl font-semibold">Ingreidents</h2>
-						<span
-							class="flex flex-col text-xl"
-							v-for="ingredient in ingredients"
-							>{{ ingredient.name }} -
-							{{ ingredient.measurement }}</span
-						>
-					</div>
-					<div class="order-3 flex w-full flex-col gap-2 text-xl">
-						<h2 class="text-2xl font-semibold">Equipment</h2>
-						<span
-							class="flex flex-col text-xl"
-							v-for="piece in equipment"
-							>{{ piece }}</span
-						>
-					</div>
-					<div
-						class="order-3 flex w-full flex-col gap-2 text-xl"
-						v-if="contentCondensed"
-					>
-						<h2 class="text-2xl font-semibold">Steps</h2>
-						<span
-							class="flex flex-col text-xl"
-							v-for="(step, index) in steps"
-							>{{ index + 1 }}. {{ step }}</span
-						>
-					</div>
-				</div>
-			</div>
+			<ArticleBlockRecipeInfo
+				:image="{
+					src: '/images/recipes/simple-syrup/ingredients.webp',
+					alt: 'Simple Syrup Ingredients',
+				}"
+				:ingredients="ingredients"
+				:equipment="equipment"
+				:instructions="instructions"
+				:contentCondensed="contentCondensed"
+				@maximize="(image) => maximize(image)"
+			/>
 			<div v-if="!contentCondensed" class="contents">
-				<!--Article Block Text-->
-				<div
-					class="flex flex-col items-center gap-x-16 gap-y-8 md:flex-row"
-				>
-					<h1
-						v-if="blocks[0].heading"
-						class="text-center text-3xl font-semibold"
-					>
-						{{ blocks[0].heading }}
-					</h1>
-					<p class="text-xl">
-						{{ blocks[0].text }}
-					</p>
-				</div>
-
-				<!--Article Block Text & Image 1-->
-				<div
-					class="flex flex-col items-center gap-x-16 gap-y-8 md:flex-row"
-				>
-					<button
-						@click="maximize(blocks[1].image)"
-						title="Expand Image"
-						class="order-2 flex items-center md:w-5/12"
-						:class="'right' == 'left' ? 'md:order-none' : ''"
-					>
-						<NuxtImg
-							class="h-full w-full object-cover select-none"
-							:src="blocks[1].image.src"
-							alt="Ingreidents List Reference"
-							draggable="false"
-						/>
-					</button>
-					<div class="contents w-7/12 gap-y-4 md:flex md:flex-col">
-						<h1
-							v-if="blocks[1].heading"
-							class="text-center text-3xl font-semibold"
-						>
-							{{ blocks[1].heading }}
-						</h1>
-						<p class="order-3 text-xl">
-							{{ blocks[1].text }}
-						</p>
-					</div>
-				</div>
-
-				<!--Article Block Text & Image 2-->
-				<div
-					class="flex flex-col items-center gap-x-16 gap-y-8 md:flex-row"
-				>
-					<button
-						@click="maximize(blocks[2].image)"
-						title="Expand Image"
-						class="order-2 flex items-center md:w-5/12"
-						:class="'left' == 'left' ? 'md:order-none' : ''"
-					>
-						<NuxtImg
-							class="h-full w-full object-cover select-none"
-							:src="blocks[2].image.src"
-							alt="Ingreidents List Reference"
-							draggable="false"
-						/>
-					</button>
-					<div class="contents w-7/12 gap-y-4 md:flex md:flex-col">
-						<h1
-							v-if="blocks[2].heading"
-							class="text-center text-3xl font-semibold"
-						>
-							{{ blocks[2].heading }}
-						</h1>
-						<p class="order-3 text-xl">
-							{{ blocks[2].text }}
-						</p>
-					</div>
-				</div>
-
-				<!--Article Block Image-->
-				<!--
-				<div
-					class="flex flex-col items-center gap-x-16 gap-y-8 md:flex-row"
-				>
-					<h1
-						v-if="blocks[2].heading"
-						class="text-center text-3xl font-semibold"
-					>
-						{{ blocks[2].heading }}
-					</h1>
-					<button
-						@click="maximize(blocks[2].image)"
-						title="Expand Image"
-						class="flex items-center"
-					>
-						<NuxtImg
-							class="h-full w-full object-cover select-none"
-							:src="blocks[2].image.src"
-							alt="Ingreidents List Reference"
-							draggable="false"
-						/>
-					</button>
-				</div>
-                -->
+				<ArticleBlockText
+					:heading="blocks[0].heading"
+					:text="blocks[0].text"
+				/>
+				<ArticleBlockTextImage
+					:heading="blocks[1].heading"
+					:text="blocks[1].text"
+					:image="blocks[1].image"
+					@maximize="(image) => maximize(image)"
+				/>
+				<ArticleBlockTextImage
+					:heading="blocks[2].heading"
+					:text="blocks[1].text"
+					:image="blocks[2].image"
+					left="image"
+					@maximize="(image) => maximize(image)"
+				/>
 			</div>
 		</div>
 	</div>
@@ -204,7 +76,7 @@ const ingredients = [
 	{ name: "Water", measurement: "2 Parts" },
 ];
 const equipment = ["Scale", "Sauce Pan", "Funnel", "Bottle"];
-const steps = [
+const instructions = [
 	"Measure out 3 parts pure cane sugar, 1 part unrefined brown sugar, and 2 parts water",
 	"Heat the on medium-low heat until the sugar has fully dissolved",
 	"Pour into storage bottle using a funnel",
