@@ -18,7 +18,7 @@
 <script lang="ts" setup>
 import { useWindowScroll } from "@vueuse/core";
 
-const { x, y, isScrolling, arrivedState, directions } = useWindowScroll({
+const { y, directions } = useWindowScroll({
 	behavior: "smooth",
 });
 
@@ -34,5 +34,6 @@ const shorten = computed(() => {
 	if (directions.bottom) {
 		return true;
 	}
+	return shorten.value;
 });
 </script>
