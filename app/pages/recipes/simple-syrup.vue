@@ -7,7 +7,7 @@
 			:src="expand.src"
 			:alt="expand.alt"
 			:open="expand.open"
-			@minimize="minimize"
+			@minimize="useMinimize"
 		/>
 
 		<div
@@ -44,7 +44,7 @@
 				:equipment="equipment"
 				:instructions="instructions"
 				:contentCondensed="contentCondensed"
-				@maximize="(image) => maximize(image)"
+				@maximize="(image) => useMaximize(image)"
 			/>
 			<div v-if="!contentCondensed" class="contents">
 				<ArticleBlockText
@@ -55,14 +55,14 @@
 					:heading="blocks[1].heading"
 					:text="blocks[1].text"
 					:image="blocks[1].image"
-					@maximize="(image) => maximize(image)"
+					@maximize="(image) => useMaximize(image)"
 				/>
 				<ArticleBlockTextImage
 					:heading="blocks[2].heading"
 					:text="blocks[1].text"
 					:image="blocks[2].image"
 					left="image"
-					@maximize="(image) => maximize(image)"
+					@maximize="(image) => useMaximize(image)"
 				/>
 			</div>
 		</div>
@@ -114,17 +114,5 @@ function toggleCondensed() {
 	contentCondensed.value = !contentCondensed.value;
 }
 
-const expand = reactive({
-	src: "",
-	alt: "",
-	open: false,
-});
-function minimize() {
-	expand.open = false;
-}
-function maximize(image) {
-	expand.src = image.src;
-	expand.alt = image.alt;
-	expand.open = true;
-}
+const expand = useExpand();
 </script>

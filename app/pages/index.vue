@@ -5,7 +5,7 @@
 			:src="expand.src"
 			:alt="expand.alt"
 			:open="expand.open"
-			@minimize="minimize"
+			@minimize="useMinimize"
 		/>
 
 		<!--Home Content-->
@@ -18,7 +18,7 @@
 			>
 				<button
 					@click="
-						maximize({
+						useMaximize({
 							src: '/images/home/bio-guitar.webp',
 							alt: 'playing guitar, credit: John Grubbs rockslidephotography',
 						})
@@ -175,17 +175,5 @@
 </template>
 
 <script lang="ts" setup>
-const expand = reactive({
-	src: "",
-	alt: "",
-	open: false,
-});
-function minimize() {
-	expand.open = false;
-}
-function maximize(image) {
-	expand.src = image.src;
-	expand.alt = image.alt;
-	expand.open = true;
-}
+const expand = useExpand();
 </script>

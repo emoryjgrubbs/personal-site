@@ -42,7 +42,7 @@
 				:src="expand.src"
 				:alt="expand.alt"
 				:open="expand.open"
-				@minimize="minimize"
+				@minimize="useMinimize"
 			/>
 
 			<!--Top Gallery-->
@@ -67,7 +67,7 @@
 					"
 				>
 					<button
-						@click="maximize(image)"
+						@click="useMaximize(image)"
 						title="Expand Image"
 						class="h-full cursor-pointer"
 						:class="showDetails ? 'xl:w-3/8' : 'w-full'"
@@ -108,20 +108,6 @@
 const showDetails = ref(false);
 function toggleDetails() {
 	showDetails.value = !showDetails.value;
-}
-
-const expand = reactive({
-	src: "",
-	alt: "",
-	open: false,
-});
-function minimize() {
-	expand.open = false;
-}
-function maximize(image) {
-	expand.src = image.src;
-	expand.alt = image.alt;
-	expand.open = true;
 }
 
 const images = [
@@ -341,4 +327,6 @@ const filteredImages = ref(images);
 function updateDisplay(filterUpdate) {
 	filteredImages.value = filterUpdate;
 }
+
+const expand = useExpand();
 </script>
