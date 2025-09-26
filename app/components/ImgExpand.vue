@@ -2,13 +2,21 @@
 	<div
 		class="fixed top-0 left-0 z-40 flex h-screen w-screen items-center justify-center select-none"
 		v-if="open"
+		@wheel.prevent
+		@touchmove.prevent
+		@scroll.prevent
 	>
 		<!--Dimmed Background (close on click)-->
-		<button class="h-full w-full bg-black/45" @click="minimize"></button>
-		<div class="center-0 absolute flex h-5/6 max-w-5/6">
+		<button
+			class="z-10 h-full w-full bg-black/45"
+			@click="minimize"
+		></button>
+		<div
+			class="absolute flex h-5/6 max-h-fit w-5/6 max-w-fit items-center justify-center"
+		>
 			<!--Top Right Close Button-->
 			<button
-				class="bg-alice-blue justify-self-right absolute -right-16 flex h-14 w-14 cursor-pointer items-center justify-center rounded-full"
+				class="bg-alice-blue absolute -top-16 right-0 z-30 flex size-14 cursor-pointer items-center justify-center rounded-full md:top-0 md:-right-16"
 				@click="minimize"
 				title="Close Image"
 			>
@@ -16,7 +24,7 @@
 			</button>
 			<!--Expanded Image-->
 			<NuxtImg
-				class="bg-alice-blue max-h-full max-w-full self-center rounded-lg object-scale-down p-8"
+				class="bg-alice-blue z-20 max-h-full max-w-full rounded-lg p-8"
 				:src="props.src"
 				:alt="props.alt"
 				loading="lazy"
