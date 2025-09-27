@@ -46,4 +46,12 @@ const emit = defineEmits(["minimize"]);
 function minimize() {
 	emit("minimize");
 }
+
+// allows for an image to be minimized using navigation controls
+onBeforeRouteLeave((to, from) => {
+	if (props.open) {
+		emit("minimize");
+		return false;
+	}
+});
 </script>
