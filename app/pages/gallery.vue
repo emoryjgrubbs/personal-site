@@ -107,11 +107,6 @@
 </template>
 
 <script lang="ts" setup>
-const showDetails = ref(false);
-function toggleDetails() {
-	showDetails.value = !showDetails.value;
-}
-
 const images = [
 	{
 		title: "Seattle Ferry 1",
@@ -300,6 +295,12 @@ const images = [
 ];
 
 const expand = useExpand();
+
+const showDetails = ref(false);
+function toggleDetails() {
+	showDetails.value = !showDetails.value;
+	console.log("showDetails toggled to: " + showDetails.value);
+}
 
 const tagList = useTagList(images);
 const filteredElements = useFilteredElements(images);

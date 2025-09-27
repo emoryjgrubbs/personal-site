@@ -41,8 +41,6 @@
 </template>
 
 <script setup lang="ts">
-//import { ClipboardDocumentCheckIcon } from '@heroicons/vue/24/outline'
-
 const email = "emoryjgrubbs@gmail.com";
 const linkedIn = "linkedin.com/in/emory-grubbs";
 const gitHub = "github.com/emoryjgrubbs";
@@ -52,14 +50,17 @@ let emailMessageTimeout;
 const emailCopied = ref(false);
 
 function handleEmail() {
+	console.log("Copying Email to Clipboard");
 	navigator.clipboard.writeText(email);
 	emailCopied.value = true;
 	emailMessageTimeout = setTimeout(emailAlert, 2500);
 }
 function handleLinkedIn() {
+	console.log("Opening LinkedIn Profile");
 	window.open(`https://www.${linkedIn}`, "_blank");
 }
 function handleGitHub() {
+	console.log("Opening GitHub Profile");
 	window.open(`https://${gitHub}`, "_blank");
 }
 

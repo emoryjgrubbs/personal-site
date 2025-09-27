@@ -343,6 +343,7 @@ const emit = defineEmits(["searchUpdate"]);
 const showBreakoutBar = ref(false);
 function toggleBreakoutBar() {
 	showBreakoutBar.value = !showBreakoutBar.value;
+	console.log("showBreakoutBar toggled to: " + showBreakoutBar.value);
 }
 
 //input filter variables
@@ -374,12 +375,19 @@ defineExpose({
 // controlling selectedTags
 function invertTag(index) {
 	if (selectedTags.value[index].sign == "n") {
+		console.log(
+			"Inverting tag to include: " + selectedTags.value[index].value
+		);
 		selectedTags.value[index].sign = "p";
 	} else {
+		console.log(
+			"Inverting tag to exclude: " + selectedTags.value[index].value
+		);
 		selectedTags.value[index].sign = "n";
 	}
 }
 function removeTag(index) {
+	console.log("Removing tag: " + selectedTags.value[index].value);
 	selectedTags.value.splice(index, 1);
 }
 
@@ -389,25 +397,31 @@ const today = (() => {
 	// offset of local timezone (in milliseconds)
 	const offset = today.getTimezoneOffset() * 60 * 1000;
 	const rectifiedDay = new Date(today.getTime() - offset);
+	console.debug("Today is: " + rectifiedDay.toISOString().split("T")[0]);
 	return rectifiedDay.toISOString().split("T")[0];
 })();
 
 // controlling sortTerm
 function invertSort() {
 	if (sortTerm.value.sign == "n") {
+		console.log("Inverting sort to ascending");
 		sortTerm.value.sign = "p";
 	} else {
+		console.log("Inverting sort to descending");
 		sortTerm.value.sign = "n";
 	}
 }
 function selectOrder(value) {
 	if (sortTerm.value.value == value) {
 		if (sortTerm.value.sign == "p") {
+			console.log("Inverting sort to descending");
 			sortTerm.value.sign = "n";
 		} else {
+			console.log("Inverting sort to ascending");
 			sortTerm.value.sign = "p";
 		}
 	} else {
+		console.log("Changing sort to " + value);
 		sortTerm.value.sign = "p";
 		sortTerm.value.value = value;
 	}

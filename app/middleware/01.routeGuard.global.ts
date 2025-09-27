@@ -4,13 +4,9 @@ export default defineNuxtRouteMiddleware(async (to, from) => {
 	const router = useRouter();
 	const pages = router.getRoutes();
 
-	console.log(
+	console.debug(
 		"Attempting to navigating\nfrom: " + from.path + ", to: " + to.path
 	);
-
-	if (to.path == "/") {
-		return;
-	}
 
 	if (pages.map((element) => element.name).includes(to.name)) {
 		console.log("Route Exists, completing navigation");

@@ -29,9 +29,11 @@ const props = defineProps({
 
 const shorten = computed(() => {
 	if (directions.top) {
+		console.debug("Expanding Return Link");
 		return false;
 	}
 	if (directions.bottom) {
+		console.debug("Shortening Return Link");
 		return true;
 	}
 	return shorten.value;

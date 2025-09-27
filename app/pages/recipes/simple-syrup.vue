@@ -112,6 +112,7 @@ const blocks = [
 const contentCondensed = ref(false);
 function toggleCondensed() {
 	contentCondensed.value = !contentCondensed.value;
+	console.log("contentCondensed toggled to: " + contentCondensed.value);
 }
 
 const expand = useExpand();
