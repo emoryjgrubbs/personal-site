@@ -10,9 +10,11 @@
 				:content="images"
 				:tagList="tagList"
 				placeholder="Gallery Image"
-				@searchUpdate="(filterUpdate) => updateDisplay(filterUpdate)"
+				@searchUpdate="
+					(filterUpdate) => useUpdateElements(filterUpdate)
+				"
 				class="sm:mb-10"
-				ref="filter"
+				:ref="useSelectedTags()"
 			/>
 
 			<!--Button for toggling Image Details-->
@@ -58,7 +60,7 @@
 				hydrate-on-visible
 			>
 				<div
-					v-for="image in filteredImages"
+					v-for="image in filteredElements"
 					class="flex items-center select-none"
 					:class="
 						showDetails
@@ -91,7 +93,7 @@
 							<div
 								v-for="tag in image.tags"
 								class="bg-columbia-blue cursor-pointer rounded-md px-3 capitalize"
-								@click="addClickedTag(tag)"
+								@click="useClickedTag(tag)"
 								title="Add Tag to Filter"
 							>
 								{{ tag }}
@@ -297,36 +299,8 @@ const images = [
 	},
 ];
 
-function computeTagList() {
-	let list = [];
-	for (const image of images) {
-		list.push(...image.tags);
-	}
-	list = [...new Set(list)];
-	list.sort();
-	list = list.map((element) => ({ sign: "p", value: element }));
-	return list;
-}
-
-const tagList = computeTagList();
-const filter = ref(null);
-
-function addClickedTag(value) {
-	if (
-		!filter.value.selectedTags
-			.map((element) => element.value)
-			.includes(value)
-	) {
-		const index = tagList.map((element) => element.value).indexOf(value);
-		filter.value.selectedTags.push(tagList[index]);
-	}
-}
-
-const filteredImages = ref(images);
-
-function updateDisplay(filterUpdate) {
-	filteredImages.value = filterUpdate;
-}
-
 const expand = useExpand();
+
+const tagList = useTagList(images);
+const filteredElements = useFilteredElements(images);
 </script>

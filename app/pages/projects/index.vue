@@ -9,8 +9,11 @@
 			<CombiFilter
 				:content="projects"
 				placeholder="Project"
-				@searchUpdate="(filterUpdate) => updateDisplay(filterUpdate)"
+				@searchUpdate="
+					(filterUpdate) => useUpdateElements(filterUpdate)
+				"
 				class="mb-10"
+				:ref="useSelectedTags()"
 			/>
 		</div>
 	</div>
@@ -18,4 +21,7 @@
 
 <script lang="ts" setup>
 const projects = [];
+
+const tagList = useTagList(projects);
+const filteredElements = useFilteredElements(projects);
 </script>

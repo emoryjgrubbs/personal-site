@@ -10,15 +10,17 @@
 				:content="recipes"
 				:tagList="tagList"
 				placeholder="Recipe"
-				@searchUpdate="(filterUpdate) => updateDisplay(filterUpdate)"
+				@searchUpdate="
+					(filterUpdate) => useUpdateElements(filterUpdate)
+				"
 				class="mb-10"
-				ref="filter"
+				:ref="useSelectedTags()"
 			/>
 
 			<!--Recipe Cards-->
 			<div class="grid grid-cols-1 gap-3 md:grid-cols-3 xl:grid-cols-5">
 				<div
-					v-for="recipe in filteredRecipes"
+					v-for="recipe in filteredElements"
 					class="flex items-center select-none"
 				>
 					<NuxtLink
@@ -53,34 +55,6 @@ const recipes = [
 ];
 // {title: "", tags: [], dates: [{start: "", end: ""}], thumbnail: "/images/recipes//thumbnail.webp", thumbnailAlt: "", link: "/recipes/"},
 
-function computeTagList() {
-	let list = [];
-	for (const recipe of recipes) {
-		list.push(...recipe.tags);
-	}
-	list = [...new Set(list)];
-	list.sort();
-	list = list.map((element) => ({ sign: "p", value: element }));
-	return list;
-}
-
-const tagList = computeTagList();
-const filter = ref(null);
-
-function addClickedTag(value) {
-	if (
-		!filter.value.selectedTags
-			.map((element) => element.value)
-			.includes(value)
-	) {
-		const index = tagList.map((element) => element.value).indexOf(value);
-		filter.value.selectedTags.push(tagList[index]);
-	}
-}
-
-const filteredRecipes = ref(recipes);
-
-function updateDisplay(filterUpdate) {
-	filteredRecipes.value = filterUpdate;
-}
+const tagList = useTagList(recipes);
+const filteredElements = useFilteredElements(recipes);
 </script>

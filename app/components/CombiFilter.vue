@@ -50,7 +50,7 @@
 							>
 								<ComboboxOption
 									v-show="filteredTagList == 0"
-									disabled="true"
+									:disabled="true"
 									class="bg-columbia-blue h-8 rounded-b-md px-3"
 									title="No Tags to Select"
 								>
