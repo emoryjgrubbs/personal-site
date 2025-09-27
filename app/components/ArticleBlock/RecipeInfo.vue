@@ -4,7 +4,7 @@
 			@click="maximize(image)"
 			title="Expand Image"
 			class="overflow-contain order-2 flex aspect-square items-center md:order-none md:w-5/12"
-			v-if="!props.contentCondensed"
+			v-if="!props.condenseContent"
 		>
 			<NuxtImg
 				class="h-full w-full object-cover select-none"
@@ -33,7 +33,7 @@
 			</div>
 			<div
 				class="order-3 flex w-full flex-col gap-2 text-xl"
-				v-if="props.contentCondensed"
+				v-if="props.condenseContent"
 			>
 				<h2 class="text-2xl font-semibold">Steps</h2>
 				<span
@@ -52,7 +52,7 @@ const props = defineProps({
 	ingredients: Array,
 	equipment: Array,
 	instructions: Array,
-	contentCondensed: Boolean,
+	condenseContent: Boolean,
 });
 
 const emit = defineEmits(["maximize"]);

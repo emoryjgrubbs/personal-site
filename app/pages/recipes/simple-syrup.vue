@@ -17,16 +17,16 @@
 			<div class="flex w-full justify-end">
 				<button
 					class="flex w-fit cursor-pointer flex-row items-center gap-2 text-xl transition ease-in-out hover:scale-102"
-					@click="toggleCondensed"
+					@click="useToggleCondense()"
 					:title="
-						contentCondensed
+						condenseContent
 							? 'Expand Recipe View'
 							: 'Condense Recipe View'
 					"
 				>
 					<Icon
 						:name="
-							contentCondensed
+							condenseContent
 								? 'famicons:radio-button-on'
 								: 'famicons:radio-button-off'
 						"
@@ -43,10 +43,10 @@
 				:ingredients="ingredients"
 				:equipment="equipment"
 				:instructions="instructions"
-				:contentCondensed="contentCondensed"
+				:condenseContent="condenseContent"
 				@maximize="(image) => useMaximize(image)"
 			/>
-			<div v-if="!contentCondensed" class="contents">
+			<div v-if="!condenseContent" class="contents">
 				<ArticleBlockText
 					:heading="blocks[0].heading"
 					:text="blocks[0].text"
@@ -109,11 +109,7 @@ const blocks = [
 	},
 ];
 
-const contentCondensed = ref(false);
-function toggleCondensed() {
-	contentCondensed.value = !contentCondensed.value;
-	console.log("contentCondensed toggled to: " + contentCondensed.value);
-}
+const condenseContent = useCondenseContent();
 
 const expand = useExpand();
 </script>

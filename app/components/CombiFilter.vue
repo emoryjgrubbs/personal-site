@@ -340,17 +340,19 @@ const props = defineProps({
 const emit = defineEmits(["searchUpdate"]);
 
 //page control variables & functions
-const showBreakoutBar = ref(false);
+const showBreakoutBar = useBreakoutBar();
 function toggleBreakoutBar() {
 	showBreakoutBar.value = !showBreakoutBar.value;
 	console.log("showBreakoutBar toggled to: " + showBreakoutBar.value);
 }
 
 //input filter variables
-const searchTerm = ref("");
+const searchTerm = useState(`${props.placeholder}searchTerm`, () => "");
 const tagTerm = ref("");
-const dateTerm = ref({ start: "", end: "" });
-const sortTerm = ref({ sign: "p", value: "Default" });
+const dateDefault = { start: "", end: "" };
+const dateTerm = useState(`${props.placeholder}dateTerm`, () => dateDefault);
+const sortDefault = { sign: "p", value: "Default" };
+const sortTerm = useState(`${props.placeholder}sortTerm`, () => sortDefault);
 
 // tag list displayed in combobox
 const filteredTagList = computed(() => {
@@ -363,7 +365,7 @@ const filteredTagList = computed(() => {
 });
 
 // list of tags selected by user with tagTerm/combobox
-const selectedTags = ref([]);
+const selectedTags = useState(`${props.placeholder}selectedTags`, () => []);
 /*
     exposed because the parent page needs to be able to directly add 
     tags to the list when the user clicks on a displayed tag
@@ -725,6 +727,7 @@ const searchResults = computed(() => {
 		}
 	}
 
+	emit("searchUpdate", filteredContent);
 	return filteredContent;
 });
 

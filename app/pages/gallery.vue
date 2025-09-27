@@ -296,7 +296,7 @@ const images = [
 
 const expand = useExpand();
 
-const showDetails = ref(false);
+const showDetails = useState("showImageDetails", () => false);
 function toggleDetails() {
 	showDetails.value = !showDetails.value;
 	console.log("showDetails toggled to: " + showDetails.value);
