@@ -23,15 +23,18 @@ export const useSelectedTags = () => {
 
 export function useClickedTag(value: string) {
 	console.log("addingClickedTag: " + value);
-	if (
-		!selectedTags.value.selectedTags
-			.map((element: { sign: string; value: string }) => element.value)
-			.includes(value)
-	) {
-		const index = tagList.map((element) => element.value).indexOf(value);
+	const indexSelected = selectedTags.value.selectedTags
+		.map((element: { sign: string; value: string }) => element.value)
+		.indexOf(value);
+	if (indexSelected == -1) {
+		const indexFull = tagList
+			.map((element) => element.value)
+			.indexOf(value);
 		selectedTags.value.selectedTags.push(
-			tagList[index] || { sign: "p", value: value }
+			tagList[indexFull] || { sign: "p", value: value }
 		);
+	} else {
+		selectedTags.value.selectedTags.splice(indexSelected, 1);
 	}
 }
 
