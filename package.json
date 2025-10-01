@@ -1,23 +1,28 @@
 {
-  "name": "nuxt-app",
-  "private": true,
-  "type": "module",
-  "scripts": {
-    "build": "nuxt build",
-    "dev": "nuxt dev",
-    "generate": "nuxt generate",
-    "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
-  },
-  "dependencies": {
-    "@heroicons/vue": "^2.1.5",
-    "@nuxt/image": "^1.8.0",
-    "nuxt": "^3.12.4",
-    "vue": "latest"
-  },
-  "devDependencies": {
-    "autoprefixer": "^10.4.20",
-    "postcss": "^8.4.47",
-    "tailwindcss": "^3.4.12"
-  }
+	"name": "nuxt-app",
+	"private": true,
+	"type": "module",
+	"scripts": {
+		"build": "nuxt build",
+		"dev": "nuxt dev",
+		"generate": "nuxt generate",
+		"preview": "nuxt preview",
+		"postinstall": "nuxt prepare"
+	},
+	"dependencies": {
+		"@headlessui/vue": "^1.7.23",
+		"@nuxt/icon": "^1.15.0",
+		"@nuxt/image": "^1.11.0",
+		"@tailwindcss/vite": "^4.1.11",
+		"@vueuse/core": "^13.9.0",
+		"nuxt": "^4.0.1",
+		"tailwindcss": "^4.1.11",
+		"vue": "^3.5.18",
+		"vue-router": "^4.5.1"
+	},
+	"devDependencies": {
+		"@iconify-json/famicons": "^1.2.2",
+		"prettier": "^3.6.2",
+		"prettier-plugin-tailwindcss": "^0.6.14"
+	}
 }
