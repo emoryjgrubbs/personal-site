@@ -24,7 +24,7 @@
 			<div class="grid grid-cols-1 gap-3 md:grid-cols-3">
 				<div
 					v-for="recipe in filteredElements"
-					class="aspect-2/3 md:aspect-4/5"
+					class="aspect-2/3 lg:aspect-4/5"
 				>
 					<div
 						class="flex h-full w-full flex-col items-center gap-2 select-none"
@@ -45,52 +45,62 @@
 							/>
 						</NuxtLink>
 						<div
-							class="flex h-full w-full flex-row gap-1 overflow-hidden"
+							class="text-sm xl:text-md flex h-full w-full flex-row gap-x-1 md:gap-x-2 overflow-hidden 2xl:text-lg"
 						>
-							<div class="flex h-full w-1/3 flex-col text-center">
-								<h2>Ingredients</h2>
+							<div
+								class="flex h-full w-1/2 flex-col gap-x-1 md:gap-x-2 overflow-y-scroll text-center lg:w-2/3 lg:flex-row lg:overflow-y-hidden"
+							>
 								<div
-									class="sm:text-md flex h-full flex-col gap-2 overflow-y-scroll text-sm lg:text-lg"
+									class="contents w-1/2 overflow-x-clip overflow-y-scroll lg:flex lg:flex-col"
 								>
-									<div
-										v-for="ingredient in recipe.ingredients"
-										class="bg-columbia-blue cursor-pointer gap-2 rounded-md px-1 capitalize sm:px-3"
-										@click="useClickedTag(ingredient)"
-										title="Add Ingerdient to Filter"
-									>
-										{{ ingredient }}
+									<h2 class="bg-alice-blue sticky top-0 overflow-x-visible">
+										Ingredients
+									</h2>
+									<div class="flex flex-col gap-2">
+										<div
+											v-for="ingredient in recipe.ingredients"
+											class="bg-columbia-blue cursor-pointer rounded-md px-1 capitalize xl:px-3 overflow-x-scroll hyphens-auto" lang="en"
+											@click="useClickedTag(ingredient)"
+											title="Add Ingerdient to Filter"
+										>
+											{{ ingredient }}
+										</div>
+									</div>
+								</div>
+								<div
+									class="contents w-1/2 overflow-x-clip overflow-y-scroll lg:flex lg:flex-col"
+								>
+									<h2 class="bg-alice-blue sticky top-0 overflow-x-visible">
+										Equipment
+									</h2>
+									<div class="flex flex-col gap-2">
+										<div
+											v-for="piece in recipe.equipment"
+											class="bg-columbia-blue cursor-pointer rounded-md px-1 capitalize xl:px-3 overflow-x-scroll hyphens-auto" lang="en"
+											@click="useClickedTag(piece)"
+											title="Add equipment to Filter"
+										>
+											{{ piece }}
+										</div>
 									</div>
 								</div>
 							</div>
-							<div class="flex h-full w-1/3 flex-col text-center">
-								<h2>Equipment</h2>
-								<div
-									class="sm:text-md flex flex-col gap-2 overflow-y-scroll text-sm lg:text-lg"
-								>
-									<div
-										v-for="piece in recipe.equipment"
-										class="bg-columbia-blue cursor-pointer gap-2 rounded-md px-1 capitalize sm:px-3"
-										@click="useClickedTag(piece)"
-										title="Add equipment to Filter"
-									>
-										{{ piece }}
-									</div>
-								</div>
-							</div>
-							<div class="flex h-full w-1/3 flex-col text-center">
-								<h2>Dietary</h2>
-								<div
-									class="sm:text-md flex flex-col gap-2 overflow-y-scroll text-sm lg:text-lg"
-								>
-									<div
-										v-for="info in recipe.dietary"
-										class="bg-columbia-blue cursor-pointer gap-2 rounded-md px-1 capitalize sm:px-3"
-										@click="useClickedTag(info)"
-										title="Add Dietary Information to Filter"
-									>
-										{{ info }}
-									</div>
-								</div>
+							<div
+								class="flex h-full w-1/2 flex-col overflow-y-scroll text-center lg:w-1/3"
+							>
+								<h2 class="bg-alice-blue sticky top-0">
+									Dietary
+								</h2>
+                                <div class="flex flex-col gap-2">
+                                    <div
+                                        v-for="info in recipe.dietary"
+                                        class="bg-columbia-blue cursor-pointer rounded-md px-1 capitalize xl:px-3 overflow-x-scroll"
+                                        @click="useClickedTag(info)"
+                                        title="Add Dietary Information to Filter"
+                                    >
+                                        {{ info }}
+                                    </div>
+                                </div>
 							</div>
 						</div>
 						<!--
@@ -118,7 +128,7 @@ const recipes = (function () {
 		},
 		{
 			title: "Lemon-Limeade",
-			ingredients: ["lemon", "lime", "water", "simple-syrup"],
+			ingredients: ["lemon", "lime", "water", "simple syrup"],
 			equipment: ["knife", "juicer", "shaker", "strainer"],
 			dietary: [],
 			tags: ["drink"],
@@ -212,7 +222,19 @@ const recipes = (function () {
 				"measuring cup",
 				"baking pan",
 			],
-			dietary: ["dessert"],
+			dietary: [
+				"dessert",
+				"as;kldj",
+				"al;skj",
+				"al;skj",
+				"al;skj",
+				"al;skj",
+				"al;skj",
+				"al;skj",
+				"al;skj",
+				"al;skj",
+				"al;skj",
+			],
 			tags: [],
 			dates: [],
 			thumbnail: "/images/recipes/simple-syrup/thumbnail.webp",
