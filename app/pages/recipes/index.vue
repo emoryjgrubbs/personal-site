@@ -45,21 +45,24 @@
 							/>
 						</NuxtLink>
 						<div
-							class="text-sm xl:text-md flex h-full w-full flex-row gap-x-1 md:gap-x-2 overflow-hidden 2xl:text-lg"
+							class="xl:text-md flex h-full w-full flex-row gap-x-1 overflow-hidden text-sm md:gap-x-2 2xl:text-lg"
 						>
 							<div
-								class="flex h-full w-1/2 flex-col gap-x-1 md:gap-x-2 overflow-y-scroll text-center lg:w-2/3 lg:flex-row lg:overflow-y-hidden"
+								class="flex h-full w-1/2 flex-col gap-x-1 overflow-y-scroll text-center md:gap-x-2 lg:w-2/3 lg:flex-row lg:overflow-y-hidden"
 							>
 								<div
 									class="contents w-1/2 overflow-x-clip overflow-y-scroll lg:flex lg:flex-col"
 								>
-									<h2 class="bg-alice-blue sticky top-0 overflow-x-visible">
+									<h2
+										class="bg-alice-blue sticky top-0 overflow-x-visible"
+									>
 										Ingredients
 									</h2>
 									<div class="flex flex-col gap-2">
 										<div
 											v-for="ingredient in recipe.ingredients"
-											class="bg-columbia-blue cursor-pointer rounded-md px-1 capitalize xl:px-3 overflow-x-scroll hyphens-auto" lang="en"
+											class="bg-columbia-blue cursor-pointer overflow-x-scroll rounded-md px-1 hyphens-auto capitalize xl:px-3"
+											lang="en"
 											@click="useClickedTag(ingredient)"
 											title="Add Ingerdient to Filter"
 										>
@@ -70,13 +73,16 @@
 								<div
 									class="contents w-1/2 overflow-x-clip overflow-y-scroll lg:flex lg:flex-col"
 								>
-									<h2 class="bg-alice-blue sticky top-0 overflow-x-visible">
+									<h2
+										class="bg-alice-blue sticky top-0 overflow-x-visible"
+									>
 										Equipment
 									</h2>
 									<div class="flex flex-col gap-2">
 										<div
 											v-for="piece in recipe.equipment"
-											class="bg-columbia-blue cursor-pointer rounded-md px-1 capitalize xl:px-3 overflow-x-scroll hyphens-auto" lang="en"
+											class="bg-columbia-blue cursor-pointer overflow-x-scroll rounded-md px-1 hyphens-auto capitalize xl:px-3"
+											lang="en"
 											@click="useClickedTag(piece)"
 											title="Add equipment to Filter"
 										>
@@ -91,16 +97,16 @@
 								<h2 class="bg-alice-blue sticky top-0">
 									Dietary
 								</h2>
-                                <div class="flex flex-col gap-2">
-                                    <div
-                                        v-for="info in recipe.dietary"
-                                        class="bg-columbia-blue cursor-pointer rounded-md px-1 capitalize xl:px-3 overflow-x-scroll"
-                                        @click="useClickedTag(info)"
-                                        title="Add Dietary Information to Filter"
-                                    >
-                                        {{ info }}
-                                    </div>
-                                </div>
+								<div class="flex flex-col gap-2">
+									<div
+										v-for="info in recipe.dietary"
+										class="bg-columbia-blue cursor-pointer overflow-x-scroll rounded-md px-1 capitalize xl:px-3"
+										@click="useClickedTag(info)"
+										title="Add Dietary Information to Filter"
+									>
+										{{ info }}
+									</div>
+								</div>
 							</div>
 						</div>
 						<!--
