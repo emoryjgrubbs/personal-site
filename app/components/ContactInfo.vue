@@ -16,26 +16,30 @@
 					<Icon name="famicons:clipboard" />
 				</div>
 			</button>
-			<button
+			<NuxtLink
 				class="group flex w-96 flex-row justify-center space-x-2 justify-self-center pb-5 transition ease-in-out hover:scale-105 hover:cursor-pointer"
 				title="View LinkedIn"
-				@click="handleLinkedIn"
+				:to="'http://' + linkedIn"
+				external
+				target="_blank"
 			>
 				<div>LinkedIn:</div>
 				<div class="group-hover:underline">
 					{{ linkedIn }}
 				</div>
-			</button>
-			<button
+			</NuxtLink>
+			<NuxtLink
 				class="group flex w-96 flex-row justify-center space-x-2 justify-self-center pb-5 transition ease-in-out hover:scale-105 hover:cursor-pointer"
 				title="View GitHub"
-				@click="handleGitHub"
+				:to="'http://' + gitHub"
+				external
+				target="_blank"
 			>
 				<div>GitHub:</div>
 				<div class="group-hover:underline">
 					{{ gitHub }}
 				</div>
-			</button>
+			</NuxtLink>
 		</div>
 	</div>
 </template>
@@ -46,7 +50,6 @@ const linkedIn = "linkedin.com/in/emory-grubbs";
 const gitHub = "github.com/emoryjgrubbs";
 
 let emailMessageTimeout;
-
 const emailCopied = ref(false);
 
 function handleEmail() {
@@ -55,15 +58,6 @@ function handleEmail() {
 	emailCopied.value = true;
 	emailMessageTimeout = setTimeout(emailAlert, 2500);
 }
-function handleLinkedIn() {
-	console.log("Opening LinkedIn Profile");
-	window.open(`https://www.${linkedIn}`, "_blank");
-}
-function handleGitHub() {
-	console.log("Opening GitHub Profile");
-	window.open(`https://${gitHub}`, "_blank");
-}
-
 function emailAlert() {
 	emailCopied.value = false;
 }
