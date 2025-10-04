@@ -108,6 +108,105 @@
 
 <script lang="ts" setup>
 const images = [
+	{
+		title: "Deck of the Bainbridge",
+		tags: [
+			"",
+		],
+		dates: [{ start: "2025-01-15", end: "2025-01-15" }],
+		src: "/images/gallery/00004-seattle-w24/8-west-of-seattle/deck-of-the-bainbridge.webp",
+		alt: "The empty deck of a ferry in winter",
+	},
+	{
+		title: "",
+		tags: [
+			"",
+		],
+		dates: [{ start: "2025-01-15", end: "2025-01-15" }],
+		src: "/images/gallery/00004-seattle-w24/8-west-of-seattle/birds-to-name.webp",
+		alt: "Several Birds fly over a view of The Sound, with a ferry in the background",
+	},
+	{
+		title: "",
+		tags: [
+			"",
+		],
+		dates: [{ start: "2025-01-12", end: "2025-01-12" }],
+		src: "/images/gallery/00004-seattle-w24/5-vancuver/another-neon-to-name-later.webp",
+		alt: "A vancuver street full of cars with neon dragon signs and christmas lights",
+	},
+	{
+		title: "",
+		tags: [
+			"",
+		],
+		dates: [{ start: "2025-01-12", end: "2025-01-12" }],
+		src: "/images/gallery/00004-seattle-w24/5-vancuver/name-neon-later.webp",
+		alt: "An empty area of Vancuver's China Town after the rain",
+	},
+	{
+		title: "Construction Zone",
+		tags: [
+			"",
+		],
+		dates: [{ start: "2025-01-10", end: "2025-01-10" }],
+		src: "/images/gallery/00004-seattle-w24/3-downtown-seattle-day-3/construction-zone.webp",
+		alt: "A construction blocks the bike path in front of the Seattle Ferry Terminal",
+	},
+	{
+		title: "Sunset",
+		tags: [
+			"",
+		],
+		dates: [{ start: "2025-01-10", end: "2025-01-10" }],
+		src: "/images/gallery/00004-seattle-w24/3-downtown-seattle-day-3/sunset.webp",
+		alt: "A lone bird flys into dark clouds of sunset",
+	},
+	{
+		title: "Day on the Beach",
+		tags: [
+			"",
+		],
+		dates: [{ start: "2025-01-10", end: "2025-01-10" }],
+		src: "/images/gallery/00004-seattle-w24/3-downtown-seattle-day-3/day-on-the-beach.webp",
+		alt: "A lone person sits, bundled up, on a log at a Seattle beach",
+	},
+    {
+		title: "",
+		tags: [
+			"",
+		],
+		dates: [{ start: "2025-01-09", end: "2025-01-09" }],
+		src: "/images/gallery/00004-seattle-w24/2-down-town-seattle-day-2/again-no-clue.webp",
+		alt: "People walk near Pike Place Market",
+	},
+    {
+		title: "",
+		tags: [
+			"",
+		],
+		dates: [{ start: "2025-01-09", end: "2025-01-09" }],
+		src: "/images/gallery/00004-seattle-w24/2-down-town-seattle-day-2/idk-yet.webp",
+		alt: "An elderly couple embrace in the neon lights of Pike Place Market",
+	},
+	{
+		title: "Machinery on the Sound",
+		tags: [
+			"",
+		],
+		dates: [{ start: "2025-01-09", end: "2025-01-09" }],
+		src: "/images/gallery/00004-seattle-w24/2-down-town-seattle-day-2/machine-on-sound.webp",
+		alt: "A ventalation system a piece of a pier appear in front of the mountains across The Sound",
+	},
+	{
+		title: "More Shops",
+		tags: [
+			"",
+		],
+		dates: [{ start: "2025-01-09", end: "2025-01-09" }],
+		src: "/images/gallery/00004-seattle-w24/2-down-town-seattle-day-2/more-shops.webp",
+		alt: "A man walks down the stairs away from a sign advertising More Shops at Pike Place Market",
+	},
 ];
 /* gallery image object
 	{
