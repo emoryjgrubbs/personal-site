@@ -86,7 +86,8 @@
 						class="flex w-full flex-col gap-3 text-xl"
 						v-if="showDetails"
 					>
-						<h1 class="text-2xl">Title: {{ image.title }}</h1>
+						<h1 v-if="image.title == ''" class="text-2xl">No Title</h1>
+						<h1 v-else class="text-2xl">{{ image.title }}</h1>
 						<div>Date: {{ image.dates[0].start }}</div>
 						<div class="flex flex-row flex-wrap gap-3">
 							Tags:
@@ -123,7 +124,7 @@ const images = [
 			"",
 		],
 		dates: [{ start: "2025-01-15", end: "2025-01-15" }],
-		src: "/images/gallery/00004-seattle-w24/8-west-of-seattle/birds-to-name.webp",
+		src: "/images/gallery/00004-seattle-w24/8-west-of-seattle/8K8A0034.webp",
 		alt: "Several Birds fly over a view of The Sound, with a ferry in the background",
 	},
 	{
@@ -132,7 +133,7 @@ const images = [
 			"",
 		],
 		dates: [{ start: "2025-01-12", end: "2025-01-12" }],
-		src: "/images/gallery/00004-seattle-w24/5-vancuver/another-neon-to-name-later.webp",
+		src: "/images/gallery/00004-seattle-w24/5-vancuver/8K8A9494.webp",
 		alt: "A vancuver street full of cars with neon dragon signs and christmas lights",
 	},
 	{
@@ -141,25 +142,25 @@ const images = [
 			"",
 		],
 		dates: [{ start: "2025-01-12", end: "2025-01-12" }],
-		src: "/images/gallery/00004-seattle-w24/5-vancuver/name-neon-later.webp",
+		src: "/images/gallery/00004-seattle-w24/5-vancuver/8K8A9467.webp",
 		alt: "An empty area of Vancuver's China Town after the rain",
 	},
 	{
-		title: "Construction Zone",
+		title: "",
 		tags: [
 			"",
 		],
 		dates: [{ start: "2025-01-10", end: "2025-01-10" }],
-		src: "/images/gallery/00004-seattle-w24/3-downtown-seattle-day-3/construction-zone.webp",
+		src: "/images/gallery/00004-seattle-w24/3-downtown-seattle-day-3/8K8A8745.webp",
 		alt: "A construction blocks the bike path in front of the Seattle Ferry Terminal",
 	},
 	{
-		title: "Sunset",
+		title: "",
 		tags: [
 			"",
 		],
 		dates: [{ start: "2025-01-10", end: "2025-01-10" }],
-		src: "/images/gallery/00004-seattle-w24/3-downtown-seattle-day-3/sunset.webp",
+		src: "/images/gallery/00004-seattle-w24/3-downtown-seattle-day-3/8K8A8210.webp",
 		alt: "A lone bird flys into dark clouds of sunset",
 	},
 	{
@@ -177,7 +178,7 @@ const images = [
 			"",
 		],
 		dates: [{ start: "2025-01-09", end: "2025-01-09" }],
-		src: "/images/gallery/00004-seattle-w24/2-down-town-seattle-day-2/again-no-clue.webp",
+		src: "/images/gallery/00004-seattle-w24/2-down-town-seattle-day-2/8K8A8007.webp",
 		alt: "People walk near Pike Place Market",
 	},
     {
@@ -186,16 +187,16 @@ const images = [
 			"",
 		],
 		dates: [{ start: "2025-01-09", end: "2025-01-09" }],
-		src: "/images/gallery/00004-seattle-w24/2-down-town-seattle-day-2/idk-yet.webp",
+		src: "/images/gallery/00004-seattle-w24/2-down-town-seattle-day-2/8K8A7999.webp",
 		alt: "An elderly couple embrace in the neon lights of Pike Place Market",
 	},
 	{
-		title: "Machinery on the Sound",
+		title: "",
 		tags: [
 			"",
 		],
 		dates: [{ start: "2025-01-09", end: "2025-01-09" }],
-		src: "/images/gallery/00004-seattle-w24/2-down-town-seattle-day-2/machine-on-sound.webp",
+		src: "/images/gallery/00004-seattle-w24/2-down-town-seattle-day-2/8K8A7975.webp",
 		alt: "A ventalation system a piece of a pier appear in front of the mountains across The Sound",
 	},
 	{
@@ -215,7 +216,7 @@ const images = [
 			"",
 		],
 		dates: [{ start: "YYYY-MM-DD", end: "YYYY-MM-DD" }],
-		src: "/images/.../.webp",
+		src: "/images/gallery/.../.webp",
 		alt: "",
 	},
 */
