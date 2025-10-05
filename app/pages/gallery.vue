@@ -110,6 +110,69 @@
 <script lang="ts" setup>
 const images = [
 	{
+		title: "",
+		tags: [
+			"",
+		],
+		dates: [{ start: "2025-07-10", end: "2025-07-10" }],
+		src: "/images/gallery/00012-last-visits/8K8A1381.webp",
+		alt: "",
+	},
+	{
+		title: "",
+		tags: [
+			"",
+		],
+		dates: [{ start: "2025-07-10", end: "2025-07-10" }],
+		src: "/images/gallery/00012-last-visits/8K8A1292.webp",
+		alt: "",
+	},
+	{
+		title: "",
+		tags: [
+			"",
+		],
+		dates: [{ start: "2025-07-10", end: "2025-07-10" }],
+		src: "/images/gallery/00012-last-visits/8K8A1246.webp",
+		alt: "",
+	},
+	{
+		title: "",
+		tags: [
+			"",
+		],
+		dates: [{ start: "2025-07-09", end: "2025-07-09" }],
+		src: "/images/gallery/00012-last-visits/8K8A1143.webp",
+		alt: "",
+	},
+	{
+		title: "",
+		tags: [
+			"",
+		],
+		dates: [{ start: "2025-07-07", end: "2025-07-07" }],
+		src: "/images/gallery/00012-last-visits/8K8A1099.webp",
+		alt: "",
+	},
+	{
+		title: "",
+		tags: [
+			"",
+		],
+		dates: [{ start: "2025-06-26", end: "2025-06-26" }],
+		src: "/images/gallery/00011-utd-campus/8K8A0950.webp",
+		alt: "",
+	},
+	{
+		title: "",
+		tags: [
+			"",
+		],
+		dates: [{ start: "2025-06-26", end: "2025-06-26" }],
+		src: "/images/gallery/00011-utd-campus/8K8A0852.webp",
+		alt: "",
+	},
+	{
 		title: "Deck of the Bainbridge",
 		tags: [
 			"",
