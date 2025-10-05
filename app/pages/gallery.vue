@@ -114,9 +114,117 @@ const images = [
 		tags: [
 			"",
 		],
+		dates: [{ start: "2025-07-27", end: "2025-07-27" }],
+		src: "/images/gallery/00013-moving-day/7-moab-to-salt-lake-city/8K8A2836.webp",
+		alt: "Picture of a group at the Scenic Mound from Ensign Peak Trail",
+	},
+	{
+		title: "",
+		tags: [
+			"",
+		],
+		dates: [{ start: "2025-07-27", end: "2025-07-27" }],
+		src: "/images/gallery/00013-moving-day/7-moab-to-salt-lake-city/8K8A2834.webp",
+		alt: "View of Salt Lake City from Ensign Peak Trail",
+	},
+	{
+		title: "",
+		tags: [
+			"",
+		],
+		dates: [{ start: "2025-07-27", end: "2025-07-27" }],
+		src: "/images/gallery/00013-moving-day/7-moab-to-salt-lake-city/8K8A2785.webp",
+		alt: "View of a Radio station north of Ensign Peak",
+	},
+	{
+		title: "",
+		tags: [
+			"",
+		],
+		dates: [{ start: "2025-07-27", end: "2025-07-27" }],
+		src: "/images/gallery/00013-moving-day/7-moab-to-salt-lake-city/8K8A2706.webp",
+		alt: "View of the canyons at Dead Horse Point",
+	},
+	{
+		title: "",
+		tags: [
+			"",
+		],
+		dates: [{ start: "2025-07-26", end: "2025-07-26" }],
+		src: "/images/gallery/00013-moving-day/6-los-alamos-to-moab/8K8A2060.webp",
+		alt: "View of Ute Mountain in South West Colorado",
+	},
+	{
+		title: "",
+		tags: [
+			"",
+		],
+		dates: [{ start: "2025-07-26", end: "2025-07-26" }],
+		src: "/images/gallery/00013-moving-day/6-los-alamos-to-moab/8K8A1998.webp",
+		alt: "View of the Abiquiu Reservoir",
+	},
+	{
+		title: "",
+		tags: [
+			"",
+		],
+		dates: [{ start: "2025-07-23", end: "2025-07-23" }],
+		src: "/images/gallery/00013-moving-day/3-tooling-around-los-alamos/8K8A1795.webp",
+		alt: "View of the San Jaun Mountains north of Los Alamos",
+	},
+	{
+		title: "",
+		tags: [
+			"",
+		],
+		dates: [{ start: "2025-07-22", end: "2025-07-22" }],
+		src: "/images/gallery/00013-moving-day/2-tucumcari-to-los-alamos/8K8A1786.webp",
+		alt: "Looking back towards the Blue Dot Trailhead at the White Rock Overlook",
+	},
+	{
+		title: "",
+		tags: [
+			"",
+		],
+		dates: [{ start: "2025-07-22", end: "2025-07-22" }],
+		src: "/images/gallery/00013-moving-day/2-tucumcari-to-los-alamos/8K8A1778.webp",
+		alt: "View of the Rio Grande valley from the White Rock Overlook",
+	},
+	{
+		title: "",
+		tags: [
+			"",
+		],
+		dates: [{ start: "2025-07-21", end: "2025-07-21" }],
+		src: "/images/gallery/00013-moving-day/1-dallas-to-tucumcari/8K8A1656.webp",
+		alt: "Fireworks launching at Cadillac Ranch",
+	},
+	{
+		title: "",
+		tags: [
+			"",
+		],
+		dates: [{ start: "2025-07-21", end: "2025-07-21" }],
+		src: "/images/gallery/00013-moving-day/1-dallas-to-tucumcari/8K8A1600.webp",
+		alt: "Kids lighting off fireworks at Cadillac Ranch",
+	},
+	{
+		title: "",
+		tags: [
+			"",
+		],
+		dates: [{ start: "2025-07-21", end: "2025-07-21" }],
+		src: "/images/gallery/00013-moving-day/1-dallas-to-tucumcari/8K8A1591.webp",
+		alt: "Fireworks in the black sky above Cadillac Ranch",
+	},
+	{
+		title: "",
+		tags: [
+			"",
+		],
 		dates: [{ start: "2025-07-10", end: "2025-07-10" }],
 		src: "/images/gallery/00012-last-visits/8K8A1381.webp",
-		alt: "",
+		alt: "Dirty kayaks in a White Rock Lake boat house",
 	},
 	{
 		title: "",
@@ -125,7 +233,7 @@ const images = [
 		],
 		dates: [{ start: "2025-07-10", end: "2025-07-10" }],
 		src: "/images/gallery/00012-last-visits/8K8A1292.webp",
-		alt: "",
+		alt: "Lights on in the halls of an empty UTD building",
 	},
 	{
 		title: "",
@@ -134,7 +242,7 @@ const images = [
 		],
 		dates: [{ start: "2025-07-10", end: "2025-07-10" }],
 		src: "/images/gallery/00012-last-visits/8K8A1246.webp",
-		alt: "",
+		alt: "The UTD Science Learning Center as seen by night",
 	},
 	{
 		title: "",
@@ -143,7 +251,7 @@ const images = [
 		],
 		dates: [{ start: "2025-07-09", end: "2025-07-09" }],
 		src: "/images/gallery/00012-last-visits/8K8A1143.webp",
-		alt: "",
+		alt: "An empty gas station sits lit up in front of a black void",
 	},
 	{
 		title: "",
@@ -152,7 +260,7 @@ const images = [
 		],
 		dates: [{ start: "2025-07-07", end: "2025-07-07" }],
 		src: "/images/gallery/00012-last-visits/8K8A1099.webp",
-		alt: "",
+		alt: "A flock of birds sit silhouetted in a barren tree",
 	},
 	{
 		title: "",
@@ -161,7 +269,7 @@ const images = [
 		],
 		dates: [{ start: "2025-06-26", end: "2025-06-26" }],
 		src: "/images/gallery/00011-utd-campus/8K8A0950.webp",
-		alt: "",
+		alt: "The sky is imperfectly reflected off a window",
 	},
 	{
 		title: "",
@@ -170,7 +278,7 @@ const images = [
 		],
 		dates: [{ start: "2025-06-26", end: "2025-06-26" }],
 		src: "/images/gallery/00011-utd-campus/8K8A0852.webp",
-		alt: "",
+		alt: "A plane flys above the clouds",
 	},
 	{
 		title: "Deck of the Bainbridge",
