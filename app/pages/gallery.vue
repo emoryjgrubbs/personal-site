@@ -114,6 +114,33 @@ const images = [
 		tags: [
 			"",
 		],
+		dates: [{ start: "2025-09-13", end: "2025-09-13" }],
+		src: "/images/gallery/00016-cougar-mt-lookout-hike/8K8A3317.webp",
+		alt: "Spider walking along its web",
+	},
+	{
+		title: "",
+		tags: [
+			"",
+		],
+		dates: [{ start: "2025-09-13", end: "2025-09-13" }],
+		src: "/images/gallery/00016-cougar-mt-lookout-hike/8K8A3262.webp",
+		alt: "Woodpecker hitting a tree",
+	},
+	{
+		title: "",
+		tags: [
+			"",
+		],
+		dates: [{ start: "2025-08-24", end: "2025-08-24" }],
+		src: "/images/gallery/00014-start-of-seattle-life/8K8A2957.webp",
+		alt: "Rocks on the trail of the Marshall's Hill Trail",
+	},
+	{
+		title: "",
+		tags: [
+			"",
+		],
 		dates: [{ start: "2025-07-27", end: "2025-07-27" }],
 		src: "/images/gallery/00013-moving-day/7-moab-to-salt-lake-city/8K8A2836.webp",
 		alt: "Picture of a group at the Scenic Mound from Ensign Peak Trail",
