@@ -3,7 +3,7 @@
 		<button
 			@click="maximize(image)"
 			title="Expand Image"
-			class="overflow-contain order-2 flex aspect-square items-center md:order-none md:w-5/12"
+			class="overflow-contain order-2 flex aspect-square items-center md:order-none md:w-1/2 xl:w-5/12"
 			v-if="!props.condenseContent"
 		>
 			<NuxtImg
@@ -13,7 +13,7 @@
 				draggable="false"
 			/>
 		</button>
-		<div class="contents w-full gap-y-8 md:flex md:flex-col">
+		<div class="contents w-full md:w-1/2 xl:w-7/12 gap-y-8 md:flex md:flex-col">
 			<h1 class="text-center text-3xl font-semibold capitalize">
 				{{ recipe }}
 			</h1>

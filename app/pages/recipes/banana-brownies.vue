@@ -38,8 +38,8 @@
 			<ArticleBlockRecipeInfo
 				:recipe="title"
 				:image="{
-					src: '/images/recipes/simple-syrup/ingredients.webp',
-					alt: 'Simple Syrup Ingredients',
+					src: '/images/recipes/banana-brownies/ingredients.webp',
+					alt: 'Ingredients',
 				}"
 				:ingredients="ingredients"
 				:equipment="equipment"
@@ -47,18 +47,112 @@
 				:condenseContent="condenseContent"
 				@maximize="(image) => useMaximize(image)"
 			/>
-			<div v-if="!condenseContent" class="contents"></div>
+			<div v-if="!condenseContent" class="contents">
+                <ArticleBlockText :heading="blocks[0].heading" :text="blocks[0].text" />
+
+                <ArticleBlockTextImage :heading="blocks[1].heading" :text="blocks[1].text" :image="blocks[1].image" />
+                <ArticleBlockTextImage :heading="blocks[2].heading" :text="blocks[2].text" :image="blocks[2].image" left="image" />
+                <ArticleBlockTextImage :heading="blocks[3].heading" :text="blocks[3].text" :image="blocks[3].image" />
+                <ArticleBlockTextImage :heading="blocks[4].heading" :text="blocks[4].text" :image="blocks[4].image" left="image" />
+
+                <ArticleBlockText :heading="blocks[5].heading" :text="blocks[5].text" />
+
+                <ArticleBlockImage :heading="blocks[6].heading" :image="blocks[6].image" />
+            </div>
 		</div>
 	</div>
 </template>
 
 <script lang="ts" setup>
 const title = "Banana Brownies";
-const ingredients = [];
-const equipment = [];
-const instructions = [];
+const ingredients = [
+	{ name: "Cocoa", measurement: "3/4 of a Cup" },
+	{ name: "Butter", measurement: "12 TBSP" },
+	{ name: "Eggs", measurement: "2" },
+	{ name: "Bananas", measurement: "1 and 1/2" },
+    { name: "Vanilla Extract", measurement: "1 TSP" },
+	{ name: "All Purpose Flour", measurement: "3/4 of a Cup" },
+	{ name: "Unrefined Brown Sugar", measurement: "1 of a Cup" },
+	{ name: "Pure Cane Sugar", measurement: "3/4 of a Cup" },
+];
+const equipment = [
+    "sauce pan",
+    "whisk",
+    "mixing bowl",
+    "measuring cup",
+    "baking pan",
+];
+const instructions = [
+    "Pre-heat the oven to 325 degrees",
+    "Add 12 tbsp butter and 3/4 cup cocoa to a sauce pan",
+    "Set sauce pan on low heat, stirring occasionally",
+    "Once smooth pour into a mixing bowl and let cool",
+    "Combine 3/4 cup of flour, 1 cup of brown sugar, 3/4 cup of cane sugar in a separate bowl",
+    "Whisk 2 eggs, 1 and 1/2 bananas, and 1 tsp of vanilla extract into the butter and cocoa",
+    "Whisk the dry ingredients into the wet ingredients until homogeneous",
+    "Pour brownie mix into a buttered baking pan",
+    "Bake at 325 for about 50 minutes",
+    "Remove from the oven, let cool, and cut",
+];
 
-const blocks = [];
+const blocks = [
+	{
+		heading: "",
+		text: "Pre-heat oven to 325.",
+		image: {
+			src: "",
+			alt: "",
+		},
+	},
+	{
+		heading: "",
+		text: "Add 12 tbsp of butter to a sauce pan with three quarters of a cup cocoa, stirring occasionally over low heat. Once smooth, take off the heat and let cool.",
+		image: {
+			src: "images/recipes/banana-brownies/sauce-pan.webp",
+			alt: "",
+		},
+	},
+	{
+		heading: "",
+		text: "While the butter and cocoa is cooling, add a cup of brown sugar, three fourths a cup of cane sugar, a three fourths a cup of flour, and a large pinch of salt to a bowl.",
+		image: {
+			src: "images/recipes/banana-brownies/dry.webp",
+			alt: "",
+		},
+	},
+	{
+		heading: "",
+		text: "Once the butter and cocoa have cooled, pour the mixture into a mixing bowl. Then whisk in two eggs and a one and a half bananas, along with a teaspoon of vanilla. The banana will incorporate when whisked, but I like to try and leave some chunks still intact.",
+		image: {
+			src: "images/recipes/banana-brownies/wet.webp",
+			alt: "",
+		},
+	},
+	{
+		heading: "",
+		text: "After the binders have been added to the cocoa mixture, add the dry ingredients. Stir all the ingredients together until homogeneous. Then transfer to a buttered 8 by 8 square pan, baking for about 50 minutes.",
+		image: {
+			src: "images/recipes/banana-brownies/wet-dry.webp",
+			alt: "",
+		},
+	},
+	{
+		heading: "",
+		text: "Let cool then cut.",
+		image: {
+			src: "",
+			alt: "",
+		},
+	},
+	{
+		heading: "",
+		text: "",
+		image: {
+			src: "images/recipes/banana-brownies/product.webp",
+			alt: "",
+		},
+	},
+];
 
 const condenseContent = useCondenseContent();
 

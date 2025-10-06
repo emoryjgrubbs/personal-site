@@ -11,7 +11,7 @@
 			<NuxtImg
 				class="h-full w-full object-cover select-none"
 				:src="props.image.src"
-				alt="Ingreidents List Reference"
+				:alt="props.image.alt"
 				draggable="false"
 			/>
 		</button>
