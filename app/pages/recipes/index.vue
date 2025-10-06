@@ -33,7 +33,10 @@
 							{{ recipe.title }}
 						</h1>
 						<NuxtLink
-							:to="recipe.link"
+							:to="{
+								name: recipe.name,
+								params: { variant: recipe.variant },
+							}"
 							:title="'Navigate To ' + recipe.title"
 							class="w-full cursor-pointer"
 						>
@@ -130,7 +133,8 @@ const recipes = (function () {
 			dates: [{ start: "2025-09-13", end: "2025-09-13" }],
 			thumbnail: "/images/recipes/simple-syrup/thumbnail.webp",
 			thumbnailAlt: "Ingredients for Simple Syrup",
-			link: "/Recipes/Simple-Syrup",
+			name: "recipes-simple-syrup",
+			variant: "",
 		},
 		{
 			title: "Lemon-Limeade",
@@ -141,7 +145,8 @@ const recipes = (function () {
 			dates: [],
 			thumbnail: "/images/recipes/simple-syrup/thumbnail.webp",
 			thumbnailAlt: "Ingredients for Simple Syrup",
-			link: "/Recipes/Simple-Syrup",
+			name: "recipes-juice-variant",
+			variant: "lemon-limeade",
 		},
 		{
 			title: "Espresso",
@@ -157,7 +162,8 @@ const recipes = (function () {
 			dates: [],
 			thumbnail: "/images/recipes/simple-syrup/thumbnail.webp",
 			thumbnailAlt: "Ingredients for Simple Syrup",
-			link: "/Recipes/Simple-Syrup",
+			name: "recipes-coffee-variant",
+			variant: "espresso",
 		},
 		{
 			title: "Latte",
@@ -174,7 +180,8 @@ const recipes = (function () {
 			dates: [],
 			thumbnail: "/images/recipes/simple-syrup/thumbnail.webp",
 			thumbnailAlt: "Ingredients for Simple Syrup",
-			link: "/Recipes/Simple-Syrup",
+			name: "recipes-coffee-variant",
+			variant: "latte",
 		},
 		{
 			title: "Red Pasta",
@@ -207,7 +214,8 @@ const recipes = (function () {
 			dates: [],
 			thumbnail: "/images/recipes/simple-syrup/thumbnail.webp",
 			thumbnailAlt: "Ingredients for Simple Syrup",
-			link: "/Recipes/Simple-Syrup",
+			name: "recipes-pasta-variant",
+			variant: "red",
 		},
 		{
 			title: "Banana Brownies",
@@ -228,24 +236,13 @@ const recipes = (function () {
 				"measuring cup",
 				"baking pan",
 			],
-			dietary: [
-				"dessert",
-				"as;kldj",
-				"al;skj",
-				"al;skj",
-				"al;skj",
-				"al;skj",
-				"al;skj",
-				"al;skj",
-				"al;skj",
-				"al;skj",
-				"al;skj",
-			],
+			dietary: ["dessert", "gluten"],
 			tags: [],
 			dates: [],
 			thumbnail: "/images/recipes/simple-syrup/thumbnail.webp",
 			thumbnailAlt: "Ingredients for Simple Syrup",
-			link: "/Recipes/Simple-Syrup",
+			name: "recipes-banana-brownies",
+			variant: "",
 		},
 	];
 

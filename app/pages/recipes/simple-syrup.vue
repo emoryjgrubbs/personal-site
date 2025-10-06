@@ -36,6 +36,7 @@
 			</div>
 
 			<ArticleBlockRecipeInfo
+				:recipe="title"
 				:image="{
 					src: '/images/recipes/simple-syrup/ingredients.webp',
 					alt: 'Simple Syrup Ingredients',
@@ -70,6 +71,7 @@
 </template>
 
 <script lang="ts" setup>
+const title = "Simple Syrup";
 const ingredients = [
 	{ name: "Pure Cane Sugar", measurement: "3 Parts" },
 	{ name: "Unrefined Brown Sugar", measurement: "1 Parts" },

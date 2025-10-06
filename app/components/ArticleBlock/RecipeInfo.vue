@@ -14,7 +14,9 @@
 			/>
 		</button>
 		<div class="contents w-full gap-y-8 md:flex md:flex-col">
-			<h1 class="text-center text-3xl font-semibold">Simple Syrup</h1>
+			<h1 class="text-center text-3xl font-semibold capitalize">
+				{{ recipe }}
+			</h1>
 			<div class="order-3 flex w-full flex-col gap-2 text-xl">
 				<h2 class="text-2xl font-semibold">Ingreidents</h2>
 				<span
@@ -48,6 +50,7 @@
 
 <script lang="ts" setup>
 const props = defineProps({
+	recipe: String,
 	image: { src: String, alt: String },
 	ingredients: Array,
 	equipment: Array,

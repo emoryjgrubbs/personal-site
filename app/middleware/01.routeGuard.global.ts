@@ -4,6 +4,8 @@ export default defineNuxtRouteMiddleware(async (to, from) => {
 	const router = useRouter();
 	const pages = router.getRoutes();
 
+	return;
+
 	console.debug(
 		"Attempting to navigating\nfrom: " + from.path + ", to: " + to.path
 	);

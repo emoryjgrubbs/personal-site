@@ -57,7 +57,7 @@
 				class="flex flex-col items-center gap-x-16 gap-y-8 md:flex-row"
 			>
 				<NuxtLink
-					to="/Projects"
+					to="/projects"
 					class="group relative order-2 cursor-pointer select-none md:w-5/12"
 					title="Navigate To Projects"
 				>
@@ -95,7 +95,7 @@
 				class="flex flex-col items-center gap-x-16 gap-y-8 md:flex-row"
 			>
 				<NuxtLink
-					to="/Recipes"
+					to="/recipes"
 					class="group relative order-2 cursor-pointer select-none md:order-none md:w-5/12"
 					title="Navigate To Recipes"
 				>
@@ -133,7 +133,7 @@
 				class="flex flex-col items-center gap-x-16 gap-y-8 md:flex-row"
 			>
 				<NuxtLink
-					to="/Gallery"
+					to="/gallery"
 					class="group relative order-2 cursor-pointer select-none md:w-5/12"
 					title="Navigate To Gallery"
 				>
