@@ -13,7 +13,9 @@
 				draggable="false"
 			/>
 		</button>
-		<div class="contents w-full md:w-1/2 xl:w-7/12 gap-y-8 md:flex md:flex-col">
+		<div
+			class="contents w-full gap-y-8 md:flex md:w-1/2 md:flex-col xl:w-7/12"
+		>
 			<h1 class="text-center text-3xl font-semibold capitalize">
 				{{ recipe }}
 			</h1>

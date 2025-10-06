@@ -48,17 +48,44 @@
 				@maximize="(image) => useMaximize(image)"
 			/>
 			<div v-if="!condenseContent" class="contents">
-                <ArticleBlockText :heading="blocks[0].heading" :text="blocks[0].text" />
+				<ArticleBlockText
+					:heading="blocks[0].heading"
+					:text="blocks[0].text"
+				/>
 
-                <ArticleBlockTextImage :heading="blocks[1].heading" :text="blocks[1].text" :image="blocks[1].image" />
-                <ArticleBlockTextImage :heading="blocks[2].heading" :text="blocks[2].text" :image="blocks[2].image" left="image" />
-                <ArticleBlockTextImage :heading="blocks[3].heading" :text="blocks[3].text" :image="blocks[3].image" />
-                <ArticleBlockTextImage :heading="blocks[4].heading" :text="blocks[4].text" :image="blocks[4].image" left="image" />
+				<ArticleBlockTextImage
+					:heading="blocks[1].heading"
+					:text="blocks[1].text"
+					:image="blocks[1].image"
+				/>
+				<ArticleBlockTextImage
+					:heading="blocks[2].heading"
+					:text="blocks[2].text"
+					:image="blocks[2].image"
+					left="image"
+				/>
+				<ArticleBlockTextImage
+					:heading="blocks[3].heading"
+					:text="blocks[3].text"
+					:image="blocks[3].image"
+				/>
+				<ArticleBlockTextImage
+					:heading="blocks[4].heading"
+					:text="blocks[4].text"
+					:image="blocks[4].image"
+					left="image"
+				/>
 
-                <ArticleBlockText :heading="blocks[5].heading" :text="blocks[5].text" />
+				<ArticleBlockText
+					:heading="blocks[5].heading"
+					:text="blocks[5].text"
+				/>
 
-                <ArticleBlockImage :heading="blocks[6].heading" :image="blocks[6].image" />
-            </div>
+				<ArticleBlockImage
+					:heading="blocks[6].heading"
+					:image="blocks[6].image"
+				/>
+			</div>
 		</div>
 	</div>
 </template>
@@ -70,29 +97,29 @@ const ingredients = [
 	{ name: "Butter", measurement: "12 TBSP" },
 	{ name: "Eggs", measurement: "2" },
 	{ name: "Bananas", measurement: "1 and 1/2" },
-    { name: "Vanilla Extract", measurement: "1 TSP" },
+	{ name: "Vanilla Extract", measurement: "1 TSP" },
 	{ name: "All Purpose Flour", measurement: "3/4 of a Cup" },
 	{ name: "Unrefined Brown Sugar", measurement: "1 of a Cup" },
 	{ name: "Pure Cane Sugar", measurement: "3/4 of a Cup" },
 ];
 const equipment = [
-    "sauce pan",
-    "whisk",
-    "mixing bowl",
-    "measuring cup",
-    "baking pan",
+	"sauce pan",
+	"whisk",
+	"mixing bowl",
+	"measuring cup",
+	"baking pan",
 ];
 const instructions = [
-    "Pre-heat the oven to 325 degrees",
-    "Add 12 tbsp butter and 3/4 cup cocoa to a sauce pan",
-    "Set sauce pan on low heat, stirring occasionally",
-    "Once smooth pour into a mixing bowl and let cool",
-    "Combine 3/4 cup of flour, 1 cup of brown sugar, 3/4 cup of cane sugar in a separate bowl",
-    "Whisk 2 eggs, 1 and 1/2 bananas, and 1 tsp of vanilla extract into the butter and cocoa",
-    "Whisk the dry ingredients into the wet ingredients until homogeneous",
-    "Pour brownie mix into a buttered baking pan",
-    "Bake at 325 for about 50 minutes",
-    "Remove from the oven, let cool, and cut",
+	"Pre-heat the oven to 325 degrees",
+	"Add 12 tbsp butter and 3/4 cup cocoa to a sauce pan",
+	"Set sauce pan on low heat, stirring occasionally",
+	"Once smooth pour into a mixing bowl and let cool",
+	"Combine 3/4 cup of flour, 1 cup of brown sugar, 3/4 cup of cane sugar in a separate bowl",
+	"Whisk 2 eggs, 1 and 1/2 bananas, and 1 tsp of vanilla extract into the butter and cocoa",
+	"Whisk the dry ingredients into the wet ingredients until homogeneous",
+	"Pour brownie mix into a buttered baking pan",
+	"Bake at 325 for about 50 minutes",
+	"Remove from the oven, let cool, and cut",
 ];
 
 const blocks = [
