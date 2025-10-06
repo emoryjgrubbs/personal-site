@@ -86,7 +86,9 @@
 						class="flex w-full flex-col gap-3 text-xl"
 						v-if="showDetails"
 					>
-						<h1 v-if="image.title == ''" class="text-2xl">No Title</h1>
+						<h1 v-if="image.title == ''" class="text-2xl">
+							No Title
+						</h1>
 						<h1 v-else class="text-2xl">{{ image.title }}</h1>
 						<div>Date: {{ image.dates[0].start }}</div>
 						<div class="flex flex-row flex-wrap gap-3">
@@ -112,7 +114,25 @@ const images = [
 	{
 		title: "",
 		tags: [
-			"",
+			//location
+			"usa",
+			"united states",
+			"washington",
+			"seattle metro",
+			"renton",
+			"cougar mountain wildland park",
+			"outdoors",
+
+			//subject
+			"animal",
+			"spider",
+
+			//temporal
+			"day",
+
+			//camera
+			"color",
+			"bokeh",
 		],
 		dates: [{ start: "2025-09-13", end: "2025-09-13" }],
 		src: "/images/gallery/00016-cougar-mt-lookout-hike/8K8A3317.webp",
@@ -121,7 +141,25 @@ const images = [
 	{
 		title: "",
 		tags: [
-			"",
+			//location
+			"usa",
+			"united states",
+			"washington",
+			"seattle metro",
+			"renton",
+			"cougar mountain wildland park",
+			"outdoors",
+
+			//subject
+			"animal",
+			"bird",
+			"woodpecker",
+
+			//temporal
+			"day",
+
+			//camera
+			"color",
 		],
 		dates: [{ start: "2025-09-13", end: "2025-09-13" }],
 		src: "/images/gallery/00016-cougar-mt-lookout-hike/8K8A3262.webp",
@@ -130,7 +168,23 @@ const images = [
 	{
 		title: "",
 		tags: [
-			"",
+			//location
+			"usa",
+			"united states",
+			"washington",
+			"seattle metro",
+			"renton",
+			"cougar mountain wildland park",
+			"outdoors",
+
+			//subject
+			"landscape",
+
+			//temporal
+			"day",
+
+			//camera
+			"color",
 		],
 		dates: [{ start: "2025-08-24", end: "2025-08-24" }],
 		src: "/images/gallery/00014-start-of-seattle-life/8K8A2957.webp",
@@ -139,7 +193,25 @@ const images = [
 	{
 		title: "",
 		tags: [
-			"",
+			//location
+			"usa",
+			"united states",
+			"utah",
+			"salt lake city",
+			"ensign peak",
+			"outdoors",
+
+			//subject
+			"human",
+			"person",
+			"group",
+
+			//temporal
+			"night",
+
+			//camera
+			"color",
+			"silhouette",
 		],
 		dates: [{ start: "2025-07-27", end: "2025-07-27" }],
 		src: "/images/gallery/00013-moving-day/7-moab-to-salt-lake-city/8K8A2836.webp",
@@ -148,7 +220,24 @@ const images = [
 	{
 		title: "",
 		tags: [
-			"",
+			//location
+			"usa",
+			"united states",
+			"utah",
+			"salt lake city",
+			"ensign peak",
+			"outdoors",
+
+			//subject
+			"city",
+
+			//temporal
+			"night",
+
+			//camera
+			"b&k",
+			"black & white",
+			"black and white",
 		],
 		dates: [{ start: "2025-07-27", end: "2025-07-27" }],
 		src: "/images/gallery/00013-moving-day/7-moab-to-salt-lake-city/8K8A2834.webp",
@@ -157,7 +246,23 @@ const images = [
 	{
 		title: "",
 		tags: [
-			"",
+			//location
+			"usa",
+			"united states",
+			"utah",
+			"salt lake city",
+			"ensign peak",
+			"outdoors",
+
+			//subject
+			"landscape",
+
+			//temporal
+			"sunset",
+
+			//camera
+			"color",
+			"silhouette",
 		],
 		dates: [{ start: "2025-07-27", end: "2025-07-27" }],
 		src: "/images/gallery/00013-moving-day/7-moab-to-salt-lake-city/8K8A2785.webp",
@@ -166,7 +271,22 @@ const images = [
 	{
 		title: "",
 		tags: [
-			"",
+			//location
+			"usa",
+			"united states",
+			"utah",
+			"moab",
+			"dead horse point state park",
+			"outdoors",
+
+			//subject
+			"landscape",
+
+			//temporal
+			"day",
+
+			//camera
+			"color",
 		],
 		dates: [{ start: "2025-07-27", end: "2025-07-27" }],
 		src: "/images/gallery/00013-moving-day/7-moab-to-salt-lake-city/8K8A2706.webp",
@@ -175,7 +295,20 @@ const images = [
 	{
 		title: "",
 		tags: [
-			"",
+			//location
+			"usa",
+			"united states",
+			"colorado",
+			"outdoors",
+
+			//subject
+			"landscape",
+
+			//temporal
+			"day",
+
+			//camera
+			"color",
 		],
 		dates: [{ start: "2025-07-26", end: "2025-07-26" }],
 		src: "/images/gallery/00013-moving-day/6-los-alamos-to-moab/8K8A2060.webp",
@@ -184,7 +317,21 @@ const images = [
 	{
 		title: "",
 		tags: [
-			"",
+			//location
+			"usa",
+			"united states",
+			"new mexico",
+			"abiquiu reservoir",
+			"outdoors",
+
+			//subject
+			"landscape",
+
+			//temporal
+			"day",
+
+			//camera
+			"color",
 		],
 		dates: [{ start: "2025-07-26", end: "2025-07-26" }],
 		src: "/images/gallery/00013-moving-day/6-los-alamos-to-moab/8K8A1998.webp",
@@ -193,7 +340,21 @@ const images = [
 	{
 		title: "",
 		tags: [
-			"",
+			//location
+			"usa",
+			"united states",
+			"new mexico",
+			"los alamos",
+			"outdoors",
+
+			//subject
+			"landscape",
+
+			//temporal
+			"day",
+
+			//camera
+			"color",
 		],
 		dates: [{ start: "2025-07-23", end: "2025-07-23" }],
 		src: "/images/gallery/00013-moving-day/3-tooling-around-los-alamos/8K8A1795.webp",
@@ -202,7 +363,22 @@ const images = [
 	{
 		title: "",
 		tags: [
-			"",
+			//location
+			"usa",
+			"united states",
+			"new mexico",
+			"white rock",
+			"white rock overlook",
+			"outdoors",
+
+			//subject
+			"landscape",
+
+			//temporal
+			"day",
+
+			//camera
+			"color",
 		],
 		dates: [{ start: "2025-07-22", end: "2025-07-22" }],
 		src: "/images/gallery/00013-moving-day/2-tucumcari-to-los-alamos/8K8A1786.webp",
@@ -211,7 +387,22 @@ const images = [
 	{
 		title: "",
 		tags: [
-			"",
+			//location
+			"usa",
+			"united states",
+			"new mexico",
+			"white rock",
+			"white rock overlook",
+			"outdoors",
+
+			//subject
+			"landscape",
+
+			//temporal
+			"day",
+
+			//camera
+			"color",
 		],
 		dates: [{ start: "2025-07-22", end: "2025-07-22" }],
 		src: "/images/gallery/00013-moving-day/2-tucumcari-to-los-alamos/8K8A1778.webp",
@@ -220,7 +411,22 @@ const images = [
 	{
 		title: "",
 		tags: [
-			"",
+			//location
+			"usa",
+			"united states",
+			"texas",
+			"amarillo",
+			"cadillac ranch",
+			"outdoors",
+
+			//subject
+			"fireworks",
+
+			//temporal
+			"night",
+
+			//camera
+			"color",
 		],
 		dates: [{ start: "2025-07-21", end: "2025-07-21" }],
 		src: "/images/gallery/00013-moving-day/1-dallas-to-tucumcari/8K8A1656.webp",
@@ -229,7 +435,26 @@ const images = [
 	{
 		title: "",
 		tags: [
-			"",
+			//location
+			"usa",
+			"united states",
+			"texas",
+			"amarillo",
+			"cadillac ranch",
+			"fireworks",
+			"outdoors",
+
+			//subject
+			"human",
+			"person",
+			"group",
+
+			//temporal
+			"night",
+
+			//camera
+			"color",
+			"silhouette",
 		],
 		dates: [{ start: "2025-07-21", end: "2025-07-21" }],
 		src: "/images/gallery/00013-moving-day/1-dallas-to-tucumcari/8K8A1600.webp",
@@ -238,7 +463,22 @@ const images = [
 	{
 		title: "",
 		tags: [
-			"",
+			//location
+			"usa",
+			"united states",
+			"texas",
+			"amarillo",
+			"cadillac ranch",
+			"outdoors",
+
+			//subject
+			"fireworks",
+
+			//temporal
+			"night",
+
+			//camera
+			"color",
 		],
 		dates: [{ start: "2025-07-21", end: "2025-07-21" }],
 		src: "/images/gallery/00013-moving-day/1-dallas-to-tucumcari/8K8A1591.webp",
@@ -247,7 +487,25 @@ const images = [
 	{
 		title: "",
 		tags: [
-			"",
+			//location
+			"usa",
+			"united states",
+			"texas",
+			"dfw metro",
+			"dallas metro",
+			"dallas",
+			"white rock lake",
+			"outdoors",
+
+			//subject
+			"boat",
+			"building",
+
+			//temporal
+			"day",
+
+			//camera
+			"color",
 		],
 		dates: [{ start: "2025-07-10", end: "2025-07-10" }],
 		src: "/images/gallery/00012-last-visits/8K8A1381.webp",
@@ -256,7 +514,26 @@ const images = [
 	{
 		title: "",
 		tags: [
-			"",
+			//location
+			"usa",
+			"united states",
+			"texas",
+			"dfw metro",
+			"dallas metro",
+			"richardson",
+			"utd",
+			"university of texas at dallas",
+			"lloyd v. berkner hall",
+			"outdoors",
+
+			//subject
+			"building",
+
+			//temporal
+			"night",
+
+			//camera
+			"color",
 		],
 		dates: [{ start: "2025-07-10", end: "2025-07-10" }],
 		src: "/images/gallery/00012-last-visits/8K8A1292.webp",
@@ -265,7 +542,26 @@ const images = [
 	{
 		title: "",
 		tags: [
-			"",
+			//location
+			"usa",
+			"united states",
+			"texas",
+			"dfw metro",
+			"dallas metro",
+			"richardson",
+			"utd",
+			"university of texas at dallas",
+			"science learning center",
+			"outdoors",
+
+			//subject
+			"building",
+
+			//temporal
+			"night",
+
+			//camera
+			"color",
 		],
 		dates: [{ start: "2025-07-10", end: "2025-07-10" }],
 		src: "/images/gallery/00012-last-visits/8K8A1246.webp",
@@ -274,7 +570,21 @@ const images = [
 	{
 		title: "",
 		tags: [
-			"",
+			//location
+			"usa",
+			"united states",
+			"texas",
+			"lorena",
+			"outdoors",
+
+			//subject
+			"building",
+
+			//temporal
+			"night",
+
+			//camera
+			"color",
 		],
 		dates: [{ start: "2025-07-09", end: "2025-07-09" }],
 		src: "/images/gallery/00012-last-visits/8K8A1143.webp",
@@ -283,7 +593,28 @@ const images = [
 	{
 		title: "",
 		tags: [
-			"",
+			//location
+			"usa",
+			"united states",
+			"texas",
+			"austin",
+			"outdoors",
+
+			//subject
+			"animal",
+			"bird",
+			"mississippi kite",
+			"blue jay",
+			"group",
+
+			//temporal
+			"day",
+
+			//camera
+			"b&k",
+			"black & white",
+			"black and white",
+			"silhouette",
 		],
 		dates: [{ start: "2025-07-07", end: "2025-07-07" }],
 		src: "/images/gallery/00012-last-visits/8K8A1099.webp",
@@ -292,7 +623,28 @@ const images = [
 	{
 		title: "",
 		tags: [
-			"",
+			//location
+			"usa",
+			"united states",
+			"texas",
+			"dfw metro",
+			"dallas metro",
+			"richardson",
+			"utd",
+			"university of texas at dallas",
+			"founders building",
+			"outdoors",
+
+			//subject
+			"building",
+
+			//temporal
+			"summer",
+			"day",
+
+			//camera
+			"color",
+			"reflection",
 		],
 		dates: [{ start: "2025-06-26", end: "2025-06-26" }],
 		src: "/images/gallery/00011-utd-campus/8K8A0950.webp",
@@ -301,7 +653,24 @@ const images = [
 	{
 		title: "",
 		tags: [
-			"",
+			//location
+			"usa",
+			"united states",
+			"texas",
+			"dfw metro",
+			"dallas metro",
+			"richardson",
+			"outdoors",
+
+			//subject
+			"airplane",
+
+			//temporal
+			"day",
+
+			//camera
+			"color",
+			"silhouette",
 		],
 		dates: [{ start: "2025-06-26", end: "2025-06-26" }],
 		src: "/images/gallery/00011-utd-campus/8K8A0852.webp",
@@ -310,7 +679,25 @@ const images = [
 	{
 		title: "Deck of the Bainbridge",
 		tags: [
-			"",
+			//location
+			"usa",
+			"united states",
+			"washington",
+			"seattle metro",
+			"the sound",
+			"outdoors",
+
+			//subject
+			"bainbridge ferry",
+			"boat",
+			"ferry",
+
+			//temporal
+			"winter",
+			"night",
+
+			//camera
+			"color",
 		],
 		dates: [{ start: "2025-01-15", end: "2025-01-15" }],
 		src: "/images/gallery/00004-seattle-w24/8-west-of-seattle/deck-of-the-bainbridge.webp",
@@ -319,7 +706,28 @@ const images = [
 	{
 		title: "",
 		tags: [
-			"",
+			//location
+			"usa",
+			"united states",
+			"washington",
+			"seattle metro",
+			"the sound",
+			"bainbridge ferry",
+			"outdoors",
+
+			//subject
+			"animal",
+			"bird",
+			"seagull",
+			"group",
+			"boat",
+			"ferry",
+
+			//temporal
+			"day",
+
+			//camera
+			"color",
 		],
 		dates: [{ start: "2025-01-15", end: "2025-01-15" }],
 		src: "/images/gallery/00004-seattle-w24/8-west-of-seattle/8K8A0034.webp",
@@ -328,7 +736,24 @@ const images = [
 	{
 		title: "",
 		tags: [
-			"",
+			//location
+			"canada",
+			"bc",
+			"british columbia",
+			"vancuver",
+			"outdoors",
+
+			//subject
+			"car",
+			"neon",
+			"sign",
+			"street",
+
+			//temporal
+			"night",
+
+			//camera
+			"color",
 		],
 		dates: [{ start: "2025-01-12", end: "2025-01-12" }],
 		src: "/images/gallery/00004-seattle-w24/5-vancuver/8K8A9494.webp",
@@ -337,7 +762,24 @@ const images = [
 	{
 		title: "",
 		tags: [
-			"",
+			//location
+			"canada",
+			"bc",
+			"british columbia",
+			"vancuver",
+			"outdoors",
+
+			//subject
+			"neon",
+			"sign",
+			"street",
+			"building",
+
+			//temporal
+			"night",
+
+			//camera
+			"color",
 		],
 		dates: [{ start: "2025-01-12", end: "2025-01-12" }],
 		src: "/images/gallery/00004-seattle-w24/5-vancuver/8K8A9467.webp",
@@ -346,7 +788,25 @@ const images = [
 	{
 		title: "",
 		tags: [
-			"",
+			//location
+			"usa",
+			"united states",
+			"washington",
+			"seattle metro",
+			"seattle",
+			"outdoors",
+
+			//subject
+			"sign",
+			"graffiti",
+			"street",
+			"traffic cone",
+
+			//temporal
+			"night",
+
+			//camera
+			"color",
 		],
 		dates: [{ start: "2025-01-10", end: "2025-01-10" }],
 		src: "/images/gallery/00004-seattle-w24/3-downtown-seattle-day-3/8K8A8745.webp",
@@ -355,7 +815,24 @@ const images = [
 	{
 		title: "",
 		tags: [
-			"",
+			//location
+			"usa",
+			"united states",
+			"washington",
+			"seattle metro",
+			"seattle",
+			"golden gardens park",
+			"outdoors",
+
+			//subject
+			"animal",
+			"bird",
+
+			//temporal
+			"sunset",
+
+			//camera
+			"color",
 		],
 		dates: [{ start: "2025-01-10", end: "2025-01-10" }],
 		src: "/images/gallery/00004-seattle-w24/3-downtown-seattle-day-3/8K8A8210.webp",
@@ -364,25 +841,86 @@ const images = [
 	{
 		title: "Day on the Beach",
 		tags: [
-			"",
+			//location
+			"usa",
+			"united states",
+			"washington",
+			"seattle metro",
+			"seattle",
+			"golden gardens park",
+			"outdoors",
+
+			//subject
+			"human",
+			"person",
+			"beach",
+
+			//temporal
+			"winter",
+			"day",
+
+			//camera
+			"color",
 		],
 		dates: [{ start: "2025-01-10", end: "2025-01-10" }],
 		src: "/images/gallery/00004-seattle-w24/3-downtown-seattle-day-3/day-on-the-beach.webp",
 		alt: "A lone person sits, bundled up, on a log at a Seattle beach",
 	},
-    {
+	{
 		title: "",
 		tags: [
-			"",
+			//location
+			"usa",
+			"united states",
+			"washington",
+			"seattle metro",
+			"seattle",
+			"outdoors",
+
+			//subject
+			"human",
+			"person",
+			"group",
+			"neon",
+			"sign",
+			"car",
+			"street",
+
+			//temporal
+			"night",
+
+			//camera
+			"b&k",
+			"black & white",
+			"black and white",
 		],
 		dates: [{ start: "2025-01-09", end: "2025-01-09" }],
 		src: "/images/gallery/00004-seattle-w24/2-down-town-seattle-day-2/8K8A8007.webp",
 		alt: "People walk near Pike Place Market",
 	},
-    {
+	{
 		title: "",
 		tags: [
-			"",
+			//location
+			"usa",
+			"united states",
+			"washington",
+			"seattle metro",
+			"seattle",
+			"pike place market",
+			"indoors",
+
+			//subject
+			"human",
+			"person",
+			"group",
+			"neon",
+			"sign",
+
+			//temporal
+
+			//camera
+			"color",
 		],
 		dates: [{ start: "2025-01-09", end: "2025-01-09" }],
 		src: "/images/gallery/00004-seattle-w24/2-down-town-seattle-day-2/8K8A7999.webp",
@@ -391,16 +929,51 @@ const images = [
 	{
 		title: "",
 		tags: [
-			"",
+			//location
+			"usa",
+			"united states",
+			"washington",
+			"seattle metro",
+			"seattle",
+			"outdoors",
+
+			//subject
+			"landscape",
+			"boat",
+
+			//temporal
+			"day",
+
+			//camera
+			"color",
 		],
 		dates: [{ start: "2025-01-09", end: "2025-01-09" }],
 		src: "/images/gallery/00004-seattle-w24/2-down-town-seattle-day-2/8K8A7975.webp",
-		alt: "A ventalation system a piece of a pier appear in front of the mountains across The Sound",
+		alt: "A ventalation system and a piece of a pier 66 appear in front of the mountains across The Sound",
 	},
 	{
 		title: "More Shops",
 		tags: [
-			"",
+			//location
+			"usa",
+			"united states",
+			"washington",
+			"seattle metro",
+			"seattle",
+			"pike place market",
+			"indoors",
+
+			//subject
+			"human",
+			"person",
+			"group",
+			"neon",
+			"sign",
+
+			//temporal
+
+			//camera
+			"color",
 		],
 		dates: [{ start: "2025-01-09", end: "2025-01-09" }],
 		src: "/images/gallery/00004-seattle-w24/2-down-town-seattle-day-2/more-shops.webp",
@@ -411,7 +984,14 @@ const images = [
 	{
 		title: "",
 		tags: [
+            //location
 			"",
+
+            //subject
+
+            //temporal
+
+            //camera
 		],
 		dates: [{ start: "YYYY-MM-DD", end: "YYYY-MM-DD" }],
 		src: "/images/gallery/.../.webp",
