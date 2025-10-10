@@ -143,7 +143,7 @@ const recipes = (function () {
 			dietary: [],
 			tags: ["drink"],
 			dates: [],
-			thumbnail: "/images/recipes/juice/lemon-limeade/thumbnail.webp",
+			thumbnail: "/images/recipes/juice/lemon-limeade-thumbnail.webp",
 			thumbnailAlt: "",
 			name: "recipes-juice-variant",
 			variant: "lemon-limeade",
