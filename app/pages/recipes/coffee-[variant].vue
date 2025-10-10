@@ -48,17 +48,54 @@
 				@maximize="(image) => useMaximize(image)"
 			/>
 			<div v-if="!condenseContent" class="contents">
-                <ArticleBlockText :heading="blocks[0].heading" :text="blocks[0].text" :image="blocks[0].image" />
-                <ArticleBlockText :heading="blocks[1].heading" :text="blocks[1].text" :image="blocks[1].image" />
-                <ArticleBlockTextImage :heading="blocks[2].heading" :text="blocks[2].text" :image="blocks[2].image" />
-                <ArticleBlockText :heading="blocks[3].heading" :text="blocks[3].text" :image="blocks[3].image" />
-                <ArticleBlockTextImage :heading="blocks[4].heading" :text="blocks[4].text" :image="blocks[4].image" left="image"/>
-                <ArticleBlockImage v-if="route.params.variant.toLowerCase() == 'espresso'" :heading="blocks[5].heading" :text="blocks[5].text" :image="blocks[5].image" />
-                <div v-if="route.params.variant.toLowerCase() == 'latte'" class="contents">
-                    <ArticleBlockTextImage :heading="blocks[6].heading" :text="blocks[6].text" :image="blocks[6].image" />
-                </div>
-                <ArticleBlockText :heading="blocks[7].heading" :text="blocks[7].text" :image="blocks[7].image" />
-            </div>
+				<ArticleBlockText
+					:heading="blocks[0].heading"
+					:text="blocks[0].text"
+					:image="blocks[0].image"
+				/>
+				<ArticleBlockText
+					:heading="blocks[1].heading"
+					:text="blocks[1].text"
+					:image="blocks[1].image"
+				/>
+				<ArticleBlockTextImage
+					:heading="blocks[2].heading"
+					:text="blocks[2].text"
+					:image="blocks[2].image"
+				/>
+				<ArticleBlockText
+					:heading="blocks[3].heading"
+					:text="blocks[3].text"
+					:image="blocks[3].image"
+				/>
+				<ArticleBlockTextImage
+					:heading="blocks[4].heading"
+					:text="blocks[4].text"
+					:image="blocks[4].image"
+					left="image"
+				/>
+				<ArticleBlockImage
+					v-if="route.params.variant.toLowerCase() == 'espresso'"
+					:heading="blocks[5].heading"
+					:text="blocks[5].text"
+					:image="blocks[5].image"
+				/>
+				<div
+					v-if="route.params.variant.toLowerCase() == 'latte'"
+					class="contents"
+				>
+					<ArticleBlockTextImage
+						:heading="blocks[6].heading"
+						:text="blocks[6].text"
+						:image="blocks[6].image"
+					/>
+				</div>
+				<ArticleBlockText
+					:heading="blocks[7].heading"
+					:text="blocks[7].text"
+					:image="blocks[7].image"
+				/>
+			</div>
 		</div>
 	</div>
 </template>
@@ -67,85 +104,85 @@
 const route = useRoute();
 const title = route.params.variant;
 const info = computed(() => {
-    let image;
-    let alt;
+	let image;
+	let alt;
 
-    switch(route.params.variant.toLowerCase()) {
-        case 'espresso':
-            image = "images/recipes/coffee/espresso-ingredients.webp";
-            alt = "Counter preped to brew espresso";
-            break;
-        case 'latte':
-            image = "images/recipes/coffee/latte-ingredients.webp";
-            alt = "Counter preped to pour a latte";
-            break;
-        default:
-            console.debug("Bad coffee variant");
-    }
+	switch (route.params.variant.toLowerCase()) {
+		case "espresso":
+			image = "images/recipes/coffee/espresso-ingredients.webp";
+			alt = "Counter preped to brew espresso";
+			break;
+		case "latte":
+			image = "images/recipes/coffee/latte-ingredients.webp";
+			alt = "Counter preped to pour a latte";
+			break;
+		default:
+			console.debug("Bad coffee variant");
+	}
 
-    return { image: image, alt: alt };
+	return { image: image, alt: alt };
 });
 const ingredients = computed(() => {
-    switch(route.params.variant.toLowerCase()) {
-        case 'espresso':
-            return [
-                { name: "Coffee Beans", measurement: "19 Grams" },
-                { name: "Water", measurement: "" },
-            ];
-        case 'latte':
-            return [
-                { name: "Coffee Beans", measurement: "19 Grams" },
-                { name: "Water", measurement: "" },
-                { name: "Milk", measurement: "165 Grams" },
-            ];
-    }
+	switch (route.params.variant.toLowerCase()) {
+		case "espresso":
+			return [
+				{ name: "Coffee Beans", measurement: "19 Grams" },
+				{ name: "Water", measurement: "" },
+			];
+		case "latte":
+			return [
+				{ name: "Coffee Beans", measurement: "19 Grams" },
+				{ name: "Water", measurement: "" },
+				{ name: "Milk", measurement: "165 Grams" },
+			];
+	}
 
-    return [];
+	return [];
 });
 const equipment = computed(() => {
-    switch(route.params.variant.toLowerCase()) {
-        case 'espresso':
-            return [
-                "grinder",
-                "distribution tool",
-                "scale",
-                "espresso machine",
-            ];
-        case 'latte':
-            return [
+	switch (route.params.variant.toLowerCase()) {
+		case "espresso":
+			return [
+				"grinder",
+				"distribution tool",
+				"scale",
+				"espresso machine",
+			];
+		case "latte":
+			return [
 				"grinder",
 				"distribution tool",
 				"scale",
 				"pitcher",
 				"espresso machine",
 			];
-    }
+	}
 
-    return [];
+	return [];
 });
 const instructions = computed(() => {
-    let espresso = [
-        "Let your machine fully heat up for at around half an hour",
-        "Insert your portafilter to warm, while you grind you coffee",
-        "Prepare your puck. If possible distribute your grounds, then tamp with moderate force",
-        "For stock Gaggias, push water through the machine untill it drops below temp, then after the light comes back on wait an 10 seconds, finally push the steam button and wait an additional 5 seconds",
-        "Pull your shot, aiming for about 2:1 in 35 seconds",
-    ];
-    let latte = [
-        "Measure out about 160 grams of milk in a pitcher",
-        "Introduce air for 3 to 5 seconds",
-        "At about a 45 degree angle, incorporate the air into the milk until hot to the touch",
-        "Pour the milk into the espresso shot, starting high and slow, then bringing the pitcher down close to the surface to pour a design",
-    ];
+	let espresso = [
+		"Let your machine fully heat up for at around half an hour",
+		"Insert your portafilter to warm, while you grind you coffee",
+		"Prepare your puck. If possible distribute your grounds, then tamp with moderate force",
+		"For stock Gaggias, push water through the machine untill it drops below temp, then after the light comes back on wait an 10 seconds, finally push the steam button and wait an additional 5 seconds",
+		"Pull your shot, aiming for about 2:1 in 35 seconds",
+	];
+	let latte = [
+		"Measure out about 160 grams of milk in a pitcher",
+		"Introduce air for 3 to 5 seconds",
+		"At about a 45 degree angle, incorporate the air into the milk until hot to the touch",
+		"Pour the milk into the espresso shot, starting high and slow, then bringing the pitcher down close to the surface to pour a design",
+	];
 
-    switch(route.params.variant.toLowerCase()) {
-        case 'espresso':
-            return espresso;
-        case 'latte':
-            return espresso.concat(latte);
-    }
+	switch (route.params.variant.toLowerCase()) {
+		case "espresso":
+			return espresso;
+		case "latte":
+			return espresso.concat(latte);
+	}
 
-    return [];
+	return [];
 });
 
 const blocks = [

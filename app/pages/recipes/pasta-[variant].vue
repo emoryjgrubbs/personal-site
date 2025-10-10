@@ -112,7 +112,19 @@ const equipment = [
 	"spatula",
 	"pot",
 ];
-const instructions = [];
+const instructions = [
+	"Crush a can of whole peeled tomatos in a mixing bowl and add a cup of water to the left over juice",
+	"Coarse mince 7 garlic cloves",
+	"Heat 1/4 cup of olive oil in a sauce pan on medium low heat",
+	"Add red pepper flakes and garlic to the oil",
+	"As soon as the garlic is sizzling, add the crushed tomatos and watered down juice",
+	"Add a teaspoon of salt with black pepper and oregano to taste, then mix to incorporate",
+	"Once the sauce starts to bubble, add fresh basil and let it wilt",
+	"Brown 3/4 pounds of ground beef, seasoned with salt and black pepper",
+	"Once the meat is browned, add it to the sauce and lower the temperature",
+	"If not previously done, submerge the basil",
+	"Boil water and cook selected noodles for the time specified by the packaging",
+];
 
 const blocks = [
 	{
