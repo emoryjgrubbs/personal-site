@@ -17,9 +17,6 @@
 				:ref="useSelectedTags()"
 			/>
 
-			<h1 class="text-3xl">
-				CURRENTLY ALL RECIPES BUT SIMPLES SYRUP ARE FOR TESTING PURPOSES
-			</h1>
 			<!--Recipe Cards-->
 			<div class="grid grid-cols-1 gap-3 md:grid-cols-3">
 				<div
