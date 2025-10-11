@@ -91,14 +91,14 @@ const title = "Pasta";
 const ingredients = [
 	{ name: "whole peeled tomatos", measurement: "28 ounce can" },
 	{ name: "water", measurement: "1 cup" },
-	{ name: "olive oil", measurement: "1/4 cup" },
+	{ name: "olive oil", measurement: "¼ cup" },
 	{ name: "garlic", measurement: "7 cloves" },
 	{ name: "red pepper flakes", measurement: "" },
 	{ name: "salt", measurement: "1 TSP" },
 	{ name: "pepper", measurement: "" },
 	{ name: "oregano", measurement: "" },
 	{ name: "basil", measurement: "1 to 3 spirgs" },
-	{ name: "80/20 ground beef", measurement: "3/4 of a pound" },
+	{ name: "80/20 ground beef", measurement: "¾ of a pound" },
 	{ name: "noodles", measurement: "1 package" },
 ];
 const equipment = [
@@ -115,12 +115,12 @@ const equipment = [
 const instructions = [
 	"Crush a can of whole peeled tomatos in a mixing bowl and add a cup of water to the left over juice",
 	"Coarse mince 7 garlic cloves",
-	"Heat 1/4 cup of olive oil in a sauce pan on medium low heat",
+	"Heat ¼ cup of olive oil in a sauce pan on medium low heat",
 	"Add red pepper flakes and garlic to the oil",
 	"As soon as the garlic is sizzling, add the crushed tomatos and watered down juice",
 	"Add a teaspoon of salt with black pepper and oregano to taste, then mix to incorporate",
 	"Once the sauce starts to bubble, add fresh basil and let it wilt",
-	"Brown 3/4 pounds of ground beef, seasoned with salt and black pepper",
+	"Brown ¾ pounds of ground beef, seasoned with salt and black pepper",
 	"Once the meat is browned, add it to the sauce and lower the temperature",
 	"If not previously done, submerge the basil",
 	"Boil water and cook selected noodles for the time specified by the packaging",

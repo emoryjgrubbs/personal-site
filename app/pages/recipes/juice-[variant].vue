@@ -104,7 +104,7 @@ const ingredients = computed(() => {
 				{ name: "lemon", measurement: "1" },
 				{ name: "lime", measurement: "1" },
 				{ name: "water", measurement: "6 to 8 Ounces" },
-				{ name: "simple-syrup", measurement: "1 to 1 1/2 Ounces" },
+				{ name: "simple-syrup", measurement: "1 to 1 ½ Ounces" },
 			];
 	}
 
@@ -124,7 +124,7 @@ const instructions = computed(() => {
 			return [
 				"Cut a lemon and a lime in half",
 				"Juice the fruit into a shaker",
-				"Add 1 1/4 ounces of simple syrup, 8 ounces of water, and 6 large ice cubes",
+				"Add 1 ¼ ounces of simple syrup, 8 ounces of water, and 6 large ice cubes",
 				"Shake lengthwise to combine and chill the juice",
 				"Strain into a cup and add more ice",
 			];

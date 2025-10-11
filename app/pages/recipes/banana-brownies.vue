@@ -93,14 +93,14 @@
 <script lang="ts" setup>
 const title = "Banana Brownies";
 const ingredients = [
-	{ name: "Cocoa", measurement: "3/4 of a Cup" },
+	{ name: "Cocoa", measurement: "¾ Cup" },
 	{ name: "Butter", measurement: "12 TBSP" },
 	{ name: "Eggs", measurement: "2" },
-	{ name: "Bananas", measurement: "1 and 1/2" },
+	{ name: "Bananas", measurement: "1 ½" },
 	{ name: "Vanilla Extract", measurement: "1 TSP" },
-	{ name: "All Purpose Flour", measurement: "3/4 of a Cup" },
-	{ name: "Unrefined Brown Sugar", measurement: "1 of a Cup" },
-	{ name: "Pure Cane Sugar", measurement: "3/4 of a Cup" },
+	{ name: "All Purpose Flour", measurement: "¾ Cup" },
+	{ name: "Unrefined Brown Sugar", measurement: "1 Cup" },
+	{ name: "Pure Cane Sugar", measurement: "¾ Cup" },
 ];
 const equipment = [
 	"sauce pan",
@@ -111,11 +111,11 @@ const equipment = [
 ];
 const instructions = [
 	"Pre-heat the oven to 325 degrees",
-	"Add 12 tbsp butter and 3/4 cup cocoa to a sauce pan",
+	"Add 12 tbsp butter and ¾ cup cocoa to a sauce pan",
 	"Set sauce pan on low heat, stirring occasionally",
 	"Once smooth pour into a mixing bowl and let cool",
-	"Combine 3/4 cup of flour, 1 cup of brown sugar, 3/4 cup of cane sugar in a separate bowl",
-	"Whisk 2 eggs, 1 and 1/2 bananas, and 1 tsp of vanilla extract into the butter and cocoa",
+	"Combine ¾ cup of flour, 1 cup of brown sugar, ¾ cup of cane sugar in a separate bowl",
+	"Whisk 2 eggs, 1 ½ bananas, and 1 tsp of vanilla extract into the butter and cocoa",
 	"Whisk the dry ingredients into the wet ingredients until homogeneous",
 	"Pour brownie mix into a buttered baking pan",
 	"Bake at 325 for about 50 minutes",
