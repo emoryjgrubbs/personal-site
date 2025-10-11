@@ -89,7 +89,7 @@ const info = computed(() => {
 	switch (route.params.variant.toLowerCase()) {
 		case "lemon-limeade":
 			image = "images/recipes/juice/lemon-limeade-ingredients.webp";
-			alt = "Counter preped to brew espresso";
+			alt = "Ingredients for lemon-limeade laid out";
 			break;
 		default:
 			console.debug("Bad juice variant");
@@ -139,7 +139,7 @@ const blocks = [
 		text: "Cut a lemon and a lime in half, and combine the juice with between 1 and 1.5 ounces of simple syrup and 6 to 8 ounces of water. I use a boston shaker because it’s easy to load and clean, but you could use a water tight container. The syrup I use is linked at the bottom of this page, as well as in the ingredients.",
 		image: {
 			src: "images/recipes/juice/lemon-limeade-juicing.webp",
-			alt: "",
+			alt: "Ingredients after fruit have been juiced",
 		},
 	},
 	{
@@ -155,7 +155,7 @@ const blocks = [
 		text: "With the shaker prepared, I shake lengthwise to fully incorporate the ingredients for about 30 seconds. At this point it should be fairly cold to the touch. Finally I strain the drink as I pour it, using both a hawthorn strainer and a conical fine mesh sieve. This fully filters any ice, pulp, or seeds while allowing a fast flow. I then add some more ice cubes to the cup and enjoy.",
 		image: {
 			src: "images/recipes/juice/lemon-limeade-shaken.webp",
-			alt: "",
+			alt: "Boston shaker after the ingredients have been shaken together",
 		},
 	},
 	{
@@ -171,7 +171,7 @@ const blocks = [
 		text: "For something more akin to an ultra-fresh sprite, you can carbonate your juice. This assumes your machine allows you to carbonate more than just water, which as far as I am aware is just the Drinkmate I have or a Brevil. I find just substituting carbonated water after shaking the other ingredients isn’t concentrated enough to make a noticeable difference. But I normally skip this entirely.",
 		image: {
 			src: "images/recipes/juice/lemon-limeade-carbonation.webp",
-			alt: "",
+			alt: "Carbonation container, with juice funneled in",
 		},
 	},
 ];

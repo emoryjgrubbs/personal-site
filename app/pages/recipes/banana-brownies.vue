@@ -39,7 +39,7 @@
 				:recipe="title"
 				:image="{
 					src: '/images/recipes/banana-brownies/ingredients.webp',
-					alt: 'Ingredients',
+					alt: 'Brownie Ingredients Laid Out',
 				}"
 				:ingredients="ingredients"
 				:equipment="equipment"
@@ -136,7 +136,7 @@ const blocks = [
 		text: "Add 12 tbsp of butter to a sauce pan with three quarters of a cup cocoa, stirring occasionally over low heat. Once smooth, take off the heat and let cool.",
 		image: {
 			src: "images/recipes/banana-brownies/sauce-pan.webp",
-			alt: "",
+			alt: "Sacue pan with the combined butter and cocoa",
 		},
 	},
 	{
@@ -144,7 +144,7 @@ const blocks = [
 		text: "While the butter and cocoa is cooling, add a cup of brown sugar, three fourths a cup of cane sugar, a three fourths a cup of flour, and a large pinch of salt to a bowl.",
 		image: {
 			src: "images/recipes/banana-brownies/dry.webp",
-			alt: "",
+			alt: "Bowl of the dry ingredients",
 		},
 	},
 	{
@@ -152,7 +152,7 @@ const blocks = [
 		text: "Once the butter and cocoa have cooled, pour the mixture into a mixing bowl. Then whisk in two eggs and a one and a half bananas, along with a teaspoon of vanilla. The banana will incorporate when whisked, but I like to try and leave some chunks still intact.",
 		image: {
 			src: "images/recipes/banana-brownies/wet.webp",
-			alt: "",
+			alt: "Wisked wet ingredients",
 		},
 	},
 	{
@@ -160,7 +160,7 @@ const blocks = [
 		text: "After the binders have been added to the cocoa mixture, add the dry ingredients. Stir all the ingredients together until homogeneous. Then transfer to a buttered 8 by 8 square pan, baking for about 50 minutes.",
 		image: {
 			src: "images/recipes/banana-brownies/wet-dry.webp",
-			alt: "",
+			alt: "Mixing bowl with the wet and dry ingreidents",
 		},
 	},
 	{
@@ -176,7 +176,7 @@ const blocks = [
 		text: "",
 		image: {
 			src: "images/recipes/banana-brownies/product.webp",
-			alt: "",
+			alt: "Finished brownies",
 		},
 	},
 ];

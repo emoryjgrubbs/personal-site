@@ -207,7 +207,7 @@ const blocks = [
 		text: "The next step is to prepare your puck. I have issues with channeling that seem to stem from my inability to pour the grounds so they are flat before the tamp. I’ve found that a small fork does the job, but a proper needle tool is a necessary upgrade if you have this issue. If you don’t want to make a mess while you comb through the coffee, some sort of dosing funnel really helps. After I am satisfied with the distribution, I tamp with my arm as straight above the portafilter as possible, giving a little twist before pulling up to prevent anything from sticking.",
 		image: {
 			src: "images/recipes/coffee/espresso-puck-prep.webp",
-			alt: "",
+			alt: "Portafilter with ground coffee after WDT",
 		},
 	},
 	{
@@ -223,7 +223,7 @@ const blocks = [
 		text: "When pulling shots, I rely on an espresso scale for insight into the shot(maybe change to something about “quantifying” results). I have gotten the best results pulling shots at about a 2:1 ratio, in about 35 seconds. If you want the best coffee possible, you should be tasting your espresso, as it will provide the most feedback. The general rule is that sour espresso is underextracting and bitter espresso is overextracted. Once you are familiar with how a particular batch of beans pulls, you can look at the time and extraction stream as a measure of the shot’s performance.",
 		image: {
 			src: "images/recipes/coffee/espresso-pulling.webp",
-			alt: "",
+			alt: "Espresso machine at the end of a shot",
 		},
 	},
 	{
@@ -231,7 +231,7 @@ const blocks = [
 		text: "",
 		image: {
 			src: "images/recipes/coffee/espresso-thumbnail.webp",
-			alt: "",
+			alt: "Finished espresso, with seltzer water",
 		},
 	},
 	{
@@ -239,7 +239,7 @@ const blocks = [
 		text: "For a latte, I use about 160 grams of whole milk that just came out of the refrigerator. I set my pitcher at a slight angle using the spout as a guide, with the steam nozzle right at the surface. Once the milk has been sufficiently aerated, I move the nozzle down to incorporate the air. I know the milk is up to temp when I really don’t want to be holding on to the pitcher anymore, at which point I use a wet rag to clean the tip and purge it into a waste cup. At this point I stir my espresso and pour it into the cup I will be using. Then I start pouring my milk high and slow to mix with the coffee. Nearing the top of the cup, I will bring down my pitcher and start pouring a design.",
 		image: {
 			src: "images/recipes/coffee/latte-product.webp",
-			alt: "",
+			alt: "Finished Latte",
 		},
 	},
 	{

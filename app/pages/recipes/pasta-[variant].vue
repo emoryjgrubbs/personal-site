@@ -39,7 +39,7 @@
 				:recipe="title"
 				:image="{
 					src: '/images/recipes/pasta/red/ingredients.webp',
-					alt: 'Simple Syrup Ingredients',
+					alt: 'Pasta ingredients laid out',
 				}"
 				:ingredients="ingredients"
 				:equipment="equipment"
@@ -132,7 +132,7 @@ const blocks = [
 		text: "The first thing I do is start the sauce, since it needs time to simmer. I start by pouring whole peeled tomatoes into a mixing bowl to be crushed. I also take a cup of water and pour it into the can. Then setting those aside, I coarse mince about 7 good sized cloves of garlic.",
 		image: {
 			src: "/images/recipes/pasta/red/prep.webp",
-			alt: "",
+			alt: "Mixing bowl with crushed tomatos, and cutting board with chopped garlic",
 		},
 	},
 	{
@@ -140,7 +140,7 @@ const blocks = [
 		text: "Once I have these prepared, I heat a fourth cup of olive oil, sprinkling in a generous amount of red pepper flakes. Once up to temp, I throw in the garlic. As soon as I hear the garlic starting to sizzle, I pour in the tomatoes. I also pour the water from the can into the bowl at this point, attempting to get as much of the liquid from the can into the sauce as possible.",
 		image: {
 			src: "/images/recipes/pasta/red/sizzle.webp",
-			alt: "",
+			alt: "Sauce pan with oil, garlic, and red pepper flakes",
 		},
 	},
 	{
@@ -148,7 +148,7 @@ const blocks = [
 		text: "After a quick stir to incorporate the ingredients, I add a healthy amount of salt, black pepper and oregano. I use a teaspoon of salt, but just look at the density of spices covering the surface of the sauce as a measure for the pepper and oregano. I do two passes for the black pepper and one for the oregano… . Once the sauce is starting to bubble, I add some fresh basil and let it wilt.",
 		image: {
 			src: "/images/recipes/pasta/red/spice.webp",
-			alt: "",
+			alt: "Sauce pan with spices layered on top of tomato sauce",
 		},
 	},
 	{
@@ -156,7 +156,7 @@ const blocks = [
 		text: "Now that the sauce has started to simmer, I add about 3/4ths of a pound of ground beef to a skillet. While it’s still a block, I season one side with salt and pepper. While keeping an eye on the sauce and stirring occasionally, I let the meat start to brown. After the bottom is starting to take on color, I flip the meat and start to break it apart with a spatula. I like varying pebbles of beef in my sauce, so I continue to use the spatula to break things apart when I agitate the beef. Once satisfactorily browned, add the meat to the sauce that has been simmering.",
 		image: {
 			src: "/images/recipes/pasta/red/meat.webp",
-			alt: "",
+			alt: "Beef in the process of browning",
 		},
 	},
 	{
@@ -164,7 +164,7 @@ const blocks = [
 		text: "Once the meat has been added to the sauce, I lower the temperature and start preparing the noodles. At this point I just stir the sauce occasionally, while waiting for the noodle water to boil. Once boiling I add some salt to the water and the noodles. I usually only do a third of the noodles as fresh noodles make a big difference to me, and I don’t have a microwave to easily reheat the leftovers. Once in, I follow the package's instructions, which is usually to boil the noodles for about 10 or 11 minutes.",
 		image: {
 			src: "/images/recipes/pasta/red/combining.webp",
-			alt: "",
+			alt: "Sauce with the meat added",
 		},
 	},
 	{
@@ -172,7 +172,7 @@ const blocks = [
 		text: "Once that timer is up on the noodles, I turn off the heat on all burners and strain the noodles. Then I top my noodles with sauces in a large bowl, mixing to evenly coat them in sauce, and put the excess sauce in a container to be preserved and eaten later.",
 		image: {
 			src: "/images/recipes/pasta/red/product.webp",
-			alt: "",
+			alt: "Finished pasta",
 		},
 	},
 ];
