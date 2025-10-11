@@ -25,7 +25,9 @@
 				<span
 					class="flex flex-col text-xl"
 					v-for="ingredient in props.ingredients"
-					>{{ ingredient.name }} - {{ ingredient.measurement }}</span
+					>{{ ingredient.name }}
+					{{ ingredient.measurement ? "-" : "" }}
+					{{ ingredient.measurement }}</span
 				>
 			</div>
 			<div class="order-3 flex w-full flex-col gap-2 text-xl">
