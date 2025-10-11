@@ -114,7 +114,7 @@ const instructions = [
 	"Add 12 tbsp butter and ¾ cup cocoa to a sauce pan",
 	"Set sauce pan on low heat, stirring occasionally",
 	"Once smooth pour into a mixing bowl and let cool",
-	"Combine ¾ cup of flour, 1 cup of brown sugar, ¾ cup of cane sugar in a separate bowl",
+	"Combine ¾ cup of flour, 1 cup of brown sugar, ¾ cup of cane sugar, and a pinch of salt in a separate bowl",
 	"Whisk 2 eggs, 1 ½ bananas, and 1 tsp of vanilla extract into the butter and cocoa",
 	"Whisk the dry ingredients into the wet ingredients until homogeneous",
 	"Pour brownie mix into a buttered baking pan",
