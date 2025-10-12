@@ -247,7 +247,8 @@ const recipes = (function () {
 	internal.map((element) => {
 		element.tags = element.tags.concat(
 			element.ingredients,
-			element.equipment
+			element.equipment,
+			element.dietary
 		);
 	});
 
