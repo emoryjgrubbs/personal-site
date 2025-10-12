@@ -133,7 +133,7 @@ const blocks = [
 	},
 	{
 		heading: "",
-		text: "Add 12 tbsp of butter to a sauce pan with three quarters of a cup cocoa, stirring occasionally over low heat. Once smooth, take off the heat and let cool.",
+		text: "Add 12 tbsp of butter to a sauce pan with ¾ a cup cocoa, stirring occasionally over low heat. Once smooth, take off the heat and let cool.",
 		image: {
 			src: "images/recipes/banana-brownies/sauce-pan.webp",
 			alt: "Sacue pan with the combined butter and cocoa",
@@ -141,7 +141,7 @@ const blocks = [
 	},
 	{
 		heading: "",
-		text: "While the butter and cocoa is cooling, add a cup of brown sugar, three fourths a cup of cane sugar, a three fourths a cup of flour, and a large pinch of salt to a bowl.",
+		text: "While the butter and cocoa is cooling, add 1 cup of brown sugar, ¾ a cup of cane sugar, ¾ a cup of flour, and a large pinch of salt to a bowl.",
 		image: {
 			src: "images/recipes/banana-brownies/dry.webp",
 			alt: "Bowl of the dry ingredients",
@@ -149,7 +149,7 @@ const blocks = [
 	},
 	{
 		heading: "",
-		text: "Once the butter and cocoa have cooled, pour the mixture into a mixing bowl. Then whisk in two eggs and a one and a half bananas, along with a teaspoon of vanilla. The banana will incorporate when whisked, but I like to try and leave some chunks still intact.",
+		text: "Once the butter and cocoa have cooled, pour the mixture into a mixing bowl. Then whisk in 2 eggs and 1 ½ bananas, along with 1 teaspoon of vanilla. The banana will incorporate when whisked, but I like to try and leave some chunks still intact. It’s best to use a ripe banana for this because they are softer.",
 		image: {
 			src: "images/recipes/banana-brownies/wet.webp",
 			alt: "Wisked wet ingredients",

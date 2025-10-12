@@ -196,7 +196,7 @@ const blocks = [
 	},
 	{
 		heading: "",
-		text: "Once your machine is preheated, lock in your portafilter as you grind your beans. I have a hand grinder so I find this is a good time to heat the basket. However, if you have an electric grinder or pre-ground coffee, you may want to let it heat for longer. The amount of coffee you need to appropriately fill your basket will depend on your specific machine and basket. For my Gaggia Classic Pro E24 with a 17 - 21g IMS basket, I find 19 grams usually puts my puck at the right height. To find the height for your set up, you want the top of the puck to be just below the shower screen, so check your prepared portafilter after locking it in. If you see an indent it’s too high and you should reduce the amount of grounds slightly. Another complication is that different beans perform best at different grind sizes. This is also affected by how long ago the beans we roasted. With my 1zpresso J-Ultra hand grinder, I start at 1.2.0 and adjust according to taste.",
+		text: "Once your machine is preheated, lock in your portafilter as you grind your beans. I have a hand grinder so I find this is a good time to heat the basket. However, if you have an electric grinder or pre-ground coffee, you may want to let it heat for longer. The amount of coffee you need to appropriately fill your basket will depend on your specific machine and basket. For my Gaggia Classic Pro E24 with a 17 - 21g IMS basket, I find 19 grams usually puts my puck at the right height. To find the height for your set up, you want the top of the puck to be just below the shower screen. To check, lock in your portafilter and look at it before pulling the shot. Another complication is that different beans perform best at different grind sizes. This is also affected by how long ago the beans we roasted. With my 1zpresso J-Ultra hand grinder, I start at 1.2.0 and adjust according to taste.",
 		image: {
 			src: "",
 			alt: "",
@@ -204,7 +204,7 @@ const blocks = [
 	},
 	{
 		heading: "",
-		text: "The next step is to prepare your puck. I have issues with channeling that seem to stem from my inability to pour the grounds so they are flat before the tamp. I’ve found that a small fork does the job, but a proper needle tool is a necessary upgrade if you have this issue. If you don’t want to make a mess while you comb through the coffee, some sort of dosing funnel really helps. After I am satisfied with the distribution, I tamp with my arm as straight above the portafilter as possible, giving a little twist before pulling up to prevent anything from sticking.",
+		text: "The next step is to prepare your puck. I have issues with channeling that seem to be a result of unlevel grounds. I’ve found that a small fork can help to push the grounds into a more level state, but it’s slow and messy. A proper distribution tool is a necessary long term upgrade if you have this issue. Additionally, a dosing funnel significantly cuts down on the mess while you comb through the coffee. After I am satisfied with the distribution, I tamp with my arm as straight above the portafilter as possible, giving a little twist before pulling up to prevent anything from sticking.",
 		image: {
 			src: "images/recipes/coffee/espresso-puck-prep.webp",
 			alt: "Portafilter with ground coffee after WDT",
@@ -220,7 +220,7 @@ const blocks = [
 	},
 	{
 		heading: "",
-		text: "When pulling shots, I rely on an espresso scale for insight into the shot(maybe change to something about “quantifying” results). I have gotten the best results pulling shots at about a 2:1 ratio, in about 35 seconds. If you want the best coffee possible, you should be tasting your espresso, as it will provide the most feedback. The general rule is that sour espresso is underextracting and bitter espresso is overextracted. Once you are familiar with how a particular batch of beans pulls, you can look at the time and extraction stream as a measure of the shot’s performance.",
+		text: "When pulling shots, I rely on an espresso scale for quantitative data points which I later use to improve the coffee. I have gotten the best results pulling shots at about a 2:1 ratio, in about 35 seconds. If you want the best coffee possible, you should be tasting your espresso, as it will provide the most feedback. The general rule is that sour espresso is underextracting and bitter espresso is overextracted. Once you are familiar with how a particular batch of beans pulls, you can look at the time and extraction stream as a measure of the shot’s performance.",
 		image: {
 			src: "images/recipes/coffee/espresso-pulling.webp",
 			alt: "Espresso machine at the end of a shot",

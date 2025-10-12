@@ -129,7 +129,7 @@ const instructions = [
 const blocks = [
 	{
 		heading: "",
-		text: "The first thing I do is start the sauce, since it needs time to simmer. I start by pouring whole peeled tomatoes into a mixing bowl to be crushed. I also take a cup of water and pour it into the can. Then setting those aside, I coarse mince about 7 good sized cloves of garlic.",
+		text: "The first thing I do is start the sauce, since it needs time to simmer. I start by pouring whole peeled San Marzano tomatoes into a mixing bowl to be crushed. I also take 1 cup of water and pour it into the can. Then setting those aside, I coarse mince about 7 good sized cloves of garlic.",
 		image: {
 			src: "/images/recipes/pasta/red/prep.webp",
 			alt: "Mixing bowl with crushed tomatos, and cutting board with chopped garlic",
@@ -137,7 +137,7 @@ const blocks = [
 	},
 	{
 		heading: "",
-		text: "Once I have these prepared, I heat a fourth cup of olive oil, sprinkling in a generous amount of red pepper flakes. Once up to temp, I throw in the garlic. As soon as I hear the garlic starting to sizzle, I pour in the tomatoes. I also pour the water from the can into the bowl at this point, attempting to get as much of the liquid from the can into the sauce as possible.",
+		text: "Once I have these prepared, I heat ¼ a cup of olive oil, sprinkling in a generous amount of red pepper flakes. Once up to temp, I throw in the garlic. As soon as I hear the garlic starting to sizzle, I pour in the tomatoes. I also pour the water from the can into the bowl at this point, attempting to get as much of the liquid from the can into the sauce as possible.",
 		image: {
 			src: "/images/recipes/pasta/red/sizzle.webp",
 			alt: "Sauce pan with oil, garlic, and red pepper flakes",
@@ -145,7 +145,7 @@ const blocks = [
 	},
 	{
 		heading: "",
-		text: "After a quick stir to incorporate the ingredients, I add a healthy amount of salt, black pepper and oregano. I use a teaspoon of salt, but just look at the density of spices covering the surface of the sauce as a measure for the pepper and oregano. I do two passes for the black pepper and one for the oregano… . Once the sauce is starting to bubble, I add some fresh basil and let it wilt.",
+		text: "After a quick stir to incorporate the ingredients, I add a healthy amount of salt, black pepper and oregano. I use 1 teaspoon of salt, but just look at the density of spices covering the surface of the sauce as a measure for the pepper and oregano. I do two passes for the black pepper and one for the oregano, before stirring them in. Once the sauce is starting to bubble, I add some fresh basil and let it wilt.",
 		image: {
 			src: "/images/recipes/pasta/red/spice.webp",
 			alt: "Sauce pan with spices layered on top of tomato sauce",
@@ -153,7 +153,7 @@ const blocks = [
 	},
 	{
 		heading: "",
-		text: "Now that the sauce has started to simmer, I add about 3/4ths of a pound of ground beef to a skillet. While it’s still a block, I season one side with salt and pepper. While keeping an eye on the sauce and stirring occasionally, I let the meat start to brown. After the bottom is starting to take on color, I flip the meat and start to break it apart with a spatula. I like varying pebbles of beef in my sauce, so I continue to use the spatula to break things apart when I agitate the beef. Once satisfactorily browned, add the meat to the sauce that has been simmering.",
+		text: "Now that the sauce has started to simmer, I add about ¾ of a pound ground beef to a skillet. While it’s still a block, I season one side with salt and pepper. While keeping an eye on the sauce and stirring occasionally, I let the meat start to brown. After the bottom is starting to take on color, I flip the meat and start to break it apart with a spatula. I like varying pebbles of beef in my sauce, so I continue to use the spatula to break things apart when I agitate the beef. Once satisfactorily browned, add the meat to the sauce that has been simmering.",
 		image: {
 			src: "/images/recipes/pasta/red/meat.webp",
 			alt: "Beef in the process of browning",

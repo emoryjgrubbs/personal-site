@@ -64,15 +64,10 @@
 					:image="blocks[2].image"
 					left="image"
 				/>
-				<ArticleBlockText
+				<ArticleBlockTextImage
 					:heading="blocks[3].heading"
 					:text="blocks[3].text"
 					:image="blocks[3].image"
-				/>
-				<ArticleBlockTextImage
-					:heading="blocks[4].heading"
-					:text="blocks[4].text"
-					:image="blocks[4].image"
 				/>
 			</div>
 		</div>
@@ -136,7 +131,7 @@ const instructions = computed(() => {
 const blocks = [
 	{
 		heading: "",
-		text: "Cut a lemon and a lime in half, and combine the juice with between 1 and 1.5 ounces of simple syrup and 6 to 8 ounces of water. I use a boston shaker because it’s easy to load and clean, but you could use a water tight container. The syrup I use is linked at the bottom of this page, as well as in the ingredients.",
+		text: "Cut 1 lemon and 1 lime in half, and combine the juice with 1 to 1 ½ ounces of simple syrup and 6 to 8 ounces of water. I use a boston shaker because it’s easy to load and clean, but you could use any water tight container.",
 		image: {
 			src: "images/recipes/juice/lemon-limeade-juicing.webp",
 			alt: "Ingredients after fruit have been juiced",
@@ -144,7 +139,7 @@ const blocks = [
 	},
 	{
 		heading: "",
-		text: "Once the other ingredients are in the shaker, I load 6 large ice cubes in as well. This allows the drink to be enjoyed immediately, although it does also introduce more water. So, if you choose not to shake with ice, add an extra couple ounces of water.",
+		text: "Once the other ingredients are in the shaker, I load 6 large ice cubes in as well. This allows the drink to be enjoyed immediately, although it does also introduce more water. So, if you choose not to shake with ice, compensate with a few extra ounces.",
 		image: {
 			src: "",
 			alt: "",
@@ -152,18 +147,10 @@ const blocks = [
 	},
 	{
 		heading: "",
-		text: "With the shaker prepared, I shake lengthwise to fully incorporate the ingredients for about 30 seconds. At this point it should be fairly cold to the touch. Finally I strain the drink as I pour it, using both a hawthorn strainer and a conical fine mesh sieve. This fully filters any ice, pulp, or seeds while allowing a fast flow. I then add some more ice cubes to the cup and enjoy.",
+		text: "With the shaker prepared, I shake lengthwise to fully incorporate the ingredients for about 30 seconds. At this point it should be fairly cold to the touch. Finally I strain the drink as I pour it, using both a hawthorn strainer and a conical fine mesh sieve. This fully filters any ice, pulp, or seeds while not restricting flow. I then add some more ice cubes to the cup and enjoy.",
 		image: {
 			src: "images/recipes/juice/lemon-limeade-shaken.webp",
 			alt: "Boston shaker after the ingredients have been shaken together",
-		},
-	},
-	{
-		heading: "",
-		text: "I will make a lot more complicated drinks for people, but this always seems to be a favorite. Probably because it’s just a bunch of sugar, fresh citrus juice, and water. The same principles can be applied with other fruit, such as oranges, just consider the amount of juice you are getting out. I’m much more freeform when making this because it’s pretty hard to screw up, which is why I’m only specifying by number of fruit and not exact ounces. But, my recommendations would be to reduce to only using one fruit for something larger like a navel orange, or increasing to 3 for something smaller like a mandarin.",
-		image: {
-			src: "",
-			alt: "",
 		},
 	},
 	{
