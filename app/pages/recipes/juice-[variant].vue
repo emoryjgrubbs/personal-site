@@ -117,7 +117,7 @@ const instructions = computed(() => {
 	switch (route.params.variant.toLowerCase()) {
 		case "lemon-limeade":
 			return [
-				"Cut a lemon and a lime in half",
+				"Cut 1 lemon and 1 lime in half",
 				"Juice the fruit into a shaker",
 				"Add 1 ¼ ounces of simple syrup, 8 ounces of water, and 6 large ice cubes",
 				"Shake lengthwise to combine and chill the juice",
