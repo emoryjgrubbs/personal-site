@@ -1,6 +1,6 @@
 <template>
 	<div
-		class="fixed z-40 mx-12 flex flex-col gap-y-8 transition-all ease-out hover:scale-110 md:mx-8 xl:mx-20"
+		class="fixed z-40 mx-8 flex flex-col gap-y-8 transition-all ease-out hover:scale-110 md:mx-8 xl:mx-20"
 		:class="y > 100 ? 'top-10' : y > 50 ? 'top-16' : 'top-33'"
 	>
 		<NuxtLink
