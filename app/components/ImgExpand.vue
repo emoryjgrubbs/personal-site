@@ -2,6 +2,7 @@
 	<div
 		class="fixed top-0 left-0 z-40 flex h-screen w-screen items-center justify-center select-none"
 		v-if="open"
+        @keydown="minimize"
 	>
 		<!--Dimmed Background (close on click)-->
 		<button
@@ -50,5 +51,13 @@ onBeforeRouteLeave((to, from) => {
 		emit("minimize");
 		return false;
 	}
+});
+
+onMounted(() => {
+    document.addEventListener('keydown', function(event) {
+        if (event.key == "Escape" || event.which == 27) {
+            minimize();
+        }
+    });
 });
 </script>
