@@ -64,7 +64,7 @@
 					class="flex items-center select-none"
 					:class="
 						showDetails
-							? 'gap-6 flex flex-col md:flex-row md:gap-12'
+							? 'flex flex-col gap-6 md:flex-row md:gap-12'
 							: 'aspect-square overflow-hidden'
 					"
 				>
@@ -115,29 +115,358 @@ const images = [
 	{
 		title: "",
 		tags: [
-            //location
+			//location
+			"usa",
+			"united states",
+			"texas",
+			"austin",
+			"outdoors",
+			//subject
+			"skyline",
+			"building",
+			//temporal
+			"night",
+			//camera
+			//make
+			"canon",
+			//model
+			"f-1",
+			//format
+			"film",
+			"35mm",
+			//
+			"color",
+		],
+		dates: [{ start: "2025-12-01", end: "2025-12-01" }],
+		src: "/images/gallery/00021-thanksgiving-in-austin/2-roll-2-enchanted-rock-coffee-downtown/000065510032.webp",
+		alt: "Austin skyline, seen from the pedestrian bridge at night",
+	},
+	{
+		title: "",
+		tags: [
+			//location
+			"usa",
+			"united states",
+			"texas",
+			"austin",
+			"pease park",
+			"outdoors",
+			//subject
+			"treehouse",
+			"metal",
+			"wire",
+			//temporal
+			"day",
+			"fall",
+			"autumn",
+			//camera
+			//make
+			"canon",
+			//model
+			"f-1",
+			//format
+			"film",
+			"35mm",
+			//
+			"color",
+		],
+		dates: [{ start: "2025-12-01", end: "2025-12-01" }],
+		src: "/images/gallery/00021-thanksgiving-in-austin/2-roll-2-enchanted-rock-coffee-downtown/000065510023.webp",
+		alt: "An upward view of the Pease Park treehouse bars, on an overcast day",
+	},
+	{
+		title: "",
+		tags: [
+			//location
+			"usa",
+			"united states",
+			"texas",
+			"enchanted rock",
+			"outdoors",
+			//subject
+			"boulder",
+			"tree",
+			//temporal
+			"day",
+			"fall",
+			"autumn",
+			//camera
+			//make
+			"canon",
+			//model
+			"f-1",
+			//format
+			"film",
+			"35mm",
+			//
+			"color",
+		],
+		dates: [{ start: "2025-11-30", end: "2025-11-30" }],
+		src: "/images/gallery/00021-thanksgiving-in-austin/2-roll-2-enchanted-rock-coffee-downtown/000065510014.webp",
+		alt: "Westward view of trees and boulders at The Enchanted Rock State Park",
+	},
+	{
+		title: "",
+		tags: [
+			//location
+			"usa",
+			"united states",
+			"texas",
+			"enchanted rock",
+			"outdoors",
+			//subject
+			"human",
+			"person",
+			"group",
+			//temporal
+			"day",
+			"fall",
+			"autumn",
+			//camera
+			//make
+			"canon",
+			//model
+			"f-1",
+			//format
+			"film",
+			"35mm",
+			//
+			"color",
+		],
+		dates: [{ start: "2025-11-30", end: "2025-11-30" }],
+		src: "/images/gallery/00021-thanksgiving-in-austin/2-roll-2-enchanted-rock-coffee-downtown/000065510005.webp",
+		alt: "Three people standing atop Enchanted Rock, on an overcast day",
+	},
+	{
+		title: "Thanksgiving",
+		tags: [
+			//location
+			"usa",
+			"united states",
+			"texas",
+			"austin",
+			"outdoors",
+			//subject
+			"sky",
+			"cloud",
+			"tree",
+			//temporal
+			"day",
+			"sunset",
+			//camera
+			//make
+			"canon",
+			//model
+			"f-1",
+			//format
+			"film",
+			"35mm",
+			//
+			"color",
+			"silhouette",
+		],
+		dates: [{ start: "2025-11-27", end: "2025-11-27" }],
+		src: "/images/gallery/00021-thanksgiving-in-austin/1-roll-1-coffee-lake-thanksgiving/thanksgiving.webp",
+		alt: "Dark clouds in the sky on Thanksgiving",
+	},
+	{
+		title: "",
+		tags: [
+			//location
+			"usa",
+			"united states",
+			"texas",
+			"austin",
+			"town lake",
+			"lady bird lake",
+			"outdoors",
+			//subject
+			"human",
+			"person",
+			"group",
+			"kayak",
+			"skyline",
+			"building",
+			"water",
+			"tree",
+			//temporal
+			"day",
+			"fall",
+			"autumn",
+			//camera
+			//make
+			"canon",
+			//model
+			"f-1",
+			//format
+			"film",
+			"35mm",
+			//
+			"color",
+			"reflection",
+		],
+		dates: [{ start: "2025-11-26", end: "2025-11-26" }],
+		src: "/images/gallery/00021-thanksgiving-in-austin/1-roll-1-coffee-lake-thanksgiving/000079540021.webp",
+		alt: "Kayakers in Town Lake, with the Austin skyline behind them",
+	},
+	{
+		title: "Town Lake",
+		tags: [
+			//location
+			"usa",
+			"united states",
+			"texas",
+			"austin",
+			"town lake",
+			"lady bird lake",
+			"outdoors",
+			//subject
+			"building",
+			"water",
+			"tree",
+			//temporal
+			"day",
+			"fall",
+			"autumn",
+			//camera
+			//make
+			"canon",
+			//model
+			"f-1",
+			//format
+			"film",
+			"35mm",
+			//
+			"color",
+			"reflection",
+		],
+		dates: [{ start: "2025-11-26", end: "2025-11-26" }],
+		src: "/images/gallery/00021-thanksgiving-in-austin/1-roll-1-coffee-lake-thanksgiving/town-lake.webp",
+		alt: "The Austin skyline is reflected in the water of Town Lake",
+	},
+	{
+		title: "",
+		tags: [
+			//location
+			"usa",
+			"united states",
+			"texas",
+			"austin",
+			"outdoors",
+			//subject
+			"bridge",
+			"lamp post",
+			//temporal
+			"day",
+			//camera
+			//make
+			"canon",
+			//model
+			"f-1",
+			//format
+			"film",
+			"35mm",
+			//
+			"color",
+		],
+		dates: [{ start: "2025-11-26", end: "2025-11-26" }],
+		src: "/images/gallery/00021-thanksgiving-in-austin/1-roll-1-coffee-lake-thanksgiving/000079540012.webp",
+		alt: "The ivy covered ramp to the Pfluger Pedestrian Bridge",
+	},
+	{
+		title: "",
+		tags: [
+			//location
+			"usa",
+			"united states",
+			"texas",
+			"austin",
+			"town lake",
+			"lady bird lake",
+			"outdoors",
+			//subject
+			"human",
+			"person",
+			"kayak",
+			"bridge",
+			"water",
+			//temporal
+			"day",
+			"fall",
+			"autumn",
+			//camera
+			//make
+			"canon",
+			//model
+			"f-1",
+			//format
+			"film",
+			"35mm",
+			//
+			"color",
+		],
+		dates: [{ start: "2025-11-26", end: "2025-11-26" }],
+		src: "/images/gallery/00021-thanksgiving-in-austin/1-roll-1-coffee-lake-thanksgiving/000079540011.webp",
+		alt: "A lone kayaker is framed by the spans of the Lamar Bridge",
+	},
+	{
+		title: "",
+		tags: [
+			//location
+			"usa",
+			"united states",
+			"texas",
+			"austin",
+			"outdoors",
+			//subject
+			"truck",
+			"kei truck",
+			"suzuki",
+			//temporal
+			"day",
+			//camera
+			//make
+			"canon",
+			//model
+			"f-1",
+			//format
+			"film",
+			"35mm",
+			//
+			"color",
+		],
+		dates: [{ start: "2025-11-26", end: "2025-11-26" }],
+		src: "/images/gallery/00021-thanksgiving-in-austin/1-roll-1-coffee-lake-thanksgiving/000079540003.webp",
+		alt: "The front right side of a Suzuki kei truck",
+	},
+	{
+		title: "",
+		tags: [
+			//location
 			"usa",
 			"united states",
 			"washington",
-            "lake crescent",
-            "outdoors",
-            //subject
-            "mountain",
-            "fog",
-            "dock",
-            "water",
-            "tree",
-            //temporal
-            "fall",
-            "autumn",
-            "day",
-            //camera
-                //make
-            "canon",
-                //model
-            "5d",
-                //
-            "color",
+			"lake crescent",
+			"outdoors",
+			//subject
+			"mountain",
+			"fog",
+			"dock",
+			"water",
+			"tree",
+			//temporal
+			"fall",
+			"autumn",
+			"day",
+			//camera
+			//make
+			"canon",
+			//model
+			"5d",
+			//format
+			"digital",
+			//
+			"color",
 		],
 		dates: [{ start: "2025-10-30", end: "2025-10-30" }],
 		src: "/images/gallery/00020-a-day-at-the-beach/8K8A5391.webp",
@@ -146,26 +475,28 @@ const images = [
 	{
 		title: "",
 		tags: [
-            //location
+			//location
 			"usa",
 			"united states",
 			"washington",
-            "sequim",
-            "outdoors",
-            //subject
-            "mountain",
-            "tree",
-            //temporal
-            "fall",
-            "autumn",
-            "day",
-            //camera
-                //make
-            "canon",
-                //model
-            "5d",
-                //
-            "color",
+			"sequim",
+			"outdoors",
+			//subject
+			"mountain",
+			"tree",
+			//temporal
+			"fall",
+			"autumn",
+			"day",
+			//camera
+			//make
+			"canon",
+			//model
+			"5d",
+			//format
+			"digital",
+			//
+			"color",
 		],
 		dates: [{ start: "2025-10-30", end: "2025-10-30" }],
 		src: "/images/gallery/00020-a-day-at-the-beach/8K8A5327.webp",
@@ -174,29 +505,31 @@ const images = [
 	{
 		title: "",
 		tags: [
-            //location
+			//location
 			"usa",
 			"united states",
 			"washington",
-            "snoqualmie",
-            "north bend",
-            "reinig bridge",
-            "outdoors",
-            //subject
-            "mountain",
-            "tree",
-            "water",
-            //temporal
-            "fall",
-            "autumn",
-            "day",
-            //camera
-                //make
-            "canon",
-                //model
-            "5d",
-                //
-            "color",
+			"snoqualmie",
+			"north bend",
+			"reinig bridge",
+			"outdoors",
+			//subject
+			"mountain",
+			"tree",
+			"water",
+			//temporal
+			"fall",
+			"autumn",
+			"day",
+			//camera
+			//make
+			"canon",
+			//model
+			"5d",
+			//format
+			"digital",
+			//
+			"color",
 		],
 		dates: [{ start: "2005-10-16", end: "2005-10-16" }],
 		src: "/images/gallery/00017-rayin-around/5-twin-peaks/8K8A4926.webp",
@@ -205,29 +538,31 @@ const images = [
 	{
 		title: "",
 		tags: [
-            //location
+			//location
 			"usa",
 			"united states",
 			"washington",
 			"seattle metro",
-            "the sound",
+			"the sound",
 			"outdoors",
-            //subject
-            "boat",
-            "animal",
-            "bird",
-            "gull",
-            "water",
-            //temporal
-            "day",
-            "sunset",
-            //camera
-                //make
-            "canon",
-                //model
-            "5d",
-                //
-            "color",
+			//subject
+			"boat",
+			"animal",
+			"bird",
+			"gull",
+			"water",
+			//temporal
+			"day",
+			"sunset",
+			//camera
+			//make
+			"canon",
+			//model
+			"5d",
+			//format
+			"digital",
+			//
+			"color",
 		],
 		dates: [{ start: "2025-10-15", end: "2025-10-15" }],
 		src: "/images/gallery/00017-rayin-around/4-wine-and-fish/8K8A4772.webp",
@@ -236,29 +571,32 @@ const images = [
 	{
 		title: "",
 		tags: [
-            //location
+			//location
 			"usa",
 			"united states",
 			"washington",
 			"seattle metro",
 			"seattle",
-            "the sound",
+			"the sound",
 			"outdoors",
-            //subject
-            "building",
-            "ferris wheel",
-            "pier",
-            "water",
-            //temporal
-            "day",
-            "sunset",
-            //camera
-                //make
-            "canon",
-                //model
-            "5d",
-                //
-            "color",
+			//subject
+			"skyline",
+			"building",
+			"ferris wheel",
+			"pier",
+			"water",
+			//temporal
+			"day",
+			"sunset",
+			//camera
+			//make
+			"canon",
+			//model
+			"5d",
+			//format
+			"digital",
+			//
+			"color",
 		],
 		dates: [{ start: "2025-10-15", end: "2025-10-15" }],
 		src: "/images/gallery/00017-rayin-around/4-wine-and-fish/8K8A4688.webp",
@@ -267,24 +605,27 @@ const images = [
 	{
 		title: "",
 		tags: [
-            //location
+			//location
 			"usa",
 			"united states",
 			"washington",
-            "mount rainer national park",
-            "outdoors",
-            //subject
-            "human",
-            "tree",
-            //temporal
-            "night",
-            //camera
-                //make
-            "canon",
-                //model
-            "5d",
-                //
-            "color",
+			"mount rainer national park",
+			"outdoors",
+			//subject
+			"human",
+			"person",
+			"tree",
+			//temporal
+			"night",
+			//camera
+			//make
+			"canon",
+			//model
+			"5d",
+			//format
+			"digital",
+			//
+			"color",
 			"silhouette",
 		],
 		dates: [{ start: "2025-10-14", end: "2025-10-14" }],
@@ -294,23 +635,25 @@ const images = [
 	{
 		title: "",
 		tags: [
-            //location
+			//location
 			"usa",
 			"united states",
 			"washington",
-            "mount rainer national park",
-            "outdoors",
-            //subject
-            "mountain",
-            //temporal
-            "night",
-            "dusk",
-            //camera
-                //make
-            "canon",
-                //model
-            "5d",
-                //
+			"mount rainer national park",
+			"outdoors",
+			//subject
+			"mountain",
+			//temporal
+			"night",
+			"dusk",
+			//camera
+			//make
+			"canon",
+			//model
+			"5d",
+			//format
+			"digital",
+			//
 			"b&k",
 			"black & white",
 			"black and white",
@@ -323,27 +666,29 @@ const images = [
 	{
 		title: "",
 		tags: [
-            //location
+			//location
 			"usa",
 			"united states",
 			"washington",
-            "mount rainer national park",
-            "outdoors",
-            //subject
-            "mountain",
-            "tree",
-            "river bed",
-            //temporal
-            "fall",
-            "autumn",
-            "day",
-            //camera
-                //make
-            "canon",
-                //model
-            "5d",
-                //
-            "color",
+			"mount rainer national park",
+			"outdoors",
+			//subject
+			"mountain",
+			"tree",
+			"river bed",
+			//temporal
+			"fall",
+			"autumn",
+			"day",
+			//camera
+			//make
+			"canon",
+			//model
+			"5d",
+			//format
+			"digital",
+			//
+			"color",
 		],
 		dates: [{ start: "2025-10-14", end: "2025-10-14" }],
 		src: "/images/gallery/00017-rayin-around/3-rainer-falls-hike/8K8A4359.webp",
@@ -352,30 +697,32 @@ const images = [
 	{
 		title: "",
 		tags: [
-            //location
+			//location
 			"usa",
 			"united states",
 			"washington",
 			"seattle metro",
-            "seattle",
-            "olympic sculpture park",
+			"seattle",
+			"olympic sculpture park",
 			"outdoors",
-            //subject
-            "mountain",
-            "building",
-            "street",
-            //temporal
-            "fall",
-            "autumn",
-            "day",
-            "sunset",
-            //camera
-                //make
-            "canon",
-                //model
-            "5d",
-                //
-            "color",
+			//subject
+			"mountain",
+			"building",
+			"street",
+			//temporal
+			"fall",
+			"autumn",
+			"day",
+			"sunset",
+			//camera
+			//make
+			"canon",
+			//model
+			"5d",
+			//format
+			"digital",
+			//
+			"color",
 		],
 		dates: [{ start: "2025-10-13", end: "2025-10-13" }],
 		src: "/images/gallery/00017-rayin-around/2-downtown-before-concert/8K8A4118.webp",
@@ -384,28 +731,32 @@ const images = [
 	{
 		title: "",
 		tags: [
-            //location
+			//location
 			"usa",
 			"united states",
 			"washington",
 			"seattle metro",
 			"seattle",
-            "pike place market",
+			"pike place market",
 			"outdoors",
-            //subject
-            "mountain",
-            "street",
-            "ferris wheel",
-            "human",
-            //temporal
-            "day",
-            //camera
-                //make
-            "canon",
-                //model
-            "5d",
-                //
-            "color",
+			//subject
+			"mountain",
+			"street",
+			"ferris wheel",
+			"human",
+			"person",
+			"group",
+			//temporal
+			"day",
+			//camera
+			//make
+			"canon",
+			//model
+			"5d",
+			//format
+			"digital",
+			//
+			"color",
 		],
 		dates: [{ start: "2025-10-13", end: "2025-10-13" }],
 		src: "/images/gallery/00017-rayin-around/2-downtown-before-concert/8K8A4068.webp",
@@ -414,27 +765,29 @@ const images = [
 	{
 		title: "",
 		tags: [
-            //location
+			//location
 			"usa",
 			"united states",
 			"washington",
-            "tiger mountain state forest",
-            "poo poo point",
-            "outdoors",
-            //subject
-            "mountain",
-            "tree",
-            //temporal
-            "fall",
-            "autumn",
-            "day",
-            //camera
-                //make
-            "canon",
-                //model
-            "5d",
-                //
-            "color",
+			"tiger mountain state forest",
+			"poo poo point",
+			"outdoors",
+			//subject
+			"mountain",
+			"tree",
+			//temporal
+			"fall",
+			"autumn",
+			"day",
+			//camera
+			//make
+			"canon",
+			//model
+			"5d",
+			//format
+			"digital",
+			//
+			"color",
 		],
 		dates: [{ start: "2025-10-12", end: "2025-10-12" }],
 		src: "/images/gallery/00017-rayin-around/1-poo-poo-peak-hike/8K8A4013.webp",
@@ -443,27 +796,29 @@ const images = [
 	{
 		title: "",
 		tags: [
-            //location
+			//location
 			"usa",
 			"united states",
 			"washington",
-            "tiger mountain state forest",
-            "poo poo point",
-            "outdoors",
-            //subject
-            "tree",
-            "mist",
-            //temporal
-            "fall",
-            "autumn",
-            "day",
-            //camera
-                //make
-            "canon",
-                //model
-            "5d",
-                //
-            "color",
+			"tiger mountain state forest",
+			"poo poo point",
+			"outdoors",
+			//subject
+			"tree",
+			"mist",
+			//temporal
+			"fall",
+			"autumn",
+			"day",
+			//camera
+			//make
+			"canon",
+			//model
+			"5d",
+			//format
+			"digital",
+			//
+			"color",
 		],
 		dates: [{ start: "2025-10-12", end: "2025-10-12" }],
 		src: "/images/gallery/00017-rayin-around/1-poo-poo-peak-hike/8K8A3852.webp",
@@ -472,23 +827,25 @@ const images = [
 	{
 		title: "",
 		tags: [
-            //location
+			//location
 			"usa",
 			"united states",
 			"washington",
-            "tiger mountain state forest",
-            "poo poo point",
-            "outdoors",
-            //subject
-            "mushroom",
-            //temporal
-            //camera
-                //make
-            "canon",
-                //model
-            "5d",
-                //
-            "color",
+			"tiger mountain state forest",
+			"poo poo point",
+			"outdoors",
+			//subject
+			"mushroom",
+			//temporal
+			//camera
+			//make
+			"canon",
+			//model
+			"5d",
+			//format
+			"digital",
+			//
+			"color",
 		],
 		dates: [{ start: "2025-10-12", end: "2025-10-12" }],
 		src: "/images/gallery/00017-rayin-around/1-poo-poo-peak-hike/8K8A3761.webp",
@@ -511,11 +868,13 @@ const images = [
 			//temporal
 			"night",
 			//camera
-                //make
-            "canon",
-                //model
-            "5d",
-                //
+			//make
+			"canon",
+			//model
+			"5d",
+			//format
+			"digital",
+			//
 			"color",
 			"silhouette",
 		],
@@ -538,11 +897,13 @@ const images = [
 			//temporal
 			"sunset",
 			//camera
-                //make
-            "canon",
-                //model
-            "5d",
-                //
+			//make
+			"canon",
+			//model
+			"5d",
+			//format
+			"digital",
+			//
 			"color",
 			"silhouette",
 		],
@@ -565,11 +926,13 @@ const images = [
 			//temporal
 			"day",
 			//camera
-                //make
-            "canon",
-                //model
-            "5d",
-                //
+			//make
+			"canon",
+			//model
+			"5d",
+			//format
+			"digital",
+			//
 			"color",
 		],
 		dates: [{ start: "2025-07-27", end: "2025-07-27" }],
@@ -589,11 +952,13 @@ const images = [
 			//temporal
 			"day",
 			//camera
-                //make
-            "canon",
-                //model
-            "5d",
-                //
+			//make
+			"canon",
+			//model
+			"5d",
+			//format
+			"digital",
+			//
 			"color",
 		],
 		dates: [{ start: "2025-07-26", end: "2025-07-26" }],
@@ -614,11 +979,13 @@ const images = [
 			//temporal
 			"day",
 			//camera
-                //make
-            "canon",
-                //model
-            "5d",
-                //
+			//make
+			"canon",
+			//model
+			"5d",
+			//format
+			"digital",
+			//
 			"color",
 		],
 		dates: [{ start: "2025-07-23", end: "2025-07-23" }],
@@ -643,11 +1010,13 @@ const images = [
 			//temporal
 			"night",
 			//camera
-                //make
-            "canon",
-                //model
-            "5d",
-                //
+			//make
+			"canon",
+			//model
+			"5d",
+			//format
+			"digital",
+			//
 			"color",
 			"silhouette",
 		],
@@ -670,11 +1039,13 @@ const images = [
 			//temporal
 			"night",
 			//camera
-                //make
-            "canon",
-                //model
-            "5d",
-                //
+			//make
+			"canon",
+			//model
+			"5d",
+			//format
+			"digital",
+			//
 			"color",
 		],
 		dates: [{ start: "2025-07-21", end: "2025-07-21" }],
@@ -700,11 +1071,13 @@ const images = [
 			//temporal
 			"night",
 			//camera
-                //make
-            "canon",
-                //model
-            "5d",
-                //
+			//make
+			"canon",
+			//model
+			"5d",
+			//format
+			"digital",
+			//
 			"color",
 		],
 		dates: [{ start: "2025-07-10", end: "2025-07-10" }],
@@ -725,11 +1098,13 @@ const images = [
 			//temporal
 			"night",
 			//camera
-                //make
-            "canon",
-                //model
-            "5d",
-            //
+			//make
+			"canon",
+			//model
+			"5d",
+			//format
+			"digital",
+			//
 			"color",
 		],
 		dates: [{ start: "2025-07-09", end: "2025-07-09" }],
@@ -754,11 +1129,13 @@ const images = [
 			//temporal
 			"day",
 			//camera
-                //make
-            "canon",
-                //model
-            "5d",
-                //
+			//make
+			"canon",
+			//model
+			"5d",
+			//format
+			"digital",
+			//
 			"b&k",
 			"black & white",
 			"black and white",
@@ -786,11 +1163,13 @@ const images = [
 			"winter",
 			"night",
 			//camera
-                //make
-            "canon",
-                //model
-            "5d",
-                //
+			//make
+			"canon",
+			//model
+			"5d",
+			//format
+			"digital",
+			//
 			"color",
 		],
 		dates: [{ start: "2025-01-15", end: "2025-01-15" }],
@@ -818,11 +1197,13 @@ const images = [
 			//temporal
 			"day",
 			//camera
-                //make
-            "canon",
-                //model
-            "5d",
-                //
+			//make
+			"canon",
+			//model
+			"5d",
+			//format
+			"digital",
+			//
 			"color",
 		],
 		dates: [{ start: "2025-01-15", end: "2025-01-15" }],
@@ -846,11 +1227,13 @@ const images = [
 			//temporal
 			"night",
 			//camera
-                //make
-            "canon",
-                //model
-            "5d",
-                //
+			//make
+			"canon",
+			//model
+			"5d",
+			//format
+			"digital",
+			//
 			"color",
 		],
 		dates: [{ start: "2025-01-12", end: "2025-01-12" }],
@@ -874,11 +1257,13 @@ const images = [
 			//temporal
 			"night",
 			//camera
-                //make
-            "canon",
-                //model
-            "5d",
-                //
+			//make
+			"canon",
+			//model
+			"5d",
+			//format
+			"digital",
+			//
 			"color",
 		],
 		dates: [{ start: "2025-01-12", end: "2025-01-12" }],
@@ -893,21 +1278,24 @@ const images = [
 			"bc",
 			"british columbia",
 			"vancuver",
-            "stanley park",
+			"stanley park",
 			"outdoors",
 			//subject
-            "building",
-            "water",
+			"skyline",
+			"building",
+			"water",
 			//temporal
 			"night",
 			//camera
-                //make
-            "canon",
-                //model
-            "5d",
-                //
+			//make
+			"canon",
+			//model
+			"5d",
+			//format
+			"digital",
+			//
 			"color",
-            "reflection",
+			"reflection",
 		],
 		dates: [{ start: "2025-01-12", end: "2025-01-12" }],
 		src: "/images/gallery/00004-seattle-w24/5-vancuver/8K8A9356.webp",
@@ -931,11 +1319,13 @@ const images = [
 			//temporal
 			"night",
 			//camera
-                //make
-            "canon",
-                //model
-            "5d",
-                //
+			//make
+			"canon",
+			//model
+			"5d",
+			//format
+			"digital",
+			//
 			"color",
 		],
 		dates: [{ start: "2025-01-10", end: "2025-01-10" }],
@@ -961,11 +1351,13 @@ const images = [
 			"winter",
 			"day",
 			//camera
-                //make
-            "canon",
-                //model
-            "5d",
-                //
+			//make
+			"canon",
+			//model
+			"5d",
+			//format
+			"digital",
+			//
 			"color",
 		],
 		dates: [{ start: "2025-01-10", end: "2025-01-10" }],
@@ -991,11 +1383,13 @@ const images = [
 			"sign",
 			//temporal
 			//camera
-                //make
-            "canon",
-                //model
-            "5d",
-                //
+			//make
+			"canon",
+			//model
+			"5d",
+			//format
+			"digital",
+			//
 			"color",
 		],
 		dates: [{ start: "2025-01-09", end: "2025-01-09" }],
@@ -1021,11 +1415,13 @@ const images = [
 			"sign",
 			//temporal
 			//camera
-                //make
-            "canon",
-                //model
-            "5d",
-                //
+			//make
+			"canon",
+			//model
+			"5d",
+			//format
+			"digital",
+			//
 			"color",
 		],
 		dates: [{ start: "2025-01-09", end: "2025-01-09" }],
