@@ -62,6 +62,7 @@
 					:heading="blocks[2].heading"
 					:text="blocks[2].text"
 					:image="blocks[2].image"
+					@maximize="(image) => useMaximize(image)"
 				/>
 				<ArticleBlockText
 					:heading="blocks[3].heading"
@@ -73,12 +74,14 @@
 					:text="blocks[4].text"
 					:image="blocks[4].image"
 					left="image"
+					@maximize="(image) => useMaximize(image)"
 				/>
 				<ArticleBlockImage
 					v-if="route.params.variant.toLowerCase() == 'espresso'"
 					:heading="blocks[5].heading"
 					:text="blocks[5].text"
 					:image="blocks[5].image"
+					@maximize="(image) => useMaximize(image)"
 				/>
 				<div
 					v-if="route.params.variant.toLowerCase() == 'latte'"
@@ -88,6 +91,7 @@
 						:heading="blocks[6].heading"
 						:text="blocks[6].text"
 						:image="blocks[6].image"
+						@maximize="(image) => useMaximize(image)"
 					/>
 				</div>
 				<ArticleBlockText

@@ -12,7 +12,7 @@
 			}"
 		>
 			<NuxtImg
-				class="h-full w-full object-cover select-none"
+				class="h-full w-full cursor-pointer object-cover select-none"
 				:src="props.image.src"
 				:alt="props.image.alt"
 				draggable="false"

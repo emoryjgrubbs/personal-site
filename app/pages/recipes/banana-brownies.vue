@@ -57,23 +57,27 @@
 					:heading="blocks[1].heading"
 					:text="blocks[1].text"
 					:image="blocks[1].image"
+					@maximize="(image) => useMaximize(image)"
 				/>
 				<ArticleBlockTextImage
 					:heading="blocks[2].heading"
 					:text="blocks[2].text"
 					:image="blocks[2].image"
 					left="image"
+					@maximize="(image) => useMaximize(image)"
 				/>
 				<ArticleBlockTextImage
 					:heading="blocks[3].heading"
 					:text="blocks[3].text"
 					:image="blocks[3].image"
+					@maximize="(image) => useMaximize(image)"
 				/>
 				<ArticleBlockTextImage
 					:heading="blocks[4].heading"
 					:text="blocks[4].text"
 					:image="blocks[4].image"
 					left="image"
+					@maximize="(image) => useMaximize(image)"
 				/>
 
 				<ArticleBlockText
@@ -84,6 +88,7 @@
 				<ArticleBlockImage
 					:heading="blocks[6].heading"
 					:image="blocks[6].image"
+					@maximize="(image) => useMaximize(image)"
 				/>
 			</div>
 		</div>

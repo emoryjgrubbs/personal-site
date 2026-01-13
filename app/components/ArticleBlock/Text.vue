@@ -1,5 +1,5 @@
 <template>
-	<div class="flex flex-col items-center gap-x-16 gap-y-8 md:flex-row">
+	<div class="flex flex-col items-center gap-x-16 gap-y-8">
 		<h1 v-if="props.heading" class="text-center text-3xl font-semibold">
 			{{ props.heading }}
 		</h1>

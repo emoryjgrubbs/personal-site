@@ -1,5 +1,5 @@
 <template>
-	<div class="flex flex-col items-center gap-x-16 gap-y-8 md:flex-row">
+	<div class="flex flex-col items-center gap-x-16 gap-y-8">
 		<h1 v-if="props.heading" class="text-center text-3xl font-semibold">
 			{{ props.heading }}
 		</h1>
@@ -9,7 +9,7 @@
 			class="flex items-center"
 		>
 			<NuxtImg
-				class="h-full w-full object-cover select-none"
+				class="h-full w-full cursor-pointer object-cover select-none"
 				:src="props.image.src"
 				:alt="props.image.alt"
 				draggable="false"
