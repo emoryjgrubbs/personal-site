@@ -38,7 +38,8 @@
 								}"
 							/>
 							<ComboboxButton
-								class="absolute right-3 flex h-full"
+								class="absolute right-3 flex h-full cursor-pointer"
+								:title="open ? 'Hide Tags' : 'Show Tags'"
 							>
 								<Icon
 									name="famicons:search"
@@ -119,7 +120,7 @@
 					</div>
 				</div>
 			</label>
-			<div class="flex flex-col gap-2 md:grow-1 md:flex-row">
+			<div class="flex flex-col gap-2 md:grow md:flex-row">
 				<!--Input for Date Range-->
 				<label>
 					Date Range
