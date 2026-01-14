@@ -739,64 +739,66 @@ function dateIncludes(contentDate, filterDate) {
 		// check if content start or end are in range
 		if (validateDate(filterStart) && validateDate(filterEnd)) {
 			for (let i = 0; i < contentDate.length; i++) {
-				// content start is after end search date
-				if (
-					contentDate[i].start.substring(0, 4) >
-					filterEnd.substring(0, 4)
-				) {
-					return false;
-				} else if (
-					contentDate[i].start.substring(0, 4) ==
-					filterEnd.substring(0, 4)
-				) {
+				date: {
+					// content start is after end search date
 					if (
-						contentDate[i].start.substring(5, 7) >
-						filterEnd.substring(5, 7)
+						contentDate[i].start.substring(0, 4) >
+						filterEnd.substring(0, 4)
 					) {
-						return false;
+						break date;
 					} else if (
-						contentDate[i].start.substring(5, 7) ==
-						filterEnd.substring(5, 7)
+						contentDate[i].start.substring(0, 4) ==
+						filterEnd.substring(0, 4)
 					) {
 						if (
-							contentDate[i].start.substring(8, 10) >
-							filterEnd.substring(8, 10)
+							contentDate[i].start.substring(5, 7) >
+							filterEnd.substring(5, 7)
 						) {
-							return false;
-						}
-					}
-				}
-				// content end is before the start search date
-				if (contentDate[i].end !== "now") {
-					if (
-						contentDate[i].end.substring(0, 4) <
-						filterStart.substring(0, 4)
-					) {
-						return false;
-					} else if (
-						contentDate[i].end.substring(0, 4) ==
-						filterStart.substring(0, 4)
-					) {
-						if (
-							contentDate[i].end.substring(5, 7) <
-							filterStart.substring(5, 7)
-						) {
-							return false;
+							break date;
 						} else if (
-							contentDate[i].end.substring(5, 7) ==
-							filterStart.substring(5, 7)
+							contentDate[i].start.substring(5, 7) ==
+							filterEnd.substring(5, 7)
 						) {
 							if (
-								contentDate[i].end.substring(8, 10) <
-								filterStart.substring(8, 10)
+								contentDate[i].start.substring(8, 10) >
+								filterEnd.substring(8, 10)
 							) {
-								return false;
+								break date;
 							}
 						}
 					}
+					// content end is before the start search date
+					if (contentDate[i].end !== "now") {
+						if (
+							contentDate[i].end.substring(0, 4) <
+							filterStart.substring(0, 4)
+						) {
+							break date;
+						} else if (
+							contentDate[i].end.substring(0, 4) ==
+							filterStart.substring(0, 4)
+						) {
+							if (
+								contentDate[i].end.substring(5, 7) <
+								filterStart.substring(5, 7)
+							) {
+								break date;
+							} else if (
+								contentDate[i].end.substring(5, 7) ==
+								filterStart.substring(5, 7)
+							) {
+								if (
+									contentDate[i].end.substring(8, 10) <
+									filterStart.substring(8, 10)
+								) {
+									break date;
+								}
+							}
+						}
+					}
+					return true;
 				}
 			}
-			return true;
 		} else {
 			return false;
 		}
@@ -805,62 +807,66 @@ function dateIncludes(contentDate, filterDate) {
 		// check if content start and end cover date
 		if (validateDate(date)) {
 			for (let i = 0; i < contentDate.length; i++) {
-				// start is after date
-				if (
-					contentDate[i].start.substring(0, 4) > date.substring(0, 4)
-				) {
-					return false;
-				} else if (
-					contentDate[i].start.substring(0, 4) == date.substring(0, 4)
-				) {
+				date: {
+					// start is after date
 					if (
-						contentDate[i].start.substring(5, 7) >
-						date.substring(5, 7)
-					) {
-						return false;
-					} else if (
-						contentDate[i].start.substring(5, 7) ==
-						date.substring(5, 7)
-					) {
-						if (
-							contentDate[i].start.substring(8, 10) >
-							date.substring(8, 10)
-						) {
-							return false;
-						}
-					}
-				}
-				// end is before date
-				if (contentDate[i].end !== "now") {
-					if (
-						contentDate[i].end.substring(0, 4) <
+						contentDate[i].start.substring(0, 4) >
 						date.substring(0, 4)
 					) {
-						return false;
+						break date;
 					} else if (
-						contentDate[i].end.substring(0, 4) ==
+						contentDate[i].start.substring(0, 4) ==
 						date.substring(0, 4)
 					) {
 						if (
-							contentDate[i].end.substring(5, 7) <
+							contentDate[i].start.substring(5, 7) >
 							date.substring(5, 7)
 						) {
-							return false;
+							break date;
 						} else if (
-							contentDate[i].end.substring(5, 7) ==
+							contentDate[i].start.substring(5, 7) ==
 							date.substring(5, 7)
 						) {
 							if (
-								contentDate[i].end.substring(8, 10) <
+								contentDate[i].start.substring(8, 10) >
 								date.substring(8, 10)
 							) {
-								return false;
+								break date;
 							}
 						}
 					}
+					// end is before date
+					if (contentDate[i].end !== "now") {
+						if (
+							contentDate[i].end.substring(0, 4) <
+							date.substring(0, 4)
+						) {
+							break date;
+						} else if (
+							contentDate[i].end.substring(0, 4) ==
+							date.substring(0, 4)
+						) {
+							if (
+								contentDate[i].end.substring(5, 7) <
+								date.substring(5, 7)
+							) {
+								break date;
+							} else if (
+								contentDate[i].end.substring(5, 7) ==
+								date.substring(5, 7)
+							) {
+								if (
+									contentDate[i].end.substring(8, 10) <
+									date.substring(8, 10)
+								) {
+									break date;
+								}
+							}
+						}
+					}
+					return true;
 				}
 			}
-			return true;
 		} else {
 			return false;
 		}
@@ -875,36 +881,38 @@ function dateIncludes(contentDate, filterDate) {
 				filterEnd.toLowerCase().includes("ongoing"))
 		) {
 			for (let i = 0; i < contentDate.length; i++) {
-				if (contentDate[i].end !== "now") {
-					if (
-						contentDate[i].end.substring(0, 4) <
-						filterStart.substring(0, 4)
-					) {
-						return false;
-					} else if (
-						contentDate[i].end.substring(0, 4) ==
-						filterStart.substring(0, 4)
-					) {
+				date: {
+					if (contentDate[i].end !== "now") {
 						if (
-							contentDate[i].end.substring(5, 7) <
-							filterStart.substring(5, 7)
+							contentDate[i].end.substring(0, 4) <
+							filterStart.substring(0, 4)
 						) {
-							return false;
+							break date;
 						} else if (
-							contentDate[i].end.substring(5, 7) ==
-							filterStart.substring(5, 7)
+							contentDate[i].end.substring(0, 4) ==
+							filterStart.substring(0, 4)
 						) {
 							if (
-								contentDate[i].end.substring(8, 10) <
-								filterStart.substring(8, 10)
+								contentDate[i].end.substring(5, 7) <
+								filterStart.substring(5, 7)
 							) {
-								return false;
+								break date;
+							} else if (
+								contentDate[i].end.substring(5, 7) ==
+								filterStart.substring(5, 7)
+							) {
+								if (
+									contentDate[i].end.substring(8, 10) <
+									filterStart.substring(8, 10)
+								) {
+									break date;
+								}
 							}
 						}
 					}
+					return true;
 				}
 			}
-			return true;
 		}
 		for (let i = 0; i < contentDate.length; i++) {
 			if (
@@ -918,6 +926,7 @@ function dateIncludes(contentDate, filterDate) {
 		}
 		return false;
 	}
+	return false;
 }
 function validateDate(date) {
 	const datePattern = /\d{4}.\d{2}.\d{2}/; //regular expression of format YYYY_MM_DD
