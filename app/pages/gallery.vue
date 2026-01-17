@@ -118,6 +118,65 @@ const images = [
 			//location
 			"usa",
 			"united states",
+			"washington",
+			"seattle metro",
+			"seattle",
+			//subject
+			"lamp",
+			"building",
+			"sky",
+			"tree",
+			//temporal
+			"dusk",
+			//camera
+			"canon",
+			//model
+			"5d",
+			//format
+			"digital",
+			//
+			"color",
+		],
+		dates: [{ start: "2026-01-12", end: "2026-01-12" }],
+		src: "/images/gallery/00022-late-nights-early-mornings-and-in-between/8K8A5920.webp",
+		alt: "House at dusk",
+	},
+	{
+		title: "",
+		tags: [
+			//location
+			"usa",
+			"united states",
+			"washington",
+			"seattle metro",
+			"seattle",
+			"post Alley",
+			"outdoors",
+			//subject
+			"plants",
+			"stairs",
+			"building",
+			//temporal
+			"day",
+			//camera
+			"canon",
+			//model
+			"5d",
+			//format
+			"digital",
+			//
+			"color",
+		],
+		dates: [{ start: "2025-12-15", end: "2025-12-15" }],
+		src: "/images/gallery/00022-late-nights-early-mornings-and-in-between/8K8A5655.webp",
+		alt: "Alcove off Post Alley",
+	},
+	{
+		title: "",
+		tags: [
+			//location
+			"usa",
+			"united states",
 			"texas",
 			"austin",
 			"outdoors",
@@ -1440,6 +1499,9 @@ const images = [
                 //make
                 //model
                 //
+            //make
+            //model
+            //
 		],
 		dates: [{ start: "YYYY-MM-DD", end: "YYYY-MM-DD" }],
 		src: "/images/gallery/.../.webp",
