@@ -35,6 +35,10 @@
 				</button>
 			</div>
 
+			<VariantLinks
+				address="recipes-coffee-variant"
+				:variants="variants"
+			/>
 			<ArticleBlockRecipeInfo
 				:recipe="title"
 				:image="{
@@ -107,16 +111,17 @@
 <script lang="ts" setup>
 const route = useRoute();
 const title = route.params.variant;
+const variants = ["espresso", "latte"];
 const info = computed(() => {
 	let image;
 	let alt;
 
 	switch (route.params.variant.toLowerCase()) {
-		case "espresso":
+		case variants[0]:
 			image = "images/recipes/coffee/espresso-ingredients.webp";
 			alt = "Counter preped to brew espresso";
 			break;
-		case "latte":
+		case variants[1]:
 			image = "images/recipes/coffee/latte-ingredients.webp";
 			alt = "Counter preped to pour a latte";
 			break;
@@ -128,12 +133,12 @@ const info = computed(() => {
 });
 const ingredients = computed(() => {
 	switch (route.params.variant.toLowerCase()) {
-		case "espresso":
+		case variants[0]:
 			return [
 				{ name: "Coffee Beans", measurement: "19 Grams" },
 				{ name: "Water", measurement: "" },
 			];
-		case "latte":
+		case variants[1]:
 			return [
 				{ name: "Coffee Beans", measurement: "19 Grams" },
 				{ name: "Water", measurement: "" },
@@ -145,14 +150,14 @@ const ingredients = computed(() => {
 });
 const equipment = computed(() => {
 	switch (route.params.variant.toLowerCase()) {
-		case "espresso":
+		case variants[0]:
 			return [
 				"grinder",
 				"distribution tool",
 				"scale",
 				"espresso machine",
 			];
-		case "latte":
+		case variants[1]:
 			return [
 				"grinder",
 				"distribution tool",
