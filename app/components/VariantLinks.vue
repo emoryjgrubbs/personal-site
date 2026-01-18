@@ -1,5 +1,5 @@
 <template>
-	<div class="flex flex-row gap-5 overflow-scroll">
+	<div class="flex flex-row gap-5 overflow-scroll" v-if="variants.length > 1">
 		<NuxtLink
 			:to="{
 				name: address,

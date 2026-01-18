@@ -35,6 +35,10 @@
 				</button>
 			</div>
 
+			<VariantLinks
+				address="recipes-coffee-variant"
+				:variants="variants"
+			/>
 			<ArticleBlockRecipeInfo
 				:recipe="title"
 				:image="{
@@ -80,12 +84,13 @@
 <script lang="ts" setup>
 const route = useRoute();
 const title = route.params.variant;
+const variants = ["lemon-limeade"];
 const info = computed(() => {
 	let image;
 	let alt;
 
 	switch (route.params.variant.toLowerCase()) {
-		case "lemon-limeade":
+		case variants[0]:
 			image = "images/recipes/juice/lemon-limeade-ingredients.webp";
 			alt = "Ingredients for lemon-limeade laid out";
 			break;
@@ -97,7 +102,7 @@ const info = computed(() => {
 });
 const ingredients = computed(() => {
 	switch (route.params.variant.toLowerCase()) {
-		case "lemon-limeade":
+		case variants[0]:
 			return [
 				{ name: "lemon", measurement: "1" },
 				{ name: "lime", measurement: "1" },
@@ -110,7 +115,7 @@ const ingredients = computed(() => {
 });
 const equipment = computed(() => {
 	switch (route.params.variant.toLowerCase()) {
-		case "lemon-limeade":
+		case variants[0]:
 			return ["knife", "juicer", "shaker", "strainer"];
 	}
 
@@ -118,7 +123,7 @@ const equipment = computed(() => {
 });
 const instructions = computed(() => {
 	switch (route.params.variant.toLowerCase()) {
-		case "lemon-limeade":
+		case variants[0]:
 			return [
 				"Cut 1 lemon and 1 lime in half",
 				"Juice the fruit into a shaker",

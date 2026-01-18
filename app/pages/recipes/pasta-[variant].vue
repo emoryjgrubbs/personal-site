@@ -35,6 +35,10 @@
 				</button>
 			</div>
 
+			<VariantLinks
+				address="recipes-coffee-variant"
+				:variants="variants"
+			/>
 			<ArticleBlockRecipeInfo
 				:recipe="title"
 				:image="{
@@ -94,6 +98,7 @@
 
 <script lang="ts" setup>
 const title = "Pasta";
+const variants = ["red"];
 const ingredients = [
 	{ name: "whole peeled tomatos", measurement: "28 ounce can" },
 	{ name: "water", measurement: "1 cup" },
