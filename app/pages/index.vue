@@ -37,18 +37,17 @@
 					<h1 class="text-center text-3xl font-semibold">About Me</h1>
 					<p class="order-3 text-xl">
 						I graduated with honors from The University of Texas at
-						Dallas, with a degree in Computer Science. And, I am
-						proud to have been involved with the school’s
-						Engineering Projects in Community Service program, as
-						both a team member and a junior mentor. Currently, my
-						personal technological interests lie in open source
-						projects. Although I switched to Linux full time about a
-						year ago, I have been interested in FOSS for a long
-						time. Past simply not wanting to pay for software as a
-						child, I believe it has some compelling advantages.
-						Particularly I find that it empowers users to make
-						decisions on how they experience and interact with the
-						software.
+						Dallas with a degree in Computer Science. I am proud to
+						have been involved with the school’s Engineering
+						Projects in Community Service program, as both a team
+						member and a junior mentor. Currently, my personal
+						technological interests lie in open source projects.
+						Although I switched to Linux full time about a year ago,
+						I have been interested in FOSS for a long time. Past
+						simply not wanting to pay for software as a child, I
+						believe it has some compelling advantages. Particularly
+						I find that it empowers users to make decisions on how
+						they experience and interact with the software.
 					</p>
 				</div>
 			</div>
