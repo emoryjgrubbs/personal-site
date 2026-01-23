@@ -129,6 +129,7 @@ const images = [
 			//temporal
 			"dusk",
 			//camera
+			//make
 			"canon",
 			//model
 			"5d",
@@ -138,8 +139,322 @@ const images = [
 			"color",
 		],
 		dates: [{ start: "2026-01-12", end: "2026-01-12" }],
-		src: "/images/gallery/00022-late-nights-early-mornings-and-in-between/8K8A5920.webp",
+		src: "/images/gallery/00022-late-nights-early-mornings-and-the-in-between/8K8A5920.webp",
 		alt: "House at dusk",
+	},
+	{
+		title: "",
+		tags: [
+			//location
+			"usa",
+			"united states",
+			"washington",
+			"seattle metro",
+			"seattle",
+			"lake city",
+			"outdoors",
+			//subject
+			"car",
+			"cadillac",
+			"sign",
+			"building",
+			//temporal
+			"day",
+			//camera
+			//make
+			"canon",
+			//model
+			"ae-1 program",
+			//format
+			"film",
+			"35mm",
+			//
+			"b&k",
+			"black & white",
+			"black and white",
+		],
+		dates: [{ start: "2026-01-12", end: "2026-01-12" }],
+		src: "/images/gallery/00022-late-nights-early-mornings-and-the-in-between/Grubbs199012-R1-E003.webp",
+		alt: "The back quarter of a vintage Cadillac",
+	},
+	{
+		title: "",
+		tags: [
+			//location
+			"usa",
+			"united states",
+			"washington",
+			"seattle metro",
+			"seattle",
+			"outdoors",
+			//subject
+			"bus",
+			"light",
+			"human",
+			"person",
+			"street",
+			"building",
+			//temporal
+			"night",
+			//camera
+			//make
+			"canon",
+			//model
+			"ae-1 program",
+			//format
+			"film",
+			"35mm",
+			//
+			"b&k",
+			"black & white",
+			"black and white",
+		],
+		dates: [{ start: "2025-12-30", end: "2025-12-30" }],
+		src: "/images/gallery/00022-late-nights-early-mornings-and-the-in-between/Grubbs199012-R1-E008.webp",
+		alt: "Busses at night",
+	},
+	{
+		title: "",
+		tags: [
+			//location
+			"usa",
+			"united states",
+			"washington",
+			"seattle metro",
+			"seattle",
+			"outdoors",
+			//subject
+			"human",
+			"person",
+			"group",
+			"street",
+			"sign",
+			"light",
+			"building",
+			//temporal
+			"night",
+			//camera
+			//make
+			"canon",
+			//model
+			"ae-1 program",
+			//format
+			"film",
+			"35mm",
+			//
+			"b&k",
+			"black & white",
+			"black and white",
+		],
+		dates: [{ start: "2025-12-30", end: "2025-12-30" }],
+		src: "/images/gallery/00022-late-nights-early-mornings-and-the-in-between/Grubbs199012-R1-E010.webp",
+		alt: "A night view of a seattle street in the winter",
+	},
+	{
+		title: "",
+		tags: [
+			//location
+			"usa",
+			"united states",
+			"washington",
+			"seattle metro",
+			"seattle",
+			"ballard locks",
+			"outdoors",
+			//subject
+			"animal",
+			"bird",
+			"gull",
+			"locks",
+			"water",
+			"building",
+			//temporal
+			"day",
+			//camera
+			//make
+			"canon",
+			//model
+			"ae-1 program",
+			//format
+			"film",
+			"35mm",
+			//
+			"b&k",
+			"black & white",
+			"black and white",
+		],
+		dates: [{ start: "2025-12-30", end: "2025-12-30" }],
+		src: "/images/gallery/00022-late-nights-early-mornings-and-the-in-between/Grubbs199012-R1-E020.webp",
+		alt: "A seagull sits on a railing, at the Ballard Locks",
+	},
+	{
+		title: "",
+		tags: [
+			//location
+			"usa",
+			"united states",
+			"washington",
+			"seattle metro",
+			"bainbridge island",
+			"outdoors",
+			//subject
+			"building",
+			"church",
+			"sky",
+			"cloud",
+			//temporal
+			"day",
+			//camera
+			//make
+			"canon",
+			//model
+			"ae-1 program",
+			//format
+			"film",
+			"35mm",
+			//
+			"b&k",
+			"black & white",
+			"black and white",
+		],
+		dates: [{ start: "2025-12-27", end: "2025-12-27" }],
+		src: "/images/gallery/00022-late-nights-early-mornings-and-the-in-between/Grubbs199012-R1-E022.webp",
+		alt: "Eagle Harbor Congregational Church",
+	},
+	{
+		title: "",
+		tags: [
+			//location
+			"usa",
+			"united states",
+			"washington",
+			"seattle metro",
+			"outdoors",
+			//subject
+			"animal",
+			"bird",
+			"gull",
+			"sky",
+			"cloud",
+			//temporal
+			"day",
+			//camera
+			//make
+			"canon",
+			//model
+			"ae-1 program",
+			//format
+			"film",
+			"35mm",
+			//
+			"b&k",
+			"black & white",
+			"black and white",
+		],
+		dates: [{ start: "2025-12-27", end: "2025-12-27" }],
+		src: "/images/gallery/00022-late-nights-early-mornings-and-the-in-between/Grubbs199012-R1-E023.webp",
+		alt: "A seagull flys overhead",
+	},
+	{
+		title: "",
+		tags: [
+			//location
+			"usa",
+			"united states",
+			"washington",
+			"seattle metro",
+			"seattle",
+			"outdoors",
+			//subject
+			"building",
+			"church",
+			"tree",
+			//temporal
+			"day",
+			//camera
+			//make
+			"canon",
+			//model
+			"ae-1 program",
+			//format
+			"film",
+			"35mm",
+			//
+			"b&k",
+			"black & white",
+			"black and white",
+		],
+		dates: [{ start: "2025-12-27", end: "2025-12-27" }],
+		src: "/images/gallery/00022-late-nights-early-mornings-and-the-in-between/Grubbs199012-R1-E025.webp",
+		alt: "Immanuel Lutheran Church",
+	},
+	{
+		title: "",
+		tags: [
+			//location
+			"usa",
+			"united states",
+			"washington",
+			"seattle metro",
+			"renton",
+			"cedar river",
+			"outdoors",
+			//subject
+			"water",
+			"sign",
+			"bench",
+			"tree",
+			//temporal
+			"day",
+			//camera
+			//make
+			"canon",
+			//model
+			"ae-1 program",
+			//format
+			"film",
+			"35mm",
+			//
+			"b&k",
+			"black & white",
+			"black and white",
+		],
+		dates: [{ start: "2025-12-21", end: "2025-12-21" }],
+		src: "/images/gallery/00022-late-nights-early-mornings-and-the-in-between/Grubbs199012-R1-E031.webp",
+		alt: "Flooded walkway along the Cedar River, with a sign for bicyclists to dismount",
+	},
+	{
+		title: "",
+		tags: [
+			//location
+			"usa",
+			"united states",
+			"washington",
+			"seattle metro",
+			"renton",
+			"outdoors",
+			//subject
+			"sign",
+			"sky",
+			"cloud",
+			//temporal
+			"day",
+			//camera
+			//make
+			"canon",
+			//model
+			"ae-1 program",
+			//format
+			"film",
+			"35mm",
+			//
+			"b&k",
+			"black & white",
+			"black and white",
+		],
+		dates: [{ start: "2025-12-19", end: "2025-12-19" }],
+		src: "/images/gallery/00022-late-nights-early-mornings-and-the-in-between/Grubbs199012-R1-E036.webp",
+		alt: "Dragon shaped light post sign",
 	},
 	{
 		title: "",
@@ -159,6 +474,7 @@ const images = [
 			//temporal
 			"day",
 			//camera
+			//make
 			"canon",
 			//model
 			"5d",
@@ -168,7 +484,7 @@ const images = [
 			"color",
 		],
 		dates: [{ start: "2025-12-15", end: "2025-12-15" }],
-		src: "/images/gallery/00022-late-nights-early-mornings-and-in-between/8K8A5655.webp",
+		src: "/images/gallery/00022-late-nights-early-mornings-and-the-in-between/8K8A5655.webp",
 		alt: "Alcove off Post Alley",
 	},
 	{
@@ -263,38 +579,6 @@ const images = [
 		dates: [{ start: "2025-11-30", end: "2025-11-30" }],
 		src: "/images/gallery/00021-thanksgiving-in-austin/2-roll-2-enchanted-rock-coffee-downtown/000065510014.webp",
 		alt: "Westward view of trees and boulders at The Enchanted Rock State Park",
-	},
-	{
-		title: "",
-		tags: [
-			//location
-			"usa",
-			"united states",
-			"texas",
-			"enchanted rock",
-			"outdoors",
-			//subject
-			"human",
-			"person",
-			"group",
-			//temporal
-			"day",
-			"fall",
-			"autumn",
-			//camera
-			//make
-			"canon",
-			//model
-			"f-1",
-			//format
-			"film",
-			"35mm",
-			//
-			"color",
-		],
-		dates: [{ start: "2025-11-30", end: "2025-11-30" }],
-		src: "/images/gallery/00021-thanksgiving-in-austin/2-roll-2-enchanted-rock-coffee-downtown/000065510005.webp",
-		alt: "Three people standing atop Enchanted Rock, on an overcast day",
 	},
 	{
 		title: "Thanksgiving",
@@ -1127,6 +1411,7 @@ const images = [
 			"outdoors",
 			//subject
 			"building",
+			"light",
 			//temporal
 			"night",
 			//camera
