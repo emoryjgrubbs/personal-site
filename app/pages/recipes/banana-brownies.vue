@@ -108,11 +108,11 @@ const ingredients = [
 	{ name: "Pure Cane Sugar", measurement: "¾ Cup" },
 ];
 const equipment = [
-	"sauce pan",
-	"whisk",
-	"mixing bowl",
-	"measuring cup",
-	"baking pan",
+	"Sauce Pan",
+	"Whisk",
+	"Mixing Bowl",
+	"Measuring Cup",
+	"Baking Pan",
 ];
 const instructions = [
 	"Pre-heat the oven to 325 degrees",

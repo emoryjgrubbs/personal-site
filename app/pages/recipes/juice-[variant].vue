@@ -104,10 +104,10 @@ const ingredients = computed(() => {
 	switch (route.params.variant.toLowerCase()) {
 		case variants[0]:
 			return [
-				{ name: "lemon", measurement: "1" },
-				{ name: "lime", measurement: "1" },
-				{ name: "water", measurement: "6 to 8 Ounces" },
-				{ name: "simple-syrup", measurement: "1 to 1 ½ Ounces" },
+				{ name: "Lemon", measurement: "1" },
+				{ name: "Lime", measurement: "1" },
+				{ name: "Water", measurement: "6 to 8 Ounces" },
+				{ name: "Simple-Syrup", measurement: "1 to 1 ½ Ounces" },
 			];
 	}
 
@@ -116,7 +116,7 @@ const ingredients = computed(() => {
 const equipment = computed(() => {
 	switch (route.params.variant.toLowerCase()) {
 		case variants[0]:
-			return ["knife", "juicer", "shaker", "strainer"];
+			return ["Knife", "Juicer", "Shaker", "Strainer"];
 	}
 
 	return [];
