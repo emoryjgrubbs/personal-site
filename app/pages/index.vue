@@ -59,6 +59,7 @@
 					to="/projects"
 					class="group relative order-2 cursor-pointer select-none md:w-5/12"
 					title="Navigate To Projects"
+					draggable="false"
 				>
 					<NuxtImg
 						src="/images/home/projects-this-page-source.webp"
@@ -97,6 +98,7 @@
 					to="/recipes"
 					class="group relative order-2 cursor-pointer select-none md:order-none md:w-5/12"
 					title="Navigate To Recipes"
+					draggable="false"
 				>
 					<NuxtImg
 						src="/images/home/recipes-coffee.webp"
@@ -135,6 +137,7 @@
 					to="/gallery"
 					class="group relative order-2 cursor-pointer select-none md:w-5/12"
 					title="Navigate To Gallery"
+					draggable="false"
 				>
 					<NuxtImg
 						src="/images/home/gallery-overlook-camera-setup.webp"

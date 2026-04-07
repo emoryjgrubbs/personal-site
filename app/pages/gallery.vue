@@ -105,6 +105,40 @@
 						</div>
 					</div>
 				</div>
+				<!--flickr-link-->
+				<div
+					class="group relative flex cursor-pointer items-center select-none"
+					:class="showDetails ? '' : 'aspect-square overflow-hidden'"
+				>
+					<NuxtLink
+						title="Navigate To Flickr"
+						class="h-full w-full"
+						to="https://www.flickr.com/photos/emorygrubbs/"
+						external
+						target="_blank"
+						draggable="false"
+					>
+						<NuxtImg
+							class="h-full w-full cursor-pointer object-cover select-none"
+							src="/images/gallery/flickr-teaser.webp"
+							alt="Photo of Pike Place Market"
+							draggable="false"
+						/>
+						<div
+							class="group-hover:text-columbia-blue group-hover-transition absolute top-0 flex h-full w-full cursor-pointer justify-center text-white backdrop-blur-sm duration-300 ease-in-out group-hover:backdrop-blur-none lg:backdrop-blur-md"
+						>
+							<div
+								class="flex w-48 justify-evenly self-center rounded-lg py-2 text-center text-3xl font-semibold duration-300 ease-in-out group-hover:scale-125 group-hover:transition"
+							>
+								More
+								<Icon
+									name="famicons:caret-forward"
+									class="self-center"
+								/>
+							</div>
+						</div>
+					</NuxtLink>
+				</div>
 			</div>
 		</div>
 	</div>
