@@ -155,6 +155,41 @@ const images = [
 			"washington",
 			"seattle metro",
 			"seattle",
+			"outdoors",
+			//subject
+			"human",
+			"person",
+			"railing",
+			"street",
+			"car",
+			//temporal
+			"day",
+			//camera
+			//make
+			"canon",
+			//model
+			"5d",
+			//lens
+			"ef 50mm",
+			//format
+			"fullframe",
+			"digital",
+			//
+			"color",
+		],
+		dates: [{ start: "2026-04-08", end: "2026-04-08" }],
+		src: "/images/gallery/8K8A7883.webp",
+		alt: "A man sitting on a curb, framed by a metal railing",
+	},
+	{
+		title: "",
+		tags: [
+			//location
+			"usa",
+			"united states",
+			"washington",
+			"seattle metro",
+			"seattle",
 			"pocket beach",
 			"outdoors",
 			//subject
@@ -175,6 +210,7 @@ const images = [
 			"fl 55mm",
 			//format
 			"35mm",
+			"fullframe",
 			"film",
 			"kodak",
 			"portra 400",
@@ -213,6 +249,7 @@ const images = [
 			"fl 55mm",
 			//format
 			"35mm",
+			"fullframe",
 			"film",
 			"kodak",
 			"portra 400",
@@ -251,6 +288,7 @@ const images = [
 			"fl 55mm",
 			//format
 			"35mm",
+			"fullframe",
 			"film",
 			"kodak",
 			"portra 400",
@@ -289,6 +327,7 @@ const images = [
 			"fl 55mm",
 			//format
 			"35mm",
+			"fullframe",
 			"film",
 			"kodak",
 			"portra 400",
@@ -327,6 +366,7 @@ const images = [
 			"fl 55mm",
 			//format
 			"35mm",
+			"fullframe",
 			"film",
 			"kodak",
 			"portra 400",
@@ -364,6 +404,7 @@ const images = [
 			"fd 50mm",
 			//format
 			"35mm",
+			"fullframe",
 			"film",
 			"ilford",
 			"hp5+",
@@ -406,6 +447,7 @@ const images = [
 			"fd 50mm",
 			//format
 			"35mm",
+			"fullframe",
 			"film",
 			"ilford",
 			"hp5+",
@@ -446,6 +488,7 @@ const images = [
 			"fd 50mm",
 			//format
 			"35mm",
+			"fullframe",
 			"film",
 			"ilford",
 			"hp5+",
@@ -485,6 +528,7 @@ const images = [
 			"fd 50mm",
 			//format
 			"35mm",
+			"fullframe",
 			"film",
 			"fuji",
 			"fujifilm",
@@ -524,6 +568,7 @@ const images = [
 			"fd 50mm",
 			//format
 			"35mm",
+			"fullframe",
 			"film",
 			"fuji",
 			"fujifilm",
@@ -562,6 +607,7 @@ const images = [
 			"fd 50mm",
 			//format
 			"35mm",
+			"fullframe",
 			"film",
 			"ilford",
 			"hp5+",
@@ -603,6 +649,7 @@ const images = [
 			"fd 50mm",
 			//format
 			"35mm",
+			"fullframe",
 			"film",
 			"ilford",
 			"hp5+",
@@ -641,6 +688,7 @@ const images = [
 			"fd 50mm",
 			//format
 			"35mm",
+			"fullframe",
 			"film",
 			"ilford",
 			"hp5+",
@@ -680,6 +728,7 @@ const images = [
 			"fd 50mm",
 			//format
 			"35mm",
+			"fullframe",
 			"film",
 			"ilford",
 			"hp5+",
@@ -715,6 +764,7 @@ const images = [
 			"fl 55mm",
 			//format
 			"35mm",
+			"fullframe",
 			"film",
 			"kodak",
 			"portra 400",
@@ -753,6 +803,7 @@ const images = [
 			"fl 55mm",
 			//format
 			"35mm",
+			"fullframe",
 			"film",
 			"kodak",
 			"portra 400",
@@ -794,6 +845,7 @@ const images = [
 			"fl 55mm",
 			//format
 			"35mm",
+			"fullframe",
 			"film",
 			"kodak",
 			"portra 400",
@@ -831,6 +883,7 @@ const images = [
 			//lens
 			"ef 24-70mm",
 			//format
+			"fullframe",
 			"digital",
 			//
 			"color",
@@ -862,6 +915,7 @@ const images = [
 			//lens
 			"ef 24-70mm",
 			//format
+			"fullframe",
 			"digital",
 			//
 			"color",
@@ -892,6 +946,7 @@ const images = [
 			//lens
 			"ef 70-300mm",
 			//format
+			"fullframe",
 			"digital",
 			//
 			"color",
@@ -927,6 +982,7 @@ const images = [
 			//lens
 			"ef 50mm",
 			//format
+			"fullframe",
 			"digital",
 			//
 			"color",
