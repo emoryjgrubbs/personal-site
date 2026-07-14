@@ -276,7 +276,7 @@ const images = [
 			"black and white",
 		],
 		dates: [{ start: "2026-07-04", end: "2026-07-04" }],
-		src: "/images/gallery/000130610001_###.webp",
+		src: "/images/gallery/000130610001.webp",
 		alt: "People standing on the deck of the Bainbridge ferry, looking to downtown Seattle",
 	},
 	{
@@ -316,7 +316,7 @@ const images = [
 			"black and white",
 		],
 		dates: [{ start: "2026-05-23", end: "2026-05-23" }],
-		src: "/images/gallery/000130610005_###.webp",
+		src: "/images/gallery/000130610005.webp",
 		alt: "Point Wilson Lighthouse light",
 	},
 	{
@@ -356,7 +356,7 @@ const images = [
 			"black and white",
 		],
 		dates: [{ start: "2026-05-22", end: "2026-05-22" }],
-		src: "/images/gallery/000130610013_###.webp",
+		src: "/images/gallery/000130610013.webp",
 		alt: "Western Washington farm",
 	},
 	{
@@ -395,7 +395,7 @@ const images = [
 			"color",
 		],
 		dates: [{ start: "2026-05-21", end: "2026-05-21" }],
-		src: "/images/gallery/000130620002_###.webp",
+		src: "/images/gallery/000130620002.webp",
 		alt: "Couple looks to downtown Seattle across Lake Union",
 	},
 	{
@@ -439,7 +439,7 @@ const images = [
 			"color",
 		],
 		dates: [{ start: "2026-05-19", end: "2026-05-19" }],
-		src: "/images/gallery/000130620009_###.webp",
+		src: "/images/gallery/000130620009.webp",
 		alt: "Seattle monorail passes over a street",
 	},
 	{
