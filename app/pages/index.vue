@@ -145,6 +145,310 @@ const images = [
 			"usa",
 			"united states",
 			"washington",
+			"olympia",
+			"state capitol building",
+			"indoors",
+			//subject
+			"chandelier",
+			"light",
+			"dome",
+			//temporal
+			//camera
+			//make
+			"canon",
+			//model
+			"5d",
+			//lens
+			"ef 24-70mm",
+			//format
+			"fullframe",
+			"digital",
+			//
+			"color",
+		],
+		dates: [{ start: "2026-07-04", end: "2026-07-04" }],
+		src: "/images/gallery/8K8A1802.webp",
+		alt: "Chandelier hanging from the main dome of the Washington state capitol",
+	},
+	{
+		title: "",
+		tags: [
+			//location
+			"usa",
+			"united states",
+			"washington",
+			"olympia",
+			"state capitol campus",
+			"outdoors",
+			//subject
+			"building",
+			//temporal
+			//camera
+			//make
+			"canon",
+			//model
+			"5d",
+			//lens
+			"ef 24-70mm",
+			//format
+			"fullframe",
+			"digital",
+			//
+			"b&k",
+			"black & white",
+			"black and white",
+		],
+		dates: [{ start: "2026-07-04", end: "2026-07-04" }],
+		src: "/images/gallery/8K8A1665.webp",
+		alt: "Department of Natural Resources building in the capitol campus",
+	},
+	{
+		title: "",
+		tags: [
+			//location
+			"usa",
+			"united states",
+			"washington",
+			"olympia",
+			"outdoors",
+			//subject
+			"car",
+			"porsche",
+			"sign",
+			"neon",
+			"building",
+			//temporal
+			"day",
+			//camera
+			//make
+			"canon",
+			//model
+			"5d",
+			//lens
+			"ef 24-70mm",
+			//format
+			"fullframe",
+			"digital",
+			//
+			"b&k",
+			"black & white",
+			"black and white",
+		],
+		dates: [{ start: "2026-07-04", end: "2026-07-04" }],
+		src: "/images/gallery/8K8A1610.webp",
+		alt: "Porsche 911 turbo",
+	},
+	{
+		title: "",
+		tags: [
+			//location
+			"usa",
+			"united states",
+			"washington",
+			"puget sound",
+			"outdoors",
+			//subject
+			"human",
+			"person",
+			"group",
+			"skyline",
+			"building",
+			//temporal
+			"day",
+			//camera
+			//make
+			"bronica",
+			//model
+			"etrs",
+			//lens
+			"mc 75mm",
+			//format
+			"120mm",
+			"medium format",
+			"645",
+			"6x4.5",
+			"film",
+			"ilford",
+			"hp5+",
+			//
+			"b&k",
+			"black & white",
+			"black and white",
+		],
+		dates: [{ start: "2026-07-04", end: "2026-07-04" }],
+		src: "/images/gallery/000130610001_###.webp",
+		alt: "People standing on the deck of the Bainbridge ferry, looking to downtown Seattle",
+	},
+	{
+		title: "",
+		tags: [
+			//location
+			"usa",
+			"united states",
+			"washington",
+			"Port Townsend",
+			"Fort Worden State Park",
+			"outdoors",
+			//subject
+			"lighthouse",
+			"light",
+			"fresnel lens",
+			//temporal
+			"day",
+			//camera
+			//make
+			"bronica",
+			//model
+			"etrs",
+			//lens
+			"mc 75mm",
+			//format
+			"120mm",
+			"medium format",
+			"645",
+			"6x4.5",
+			"film",
+			"ilford",
+			"hp5+",
+			//
+			"b&k",
+			"black & white",
+			"black and white",
+		],
+		dates: [{ start: "2026-05-23", end: "2026-05-23" }],
+		src: "/images/gallery/000130610005_###.webp",
+		alt: "Point Wilson Lighthouse light",
+	},
+	{
+		title: "",
+		tags: [
+			//location
+			"usa",
+			"united states",
+			"washington",
+			"hansville",
+			"outdoors",
+			//subject
+			"building",
+			"farm",
+			"silo",
+			"fence",
+			//temporal
+			"day",
+			//camera
+			//make
+			"bronica",
+			//model
+			"etrs",
+			//lens
+			"mc 75mm",
+			//format
+			"120mm",
+			"medium format",
+			"645",
+			"6x4.5",
+			"film",
+			"ilford",
+			"hp5+",
+			//
+			"b&k",
+			"black & white",
+			"black and white",
+		],
+		dates: [{ start: "2026-05-22", end: "2026-05-22" }],
+		src: "/images/gallery/000130610013_###.webp",
+		alt: "Western Washington farm",
+	},
+	{
+		title: "",
+		tags: [
+			//location
+			"usa",
+			"united states",
+			"washington",
+			"seattle metro",
+			"seattle",
+			"outdoors",
+			//subject
+			"human",
+			"person",
+			"skyline",
+			"building",
+			//temporal
+			"sunset",
+			//camera
+			//make
+			"bronica",
+			//model
+			"etrs",
+			//lens
+			"mc 75mm",
+			//format
+			"120mm",
+			"medium format",
+			"645",
+			"6x4.5",
+			"film",
+			"kodak",
+			"portra 400",
+			//
+			"color",
+		],
+		dates: [{ start: "2026-05-21", end: "2026-05-21" }],
+		src: "/images/gallery/000130620002_###.webp",
+		alt: "Couple looks to downtown Seattle across Lake Union",
+	},
+	{
+		title: "",
+		tags: [
+			//location
+			"usa",
+			"united states",
+			"washington",
+			"seattle metro",
+			"seattle",
+			"outdoors",
+			//subject
+			"transit",
+			"train",
+			"monorail",
+			"sign",
+			"neon",
+			"street",
+			"car",
+			"human",
+			"person",
+			//temporal
+			"day",
+			//camera
+			//make
+			"bronica",
+			//model
+			"etrs",
+			//lens
+			"mc 75mm",
+			//format
+			"120mm",
+			"medium format",
+			"645",
+			"6x4.5",
+			"film",
+			"kodak",
+			"portra 400",
+			//
+			"color",
+		],
+		dates: [{ start: "2026-05-19", end: "2026-05-19" }],
+		src: "/images/gallery/000130620009_###.webp",
+		alt: "Seattle monorail passes over a street",
+	},
+	{
+		title: "",
+		tags: [
+			//location
+			"usa",
+			"united states",
+			"washington",
 			"seattle metro",
 			"seattle",
 			"outdoors",
@@ -172,46 +476,6 @@ const images = [
 		dates: [{ start: "2026-04-08", end: "2026-04-08" }],
 		src: "/images/gallery/8K8A7883.webp",
 		alt: "A man sitting on a curb, framed by a metal railing",
-	},
-	{
-		title: "",
-		tags: [
-			//location
-			"usa",
-			"united states",
-			"washington",
-			"seattle metro",
-			"seattle",
-			"pocket beach",
-			"outdoors",
-			//subject
-			"mountain",
-			"water",
-			"beach",
-			"sky",
-			"human",
-			"person",
-			//temporal
-			"sunset",
-			//camera
-			//make
-			"canon",
-			//model
-			"f-1",
-			//lens
-			"fl 55mm",
-			//format
-			"35mm",
-			"fullframe",
-			"film",
-			"kodak",
-			"portra 400",
-			//
-			"color",
-		],
-		dates: [{ start: "2026-03-26", end: "2026-03-26" }],
-		src: "/images/gallery/Grubbs6_Grubbs6-R1-E020.webp",
-		alt: "View of the Olympic Mountains from Seattle's Pocket Beach",
 	},
 	{
 		title: "",
@@ -251,45 +515,6 @@ const images = [
 		dates: [{ start: "2026-03-26", end: "2026-03-26" }],
 		src: "/images/gallery/GrubbsBW199589-R1-E001.webp",
 		alt: "View out of Seattle's Central Library",
-	},
-	{
-		title: "",
-		tags: [
-			//location
-			"usa",
-			"united states",
-			"washington",
-			"seattle metro",
-			"seattle",
-			"pike place market",
-			"indoors",
-			//subject
-			"human",
-			"person",
-			"light",
-			"neon",
-			"drink",
-			//temporal
-			"day",
-			//camera
-			//make
-			"canon",
-			//model
-			"f-1",
-			//lens
-			"fl 55mm",
-			//format
-			"35mm",
-			"fullframe",
-			"film",
-			"kodak",
-			"portra 400",
-			//
-			"color",
-		],
-		dates: [{ start: "2026-03-26", end: "2026-03-26" }],
-		src: "/images/gallery/Grubbs6_Grubbs6-R1-E030.webp",
-		alt: "A man orders take out from Pike Place Chinese Cuisine",
 	},
 	{
 		title: "",
@@ -494,45 +719,6 @@ const images = [
 		alt: "Flowers on a foggy day",
 	},
 	{
-		title: "Simple Life",
-		tags: [
-			//location
-			"usa",
-			"united states",
-			"california",
-			"san fransisco",
-			"nob hill",
-			"outdoors",
-			//subject
-			"security door",
-			"art",
-			"painting",
-			"tile",
-			"building",
-			//temporal
-			"day",
-			//camera
-			//make
-			"canon",
-			//model
-			"f-1",
-			//lens
-			"fd 50mm",
-			//format
-			"35mm",
-			"fullframe",
-			"film",
-			"fuji",
-			"fujifilm",
-			"400",
-			//
-			"color",
-		],
-		dates: [{ start: "2026-02-07", end: "2026-02-07" }],
-		src: "/images/gallery/simple-life.webp",
-		alt: "A record player and bottle of water are locked in a mid-century modern living room",
-	},
-	{
 		title: "",
 		tags: [
 			//location
@@ -611,87 +797,6 @@ const images = [
 		dates: [{ start: "2026-01-12", end: "2026-01-12" }],
 		src: "/images/gallery/northwest-automotive.webp",
 		alt: "The back quarter of a vintage Cadillac",
-	},
-	{
-		title: "",
-		tags: [
-			//location
-			"usa",
-			"united states",
-			"washington",
-			"seattle metro",
-			"seattle",
-			"ballard locks",
-			"outdoors",
-			//subject
-			"animal",
-			"bird",
-			"gull",
-			"locks",
-			"water",
-			"building",
-			//temporal
-			"day",
-			//camera
-			//make
-			"canon",
-			//model
-			"ae-1 program",
-			//lens
-			"fd 50mm",
-			//format
-			"35mm",
-			"fullframe",
-			"film",
-			"ilford",
-			"hp5+",
-			//
-			"b&k",
-			"black & white",
-			"black and white",
-		],
-		dates: [{ start: "2025-12-30", end: "2025-12-30" }],
-		src: "/images/gallery/Grubbs199012-R1-E020.webp",
-		alt: "A seagull sits on a railing, at the Ballard Locks",
-	},
-	{
-		title: "",
-		tags: [
-			//location
-			"usa",
-			"united states",
-			"washington",
-			"seattle metro",
-			"bainbridge island",
-			"outdoors",
-			//subject
-			"building",
-			"church",
-			"sky",
-			"cloud",
-			//temporal
-			"day",
-			//camera
-			//make
-			"canon",
-			//model
-			"ae-1 program",
-			//lens
-			"fd 50mm",
-			//format
-			"35mm",
-			"fullframe",
-			"film",
-			"ilford",
-			"hp5+",
-			//
-			"b&k",
-			"black & white",
-			"black and white",
-		],
-		dates: [{ start: "2025-12-27", end: "2025-12-27" }],
-		src: "/images/gallery/Grubbs199012-R1-E022.webp",
-		alt: "Eagle Harbor Congregational Church",
 	},
 	{
 		title: "Flood",
